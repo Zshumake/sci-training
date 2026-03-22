@@ -1,0 +1,597 @@
+import 'package:flutter/material.dart';
+import '../models/topic_content_model.dart';
+
+final TopicData classificationAsiaContent = TopicData(
+  id: 'classification-asia',
+  title: 'ISNCSCI & AIS Classification',
+  tabs: [
+    // ==========================================
+    // TAB 1: ISNCSCI EXAM
+    // ==========================================
+    TopicTab(
+      title: 'ISNCSCI Exam',
+      blocks: [
+        HeaderBlock('International Standards for Neurological Classification of SCI'),
+        TextBlock(
+          'The ISNCSCI exam (formerly known as the ASIA exam) is the gold standard for classifying spinal cord injury. It provides a systematic method for determining sensory levels, motor levels, neurological level of injury (NLI), completeness, and AIS grade. The exam should be performed with the patient in the supine position.',
+          isIntro: true,
+        ),
+        HeaderBlock('Terminology'),
+        BulletCardBlock(
+          title: 'Key Definitions',
+          themeColor: const Color(0xFF3B82F6),
+          backgroundColor: const Color(0xFFEFF6FF),
+          points: [
+            'Tetraplegia: impairment/loss of motor and/or sensory function in CERVICAL segments (replaced "quadriplegia" in 1992). Affects all four extremities, trunk, and pelvic organs',
+            'Paraplegia: impairment/loss of motor and/or sensory function in THORACIC, LUMBAR, or SACRAL segments. Arms are spared but trunk, legs, and pelvic organs may be involved',
+            'Tetraplegia does NOT refer to brachial plexus or peripheral nerve injuries',
+            'Paraplegia DOES include cauda equina and conus medullaris injuries',
+            'Dermatome: area of skin innervated by sensory axons within a single segmental nerve root',
+            'Myotome: collection of muscle fibers innervated by motor axons within a single segmental nerve root',
+          ],
+        ),
+        HeaderBlock('Step-by-Step ISNCSCI Examination'),
+        NumberedListBlock([
+          MapEntry('1', 'SENSORY EXAM: Test light touch (cotton tip) and pin prick (safety pin) at all 28 key dermatomes bilaterally (C2-S4/5). Score each as 0 (absent), 1 (impaired), or 2 (normal). Compare to face as the normal control. Also test deep anal pressure (DAP).'),
+          MapEntry('2', 'MOTOR EXAM: Test 10 key muscle groups bilaterally (5 UE + 5 LE). Score each 0-5 on MRC scale. Also test voluntary anal contraction (VAC).'),
+          MapEntry('3', 'SENSORY LEVEL: Most caudal dermatome with normal (2/2) sensation for BOTH light touch AND pin prick on EACH side, with all rostral dermatomes also normal. Determined separately for each side.'),
+          MapEntry('4', 'MOTOR LEVEL: Most caudal myotome graded ≥3/5, provided the segment ABOVE is graded 5/5. Determined separately for each side.'),
+          MapEntry('5', 'NLI: The SINGLE most caudal level where BOTH sensory AND motor function are normal on BOTH sides. This is the most ROSTRAL of the four levels (R sensory, L sensory, R motor, L motor).'),
+          MapEntry('6', 'COMPLETENESS: Determine if complete (no sacral sparing) or incomplete (sacral sparing present).'),
+          MapEntry('7', 'AIS GRADE: Assign AIS grade A-E based on completeness and motor function below NLI.'),
+          MapEntry('8', 'ZPP: Zone of Partial Preservation — only used in AIS A injuries. Most caudal segment with some preserved function.'),
+        ]),
+        HeaderBlock('1. Sensory Examination'),
+        BulletCardBlock(
+          title: 'Sensory Testing Details',
+          themeColor: const Color(0xFF0D9488),
+          backgroundColor: const Color(0xFFF0FDFA),
+          points: [
+            '28 key sensory dermatomes tested bilaterally (C2 through S4-5)',
+            'Two modalities tested separately: light touch AND pin prick',
+            'The FACE is used as the normal control point for comparison',
+            'Maximum sensory score: 112 per modality (28 dermatomes × 2 sides × 2 points each)',
+            'Total maximum sensory score: 224 (112 light touch + 112 pin prick)',
+          ],
+        ),
+        TableBlock(
+          title: 'Sensory Scoring',
+          columns: ['Score', 'Pin Prick', 'Light Touch'],
+          rows: [
+            ['0', 'Cannot differentiate sharp vs dull', 'Absent sensation'],
+            ['1', 'Can differentiate sharp/dull but not\nsame as face (hypo- or hyperesthesia)', 'Felt but different from face'],
+            ['2', 'Pin felt same as on face', 'Same as on face (normal)'],
+            ['NT', 'Not testable', 'Not testable'],
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: S4-S5 Testing',
+          'Testing S4-S5 (perianal area) for light touch and pin prick is CRITICAL — it determines complete vs incomplete status (sacral sparing). This is the single most important part of the sensory exam for classification purposes. If a patient has intact sensation at S4-S5, the injury is by definition INCOMPLETE.',
+        ),
+        HeaderBlock('Deep Anal Pressure (DAP)'),
+        BulletCardBlock(
+          title: 'DAP Testing',
+          themeColor: const Color(0xFF7C3AED),
+          backgroundColor: const Color(0xFFF5F3FF),
+          points: [
+            'Tested by inserting a lubricated gloved finger into the anus and applying pressure to the anorectal wall',
+            'Patient is asked if they can appreciate the digital pressure',
+            'Recorded as YES (present) or NO (absent)',
+            'If patient has intact sensation at S4-S5 for LT or PP, DAP is not required for classification (though the motor portion of the anorectal exam — VAC — is still required)',
+            'DAP presence = sacral sparing = at least AIS B (incomplete)',
+          ],
+        ),
+        HeaderBlock('2. Motor Examination'),
+        TableBlock(
+          title: 'Key Muscles (10 Myotomes Bilaterally)',
+          columns: ['Root', 'Index Muscle', 'Action Tested'],
+          rows: [
+            ['C5', 'Biceps brachialis', 'Elbow flexors'],
+            ['C6', 'Extensor carpi radialis longus/brevis', 'Wrist extensors'],
+            ['C7', 'Triceps', 'Elbow extensors'],
+            ['C8', 'FDP of middle finger', 'Finger flexors'],
+            ['T1', 'Abductor digiti minimi', 'Small finger abductors'],
+            ['L2', 'Iliopsoas', 'Hip flexors'],
+            ['L3', 'Quadriceps', 'Knee extensors'],
+            ['L4', 'Tibialis anterior', 'Ankle dorsiflexors'],
+            ['L5', 'Extensor hallucis longus', 'Long toe extensors'],
+            ['S1', 'Gastrocnemius/soleus', 'Ankle plantar flexors'],
+          ],
+        ),
+        MnemonicBlock(
+          'Key Muscles: "Babies Can Try Finger Foods, Ill Kids Don\'t Eat Grapes"',
+          'C5-Biceps, C6-Carpi (wrist extensors), C7-Triceps, C8-Finger Flexors, T1-Finger abductors (small), L2-Iliopsoas, L3-Knee extensors (quads), L4-Dorsiflexors, L5-Extensor hallucis longus (great toe), S1-Gastrocnemius (plantar flexors).',
+        ),
+        HeaderBlock('Manual Muscle Testing Grading'),
+        ScaleBlock(
+          scaleName: 'MRC Scale for Motor Grading',
+          description: 'Standard muscle strength grading used in ISNCSCI exam.',
+          columns: ['Grade', 'Description'],
+          rows: [
+            ['0', 'No movement (total paralysis)'],
+            ['1', 'Palpable or visible contraction but no movement'],
+            ['2', 'Active movement through full ROM with gravity eliminated'],
+            ['3', 'Active movement through full ROM against gravity'],
+            ['4', 'Active movement against moderate resistance through full ROM'],
+            ['5', 'Normal strength (based on age, sex, body habitus)'],
+            ['5*', 'Normal active movement, full ROM against gravity with sufficient resistance to be considered normal IF identified inhibiting factors (pain, disuse) were not present'],
+            ['NT', 'Not testable (immobilization, severe pain, contracture >50% ROM, amputation)'],
+          ],
+          boardPearl: 'Motor level requires the key muscle to be ≥3/5 WITH the level above being 5/5. If the level above is not 5/5, the motor level cannot be that segment. Motor index score maximum = 100 (50 UE + 50 LE).',
+        ),
+        HeaderBlock('Voluntary Anal Contraction (VAC)'),
+        BulletCardBlock(
+          title: 'VAC Testing',
+          themeColor: const Color(0xFFEA580C),
+          backgroundColor: const Color(0xFFFFF7ED),
+          points: [
+            'Tested by inserting a lubricated gloved finger into the anus',
+            'Patient is asked to "squeeze my finger as if to hold back a bowel movement"',
+            'Graded as YES (present) or NO (absent)',
+            'Must differentiate VOLITIONAL contraction from anal spasm (triggered by insertion or Valsalva)',
+            'VAC presence automatically makes the injury at least AIS C (motor incomplete)',
+            'This is a key distinction — VAC = motor function at S4-S5 = at minimum AIS C',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: VAC = At Least AIS C',
+          'If voluntary anal contraction is present, the injury is at MINIMUM AIS C (motor incomplete), regardless of other findings. This is because VAC represents preserved motor function at the sacral segments. This is one of the most commonly tested classification pearls.',
+        ),
+        HeaderBlock('3-5. Determining Levels'),
+        BulletCardBlock(
+          title: 'Sensory Level Determination',
+          themeColor: const Color(0xFF3B82F6),
+          backgroundColor: const Color(0xFFEFF6FF),
+          points: [
+            'Most caudal segment with NORMAL (2/2) sensation for BOTH light touch AND pin prick',
+            'ALL rostral dermatomes must also be normal',
+            'Determined separately for RIGHT and LEFT sides',
+            'Maximum sensory score per side per modality: 56 points (28 dermatomes × 2)',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Motor Level Determination',
+          themeColor: const Color(0xFF059669),
+          backgroundColor: const Color(0xFFECFDF5),
+          points: [
+            'Most caudal key muscle graded ≥3/5, with the segment ABOVE graded 5/5',
+            'Determined separately for RIGHT and LEFT sides',
+            'For segments without key muscles (C1-C4, T2-L1, S2-S5): motor level = sensory level IF testable motor function above that level is also normal',
+            'Example: C5 muscle is 2/5 with C4 sensory level → motor level is C4',
+            'Example: C5 muscle is 5/5, C6 is 4/5 → motor level is C5 (C6 is not ≥3/5 with level above 5/5... actually C6 IS ≥3/5 and C5 IS 5/5, so motor level would be C6)',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: Motor Level Rule',
+          'The motor level rule: the key muscle must be ≥3/5 AND the next rostral key muscle must be 5/5. If C5 is 4/5 and C6 is 3/5, the motor level is C4 (not C5, because C5 is not 5/5 — so C6 cannot meet the criterion). For non-key muscle levels (C1-C4, T2-L1, S2-S5), the motor level follows the sensory level if motor function above is normal.',
+        ),
+        BulletCardBlock(
+          title: 'Neurological Level of Injury (NLI)',
+          themeColor: const Color(0xFFDC2626),
+          backgroundColor: const Color(0xFFFEF2F2),
+          points: [
+            'The SINGLE most caudal level where BOTH sensory AND motor function are intact on BOTH sides',
+            'This is the most ROSTRAL of the four individual levels (R sensory, L sensory, R motor, L motor)',
+            'Motor and sensory levels are the same in <50% of complete injuries',
+            'NLI is used as the reference point for AIS classification',
+            'Example: R sensory C6, L sensory C5, R motor C6, L motor C5 → NLI = C5 (most rostral)',
+          ],
+        ),
+        HeaderBlock('Motor Index Score'),
+        BulletCardBlock(
+          title: 'Scoring Summary',
+          themeColor: const Color(0xFF6366F1),
+          backgroundColor: const Color(0xFFEEF2FF),
+          points: [
+            'Total motor index score maximum = 100',
+            'Upper extremity motor score (UEMS) maximum = 50 (10 key muscles × 5 points each)',
+            'Lower extremity motor score (LEMS) maximum = 50 (10 key muscles × 5 points each)',
+            'UEMS and LEMS should be reported separately',
+            'Total sensory score maximum = 224 (112 light touch + 112 pin prick)',
+          ],
+        ),
+      ],
+    ),
+    // ==========================================
+    // TAB 2: AIS SCALE
+    // ==========================================
+    TopicTab(
+      title: 'AIS Scale',
+      blocks: [
+        HeaderBlock('ASIA Impairment Scale (AIS)'),
+        TextBlock(
+          'The AIS is the standardized grading system that classifies the severity of spinal cord injury from A (complete) to E (normal). Accurate classification requires proper ISNCSCI examination and understanding of sacral sparing.',
+          isIntro: true,
+        ),
+        HeaderBlock('Sacral Sparing — The Key Concept'),
+        BulletCardBlock(
+          title: 'Defining Complete vs Incomplete',
+          themeColor: const Color(0xFFDC2626),
+          backgroundColor: const Color(0xFFFEF2F2),
+          points: [
+            'Classification depends on the presence or absence of SACRAL SPARING',
+            'Sacral sparing = ANY of: sensation (LT or PP) at S4-S5, deep anal pressure (DAP), or voluntary anal contraction (VAC)',
+            'Sacral sparing represents at least partial structural continuity of white matter long tracts',
+            'Presence of sacral sparing = better prognosis for motor/sensory recovery below NLI',
+            'Better prognosis for return of bowel and bladder function',
+            'Complete injury (no sacral sparing) has significantly worse prognosis',
+          ],
+        ),
+        ScaleBlock(
+          scaleName: 'ASIA Impairment Scale (AIS)',
+          description: 'Classification of SCI completeness and severity.',
+          columns: ['Grade', 'Name', 'Definition'],
+          rows: [
+            ['A', 'Complete', 'No motor or sensory function preserved in sacral segments S4-S5. No sacral sparing.'],
+            ['B', 'Sensory\nIncomplete', 'Sensory BUT NOT motor function preserved below NLI AND includes sacral segments S4-S5 (LT, PP, or DAP at S4-S5). No motor function >3 levels below motor level on either side.'],
+            ['C', 'Motor\nIncomplete', 'Motor function preserved below NLI: VAC present OR motor function >3 levels below motor level on either side. LESS THAN HALF of key muscles below single NLI have grade ≥3.'],
+            ['D', 'Motor\nIncomplete', 'Motor incomplete as defined for C, but AT LEAST HALF of key muscles below single NLI have grade ≥3.'],
+            ['E', 'Normal', 'Sensory and motor function are normal in all segments. Patient had prior deficits. Someone without initial SCI does not receive AIS E.'],
+          ],
+          boardPearl: 'To be AIS C or D (motor incomplete), the patient must have EITHER: (a) VAC present, OR (b) sacral sensory sparing + motor function preserved >3 levels below motor level on either side. Non-key muscles can be used for determining motor incomplete status (AIS B vs C).',
+        ),
+        HeaderBlock('AIS Classification Algorithm'),
+        BulletCardBlock(
+          title: 'Step-by-Step AIS Determination',
+          themeColor: const Color(0xFF3B82F6),
+          backgroundColor: const Color(0xFFEFF6FF),
+          points: [
+            'Step 1: Is there sacral sparing? (sensation at S4-S5, DAP, or VAC)',
+            '  → NO sacral sparing = AIS A (Complete)',
+            '  → YES sacral sparing = Incomplete (proceed to Step 2)',
+            'Step 2: Is there motor function below the NLI?',
+            '  → VAC present = Motor Incomplete (proceed to Step 3)',
+            '  → Motor function >3 levels below motor level = Motor Incomplete (proceed to Step 3)',
+            '  → NO motor function below NLI = AIS B (Sensory Incomplete)',
+            'Step 3: Assess key muscles below the single NLI:',
+            '  → <50% of key muscles below NLI grade ≥3 = AIS C',
+            '  → ≥50% of key muscles below NLI grade ≥3 = AIS D',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: AIS B vs C',
+          'The critical distinction: AIS B = sensory-only sparing below NLI (no useful motor function). AIS C = motor sparing but most key muscles below NLI are weak (<3/5). AIS D = motor sparing with at least half of key muscles functional (≥3/5). Key: when distinguishing AIS B from C, use the motor level on EACH SIDE. When distinguishing AIS C from D, use the SINGLE NLI.',
+        ),
+        HeaderBlock('Zone of Partial Preservation (ZPP)'),
+        BulletCardBlock(
+          title: 'ZPP Details',
+          themeColor: const Color(0xFFEA580C),
+          backgroundColor: const Color(0xFFFFF7ED),
+          points: [
+            'ONLY used in AIS A (complete) injuries',
+            'Defined as the most caudal dermatome and myotome with some preserved function',
+            'Reported separately for: sensory-right, sensory-left, motor-right, motor-left',
+            'Has prognostic significance — larger ZPP may indicate greater recovery potential',
+            'NOT applicable in incomplete injuries (AIS B-D)',
+            'If no ZPP exists (no function below NLI), record the NLI as the ZPP',
+          ],
+        ),
+        HeaderBlock('Prognosis by AIS Grade'),
+        TableBlock(
+          title: 'Recovery Expectations by Initial AIS Grade',
+          columns: ['Initial AIS', 'Conversion Rate', 'Key Prognostic Points'],
+          rows: [
+            ['AIS A', '~10-15% convert to\nincomplete at 1 year', 'Worst prognosis. If no motor/sensory\nrecovery by 72 hours, very unlikely\nto improve. ZPP provides some\nprognostic information.'],
+            ['AIS B', '~30% convert to\nmotor incomplete\n(C or D)', 'Pin prick preservation is a BETTER\npredictor of motor recovery than\nlight touch. AIS B with preserved PP\nhas better prognosis than LT only.'],
+            ['AIS C', '~65-75% convert\nto AIS D', 'Good prognosis for functional gains.\nAge and level influence recovery.'],
+            ['AIS D', 'Highest functional\nrecovery', 'Most achieve community ambulation.\nBest overall functional outcomes.'],
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: Pin Prick vs Light Touch',
+          'In AIS B injuries, preserved PIN PRICK sensation is a significantly better predictor of motor recovery than light touch alone. Pin prick travels via the lateral spinothalamic tract, which runs adjacent to the corticospinal tract (motor). Preservation of pin prick suggests partial sparing of the lateral white matter tracts, including nearby motor fibers.',
+        ),
+        HeaderBlock('Timing of Recovery'),
+        BulletCardBlock(
+          title: 'Neurological Recovery Timeline',
+          themeColor: const Color(0xFF059669),
+          backgroundColor: const Color(0xFFECFDF5),
+          points: [
+            'Most neurological recovery occurs in the FIRST 3-6 months',
+            'Significant recovery can continue to 12-18 months',
+            'Plateau typically by 12-18 months, though late recovery can occur',
+            'Upper extremity recovery may continue beyond LE recovery in tetraplegia',
+            'Functional gains through compensatory strategies continue for years',
+            'One-level recovery in the upper extremity dramatically improves function and independence',
+          ],
+        ),
+      ],
+    ),
+    // ==========================================
+    // TAB 3: KEY DERMATOMES & MYOTOMES
+    // ==========================================
+    TopicTab(
+      title: 'Dermatomes',
+      blocks: [
+        HeaderBlock('Key Sensory Points'),
+        TextBlock(
+          'The ISNCSCI exam tests 28 key sensory points on each side. These specific anatomical landmarks must be memorized for accurate neurological level determination. All points are tested at the mid-clavicular line for thoracic levels.',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'Cervical Key Sensory Points',
+          columns: ['Level', 'Landmark'],
+          headerColor: const Color(0xFF3B82F6),
+          rows: [
+            ['C2', 'Occipital protuberance (at least 1 cm lateral to midline)'],
+            ['C3', 'Supraclavicular fossa (above clavicle)'],
+            ['C4', 'Top of acromioclavicular (AC) joint'],
+            ['C5', 'Lateral side of antecubital fossa (elbow crease)'],
+            ['C6', 'Thumb — dorsal surface, proximal phalanx'],
+            ['C7', 'Middle finger — dorsal surface, proximal phalanx'],
+            ['C8', 'Little finger — dorsal surface, proximal phalanx'],
+            ['T1', 'Medial (ulnar) side of antecubital fossa'],
+          ],
+        ),
+        MnemonicBlock(
+          'Finger Dermatomes',
+          'C6 = Thumb (six-shooter), C7 = Middle finger (flip the bird — 7 looks like a middle finger), C8 = Little/ring finger (eight = "pinky")',
+        ),
+        TableBlock(
+          title: 'Thoracic Key Sensory Points',
+          columns: ['Level', 'Landmark', 'Memory Aid'],
+          headerColor: const Color(0xFF059669),
+          rows: [
+            ['T2', 'Apex of axilla', 'Armpit'],
+            ['T3', 'Third ICS at mid-clavicular line', '—'],
+            ['T4', 'Nipple line (4th ICS at MCL)', 'T4 = Teat (nipple)'],
+            ['T5', 'Midway between T4 and T6', '—'],
+            ['T6', 'Xiphoid process (6th ICS at MCL)', 'Xiphoid = siX'],
+            ['T7', 'Seventh ICS at mid-clavicular line', '—'],
+            ['T8', 'Midway between T6 and T10', '—'],
+            ['T9', 'Ninth ICS (midway T8-T10)', '—'],
+            ['T10', 'Umbilicus (10th ICS at MCL)', 'TEN = belly butTEN'],
+            ['T11', 'Eleventh ICS at mid-clavicular line', '—'],
+            ['T12', 'Inguinal ligament at midpoint', 'Groin crease'],
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: Thoracic Landmarks',
+          'The three most important thoracic dermatome landmarks: T4 = Nipple ("T4-eats = teats"), T6 = Xiphoid process, T10 = Umbilicus ("belly-butTEN"). T12 = inguinal ligament. These are the most frequently tested on boards.',
+        ),
+        TableBlock(
+          title: 'Lumbosacral Key Sensory Points',
+          columns: ['Level', 'Landmark'],
+          headerColor: const Color(0xFF7C3AED),
+          rows: [
+            ['L1', 'Half the distance between T12 and L2'],
+            ['L2', 'Mid-anterior thigh'],
+            ['L3', 'Medial femoral condyle (medial knee)'],
+            ['L4', 'Medial malleolus (medial ankle)'],
+            ['L5', 'Dorsum of foot at 3rd MTP joint'],
+            ['S1', 'Lateral heel'],
+            ['S2', 'Popliteal fossa in midline (behind knee)'],
+            ['S3', 'Ischial tuberosity (or infragluteal fold)'],
+            ['S4-5', 'Perianal area (tested as ONE level)'],
+          ],
+        ),
+        MnemonicBlock(
+          'LE Dermatome Landmarks',
+          'L3 = Medial Knee, L4 = Medial Malleolus (ankle), L5 = dorsum of Foot (3rd MTP), S1 = Lateral heeL (the "S" wraps around laterally). Think: Knee → Ankle → Foot → Heel going from L3 to S1.',
+        ),
+        PearlBlock(
+          'Board Pearl: High-Yield Dermatomes',
+          'The most commonly tested dermatomes on boards: C5 = lateral elbow, C6 = thumb, C7 = middle finger, C8 = little finger, T1 = medial elbow, T4 = nipple, T10 = umbilicus, L4 = medial malleolus, L5 = dorsal foot (3rd MTP), S1 = lateral heel, S4-5 = perianal. These represent the sensory levels you MUST know cold.',
+        ),
+        HeaderBlock('Sensory Scoring Summary'),
+        BulletCardBlock(
+          title: 'Maximum Scores',
+          themeColor: const Color(0xFF6366F1),
+          backgroundColor: const Color(0xFFEEF2FF),
+          points: [
+            'Light touch maximum: 112 (28 dermatomes × 2 sides × max 2 per dermatome)',
+            'Pin prick maximum: 112',
+            'Total sensory score maximum: 224',
+            'Each side maximum per modality: 56',
+          ],
+        ),
+      ],
+    ),
+    // ==========================================
+    // TAB 4: SCI SYNDROMES
+    // ==========================================
+    TopicTab(
+      title: 'SCI Syndromes',
+      blocks: [
+        HeaderBlock('Incomplete SCI Syndromes'),
+        TextBlock(
+          'Incomplete SCI syndromes arise from specific patterns of spinal cord damage. Recognizing these patterns is essential for localization, prognosis, and is heavily tested on board examinations.',
+          isIntro: true,
+        ),
+        ComparisonCardBlock(
+          title: 'Central Cord Syndrome',
+          themeColor: const Color(0xFF3B82F6),
+          backgroundColor: const Color(0xFFEFF6FF),
+          icon: Icons.center_focus_strong,
+          description: 'MOST COMMON incomplete SCI syndrome. Typically from hyperextension injury in older adults with pre-existing cervical spondylosis/stenosis.',
+          keyPoints: [
+            'Upper extremities affected MORE than lower extremities',
+            'Distal UE weaker than proximal UE (hands are worst)',
+            'Mechanism: hyperextension → ligamentum flavum buckles into canal → compresses central cord',
+            'Central damage disrupts medially-located cervical (arm) fibers of the CST while sparing lateral sacral (leg) fibers',
+            'Variable sensory loss — may have "cape-like" pain/temp loss (crossing spinothalamic fibers at anterior commissure)',
+            'Bladder dysfunction common (urinary retention)',
+            'Recovery order: LE recovers first → bladder → proximal UE → distal UE/hand function recovers LAST',
+            'Best prognosis among the common incomplete syndromes for elderly patients',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: Central Cord Mechanism',
+          'In elderly patients with spondylosis, a simple fall with hyperextension can cause central cord syndrome WITHOUT fracture (SCIWORA). The ligamentum flavum buckles inward and can narrow the sagittal diameter by up to 50%. The typical presentation: elderly patient, falls, UE weakness > LE, hands worst. MRI may show cord signal change without fracture.',
+        ),
+        ComparisonCardBlock(
+          title: 'Brown-Séquard Syndrome',
+          themeColor: const Color(0xFF7C3AED),
+          backgroundColor: const Color(0xFFF5F3FF),
+          icon: Icons.vertical_split,
+          description: 'Hemisection of the spinal cord. Classic cause: penetrating trauma (stab wound). BEST overall functional prognosis.',
+          keyPoints: [
+            'IPSILATERAL motor loss (lateral corticospinal tract — crossed in medulla)',
+            'IPSILATERAL proprioception/vibration loss (dorsal columns — cross in medulla)',
+            'CONTRALATERAL pain/temperature loss 1-2 levels BELOW lesion (lateral spinothalamic tract — crosses at anterior white commissure within 1-2 segments of entry)',
+            'IPSILATERAL LMN signs AT the level of lesion (anterior horn cell damage)',
+            'IPSILATERAL UMN signs BELOW the level of lesion',
+            'BEST functional prognosis of ALL incomplete SCI syndromes',
+            '~90% achieve community ambulation',
+            'Ipsilateral motor function tends to recover well',
+          ],
+        ),
+        MnemonicBlock(
+          'Brown-Séquard: "Same Side Motor, Opposite Side Pain"',
+          'IPSILATERAL (same side as lesion): motor loss + proprioception/vibration loss (because CST and dorsal columns cross ABOVE the cord in the medulla). CONTRALATERAL (opposite side): pain/temperature loss (because spinothalamic tract crosses within 1-2 levels at the anterior commissure, BELOW the medulla).',
+        ),
+        ComparisonCardBlock(
+          title: 'Anterior Cord Syndrome',
+          themeColor: const Color(0xFFDC2626),
+          backgroundColor: const Color(0xFFFEF2F2),
+          icon: Icons.arrow_downward,
+          description: 'Damage to the anterior two-thirds of the cord. Often from anterior spinal artery occlusion, burst fractures with retropulsed bone, or disc herniation.',
+          keyPoints: [
+            'Loss of MOTOR function below the level (corticospinal tracts)',
+            'Loss of PAIN and TEMPERATURE below the level (spinothalamic tracts)',
+            'PRESERVED: proprioception, vibration, discriminative touch (dorsal columns INTACT)',
+            'Causes: anterior spinal artery occlusion (aortic surgery!), burst fractures, disc herniation, flexion injuries',
+            'Artery of Adamkiewicz occlusion → anterior cord syndrome of lower cord',
+            'WORST prognosis of all incomplete syndromes',
+            'Only ~10-20% recover functional motor ability',
+          ],
+        ),
+        ComparisonCardBlock(
+          title: 'Posterior Cord Syndrome',
+          themeColor: const Color(0xFF0D9488),
+          backgroundColor: const Color(0xFFF0FDFA),
+          icon: Icons.arrow_upward,
+          description: 'Damage to the posterior columns. Very rare in traumatic SCI; more common in medical conditions.',
+          keyPoints: [
+            'Loss of proprioception, vibration, and discriminative touch',
+            'PRESERVED: motor function, pain, and temperature',
+            'Patients have sensory ataxia with positive Romberg sign',
+            'Wide-based, stomping gait',
+            'Causes: B12 deficiency (subacute combined degeneration), tabes dorsalis (syphilis), MS, copper deficiency',
+            'Posterior spinal artery occlusion is very rare',
+            'Very rare in traumatic SCI',
+          ],
+        ),
+        HeaderBlock('Prognosis Comparison'),
+        TableBlock(
+          title: 'Incomplete SCI Syndrome Prognosis Ranking',
+          columns: ['Syndrome', 'Prognosis', 'Ambulation Rate'],
+          headerColor: const Color(0xFF059669),
+          rows: [
+            ['Brown-Séquard', 'BEST', '~90% community ambulation'],
+            ['Central Cord', 'Good', 'Variable; LE and bladder\nrecover well; hand function\nmay remain limited'],
+            ['Posterior Cord', 'Moderate', 'Motor preserved but\nsensory ataxia limits function'],
+            ['Anterior Cord', 'WORST', '~10-20% functional\nmotor recovery'],
+          ],
+        ),
+        MnemonicBlock(
+          'Prognosis Ranking: "Brown is Best, Anterior is Awful"',
+          'Best to worst prognosis: Brown-Séquard → Central Cord → Posterior Cord → Anterior Cord. Remember: Brown-Séquard is BEST, Anterior is AWFUL.',
+        ),
+        HeaderBlock('Conus Medullaris vs Cauda Equina'),
+        TableBlock(
+          title: 'Conus Medullaris vs Cauda Equina Syndromes',
+          columns: ['Feature', 'Conus Medullaris', 'Cauda Equina'],
+          headerColor: const Color(0xFF7C3AED),
+          rows: [
+            ['Lesion type', 'UMN (spinal cord)', 'LMN (peripheral nerve roots)'],
+            ['Location', 'Cord terminus at L1-L2\nvertebral level', 'Nerve roots below L1-L2'],
+            ['Onset', 'Sudden, bilateral,\nsymmetric', 'Gradual, often unilateral\nthen bilateral'],
+            ['Pain', 'Less common', 'Severe radicular pain,\nasymmetric'],
+            ['Sensory loss', 'Perianal (saddle),\nsymmetric', 'Saddle distribution,\noften asymmetric'],
+            ['Motor findings', 'Symmetric, may be mild,\nUMN pattern', 'Asymmetric, may be severe,\nLMN pattern with atrophy'],
+            ['Reflexes', 'May be brisk (UMN)\nor absent initially', 'Absent/diminished (LMN)'],
+            ['Bladder', 'EARLY dysfunction;\ninitially areflexic\nthen UMN (spastic)', 'LATE dysfunction;\nLMN (flaccid/areflexic)'],
+            ['Bowel', 'Early involvement', 'Late involvement'],
+            ['Sexual function', 'Erectile dysfunction\ncommon, early', 'Less frequent,\nmay be preserved longer'],
+            ['Recovery', 'Generally poor\n(cord injury)', 'Better potential\n(nerve root = PNS)'],
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: Conus vs Cauda — The Quick Test',
+          'Conus = Cord = UMN = symmetric, sudden onset, early bladder dysfunction, less pain. Cauda = nerve roots = LMN = asymmetric, gradual onset, late bladder, severe radicular pain. Key: Cauda equina has BETTER recovery potential because peripheral nerve roots can regenerate (PNS), while the spinal cord (CNS) cannot.',
+        ),
+      ],
+    ),
+    // ==========================================
+    // TAB 5: CLASSIFICATION PEARLS & PRACTICE
+    // ==========================================
+    TopicTab(
+      title: 'Board Pearls',
+      blocks: [
+        HeaderBlock('High-Yield Classification Pearls'),
+        TextBlock(
+          'This tab consolidates the most frequently tested ISNCSCI and AIS classification concepts for board examination preparation.',
+          isIntro: true,
+        ),
+        PearlBlock(
+          'Pearl 1: Sacral Sparing is Everything',
+          'The presence or absence of sacral sparing (sensation at S4-S5, DAP, or VAC) is the SINGLE most important determination in SCI classification. It separates complete (AIS A) from incomplete (AIS B-E) injuries and has profound prognostic implications.',
+        ),
+        PearlBlock(
+          'Pearl 2: NLI is the Most Rostral Level',
+          'The NLI is determined by finding the most ROSTRAL (highest) of the four individual levels: right sensory, left sensory, right motor, left motor. It represents the most cephalad level where both motor and sensory are normal on both sides. Do not confuse NLI with the "worst" level.',
+        ),
+        PearlBlock(
+          'Pearl 3: Motor Level Requires 5/5 Above',
+          'To assign a motor level, the key muscle at that level must be ≥3/5 AND the key muscle at the level ABOVE must be 5/5 (or 5*). This is a commonly missed detail that changes the classification.',
+        ),
+        PearlBlock(
+          'Pearl 4: Non-Key Muscle Levels',
+          'For levels without key muscles (C1-C4, T2-L1, S2-S5), the motor level is the same as the sensory level, PROVIDED that testable motor function above that level is also normal. This is how thoracic motor levels are assigned.',
+        ),
+        PearlBlock(
+          'Pearl 5: AIS B vs C — Two Pathways to Motor Incomplete',
+          'An injury is motor incomplete (at least AIS C) if EITHER: (a) VAC is present, OR (b) the patient has sensory incomplete status AND motor function is preserved more than 3 levels below the motor level on either side. Non-key muscles count for this determination.',
+        ),
+        PearlBlock(
+          'Pearl 6: AIS C vs D — Use Single NLI',
+          'When distinguishing AIS B from C, look at the motor level on EACH SIDE separately. When distinguishing AIS C from D, use the SINGLE neurological level of injury and count what proportion of key muscles below it have grade ≥3.',
+        ),
+        PearlBlock(
+          'Pearl 7: Pin Prick Predicts Motor Recovery',
+          'In AIS B patients, preserved pin prick is a BETTER predictor of eventual motor recovery than preserved light touch alone. This is because the spinothalamic tract (pin prick) runs adjacent to the corticospinal tract (motor) in the lateral column. Sparing of one suggests sparing of the other.',
+        ),
+        PearlBlock(
+          'Pearl 8: 72-Hour Window',
+          'If no motor or sensory recovery is observed within the first 72 hours after injury, the likelihood of significant functional recovery is very poor. This is particularly true for AIS A injuries.',
+        ),
+        HeaderBlock('Common Board Scenarios'),
+        BulletCardBlock(
+          title: 'Scenario-Based Classification',
+          themeColor: const Color(0xFF3B82F6),
+          backgroundColor: const Color(0xFFEFF6FF),
+          points: [
+            'Patient with NO function at S4-S5 but motor function at L2 → AIS A with ZPP at L2 (no sacral sparing = complete)',
+            'Patient with LT at S4-S5 but no motor below NLI → AIS B (sensory incomplete)',
+            'Patient with DAP present and 2/5 strength at L3 → At minimum AIS B; check if motor function is >3 levels below motor level to determine AIS C',
+            'Patient with VAC present → At minimum AIS C (regardless of other findings)',
+            'Patient has motor function below NLI, 4/10 key muscles below NLI are ≥3/5 → AIS C (<50% are ≥3)',
+            'Patient has motor function below NLI, 6/10 key muscles below NLI are ≥3/5 → AIS D (≥50% are ≥3)',
+          ],
+        ),
+        HeaderBlock('Functional Significance of One Level'),
+        TableBlock(
+          title: 'Impact of Each Motor Level Gained in Tetraplegia',
+          columns: ['Level', 'Key Gain', 'Functional Impact'],
+          headerColor: const Color(0xFF0D9488),
+          rows: [
+            ['C4→C5', 'Elbow flexion\n(biceps)', 'Can bring hand to face\n(feeding, grooming)\nwith assistive devices'],
+            ['C5→C6', 'Wrist extension', 'TENODESIS grasp!\nCan feed independently,\nsome transfers'],
+            ['C6→C7', 'Elbow extension\n(triceps)', 'Independent transfers,\npressure relief push-ups,\nmanual wheelchair on\nflat surfaces'],
+            ['C7→C8', 'Finger flexion\n(grasp)', 'Stronger hand function,\nindependent ADLs,\neffective grasp'],
+            ['C8→T1', 'Intrinsic hand\nmuscles', 'Fine motor dexterity,\nnear-normal hand function'],
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: C6 = Tenodesis',
+          'The C6 level is functionally critical because wrist extension enables TENODESIS grasp — when the wrist extends, the fingers passively flex, allowing a functional pinch/grasp. This is the key functional milestone that dramatically improves independence. C6 tetraplegics can often self-feed, perform light ADLs, and drive with hand controls.',
+        ),
+        PearlBlock(
+          'Board Pearl: C7 = Independence Level',
+          'C7 (triceps = elbow extension) is often considered the "independence level" for tetraplegia. Triceps function enables independent transfers, wheelchair push-ups for pressure relief, and effective manual wheelchair propulsion. The gain from C6 to C7 is one of the most significant single-level improvements in SCI.',
+        ),
+      ],
+    ),
+  ],
+);

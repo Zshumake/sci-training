@@ -1,0 +1,215 @@
+import 'package:flutter/material.dart';
+import '../models/topic_content_model.dart';
+
+final TopicData painSyndromesContent = TopicData(
+  id: 'pain-syndromes',
+  title: 'Pain Syndromes in SCI',
+  tabs: [
+    TopicTab(
+      title: 'ISCIP Classification',
+      blocks: [
+        HeaderBlock('International SCI Pain Classification'),
+        TextBlock(
+          'Pain affects up to 65-80% of individuals with SCI and is consistently rated as one of the most debilitating secondary conditions. The International Spinal Cord Injury Pain (ISCIP) classification provides a standardized framework for categorizing pain types.',
+          isIntro: true,
+        ),
+        TableBlock(
+          title: 'ISCIP Basic Taxonomy (Tier 1)',
+          columns: ['Pain Type', 'Description', 'Tier 2 Subtypes'],
+          rows: [
+            ['Nociceptive', 'Pain from activation of peripheral nociceptors in tissues with intact innervation', 'Musculoskeletal, Visceral, Other'],
+            ['Neuropathic', 'Pain caused by a lesion or disease of the somatosensory nervous system', 'At-level, Below-level, Other'],
+            ['Other', 'Pain that cannot be classified as nociceptive or neuropathic', 'Unknown, Other'],
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Tier 3: Specific Pain Sources',
+          themeColor: const Color(0xFF7C3AED),
+          backgroundColor: const Color(0xFFF5F3FF),
+          points: [
+            'Musculoskeletal: shoulder impingement, rotator cuff, muscle spasm, fracture, HO, overuse',
+            'Visceral: constipation, UTI, renal calculi, bowel distension, cholecystitis',
+            'At-level neuropathic: nerve root compression, syringomyelia, cord damage at NLI',
+            'Below-level neuropathic: central neuropathic pain (spinothalamic tract damage)',
+            'Other neuropathic: compressive neuropathies (carpal tunnel, ulnar), CRPS',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: ISCIP Classification',
+          'The ISCIP replaced the Bryce-Ragnarsson and other earlier SCI pain classification systems. Key distinction: Tier 1 separates nociceptive from neuropathic pain. Tier 2 identifies the subtype. Tier 3 identifies the specific pain source. The classification is hierarchical and allows for multiple concurrent pain types.',
+        ),
+        BulletCardBlock(
+          title: 'Pain Prevalence and Impact',
+          themeColor: const Color(0xFFEA580C),
+          backgroundColor: const Color(0xFFFFF7ED),
+          points: [
+            'Chronic pain affects 65-80% of SCI patients',
+            'About one-third rate their pain as severe',
+            'Pain is often multifactorial (multiple pain types coexisting)',
+            'Significantly impacts quality of life, function, mood, and sleep',
+            'Strong association with depression and anxiety',
+            'Pain does not necessarily correlate with injury severity',
+            'May worsen or develop over time (especially neuropathic pain)',
+          ],
+        ),
+      ],
+    ),
+    TopicTab(
+      title: 'Neuropathic Pain',
+      blocks: [
+        HeaderBlock('Neuropathic Pain in SCI'),
+        TextBlock(
+          'Neuropathic pain is the most challenging and characteristic pain type in SCI. It results from damage to the somatosensory nervous system and can occur at the level of injury or below the level where the patient has no other sensation.',
+          isIntro: true,
+        ),
+        ComparisonCardBlock(
+          title: 'At-Level Neuropathic Pain',
+          themeColor: const Color(0xFFDC2626),
+          backgroundColor: const Color(0xFFFEF2F2),
+          icon: Icons.horizontal_rule,
+          description: 'Pain perceived within the dermatome of the NLI and/or within three dermatomes below the NLI.',
+          keyPoints: [
+            'Often has a segmental, band-like distribution',
+            'May be unilateral or bilateral',
+            'May have radicular component (nerve root compression)',
+            'Burning, shooting, stabbing, electric shock-like quality',
+            'Allodynia (pain from normally non-painful stimuli) common in the transitional zone',
+            'Hyperalgesia (exaggerated pain from painful stimuli)',
+            'Can be related to nerve root injury, spinal cord damage, or syringomyelia',
+            'More amenable to surgical treatment if structural cause is identified',
+          ],
+        ),
+        ComparisonCardBlock(
+          title: 'Below-Level Neuropathic Pain',
+          themeColor: const Color(0xFF6366F1),
+          backgroundColor: const Color(0xFFEEF2FF),
+          icon: Icons.arrow_downward,
+          description: 'Pain perceived more than three dermatomes below the NLI. Also called central neuropathic pain or central dysesthesia syndrome.',
+          keyPoints: [
+            'Most common and most difficult-to-treat SCI pain type',
+            'Perceived in areas with no or diminished sensation (phantom-like)',
+            'Described as burning, tingling, squeezing, aching, or electric',
+            'Often diffuse and poorly localized',
+            'May affect legs, feet, buttocks, or lower trunk',
+            'Due to abnormal processing in the damaged spinothalamic tract and thalamus',
+            'Can develop months to years after injury',
+            'More common in complete injuries (AIS A) and with spinothalamic tract damage',
+            'Refractory to most treatments; significant quality of life impact',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: At-Level vs Below-Level',
+          'At-level neuropathic pain occurs within 3 levels of the NLI and may have a treatable structural cause (e.g., nerve root compression, syringomyelia). Below-level central neuropathic pain is felt more than 3 levels below NLI and is caused by central sensitization and spinothalamic tract dysfunction. Below-level pain is much harder to treat.',
+        ),
+        BulletCardBlock(
+          title: 'Neuropathic Pain Treatment: First-Line',
+          themeColor: const Color(0xFF059669),
+          backgroundColor: const Color(0xFFECFDF5),
+          points: [
+            'Gabapentin: 300-3600 mg/day in divided doses; most evidence in SCI',
+            'Pregabalin: 150-600 mg/day in divided doses; FDA-approved for SCI neuropathic pain',
+            'Tricyclic antidepressants (TCAs): amitriptyline 25-150 mg at bedtime; nortriptyline preferred (fewer anticholinergic effects)',
+            'Duloxetine (Cymbalta): SNRI, 60-120 mg daily; less evidence in SCI specifically but effective for neuropathic pain',
+          ],
+        ),
+        MedicationCardBlock(
+          name: 'Pregabalin (Lyrica)',
+          drugClass: 'Gabapentinoid (calcium channel alpha-2-delta ligand)',
+          mechanism: 'Binds to the alpha-2-delta subunit of voltage-gated calcium channels, reducing excitatory neurotransmitter release (glutamate, norepinephrine, substance P)',
+          indication: 'First-line for SCI neuropathic pain; the ONLY FDA-approved medication specifically for SCI-related neuropathic pain',
+          dosing: 'Start 75 mg BID, titrate to 150-300 mg BID (max 600 mg/day)',
+          sideEffects: 'Sedation, dizziness, weight gain, peripheral edema, blurred vision. Dose adjustment needed in renal impairment.',
+          boardPearl: 'Pregabalin is the only FDA-approved drug specifically for SCI neuropathic pain. It has more predictable pharmacokinetics than gabapentin (linear absorption). It is also a Schedule V controlled substance due to euphoric potential.',
+        ),
+        BulletCardBlock(
+          title: 'Second-Line and Adjunctive Treatments',
+          themeColor: const Color(0xFF0D9488),
+          backgroundColor: const Color(0xFFF0FDFA),
+          points: [
+            'Tramadol: weak opioid + SNRI; moderate evidence for SCI neuropathic pain',
+            'Lamotrigine: anticonvulsant; some evidence for incomplete SCI pain',
+            'TENS (transcutaneous electrical nerve stimulation): non-invasive neuromodulation',
+            'CBT and psychological interventions: important adjunct for coping strategies',
+            'Exercise: shown to reduce pain perception and improve mood',
+            'Strong opioids: use with extreme caution; high risk of dependence, tolerance, and SCI-specific complications (constipation worsening neurogenic bowel)',
+            'Intrathecal drug delivery: baclofen + morphine or ziconotide for refractory cases',
+            'Spinal cord stimulation: limited evidence in SCI but emerging area',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: Opioid Caution in SCI',
+          'Opioids should be used with extreme caution in SCI for chronic pain management. They worsen constipation (already a major problem with neurogenic bowel), cause sedation and respiratory depression (dangerous in patients with compromised respiratory function), and carry significant addiction risk. They are NOT first-line for neuropathic pain.',
+        ),
+      ],
+    ),
+    TopicTab(
+      title: 'Nociceptive Pain',
+      blocks: [
+        HeaderBlock('Nociceptive Pain in SCI'),
+        TextBlock(
+          'Nociceptive pain arises from activation of peripheral nociceptors in tissues with preserved innervation (above the level of injury or in viscera). It is the most common overall pain category in SCI and includes musculoskeletal and visceral pain.',
+          isIntro: true,
+        ),
+        BulletCardBlock(
+          title: 'Musculoskeletal Pain (Most Common)',
+          themeColor: const Color(0xFF3B82F6),
+          backgroundColor: const Color(0xFFEFF6FF),
+          points: [
+            'Shoulder pain: affects 30-70% of manual wheelchair users',
+            'Causes: rotator cuff pathology, impingement, labral tears, bicipital tendinitis',
+            'Mechanism: overuse from wheelchair propulsion, transfers, pressure relief',
+            'Carpal tunnel syndrome: from repetitive wheelchair propulsion and weight bearing',
+            'Neck pain: postural strain, degenerative changes, surgically fused segments',
+            'Back pain: above or at the level of injury; postural, mechanical, or related to hardware',
+            'Muscle spasm pain: related to spasticity (managed with antispasticity agents)',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Shoulder Pain Prevention',
+          themeColor: const Color(0xFF059669),
+          backgroundColor: const Color(0xFFECFDF5),
+          points: [
+            'Proper wheelchair fitting and propulsion technique (long, smooth strokes)',
+            'Shoulder strengthening: rotator cuff (especially external rotators), scapular stabilizers',
+            'Stretching: pectorals, anterior shoulder',
+            'Minimize overhead activities and repetitive reaching',
+            'Ergonomic transfer technique training',
+            'Consider power wheelchair or power-assist wheels to reduce repetitive strain',
+            'Weight management to reduce strain on upper extremities',
+            'Preservation of Upper Limb Function (PUL) guidelines',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Visceral Pain',
+          themeColor: const Color(0xFFEA580C),
+          backgroundColor: const Color(0xFFFFF7ED),
+          points: [
+            'Dull, cramping, or colicky pain in the abdomen or pelvis',
+            'Poorly localized and may be referred',
+            'Causes: constipation, bowel distension, UTI, renal calculi, cholecystitis',
+            'May present atypically in SCI (above-level referred pain, AD, increased spasticity)',
+            'Acute abdomen may present ONLY as autonomic dysreflexia in patients with injury above T6',
+            'Evaluation may require a lower threshold for imaging and lab workup',
+          ],
+        ),
+        TableBlock(
+          title: 'Musculoskeletal Pain Management',
+          columns: ['Treatment', 'Approach'],
+          rows: [
+            ['Physical therapy', 'Stretching, strengthening, ROM, joint protection education'],
+            ['NSAIDs', 'Ibuprofen, naproxen, celecoxib (watch for GI effects; use short-term)'],
+            ['Acetaminophen', 'First-line analgesic; up to 3g/day with normal liver function'],
+            ['Injection therapy', 'Subacromial corticosteroid, GH joint injection, trigger point injection'],
+            ['Modalities', 'Ultrasound, ice/heat, TENS, laser therapy'],
+            ['Bracing/taping', 'Shoulder supports, wrist splints for CTS'],
+            ['Surgery', 'Rotator cuff repair, subacromial decompression, carpal tunnel release (last resort)'],
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: Shoulder Pain in SCI',
+          'Shoulder pain is the most common musculoskeletal complaint in wheelchair users. The supraspinatus tendon is most commonly involved (impingement and rotator cuff tears). Prevention is critical: proper wheelchair fitting, strengthening of external rotators and scapular stabilizers, and modified propulsion technique (long, smooth strokes rather than short, choppy ones). The Paralyzed Veterans of America (PVA) Clinical Practice Guidelines address preservation of upper limb function.',
+        ),
+      ],
+    ),
+  ],
+);
