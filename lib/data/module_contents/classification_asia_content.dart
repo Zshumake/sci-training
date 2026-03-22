@@ -11,6 +11,7 @@ final TopicData classificationAsiaContent = TopicData(
     TopicTab(
       title: 'ISNCSCI Exam',
       blocks: [
+        CustomWidgetBlock(CustomWidgetType.asiaExamTool),
         HeaderBlock('International Standards for Neurological Classification of SCI'),
         TextBlock(
           'The ISNCSCI exam (formerly known as the ASIA exam) is the gold standard for classifying spinal cord injury. It provides a systematic method for determining sensory levels, motor levels, neurological level of injury (NLI), completeness, and AIS grade. The exam should be performed with the patient in the supine position.',
@@ -303,6 +304,7 @@ final TopicData classificationAsiaContent = TopicData(
     TopicTab(
       title: 'Dermatomes',
       blocks: [
+        CustomWidgetBlock(CustomWidgetType.dermatomalMap),
         HeaderBlock('Key Sensory Points'),
         TextBlock(
           'The ISNCSCI exam tests 28 key sensory points on each side. These specific anatomical landmarks must be memorized for accurate neurological level determination. All points are tested at the mid-clavicular line for thoracic levels.',
@@ -519,6 +521,7 @@ final TopicData classificationAsiaContent = TopicData(
     TopicTab(
       title: 'Board Pearls',
       blocks: [
+        CustomWidgetBlock(CustomWidgetType.bladderManagementAlgorithm),
         HeaderBlock('High-Yield Classification Pearls'),
         TextBlock(
           'This tab consolidates the most frequently tested ISNCSCI and AIS classification concepts for board examination preparation.',

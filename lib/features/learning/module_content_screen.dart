@@ -16,6 +16,7 @@ import '../../data/module_contents/msk_complications_content.dart';
 import '../../data/module_contents/rehab_continuum_content.dart';
 import 'topic_content_view.dart';
 import '../../data/models/topic_content_model.dart';
+import '../../core/theme/app_theme.dart';
 
 class ModuleContentScreen extends StatelessWidget {
   final ModuleModel module;
@@ -81,12 +82,12 @@ class ModuleContentScreen extends StatelessWidget {
             Icon(
               Icons.construction_rounded,
               size: 64,
-              color: Colors.grey.shade400,
+              color: AppTheme.borderSubtle,
             ),
             const SizedBox(height: 16),
             Text(
               module.title,
-              style: const TextStyle(
+              style: AppTheme.displayFont(
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
               ),
@@ -95,17 +96,18 @@ class ModuleContentScreen extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               'Content coming soon!',
-              style: TextStyle(
+              style: AppTheme.bodyFont(
                 fontSize: 16,
-                color: Colors.grey.shade600,
+                color: AppTheme.textSecondary,
               ),
             ),
             const SizedBox(height: 4),
             Text(
               module.description,
-              style: TextStyle(
+              style: AppTheme.bodyFont(
                 fontSize: 14,
-                color: Colors.grey.shade500,
+                color: AppTheme.textSecondary,
+                fontStyle: FontStyle.italic,
               ),
               textAlign: TextAlign.center,
             ),

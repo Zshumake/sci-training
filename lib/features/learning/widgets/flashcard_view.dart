@@ -46,8 +46,15 @@ class _FlashcardViewState extends State<FlashcardView> {
       context: context,
       barrierDismissible: false,
       builder: (ctx) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text('Session Complete!'),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        backgroundColor: AppTheme.cardBackground,
+        title: Text(
+          'Session Complete',
+          style: AppTheme.displayFont(
+            fontSize: 18,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -56,14 +63,40 @@ class _FlashcardViewState extends State<FlashcardView> {
               children: [
                 Column(
                   children: [
-                    Text('$_knewIt', style: const TextStyle(fontSize: 36, fontWeight: FontWeight.w900, color: AppTheme.successGreen)),
-                    const Text('Knew It', style: TextStyle(fontSize: 13, color: AppTheme.textSecondary)),
+                    Text(
+                      '$_knewIt',
+                      style: AppTheme.monoFont(
+                        fontSize: 36,
+                        fontWeight: FontWeight.w900,
+                        color: AppTheme.successGreen,
+                      ),
+                    ),
+                    Text(
+                      'Knew It',
+                      style: AppTheme.bodyFont(
+                        fontSize: 13,
+                        color: AppTheme.textSecondary,
+                      ),
+                    ),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('$_needsWork', style: const TextStyle(fontSize: 36, fontWeight: FontWeight.w900, color: AppTheme.dangerRed)),
-                    const Text('Needs Work', style: TextStyle(fontSize: 13, color: AppTheme.textSecondary)),
+                    Text(
+                      '$_needsWork',
+                      style: AppTheme.monoFont(
+                        fontSize: 36,
+                        fontWeight: FontWeight.w900,
+                        color: AppTheme.dangerRed,
+                      ),
+                    ),
+                    Text(
+                      'Needs Work',
+                      style: AppTheme.bodyFont(
+                        fontSize: 13,
+                        color: AppTheme.textSecondary,
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -72,8 +105,18 @@ class _FlashcardViewState extends State<FlashcardView> {
         ),
         actions: [
           TextButton(
-            onPressed: () { Navigator.of(ctx).pop(); Navigator.of(context).pop(); },
-            child: const Text('Done'),
+            onPressed: () {
+              Navigator.of(ctx).pop();
+              Navigator.of(context).pop();
+            },
+            child: Text(
+              'Done',
+              style: AppTheme.displayFont(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: AppTheme.accentTeal,
+              ),
+            ),
           ),
         ],
       ),
@@ -91,7 +134,11 @@ class _FlashcardViewState extends State<FlashcardView> {
               padding: const EdgeInsets.only(right: 16),
               child: Text(
                 '${_currentIndex + 1}/${widget.cards.length}',
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                style: AppTheme.monoFont(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
@@ -103,12 +150,13 @@ class _FlashcardViewState extends State<FlashcardView> {
           children: [
             // Progress
             ClipRRect(
-              borderRadius: BorderRadius.circular(4),
+              borderRadius: BorderRadius.circular(2),
               child: LinearProgressIndicator(
                 value: (_currentIndex + 1) / widget.cards.length,
-                backgroundColor: Colors.grey.shade200,
-                valueColor: const AlwaysStoppedAnimation(AppTheme.accentTeal),
-                minHeight: 6,
+                backgroundColor: AppTheme.borderSubtle.withValues(alpha: 0.4),
+                valueColor:
+                    const AlwaysStoppedAnimation(AppTheme.primaryNavy),
+                minHeight: 3,
               ),
             ),
             const SizedBox(height: 24),
@@ -123,48 +171,57 @@ class _FlashcardViewState extends State<FlashcardView> {
                     width: double.infinity,
                     padding: const EdgeInsets.all(28),
                     decoration: BoxDecoration(
-                      color: _showBack ? const Color(0xFFF0FDFA) : Colors.white,
-                      borderRadius: BorderRadius.circular(20),
+                      color: _showBack
+                          ? const Color(0xFFF5F0E8)
+                          : AppTheme.cardBackground,
+                      borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: _showBack ? AppTheme.accentTeal.withValues(alpha: 0.4) : Colors.grey.shade200,
-                        width: 2,
+                        color: _showBack
+                            ? AppTheme.accentTeal.withValues(alpha: 0.4)
+                            : AppTheme.borderSubtle,
+                        width: 1,
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.06),
-                          blurRadius: 16,
-                          offset: const Offset(0, 6),
-                        ),
-                      ],
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           _showBack ? 'ANSWER' : 'QUESTION',
-                          style: TextStyle(
-                            fontSize: 11,
+                          style: AppTheme.displayFont(
+                            fontSize: 10,
                             fontWeight: FontWeight.w700,
-                            letterSpacing: 1.5,
-                            color: _showBack ? AppTheme.accentTeal : AppTheme.textSecondary,
+                            letterSpacing: 2.0,
+                            color: _showBack
+                                ? AppTheme.accentTeal
+                                : AppTheme.textSecondary,
                           ),
                         ),
                         const SizedBox(height: 20),
                         Text(
                           _showBack ? _card.back : _card.front,
-                          style: TextStyle(
-                            fontSize: _showBack ? 18 : 17,
-                            fontWeight: _showBack ? FontWeight.w700 : FontWeight.w500,
-                            height: 1.5,
-                            color: AppTheme.textPrimary,
-                          ),
+                          style: _showBack
+                              ? AppTheme.displayFont(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w700,
+                                  height: 1.5,
+                                  color: AppTheme.textPrimary,
+                                )
+                              : AppTheme.bodyFont(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w500,
+                                  height: 1.5,
+                                  color: AppTheme.textPrimary,
+                                ),
                           textAlign: TextAlign.center,
                         ),
                         if (!_showBack) ...[
                           const SizedBox(height: 24),
                           Text(
                             'Tap to reveal answer',
-                            style: TextStyle(fontSize: 13, color: Colors.grey.shade400),
+                            style: AppTheme.bodyFont(
+                              fontSize: 13,
+                              color: AppTheme.textSecondary,
+                            ),
                           ),
                         ],
                       ],
@@ -182,12 +239,20 @@ class _FlashcardViewState extends State<FlashcardView> {
                     child: ElevatedButton.icon(
                       onPressed: () => _next(false),
                       icon: const Icon(Icons.refresh_rounded, size: 18),
-                      label: const Text('Needs Work'),
+                      label: Text(
+                        'Needs Work',
+                        style: AppTheme.displayFont(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppTheme.dangerRed,
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6)),
                       ),
                     ),
                   ),
@@ -196,12 +261,20 @@ class _FlashcardViewState extends State<FlashcardView> {
                     child: ElevatedButton.icon(
                       onPressed: () => _next(true),
                       icon: const Icon(Icons.check_rounded, size: 18),
-                      label: const Text('Knew It'),
+                      label: Text(
+                        'Knew It',
+                        style: AppTheme.displayFont(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppTheme.successGreen,
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6)),
                       ),
                     ),
                   ),

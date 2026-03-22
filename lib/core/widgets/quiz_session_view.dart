@@ -53,24 +53,34 @@ class _QuizSessionViewState extends State<QuizSessionView> {
       context: context,
       barrierDismissible: false,
       builder: (ctx) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text('Quiz Complete!'),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        backgroundColor: AppTheme.cardBackground,
+        title: Text(
+          'Quiz Complete',
+          style: AppTheme.displayFont(
+            fontSize: 18,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               '$_correct / $_total',
-              style: const TextStyle(fontSize: 48, fontWeight: FontWeight.w900),
+              style: AppTheme.monoFont(
+                fontSize: 48,
+                fontWeight: FontWeight.w900,
+              ),
             ),
             const SizedBox(height: 8),
             Text(
               '${((_correct / _total) * 100).round()}% correct',
-              style: TextStyle(
+              style: AppTheme.displayFont(
                 fontSize: 18,
+                fontWeight: FontWeight.w600,
                 color: _correct / _total >= 0.7
                     ? AppTheme.successGreen
                     : AppTheme.dangerRed,
-                fontWeight: FontWeight.w600,
               ),
             ),
           ],
@@ -81,7 +91,14 @@ class _QuizSessionViewState extends State<QuizSessionView> {
               Navigator.of(ctx).pop();
               Navigator.of(context).pop();
             },
-            child: const Text('Done'),
+            child: Text(
+              'Done',
+              style: AppTheme.displayFont(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: AppTheme.accentTeal,
+              ),
+            ),
           ),
         ],
       ),
@@ -89,21 +106,25 @@ class _QuizSessionViewState extends State<QuizSessionView> {
   }
 
   Color _getOptionColor(int index) {
-    if (!_answered) return Colors.white;
-    if (index == _currentQuestion.correctIndex) return const Color(0xFFDCFCE7);
-    if (index == _selectedIndex) return const Color(0xFFFEE2E2);
-    return Colors.white;
+    if (!_answered) return AppTheme.cardBackground;
+    if (index == _currentQuestion.correctIndex) {
+      return AppTheme.successGreen.withValues(alpha: 0.08);
+    }
+    if (index == _selectedIndex) {
+      return AppTheme.dangerRed.withValues(alpha: 0.08);
+    }
+    return AppTheme.cardBackground;
   }
 
   Color _getOptionBorderColor(int index) {
     if (!_answered) {
       return index == _selectedIndex
-          ? AppTheme.accentTeal
-          : Colors.grey.shade300;
+          ? AppTheme.primaryNavy
+          : AppTheme.borderSubtle;
     }
     if (index == _currentQuestion.correctIndex) return AppTheme.successGreen;
     if (index == _selectedIndex) return AppTheme.dangerRed;
-    return Colors.grey.shade200;
+    return AppTheme.borderSubtle;
   }
 
   @override
@@ -117,9 +138,10 @@ class _QuizSessionViewState extends State<QuizSessionView> {
               padding: const EdgeInsets.only(right: 16),
               child: Text(
                 '${_currentIndex + 1}/${widget.questions.length}',
-                style: const TextStyle(
+                style: AppTheme.monoFont(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -133,12 +155,13 @@ class _QuizSessionViewState extends State<QuizSessionView> {
           children: [
             // Progress bar
             ClipRRect(
-              borderRadius: BorderRadius.circular(4),
+              borderRadius: BorderRadius.circular(2),
               child: LinearProgressIndicator(
                 value: (_currentIndex + 1) / widget.questions.length,
-                backgroundColor: Colors.grey.shade200,
-                valueColor: const AlwaysStoppedAnimation(AppTheme.accentTeal),
-                minHeight: 6,
+                backgroundColor: AppTheme.borderSubtle.withValues(alpha: 0.4),
+                valueColor:
+                    const AlwaysStoppedAnimation(AppTheme.primaryNavy),
+                minHeight: 3,
               ),
             ),
             const SizedBox(height: 24),
@@ -146,10 +169,10 @@ class _QuizSessionViewState extends State<QuizSessionView> {
             // Question
             Text(
               _currentQuestion.question,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-                height: 1.4,
+              style: AppTheme.bodyFont(
+                fontSize: 17,
+                fontWeight: FontWeight.w600,
+                height: 1.5,
                 color: AppTheme.textPrimary,
               ),
             ),
@@ -165,10 +188,10 @@ class _QuizSessionViewState extends State<QuizSessionView> {
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
                     color: _getOptionColor(i),
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(6),
                     border: Border.all(
                       color: _getOptionBorderColor(i),
-                      width: 1.5,
+                      width: 1,
                     ),
                   ),
                   child: Row(
@@ -179,19 +202,21 @@ class _QuizSessionViewState extends State<QuizSessionView> {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: !_answered
-                              ? Colors.grey.shade100
+                              ? AppTheme.surfaceMuted
                               : i == _currentQuestion.correctIndex
-                                  ? AppTheme.successGreen.withValues(alpha: 0.15)
+                                  ? AppTheme.successGreen
+                                      .withValues(alpha: 0.15)
                                   : i == _selectedIndex
-                                      ? AppTheme.dangerRed.withValues(alpha: 0.15)
-                                      : Colors.grey.shade100,
+                                      ? AppTheme.dangerRed
+                                          .withValues(alpha: 0.15)
+                                      : AppTheme.surfaceMuted,
                         ),
                         alignment: Alignment.center,
                         child: Text(
                           String.fromCharCode(65 + i),
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
+                          style: AppTheme.monoFont(
                             fontSize: 13,
+                            fontWeight: FontWeight.w700,
                             color: !_answered
                                 ? AppTheme.textSecondary
                                 : i == _currentQuestion.correctIndex
@@ -206,18 +231,20 @@ class _QuizSessionViewState extends State<QuizSessionView> {
                       Expanded(
                         child: Text(
                           _currentQuestion.options[i],
-                          style: const TextStyle(
+                          style: AppTheme.bodyFont(
                             fontSize: 14,
                             height: 1.4,
                           ),
                         ),
                       ),
                       if (_answered && i == _currentQuestion.correctIndex)
-                        const Icon(Icons.check_circle, color: AppTheme.successGreen, size: 22),
+                        const Icon(Icons.check_circle,
+                            color: AppTheme.successGreen, size: 22),
                       if (_answered &&
                           i == _selectedIndex &&
                           i != _currentQuestion.correctIndex)
-                        const Icon(Icons.cancel, color: AppTheme.dangerRed, size: 22),
+                        const Icon(Icons.cancel,
+                            color: AppTheme.dangerRed, size: 22),
                     ],
                   ),
                 ),
@@ -228,24 +255,29 @@ class _QuizSessionViewState extends State<QuizSessionView> {
             if (_answered) ...[
               const SizedBox(height: 16),
               Container(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
                 decoration: BoxDecoration(
-                  color: AppTheme.pearlBackground,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppTheme.pearlBorder),
+                  color: AppTheme.cardBackground,
+                  border: Border(
+                    left: BorderSide(
+                      color: AppTheme.pearlBorder,
+                      width: 3,
+                    ),
+                  ),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Row(
+                    Row(
                       children: [
-                        Icon(Icons.school_rounded, color: AppTheme.pearlBorder, size: 18),
-                        SizedBox(width: 8),
+                        Icon(Icons.school_rounded,
+                            color: AppTheme.pearlBorder, size: 18),
+                        const SizedBox(width: 8),
                         Text(
                           'Explanation',
-                          style: TextStyle(
+                          style: AppTheme.displayFont(
                             fontWeight: FontWeight.w700,
-                            color: Color(0xFF92400E),
+                            color: AppTheme.primaryNavy,
                             fontSize: 14,
                           ),
                         ),
@@ -254,10 +286,10 @@ class _QuizSessionViewState extends State<QuizSessionView> {
                     const SizedBox(height: 8),
                     Text(
                       _currentQuestion.explanation,
-                      style: const TextStyle(
+                      style: AppTheme.bodyFont(
                         fontSize: 13,
                         height: 1.5,
-                        color: Color(0xFF78350F),
+                        color: AppTheme.textPrimary,
                       ),
                     ),
                   ],
@@ -273,14 +305,15 @@ class _QuizSessionViewState extends State<QuizSessionView> {
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(6),
                     ),
                   ),
                   child: Text(
                     _isLastQuestion ? 'See Results' : 'Next Question',
-                    style: const TextStyle(
-                      fontSize: 16,
+                    style: AppTheme.displayFont(
+                      fontSize: 14,
                       fontWeight: FontWeight.w600,
+                      color: Colors.white,
                     ),
                   ),
                 ),

@@ -6,32 +6,75 @@ import '../../core/widgets/content_card.dart';
 import '../../core/widgets/quiz_session_view.dart';
 import 'module_content_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  late final AnimationController _staggerController;
+  final List<Animation<double>> _fadeAnimations = [];
+  final List<Animation<Offset>> _slideAnimations = [];
+
+  @override
+  void initState() {
+    super.initState();
+    final modules = ModuleData.standardModules;
+
+    _staggerController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 800 + (modules.length * 30)),
+    );
+
+    final totalDuration = 800.0 + (modules.length * 30.0);
+    for (int i = 0; i < modules.length; i++) {
+      final startFraction = (i * 30.0) / totalDuration;
+      final endFraction = ((i * 30.0) + 800.0) / totalDuration;
+      final interval = Interval(
+        startFraction.clamp(0.0, 1.0),
+        endFraction.clamp(0.0, 1.0),
+        curve: Curves.easeOutCubic,
+      );
+
+      _fadeAnimations.add(
+        Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(parent: _staggerController, curve: interval),
+        ),
+      );
+      _slideAnimations.add(
+        Tween<Offset>(begin: const Offset(0, 0.05), end: Offset.zero).animate(
+          CurvedAnimation(parent: _staggerController, curve: interval),
+        ),
+      );
+    }
+
+    _staggerController.forward();
+  }
+
+  @override
+  void dispose() {
+    _staggerController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final modules = ModuleData.standardModules;
 
     return Scaffold(
+      backgroundColor: AppTheme.surfaceLight,
       body: CustomScrollView(
         slivers: [
-          // App bar with gradient
+          // Masthead
           SliverAppBar(
-            expandedHeight: 200,
+            expandedHeight: 210,
             pinned: true,
+            backgroundColor: AppTheme.primaryNavy,
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      AppTheme.primaryNavy,
-                      Color(0xFF2D4A7A),
-                    ],
-                  ),
-                ),
+                color: AppTheme.primaryNavy,
                 child: SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -39,70 +82,39 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: 40),
-                        const Text(
-                          'SCI Training',
-                          style: TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            letterSpacing: -1,
-                          ),
-                        ),
-                        const SizedBox(height: 6),
                         Text(
-                          'Spinal Cord Injury Rotation & Board Review',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white.withValues(alpha: 0.8),
+                          'SCI Training',
+                          style: AppTheme.displayFont(
+                            fontSize: 28,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                            letterSpacing: -1.0,
                           ),
                         ),
-                        const SizedBox(height: 12),
-                        // Progress indicator
+                        const SizedBox(height: 4),
+                        Text(
+                          'Spinal Cord Injury Board Review',
+                          style: AppTheme.bodyFont(
+                            fontSize: 14,
+                            color: Colors.white70,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                        const SizedBox(height: 14),
+                        // Thin horizontal rule
+                        Container(
+                          height: 1,
+                          color: Colors.white.withValues(alpha: 0.15),
+                        ),
+                        const SizedBox(height: 14),
+                        // Stat pills row
                         Row(
                           children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 10,
-                                vertical: 5,
-                              ),
-                              decoration: BoxDecoration(
-                                color: AppTheme.accentTeal.withValues(alpha: 0.2),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                  color: AppTheme.accentTeal.withValues(alpha: 0.4),
-                                ),
-                              ),
-                              child: Text(
-                                '${modules.length} Modules',
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppTheme.accentTeal,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 8),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 10,
-                                vertical: 5,
-                              ),
-                              decoration: BoxDecoration(
-                                color: AppTheme.warningAmber.withValues(alpha: 0.2),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                  color: AppTheme.warningAmber.withValues(alpha: 0.4),
-                                ),
-                              ),
-                              child: const Text(
-                                'Board Ready',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppTheme.warningAmber,
-                                ),
-                              ),
-                            ),
+                            _buildStatPill('14', 'MODULES'),
+                            const SizedBox(width: 10),
+                            _buildStatPill('50+', 'QUESTIONS'),
+                            const SizedBox(width: 10),
+                            _buildStatPill('3', 'TOOLS'),
                           ],
                         ),
                       ],
@@ -110,218 +122,259 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              title: const Text(
+              title: Text(
                 'SCI Training',
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
-              ),
-            ),
-          ),
-          // Quiz button
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-              child: GestureDetector(
-                onTap: () {
-                  final questions = SCIQuizBank.getRandomQuiz(10);
-                  if (questions.isNotEmpty) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => QuizSessionView(
-                          questions: questions,
-                          title: 'Board Review Quiz',
-                        ),
-                      ),
-                    );
-                  }
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [AppTheme.accentTeal, Color(0xFF0D7377)],
-                    ),
-                    borderRadius: BorderRadius.circular(14),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppTheme.accentTeal.withValues(alpha: 0.3),
-                        blurRadius: 12,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 44,
-                        height: 44,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Icon(Icons.quiz_rounded, color: Colors.white, size: 24),
-                      ),
-                      const SizedBox(width: 14),
-                      const Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Board Review Quiz',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 2),
-                            Text(
-                              '10 random questions across all topics',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.white70,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const Icon(Icons.arrow_forward_rounded, color: Colors.white70),
-                    ],
-                  ),
+                style: AppTheme.displayFont(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                  letterSpacing: -0.3,
                 ),
               ),
             ),
           ),
-          // Flashcard + Podcast row
+
+          // Study Tools Row
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
               child: Row(
                 children: [
-                  // Flashcards button (placeholder — decks to be added)
+                  // Quiz card — tappable
                   Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.all(14),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(14),
-                        border: Border.all(color: AppTheme.warningAmber.withValues(alpha: 0.3)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppTheme.warningAmber.withValues(alpha: 0.1),
-                            blurRadius: 8,
-                            offset: const Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: const Row(
-                        children: [
-                          Icon(Icons.style_rounded, color: AppTheme.warningAmber, size: 22),
-                          SizedBox(width: 10),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Flashcards', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: AppTheme.textPrimary)),
-                                Text('Coming soon', style: TextStyle(fontSize: 11, color: AppTheme.textSecondary)),
-                              ],
+                    child: _StudyToolCard(
+                      label: 'Quiz',
+                      subtitle: '10 Qs',
+                      accentColor: AppTheme.accentTeal,
+                      onTap: () {
+                        final questions = SCIQuizBank.getRandomQuiz(10);
+                        if (questions.isNotEmpty) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => QuizSessionView(
+                                questions: questions,
+                                title: 'Board Review Quiz',
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
+                          );
+                        }
+                      },
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  // Podcast button (placeholder — episodes to be added)
+                  const SizedBox(width: 8),
+                  // Flashcards — coming soon
                   Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.all(14),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(14),
-                        border: Border.all(color: AppTheme.classificationColor.withValues(alpha: 0.3)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppTheme.classificationColor.withValues(alpha: 0.1),
-                            blurRadius: 8,
-                            offset: const Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: const Row(
-                        children: [
-                          Icon(Icons.headset_rounded, color: AppTheme.classificationColor, size: 22),
-                          SizedBox(width: 10),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Podcasts', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: AppTheme.textPrimary)),
-                                Text('Coming soon', style: TextStyle(fontSize: 11, color: AppTheme.textSecondary)),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: _StudyToolCard(
+                      label: 'Flashcards',
+                      subtitle: 'Soon',
+                      accentColor: AppTheme.warningAmber,
+                      showSoonChip: true,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  // Podcasts — coming soon
+                  Expanded(
+                    child: _StudyToolCard(
+                      label: 'Podcasts',
+                      subtitle: 'Soon',
+                      accentColor: AppTheme.classificationColor,
+                      showSoonChip: true,
                     ),
                   ),
                 ],
               ),
             ),
           ),
-          // Section header
+
+          // Section Divider — LEARNING PATHWAY
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 20, 20, 8),
-              child: Row(
+              padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
+              child: Column(
                 children: [
-                  Container(
-                    width: 4,
-                    height: 20,
-                    decoration: BoxDecoration(
-                      color: AppTheme.accentTeal,
-                      borderRadius: BorderRadius.circular(2),
+                  Container(height: 1, color: AppTheme.borderSubtle),
+                  const SizedBox(height: 12),
+                  Text(
+                    'LEARNING PATHWAY',
+                    style: AppTheme.displayFont(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 2.0,
+                      color: AppTheme.textSecondary,
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'Learning Pathway',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w800,
-                      color: AppTheme.textPrimary,
-                    ),
-                  ),
+                  const SizedBox(height: 12),
+                  Container(height: 1, color: AppTheme.borderSubtle),
                 ],
               ),
             ),
           ),
-          // Module cards
+
+          // Module cards with staggered animation
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 final module = modules[index];
-                return ContentCard(
-                  module: module,
-                  index: index,
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ModuleContentScreen(module: module),
-                      ),
-                    );
-                  },
+                return SlideTransition(
+                  position: _slideAnimations[index],
+                  child: FadeTransition(
+                    opacity: _fadeAnimations[index],
+                    child: ContentCard(
+                      module: module,
+                      index: index,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                ModuleContentScreen(module: module),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 );
               },
               childCount: modules.length,
             ),
           ),
+
           // Bottom padding
           const SliverToBoxAdapter(
             child: SizedBox(height: 32),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildStatPill(String value, String label) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.12),
+        ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            value,
+            style: AppTheme.monoFont(
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(width: 6),
+          Text(
+            label,
+            style: AppTheme.displayFont(
+              fontSize: 9,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1.5,
+              color: Colors.white60,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _StudyToolCard extends StatelessWidget {
+  const _StudyToolCard({
+    required this.label,
+    required this.subtitle,
+    required this.accentColor,
+    this.onTap,
+    this.showSoonChip = false,
+  });
+
+  final String label;
+  final String subtitle;
+  final Color accentColor;
+  final VoidCallback? onTap;
+  final bool showSoonChip;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: AppTheme.cardBackground,
+      borderRadius: BorderRadius.circular(6),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(6),
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(6),
+            border: Border.all(color: AppTheme.borderSubtle, width: 1),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 3,
+                height: 32,
+                decoration: BoxDecoration(
+                  color: accentColor,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      label,
+                      style: AppTheme.displayFont(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                        color: AppTheme.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    if (showSoonChip)
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 1,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          border: Border.all(
+                            color: accentColor.withValues(alpha: 0.4),
+                          ),
+                        ),
+                        child: Text(
+                          'Soon',
+                          style: AppTheme.displayFont(
+                            fontSize: 9,
+                            fontWeight: FontWeight.w500,
+                            color: accentColor,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      )
+                    else
+                      Text(
+                        subtitle,
+                        style: AppTheme.bodyFont(
+                          fontSize: 11,
+                          color: AppTheme.textSecondary,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
