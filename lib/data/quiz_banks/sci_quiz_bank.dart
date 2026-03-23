@@ -1216,6 +1216,1217 @@ class SCIQuizBank {
       moduleId: 'cardiovascular',
       difficulty: 'intermediate',
     ),
+
+    // =====================================================================
+    // NEW QUESTIONS BATCH 2 — HIGH-YIELD BOARD TOPICS
+    // =====================================================================
+
+    // =====================================================================
+    // SCI FUNDAMENTALS — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'The estimated lifetime cost for a patient who sustains a high cervical (C1-C4) SCI at age 25 is approximately:',
+      options: [
+        '\$1.2 million',
+        '\$2.5 million',
+        '\$5.1 million',
+        '\$8.7 million',
+      ],
+      correctIndex: 2,
+      explanation:
+          'The estimated lifetime cost for high tetraplegia (C1-C4) sustained at age 25 is approximately \$5.1 million (2019 dollars). This includes direct costs (medical, rehabilitation, attendant care, equipment) and indirect costs (lost wages, productivity). First-year costs alone exceed \$1.1 million. Costs decrease with lower injury levels: low tetraplegia (C5-C8) approximately \$3.7 million, paraplegia approximately \$2.5 million. These figures underscore the enormous economic burden of SCI and the importance of prevention.',
+      moduleId: 'sci-fundamentals',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Which factor is the strongest predictor of return to employment after spinal cord injury?',
+      options: [
+        'Injury level (cervical vs. thoracic)',
+        'Education level prior to injury',
+        'Age at time of injury',
+        'ASIA Impairment Scale grade',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Education level is the single strongest predictor of return to work after SCI. Higher education levels are associated with sedentary or knowledge-based occupations that are more compatible with physical disability. Other important predictors include younger age at injury, incomplete injury, higher motivation, pre-injury employment history, and access to vocational rehabilitation. Overall employment rates after SCI range from 12-40% depending on study and population.',
+      moduleId: 'sci-fundamentals',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The incidence of noncontiguous spinal fractures in patients with acute spinal column injuries is approximately:',
+      options: [
+        '1-3%',
+        '5-10%',
+        '12-28%',
+        '40-50%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Noncontiguous spinal fractures occur in approximately 12-28% of patients with acute spinal column injuries. This high incidence mandates imaging of the entire spine when a spinal fracture is identified at any level. Noncontiguous fractures may be missed if only the symptomatic level is imaged, potentially resulting in secondary neurological injury. Full spine screening (CT) is now standard of care in trauma evaluation when any spinal fracture is discovered.',
+      moduleId: 'sci-fundamentals',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Concomitant traumatic brain injury (TBI) occurs in approximately what percentage of patients with cervical spinal cord injury?',
+      options: [
+        '10%',
+        '25%',
+        '60%',
+        '80%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'TBI occurs in approximately 60% of patients with cervical SCI. Overall, approximately 47% of all traumatic SCI patients have concomitant injuries. The high co-occurrence of TBI with cervical SCI reflects shared mechanisms (high-energy trauma, falls, motor vehicle collisions). Concomitant TBI complicates rehabilitation due to cognitive and behavioral deficits, and may limit the accuracy of the neurological examination. Screening for TBI is essential in all cervical SCI patients.',
+      moduleId: 'sci-fundamentals',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Average acute care and inpatient rehabilitation length of stay for SCI has changed dramatically over the decades. In the 1970s it averaged 122 days; by 2015 it averaged approximately:',
+      options: [
+        '92 days',
+        '72 days',
+        '46 days',
+        '21 days',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Average length of stay for acute care plus inpatient rehabilitation has decreased from 122 days in the 1970s to approximately 46 days by 2015. This reflects changes in healthcare delivery, insurance reimbursement, earlier mobilization protocols, and increased use of outpatient and community-based rehabilitation. While shorter stays may reduce costs, there are concerns about whether patients are achieving optimal functional outcomes and are adequately prepared for community reintegration within these shortened timeframes.',
+      moduleId: 'sci-fundamentals',
+      difficulty: 'intermediate',
+    ),
+    QuizQuestion(
+      question:
+          'Approximately what percentage of traumatic SCI patients have at least one concomitant injury (e.g., long bone fractures, thoracic injury, TBI)?',
+      options: [
+        '15%',
+        '25%',
+        '47%',
+        '75%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Approximately 47% of traumatic SCI patients have concomitant injuries. These include long bone fractures, thoracic/abdominal injuries, traumatic brain injury, and pelvic fractures. The presence of concomitant injuries complicates the acute management of SCI, may delay rehabilitation, and can independently affect functional outcomes. A thorough trauma evaluation is essential to identify all injuries in the acute setting.',
+      moduleId: 'sci-fundamentals',
+      difficulty: 'intermediate',
+    ),
+
+    // =====================================================================
+    // ASIA/ISNCSCI — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'In the ISNCSCI examination, non-key muscle groups tested below the single neurological level of injury are used primarily to distinguish between:',
+      options: [
+        'ASIA A and ASIA B',
+        'ASIA B and ASIA C',
+        'ASIA C and ASIA D',
+        'ASIA D and ASIA E',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Non-key muscle groups (e.g., diaphragm, deltoid, hip adductors, hamstrings) are used to help distinguish ASIA B (sensory incomplete) from ASIA C (motor incomplete) when there is no voluntary motor function in key muscles more than three levels below the motor level. If a non-key muscle more than three levels below the motor level has at least grade 1 strength, the patient is classified as ASIA C rather than B. This recognizes preserved motor function that may not be captured by the 10 key muscle pairs alone.',
+      moduleId: 'classification-asia',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'In the ISNCSCI classification, the motor level is defined as the most caudal key muscle with at least grade 3/5 strength, provided the segment above is at least:',
+      options: [
+        'Grade 3/5',
+        'Grade 4/5',
+        'Grade 5/5',
+        'Any grade of motor function',
+      ],
+      correctIndex: 2,
+      explanation:
+          'The motor level determination requires the key muscle at the tested level to be at least grade 3/5 (antigravity), AND the key muscle represented by the segment above must be grade 5/5 (normal). This sequential criterion prevents isolated preserved segments from being misinterpreted as the motor level. For example, if C6 wrist extensors are 4/5 but C5 biceps is only 3/5, the motor level is C4 (not C5 or C6), because C5 does not meet the 5/5 requirement for the segment above C6.',
+      moduleId: 'classification-asia',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The neurological level of injury (NLI) on the ISNCSCI is determined as:',
+      options: [
+        'The most CAUDAL level with normal motor and sensory function on both sides',
+        'The most ROSTRAL of the four sensory and motor levels (right/left sensory, right/left motor)',
+        'The average of the right and left motor levels',
+        'The level with the greatest difference between right and left function',
+      ],
+      correctIndex: 1,
+      explanation:
+          'The single neurological level of injury (NLI) is the most ROSTRAL (highest) of the four determined levels: right sensory level, left sensory level, right motor level, and left motor level. This convention ensures that the NLI reflects the highest point of impairment on either side. For example, if right sensory = C6, left sensory = C5, right motor = C6, left motor = C7, the NLI is C5.',
+      moduleId: 'classification-asia',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Epiconus syndrome involves injury to spinal cord segments L4-S1, which anatomically reside at which vertebral level?',
+      options: [
+        'L4-S1 vertebral levels',
+        'T11-T12 vertebral levels',
+        'L1-L2 vertebral levels',
+        'T9-T10 vertebral levels',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Epiconus syndrome involves damage to L4-S1 spinal cord segments, which are anatomically located at approximately the T11-T12 vertebral level due to the discrepancy between cord segment and vertebral levels. It produces a mixed UMN/LMN picture with LMN signs in L4-S1 myotomes (knee flexion, ankle, toe muscles) and preserved UMN bladder function (the S2-S4 sacral micturition center is spared). This distinguishes it from conus medullaris syndrome (S2-S5 segments) and cauda equina syndrome (nerve roots below the conus).',
+      moduleId: 'classification-asia',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The key sensory point for the L4 dermatome on the ISNCSCI examination is located at:',
+      options: [
+        'The dorsum of the foot at the third MTP joint',
+        'The lateral heel',
+        'The medial malleolus',
+        'The anterior mid-thigh',
+      ],
+      correctIndex: 2,
+      explanation:
+          'The L4 key sensory point is the medial malleolus. Critical dermatome landmarks for the ISNCSCI: C5=lateral antecubital fossa, C6=thumb, C7=middle finger, C8=little finger, T1=medial elbow, T4=nipple line, T10=umbilicus, L1=inguinal region, L2=anterior mid-thigh, L3=medial femoral condyle, L4=medial malleolus, L5=dorsum of foot at third MTP, S1=lateral heel, S2=popliteal fossa, S3=ischial tuberosity, S4-S5=perianal area.',
+      moduleId: 'classification-asia',
+      difficulty: 'basic',
+    ),
+    QuizQuestion(
+      question:
+          'An ASIA B patient with preserved pin prick sensation (but not light touch alone) at S4-S5 has what approximate probability of converting to a motor-incomplete (ASIA C or D) classification?',
+      options: [
+        '10-20%',
+        '30-40%',
+        '50-70%',
+        '90-100%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Pin prick preservation at S4-S5 in ASIA B patients carries a 50-70% probability of conversion to motor-incomplete (ASIA C or D) status. In contrast, preservation of only light touch (without pin prick) carries only a 10-20% conversion rate. This distinction is prognostically important because pin prick is carried by small myelinated A-delta and unmyelinated C fibers in the spinothalamic tract, which are more closely associated with motor tract (corticospinal) preservation. This finding has important implications for prognosis counseling.',
+      moduleId: 'classification-asia',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Central cord syndrome accounts for approximately what percentage of all incomplete SCI cases?',
+      options: [
+        '10%',
+        '25%',
+        '50%',
+        '75%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Central cord syndrome is the most common incomplete SCI syndrome, accounting for approximately 50% of all incomplete SCI cases and approximately 9% of all traumatic SCI. It is characterized by greater weakness in the upper extremities than lower extremities, with variable sensory loss and bladder dysfunction. It most commonly occurs in elderly patients with pre-existing cervical spondylosis after hyperextension injuries. The prognosis for functional recovery is generally favorable, with lower extremity recovery preceding upper extremity recovery.',
+      moduleId: 'classification-asia',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'In the ISNCSCI examination, when sensory function is tested at a key point and the patient reports altered sensation (decreased or increased) compared to the face (reference point), this is graded as:',
+      options: [
+        '0 = absent',
+        '1 = altered (impaired)',
+        '2 = normal',
+        'NT = not testable',
+      ],
+      correctIndex: 1,
+      explanation:
+          'In the ISNCSCI sensory grading system: 0 = absent (no sensation), 1 = altered (impaired — either decreased or increased sensation compared to the face reference point), 2 = normal (same as the face). The face is used as the normal reference dermatome because it is innervated by the trigeminal nerve (CN V) and is unaffected by spinal cord injury. Both light touch and pin prick are graded independently at each key sensory point using this 0-1-2 scale.',
+      moduleId: 'classification-asia',
+      difficulty: 'intermediate',
+    ),
+
+    // =====================================================================
+    // PATHOPHYSIOLOGY / ACUTE — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'Succinylcholine is contraindicated after SCI beginning approximately 48 hours post-injury due to:',
+      options: [
+        'Increased risk of malignant hyperthermia',
+        'Upregulation of extrajunctional (immature) acetylcholine receptors causing life-threatening hyperkalemia',
+        'Direct toxic effect on the injured spinal cord',
+        'Interaction with methylprednisolone used in NASCIS protocols',
+      ],
+      correctIndex: 1,
+      explanation:
+          'After denervation injury (including SCI), extrajunctional (immature, fetal-type) acetylcholine receptors proliferate across the entire muscle membrane surface, rather than being confined to the neuromuscular junction. When succinylcholine depolarizes these widespread receptors, massive potassium efflux occurs, causing life-threatening hyperkalemia and potentially fatal cardiac arrhythmias. This risk begins approximately 48 hours after injury and may persist for 6 months to indefinitely. Non-depolarizing neuromuscular blocking agents (e.g., rocuronium, vecuronium) should be used instead.',
+      moduleId: 'pathophysiology',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The NASCIS II trial concluded that high-dose methylprednisolone improved outcomes if administered within what time window after acute SCI?',
+      options: [
+        '3 hours',
+        '8 hours',
+        '24 hours',
+        '48 hours',
+      ],
+      correctIndex: 1,
+      explanation:
+          'The NASCIS II trial (1990) concluded that methylprednisolone (30 mg/kg bolus then 5.4 mg/kg/hr for 23 hours) improved neurological outcomes if started within 8 hours of injury. NASCIS I (1984) compared high-dose vs. low-dose methylprednisolone (no placebo) and found no difference. NASCIS III (1997) suggested that patients treated between 3-8 hours should receive 48 hours of methylprednisolone instead of 24 hours. All three trials have been criticized for methodological issues, and current guidelines no longer recommend methylprednisolone as standard of care.',
+      moduleId: 'pathophysiology',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The STASCIS (Surgical Timing in Acute Spinal Cord Injury Study) trial demonstrated that early surgical decompression (<24 hours) resulted in what outcome compared to late surgery?',
+      options: [
+        'No significant difference in neurological outcomes',
+        '2.8 times more likely to improve by at least 2 AIS grades',
+        'Increased surgical complication rates that offset neurological gains',
+        'Benefit only in ASIA A complete injuries',
+      ],
+      correctIndex: 1,
+      explanation:
+          'The STASCIS trial (2012) demonstrated that patients who underwent early surgical decompression (within 24 hours of injury) were 2.8 times more likely to improve by at least 2 AIS grades compared to those who had late surgery (after 24 hours). This landmark study provided strong evidence supporting early surgical intervention in acute traumatic SCI. Early decompression is thought to limit secondary injury by restoring spinal cord perfusion and reducing ongoing mechanical compression.',
+      moduleId: 'pathophysiology',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'According to the Denis three-column model of spinal stability, the middle column consists of:',
+      options: [
+        'Anterior longitudinal ligament and anterior half of the vertebral body',
+        'Posterior longitudinal ligament, posterior annulus fibrosus, and posterior wall of the vertebral body',
+        'Supraspinous and interspinous ligaments, ligamentum flavum, and facet capsules',
+        'Laminae, pedicles, and transverse processes',
+      ],
+      correctIndex: 1,
+      explanation:
+          'The Denis three-column model divides the spine into: Anterior column = anterior longitudinal ligament (ALL), anterior annulus fibrosus, and anterior half of the vertebral body. Middle column = posterior longitudinal ligament (PLL), posterior annulus fibrosus, and posterior wall of the vertebral body. Posterior column = supraspinous/interspinous ligaments, ligamentum flavum, facet capsules, and posterior bony elements. Instability is defined as failure of two or more columns. The middle column is considered the most important for stability.',
+      moduleId: 'pathophysiology',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Type II odontoid fractures in elderly patients have a nonunion rate of approximately:',
+      options: [
+        '5-10%',
+        '15-20%',
+        '26-36%',
+        '50-60%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Type II odontoid (dens) fractures occur through the base of the odontoid process and have a notoriously high nonunion rate of 26-36% in elderly patients treated conservatively with external immobilization. The poor blood supply at the base of the dens contributes to this high nonunion rate. Type I fractures (tip avulsion) and Type III fractures (extending into the C2 body with its cancellous bone) have much better healing rates. Surgical fixation (anterior odontoid screw or posterior C1-C2 fusion) may be considered in elderly patients to improve union rates.',
+      moduleId: 'pathophysiology',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The SOMI (sternal-occipital-mandibular immobilizer) orthosis provides approximately 93% restriction of cervical flexion but only what percentage of extension restriction?',
+      options: [
+        '93%',
+        '72%',
+        '42%',
+        '15%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'The SOMI brace provides excellent restriction of cervical flexion (approximately 93%) but poor restriction of extension (approximately 42%). This is because its design relies on sternal, mandibular, and occipital contact points that primarily resist forward motion. For injuries requiring extension restriction, a cervicothoracic orthosis (CTO) such as a Minerva brace, Yale brace, or a halo vest is more appropriate. The halo vest remains the most rigid cervical orthosis, restricting approximately 96% of flexion-extension.',
+      moduleId: 'pathophysiology',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Chance fractures (flexion-distraction injuries) are associated with concurrent abdominal visceral injury in approximately what percentage of cases?',
+      options: [
+        '10%',
+        '25%',
+        '50%',
+        '75%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Chance fractures are associated with abdominal organ injuries (bowel, mesentery, spleen, pancreas, kidney) in approximately 50% of cases. These injuries classically occur from lap seatbelt restraints during motor vehicle accidents, where the seatbelt acts as a fulcrum causing a flexion-distraction mechanism through all three spinal columns. The same force that causes the spinal injury compresses the abdominal viscera. A thorough abdominal evaluation (CT abdomen/pelvis) is mandatory in all patients with Chance-type fractures.',
+      moduleId: 'pathophysiology',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'SCIWORA (Spinal Cord Injury Without Radiographic Abnormality) is more common in pediatric patients because:',
+      options: [
+        'Children have a higher incidence of penetrating spinal injuries',
+        'The pediatric spine can stretch up to 5 cm without disruption, but the spinal cord ruptures after only 5-6 mm of stretch',
+        'Pediatric spinal cords have less myelin and are more vulnerable to compression',
+        'Children have larger spinal canals relative to the spinal cord',
+      ],
+      correctIndex: 1,
+      explanation:
+          'SCIWORA occurs because the pediatric spine is inherently more elastic than the spinal cord. The immature vertebral column (with its cartilaginous end plates, horizontally oriented facets, and ligamentous laxity) can stretch up to 5 cm without disruption, while the spinal cord ruptures after only 5-6 mm of elongation. This differential elasticity allows the spine to momentarily deform (causing cord injury) and then recoil to its normal position, leaving no evidence on plain radiographs or CT. MRI can detect intramedullary signal abnormalities. SCIWORA accounts for up to 20-30% of pediatric SCIs.',
+      moduleId: 'pathophysiology',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The primary mechanism of secondary injury during the acute vascular phase (first few hours) after SCI involves:',
+      options: [
+        'Wallerian degeneration of axons',
+        'Hemorrhagic necrosis of central gray matter and ischemia from vasospasm, thrombosis, and loss of autoregulation',
+        'Demyelination of white matter tracts by oligodendrocyte apoptosis',
+        'Glial scar formation blocking axonal regeneration',
+      ],
+      correctIndex: 1,
+      explanation:
+          'The acute vascular phase of secondary injury (minutes to hours) is characterized by hemorrhagic necrosis of the central gray matter (which has a higher metabolic demand and richer blood supply) and progressive ischemia. Vasospasm of the anterior spinal artery and its sulcal branches, microthrombosis, and loss of autoregulation contribute to expanding ischemia. Hemorrhage begins centrally and extends outward. Later phases involve excitotoxicity (hours), inflammatory cell infiltration (days), and apoptosis/demyelination (days to weeks).',
+      moduleId: 'pathophysiology',
+      difficulty: 'intermediate',
+    ),
+
+    // =====================================================================
+    // NEUROGENIC BLADDER — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'Detrusor-sphincter dyssynergia (DSD) occurs in suprasacral SCI due to loss of coordination from which brainstem center?',
+      options: [
+        'Medullary reticular formation',
+        'Pontine micturition center (Barrington nucleus)',
+        'Locus coeruleus',
+        'Nucleus ambiguus',
+      ],
+      correctIndex: 1,
+      explanation:
+          'The pontine micturition center (PMC, also called Barrington nucleus or the M-region of the pons) coordinates normal voiding by simultaneously activating detrusor contraction and inhibiting external urethral sphincter activity. In suprasacral SCI, the spinal micturition reflex arc (S2-S4) is intact but is disconnected from the PMC. This loss of pontine coordination results in simultaneous contraction of the detrusor and external sphincter (DSD), generating dangerous intravesical pressures that can lead to upper tract deterioration.',
+      moduleId: 'neurogenic-bladder',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'What detrusor leak point pressure (DLPP) threshold, identified by McGuire, is associated with upper urinary tract deterioration?',
+      options: [
+        '20 cmH2O',
+        '40 cmH2O',
+        '60 cmH2O',
+        '80 cmH2O',
+      ],
+      correctIndex: 1,
+      explanation:
+          'McGuire demonstrated that sustained detrusor leak point pressures (DLPP) above 40 cmH2O are associated with a high risk of upper urinary tract deterioration, including vesicoureteral reflux, hydronephrosis, and renal damage. This landmark finding established 40 cmH2O as the critical threshold for guiding bladder management decisions. Patients with DLPP above this threshold require treatment to reduce intravesical pressures, typically with anticholinergic medications and clean intermittent catheterization. Urodynamic monitoring is essential.',
+      moduleId: 'neurogenic-bladder',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The neurogenic bladder dysfunction classification matrix categorizes problems by the combination of:',
+      options: [
+        'Injury level (cervical vs. thoracic) and completeness (A vs. B)',
+        'Failure to store vs. failure to empty, due to either the bladder (detrusor) or the outlet (sphincter)',
+        'Sympathetic vs. parasympathetic dysfunction',
+        'Acute vs. chronic phase of injury',
+      ],
+      correctIndex: 1,
+      explanation:
+          'The functional classification of neurogenic bladder dysfunction uses a 2x2 matrix: the problem is either failure to STORE or failure to EMPTY, and the cause is either the BLADDER (detrusor) or the OUTLET (sphincter). This yields four categories: (1) Failure to store/bladder = detrusor overactivity, (2) Failure to store/outlet = sphincter incompetence, (3) Failure to empty/bladder = detrusor underactivity, (4) Failure to empty/outlet = DSD or sphincter obstruction. A patient can have problems in more than one category.',
+      moduleId: 'neurogenic-bladder',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'A known complication of augmentation cystoplasty (bladder augmentation using bowel segment) includes:',
+      options: [
+        'Spontaneous voiding recovery',
+        'Metabolic acidosis from bowel mucosa absorbing urinary solutes, mucus production, and risk of perforation',
+        'Resolution of detrusor overactivity without need for CIC',
+        'Improved natural sensation of bladder fullness',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Augmentation cystoplasty uses a detubularized segment of bowel (usually ileum) to increase bladder capacity and reduce intravesical pressures. Complications include: metabolic hyperchloremic acidosis (bowel mucosa absorbs chloride and ammonium from urine), excessive mucus production (requiring bladder irrigation), risk of perforation (reduced bladder sensation), vitamin B12 deficiency (if ileum is used), and a small long-term risk of malignancy at the anastomosis site. Patients must perform CIC lifelong after augmentation.',
+      moduleId: 'neurogenic-bladder',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Capsaicin and resiniferatoxin have been investigated for intravesical use in neurogenic detrusor overactivity because they:',
+      options: [
+        'Stimulate detrusor contraction to improve emptying',
+        'Desensitize C-fiber afferents, reducing involuntary detrusor contractions',
+        'Strengthen the external urethral sphincter',
+        'Promote bladder mucosal regeneration',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Capsaicin (from chili peppers) and its ultra-potent analog resiniferatoxin act on TRPV1 (vanilloid) receptors on C-fiber bladder afferents. After SCI, a switch from A-delta to C-fiber mediated micturition reflex contributes to detrusor overactivity. Intravesical instillation of these agents causes initial C-fiber excitation followed by desensitization, reducing involuntary detrusor contractions. Resiniferatoxin is approximately 1000 times more potent than capsaicin with less initial irritation. These are considered investigational alternatives when standard treatments fail.',
+      moduleId: 'neurogenic-bladder',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Urea-splitting organisms such as Proteus mirabilis are clinically significant in SCI patients because they cause:',
+      options: [
+        'Hemorrhagic cystitis',
+        'Alkaline urine that promotes struvite (magnesium ammonium phosphate) calculi formation',
+        'Direct nephrotoxicity',
+        'Antibiotic resistance to all cephalosporins',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Urea-splitting organisms (Proteus, Klebsiella, Pseudomonas, some Staphylococcus) produce urease, which hydrolyzes urea into ammonia and carbon dioxide. This alkalinizes the urine (pH >7.2), which promotes precipitation of magnesium ammonium phosphate (struvite) and calcium phosphate (apatite) crystals, forming infection stones (staghorn calculi). SCI patients are at high risk due to neurogenic bladder, chronic catheterization, urinary stasis, and recurrent UTIs. Prevention involves adequate hydration, regular catheterization, and prompt treatment of UTIs.',
+      moduleId: 'neurogenic-bladder',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Botulinum toxin injection into the detrusor muscle for neurogenic detrusor overactivity works by:',
+      options: [
+        'Blocking nicotinic receptors at the neuromuscular junction',
+        'Inhibiting acetylcholine release from parasympathetic nerve terminals at the detrusor muscle',
+        'Directly relaxing smooth muscle calcium channels',
+        'Stimulating beta-3 adrenergic receptors on the detrusor',
+      ],
+      correctIndex: 1,
+      explanation:
+          'OnabotulinumtoxinA (Botox) injected into the detrusor muscle inhibits the release of acetylcholine from parasympathetic nerve terminals by cleaving SNARE proteins (specifically SNAP-25), preventing vesicle fusion and neurotransmitter release. This reduces involuntary detrusor contractions, increases bladder capacity, and lowers intravesical pressures. The typical dose is 200 units for neurogenic detrusor overactivity. Effects last 6-9 months, and repeat injections are required. CIC may be needed post-injection due to urinary retention.',
+      moduleId: 'neurogenic-bladder',
+      difficulty: 'intermediate',
+    ),
+
+    // =====================================================================
+    // NEUROGENIC BOWEL — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'The internal anal sphincter (IAS) provides approximately what percentage of resting anal tone?',
+      options: [
+        '30-40%',
+        '50-60%',
+        '70-85%',
+        '95-100%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'The internal anal sphincter (IAS), a smooth muscle structure under autonomic (involuntary) control, provides 70-85% of resting anal continence tone. The external anal sphincter (EAS), a striated muscle under somatic (voluntary, pudendal nerve S2-S4) control, provides the remaining 15-30% and is responsible for voluntary squeeze and the continence reflex during sudden increases in intra-abdominal pressure. In LMN bowel, the EAS is flaccid, leaving only the IAS for continence, which is often insufficient.',
+      moduleId: 'neurogenic-bowel',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'PEG-based (polyethylene glycol-based) bisacodyl suppositories are preferred over hydrogenated vegetable oil-based suppositories primarily because:',
+      options: [
+        'They are less expensive',
+        'They dissolve faster, resulting in a shorter bowel program time',
+        'They have fewer systemic side effects',
+        'They are available over the counter',
+      ],
+      correctIndex: 1,
+      explanation:
+          'PEG-based (polyethylene glycol) bisacodyl suppositories dissolve at body temperature more rapidly than hydrogenated vegetable oil (HVO)-based suppositories, resulting in faster contact with the rectal mucosa and a significantly shorter bowel program duration (often 30-60 minutes shorter). Shorter bowel program time improves patient quality of life, reduces caregiver burden, and decreases time on the commode (reducing pressure injury risk). The active ingredient (bisacodyl) is the same in both formulations.',
+      moduleId: 'neurogenic-bowel',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'For acute colonic pseudo-obstruction (Ogilvie syndrome) refractory to conservative management in an SCI patient, which pharmacologic agent can be administered to promote colonic decompression?',
+      options: [
+        'Metoclopramide 10 mg IV',
+        'Neostigmine 2 mg IV with cardiac monitoring',
+        'Ondansetron 4 mg IV',
+        'Methylnaltrexone 8 mg subcutaneous',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Neostigmine (2 mg IV given over 3-5 minutes) is used for acute colonic pseudo-obstruction (Ogilvie syndrome) that fails conservative management (NPO, NG tube, rectal tube, correction of electrolytes, discontinuation of opioids/anticholinergics). As an acetylcholinesterase inhibitor, it increases parasympathetic stimulation to the colon, promoting motility and decompression. It must be given with continuous cardiac monitoring because it can cause symptomatic bradycardia (atropine should be at bedside). Cecal diameter >12 cm carries risk of perforation.',
+      moduleId: 'neurogenic-bowel',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Superior mesenteric artery (SMA) syndrome in SCI patients is caused by compression of the duodenum when the aortomesenteric angle decreases below:',
+      options: [
+        '45 degrees',
+        '25 degrees',
+        '60 degrees',
+        '10 degrees',
+      ],
+      correctIndex: 1,
+      explanation:
+          'SMA syndrome occurs when the third portion of the duodenum is compressed between the SMA and the aorta. Normally the aortomesenteric angle is 38-65 degrees, maintained by retroperitoneal fat. When this angle narrows below 25 degrees (or the aortomesenteric distance decreases below 8 mm), duodenal compression occurs. SCI patients are at risk due to rapid weight loss, prolonged supine positioning, and body cast/brace application. Symptoms include bilious vomiting, abdominal distension, and weight loss. Treatment includes nutritional support, left lateral or prone positioning, and potentially duodenojejunostomy.',
+      moduleId: 'neurogenic-bowel',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Which gastric motility medication should be used with caution in SCI patients with injuries at T6 and above because it can mask the symptoms of AD?',
+      options: [
+        'Polyethylene glycol',
+        'Metoclopramide',
+        'Senna',
+        'Docusate',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Metoclopramide is a dopamine antagonist used to enhance gastric motility. It can also lower the blood pressure through its anti-dopaminergic effects, which may mask the hypertensive symptoms of autonomic dysreflexia in susceptible patients (T6 and above). Additionally, fecal impaction and bowel distension (the second most common AD trigger) may go unrecognized if GI symptoms are suppressed. Clinicians should be cautious with any medication that may mask or alter the presentation of AD in at-risk patients.',
+      moduleId: 'neurogenic-bowel',
+      difficulty: 'intermediate',
+    ),
+
+    // =====================================================================
+    // AUTONOMIC DYSREFLEXIA — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'Silent autonomic dysreflexia (asymptomatic AD) has been documented in approximately what percentage of AD episodes in monitored studies?',
+      options: [
+        '5%',
+        '15%',
+        '43%',
+        '80%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Studies using ambulatory blood pressure monitoring have demonstrated that approximately 43% of AD episodes are asymptomatic (silent AD), meaning significant blood pressure elevations occur without the patient experiencing typical symptoms such as headache, sweating, or flushing. Silent AD is clinically concerning because patients may not seek treatment, leading to sustained hypertensive episodes that can cause end-organ damage over time. This finding supports the importance of routine blood pressure monitoring during provocative procedures (urodynamics, bowel programs) in at-risk patients.',
+      moduleId: 'autonomic-dysreflexia',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'A patient with T4 SCI is using nitroglycerin paste to manage an episode of AD. Which medication class is ABSOLUTELY CONTRAINDICATED due to risk of life-threatening hypotension?',
+      options: [
+        'Calcium channel blockers (nifedipine)',
+        'PDE5 inhibitors (sildenafil, tadalafil)',
+        'Alpha-1 blockers (prazosin)',
+        'ACE inhibitors (captopril)',
+      ],
+      correctIndex: 1,
+      explanation:
+          'PDE5 inhibitors (sildenafil, tadalafil, vardenafil) are absolutely contraindicated with nitrates (nitroglycerin paste, sublingual nitroglycerin). Both drugs cause vasodilation through the nitric oxide-cGMP pathway, and their combined use can cause severe, refractory, life-threatening hypotension. This is particularly relevant in SCI patients because PDE5 inhibitors are commonly used for erectile dysfunction. Clinicians and patients must be aware that if a PDE5 inhibitor has been used recently (within 24-72 hours depending on the agent), nitrates must NOT be used for AD management; nifedipine should be used instead.',
+      moduleId: 'autonomic-dysreflexia',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'In a pregnant woman with SCI at T5, the presentation of autonomic dysreflexia during labor can be confused with:',
+      options: [
+        'Gestational diabetes',
+        'Preeclampsia/eclampsia',
+        'Placenta previa',
+        'Postpartum depression',
+      ],
+      correctIndex: 1,
+      explanation:
+          'AD during labor in women with SCI at T6 and above can mimic preeclampsia/eclampsia, as both present with hypertension and potentially headache. However, AD is episodic (triggered by uterine contractions), associated with bradycardia (preeclampsia has tachycardia), and has sweating/flushing above the injury level. Preeclampsia typically has proteinuria and edema. Distinguishing between these conditions is critical because treatment differs: AD requires identifying and removing the noxious stimulus (epidural anesthesia can prevent AD during labor), while preeclampsia requires delivery and possibly magnesium sulfate.',
+      moduleId: 'autonomic-dysreflexia',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'ECG changes observed during episodes of autonomic dysreflexia can include:',
+      options: [
+        'Only sinus tachycardia',
+        'QT prolongation, premature ventricular contractions, and risk of reentrant arrhythmias',
+        'Persistent ST elevation indicating acute MI',
+        'Right bundle branch block only',
+      ],
+      correctIndex: 1,
+      explanation:
+          'AD episodes can cause significant ECG changes including QT prolongation, premature atrial and ventricular contractions (PACs, PVCs), ST-T wave changes, and risk of reentrant arrhythmias due to the extreme autonomic imbalance (massive sympathetic activation below the lesion with parasympathetic dominance above). Severe, prolonged AD episodes can lead to myocardial ischemia and even infarction. Bradycardia is the most common rhythm change due to vagal (parasympathetic) response to hypertension. Cardiac monitoring is warranted during severe AD episodes.',
+      moduleId: 'autonomic-dysreflexia',
+      difficulty: 'board',
+    ),
+
+    // =====================================================================
+    // RESPIRATORY — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'A vital capacity below what threshold generally indicates the need for ventilatory support in acute SCI?',
+      options: [
+        '3 liters',
+        '2 liters',
+        '1 liter',
+        '500 mL',
+      ],
+      correctIndex: 2,
+      explanation:
+          'A vital capacity (VC) below 1 liter (approximately 15-20 mL/kg) is generally considered the threshold for ventilatory support in acute SCI. Other indications include progressive decline in VC, PaO2 <60 mmHg, PaCO2 >50 mmHg, and respiratory fatigue. Serial VC measurements (every 4-6 hours in acute cervical SCI) are critical because respiratory function may deteriorate in the first 48-72 hours due to ascending cord edema. Patients with VC 1-1.5 liters should be closely monitored in an ICU setting.',
+      moduleId: 'respiratory',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Paradoxical breathing pattern in high cervical SCI is characterized by:',
+      options: [
+        'Normal chest and abdominal wall movement during inspiration',
+        'Inward movement of the chest wall with outward abdominal distension during inspiration',
+        'Symmetric bilateral chest expansion with no abdominal movement',
+        'Outward movement of the chest wall with inward abdominal retraction during inspiration',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Paradoxical breathing occurs when the diaphragm contracts (moving the abdomen outward) during inspiration, but the paralyzed intercostal muscles cannot stabilize the rib cage, causing the chest wall to be drawn inward by the negative intrathoracic pressure generated by diaphragmatic descent. This inefficient breathing pattern increases the work of breathing and reduces tidal volume. It is most prominent in the supine position initially but may improve over time as spasticity develops in the intercostal muscles, providing passive chest wall stabilization.',
+      moduleId: 'respiratory',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'In patients with chronic cervical SCI, forced vital capacity (FVC) may paradoxically IMPROVE over the first several months due to:',
+      options: [
+        'Regeneration of phrenic nerve axons',
+        'Development of intercostal spasticity providing passive chest wall stabilization',
+        'Compensatory lung hypertrophy',
+        'Resolution of pulmonary edema',
+      ],
+      correctIndex: 1,
+      explanation:
+          'As spasticity develops in the intercostal muscles (typically weeks to months after injury), the chest wall becomes passively stabilized, reducing paradoxical chest wall motion during inspiration. This improved chest wall mechanics results in a measurable increase in FVC and other pulmonary function parameters. This improvement is one example of spasticity having a beneficial functional effect. However, patients remain at significant risk for respiratory complications due to impaired cough and secretion clearance.',
+      moduleId: 'respiratory',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Phrenic nerve pacing (diaphragm pacing) for ventilator-dependent patients with high cervical SCI requires:',
+      options: [
+        'Intact C3-C5 lower motor neurons (phrenic nerve must be intact)',
+        'Only intact C1-C2 upper motor neurons',
+        'An intact vagus nerve',
+        'Intact intercostal muscle innervation at T1-T6',
+      ],
+      correctIndex: 0,
+      explanation:
+          'Phrenic nerve pacing requires intact C3-C5 lower motor neurons (anterior horn cells) and intact phrenic nerves bilaterally. The pacer stimulates the phrenic nerve, causing diaphragmatic contraction for inspiration. Candidates must have bilateral phrenic nerve integrity confirmed by phrenic nerve conduction studies and/or fluoroscopic assessment of diaphragm movement with electrical stimulation. Patients with lower motor neuron damage at C3-C5 (e.g., extensive anterior horn cell destruction) are NOT candidates. Phrenic pacing can improve quality of life by eliminating or reducing ventilator dependence.',
+      moduleId: 'respiratory',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Glossopharyngeal breathing (frog breathing) in patients with high cervical SCI assists ventilation by:',
+      options: [
+        'Strengthening the diaphragm through exercise',
+        'Using the tongue and pharyngeal muscles to sequentially gulp air into the lungs',
+        'Recruiting accessory muscles of the neck',
+        'Creating negative pressure through pursed lip exhalation',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Glossopharyngeal breathing (GPB) is a technique in which the patient uses the tongue, pharynx, and larynx to sequentially gulp small volumes of air (40-200 mL per gulp) into the lungs, progressively increasing lung volume. Multiple gulps (6-9) constitute one breath. GPB can provide temporary ventilator-free breathing time for patients who are otherwise ventilator dependent, serving as a safety mechanism during equipment failure. It can add 500-1000 mL to vital capacity and is taught as a key self-rescue technique.',
+      moduleId: 'respiratory',
+      difficulty: 'intermediate',
+    ),
+
+    // =====================================================================
+    // CARDIOVASCULAR — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'The characteristic cardiovascular transition seen over time in high-level SCI is:',
+      options: [
+        'Persistent neurogenic shock throughout life',
+        'Transition from orthostatic hypotension in the acute phase to risk of autonomic dysreflexia in the chronic phase',
+        'Progressive hypertension due to renal artery stenosis',
+        'Normalization of all cardiovascular parameters within 6 months',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Patients with high-level SCI (at or above T6) characteristically transition from a state dominated by orthostatic hypotension and neurogenic shock in the acute phase (due to loss of sympathetic vascular tone) to a chronic state where autonomic dysreflexia becomes the predominant cardiovascular concern. This transition occurs as spinal reflex circuits below the injury reorganize and become hyperexcitable. Both conditions reflect the underlying disruption of supraspinal sympathetic control, but they manifest differently as the neurological state evolves.',
+      moduleId: 'cardiovascular',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Current guidelines recommend initiating LMWH for DVT prophylaxis in acute SCI within what time frame?',
+      options: [
+        '6 hours',
+        '24 hours',
+        '72 hours',
+        '7 days',
+      ],
+      correctIndex: 2,
+      explanation:
+          'LMWH (e.g., enoxaparin) for DVT prophylaxis should be initiated within 72 hours of acute SCI, provided there are no active hemorrhagic contraindications. Prophylaxis should continue for at least 8-12 weeks post-injury (the highest risk period for thromboembolic events). Mechanical prophylaxis (pneumatic compression devices, graduated compression stockings) should begin immediately on admission and be used in conjunction with pharmacologic prophylaxis. IVC filter placement may be considered when anticoagulation is absolutely contraindicated.',
+      moduleId: 'cardiovascular',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The mnemonic for remembering that poikilothermia (impaired temperature regulation) occurs with SCI at or above T8 is:',
+      options: [
+        '"T-EIGHT-ture" (temperature)',
+        '"T8 = thermostat off"',
+        '"Eight is great for heat"',
+        '"C3-4-5 keeps alive"',
+      ],
+      correctIndex: 0,
+      explanation:
+          'The mnemonic "temp-EIGHT-ture" helps recall that injuries at or above T8 are associated with significant poikilothermia (inability to regulate body temperature). At this level and above, sufficient loss of sympathetic control over cutaneous blood flow, sweating, and shivering impairs the body\'s thermoregulatory responses below the injury level. Patients become susceptible to both hypothermia and hyperthermia based on environmental conditions. Higher injuries (cervical) produce more severe poikilothermia.',
+      moduleId: 'cardiovascular',
+      difficulty: 'intermediate',
+    ),
+    QuizQuestion(
+      question:
+          'Takotsubo cardiomyopathy (stress-induced cardiomyopathy) in acute SCI is characterized by:',
+      options: [
+        'Coronary artery occlusion causing territorial infarction',
+        'Transient left ventricular apical ballooning with wall motion abnormalities in the absence of obstructive coronary disease',
+        'Chronic progressive dilated cardiomyopathy',
+        'Right ventricular failure from pulmonary hypertension',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Takotsubo cardiomyopathy (stress cardiomyopathy) can occur in acute SCI, particularly cervical injuries, due to the catecholamine surge during the acute injury. It presents with chest pain, ECG changes mimicking myocardial infarction (ST elevation, T-wave inversions), elevated troponin, and characteristic transient apical ballooning of the left ventricle on echocardiography. Coronary angiography reveals no obstructive coronary disease. It is usually reversible with supportive care. Awareness is important to avoid unnecessary invasive coronary interventions.',
+      moduleId: 'cardiovascular',
+      difficulty: 'board',
+    ),
+
+    // =====================================================================
+    // SPASTICITY — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'In the Tardieu Scale assessment of spasticity, R1 and R2 represent:',
+      options: [
+        'R1 = resting muscle tone, R2 = tone during voluntary contraction',
+        'R1 = angle of catch at fast velocity (dynamic component), R2 = passive range of motion at slow velocity (static component)',
+        'R1 = strength of spastic reflex, R2 = frequency of spasms',
+        'R1 = right side, R2 = left side',
+      ],
+      correctIndex: 1,
+      explanation:
+          'The Tardieu Scale assesses spasticity by comparing muscle reaction at different velocities of stretch. R1 is the angle of muscle reaction (catch or clonus) during a FAST passive stretch (capturing the dynamic/velocity-dependent component of spasticity). R2 is the passive range of motion measured during a SLOW stretch (capturing the static component, including contracture). The difference between R2 and R1 represents the dynamic component of spasticity amenable to treatment with antispasticity agents. A small R2-R1 difference suggests fixed contracture.',
+      moduleId: 'spasticity',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The antibiotic ciprofloxacin is dangerous to co-administer with tizanidine because:',
+      options: [
+        'Ciprofloxacin induces CYP3A4, accelerating tizanidine metabolism',
+        'Ciprofloxacin inhibits CYP1A2, causing up to a 10-fold increase in tizanidine serum levels',
+        'Both drugs cause QT prolongation through the same mechanism',
+        'Ciprofloxacin converts tizanidine to a toxic metabolite',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Ciprofloxacin is a potent inhibitor of CYP1A2, which is the primary hepatic enzyme responsible for tizanidine metabolism. Co-administration can increase tizanidine serum levels by up to 10-fold, causing severe hypotension, excessive sedation, and potentially dangerous bradycardia. This is a clinically critical drug interaction because both drugs are commonly prescribed in the SCI population (ciprofloxacin for UTIs, tizanidine for spasticity). Other CYP1A2 inhibitors (fluvoxamine) pose similar risks. Alternative antibiotics or antispasticity agents should be used.',
+      moduleId: 'spasticity',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Intrathecal baclofen (ITB) pump withdrawal is considered a medical emergency. The recommended rescue medication for acute ITB withdrawal is:',
+      options: [
+        'Oral baclofen only',
+        'Cyproheptadine (serotonin antagonist) along with benzodiazepines and reinstitution of intrathecal baclofen',
+        'IV methylprednisolone',
+        'Dantrolene sodium IV',
+      ],
+      correctIndex: 1,
+      explanation:
+          'ITB withdrawal is a potentially fatal medical emergency presenting with rebound spasticity, hyperthermia, rhabdomyolysis, disseminated intravascular coagulation (DIC), multi-organ failure, and seizures. It can mimic neuroleptic malignant syndrome or malignant hyperthermia. Management includes: (1) reinstitution of intrathecal baclofen delivery (troubleshoot pump/catheter), (2) cyproheptadine (serotonin antagonist) as a specific rescue agent, (3) high-dose oral baclofen and benzodiazepines as temporizing measures, (4) supportive care in ICU. Dantrolene may help with hyperthermia but does not address the underlying mechanism.',
+      moduleId: 'spasticity',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Which antispasticity medication is the ONLY one that acts peripherally at the skeletal muscle level?',
+      options: [
+        'Baclofen',
+        'Tizanidine',
+        'Diazepam',
+        'Dantrolene sodium',
+      ],
+      correctIndex: 3,
+      explanation:
+          'Dantrolene sodium is the only commonly used oral antispasticity agent that acts peripherally at the skeletal muscle level. It works by inhibiting calcium release from the sarcoplasmic reticulum, directly reducing the force of muscle contraction. All other first-line antispasticity agents act centrally: baclofen (GABA-B agonist in the spinal cord), tizanidine (alpha-2 adrenergic agonist in the brainstem/spinal cord), and diazepam (GABA-A receptor modulator in the CNS). Dantrolene carries a risk of hepatotoxicity requiring liver function monitoring.',
+      moduleId: 'spasticity',
+      difficulty: 'intermediate',
+    ),
+    QuizQuestion(
+      question:
+          'Abrupt discontinuation of oral baclofen can cause:',
+      options: [
+        'Only mild rebound spasticity',
+        'Seizures, hallucinations, hyperthermia, and potentially fatal withdrawal syndrome',
+        'Peripheral neuropathy',
+        'Permanent increase in spasticity',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Abrupt discontinuation of oral baclofen can precipitate a life-threatening withdrawal syndrome including seizures, hallucinations, psychosis, hyperthermia, rebound severe spasticity, rhabdomyolysis, and multi-organ failure. This occurs because chronic baclofen use causes downregulation of GABA-B receptors; sudden removal leads to uncontrolled excitatory neural activity. Baclofen must always be tapered gradually (reduce by 5-10 mg every few days). This risk exists for both oral and intrathecal baclofen, with ITB withdrawal being even more severe due to higher CNS concentrations.',
+      moduleId: 'spasticity',
+      difficulty: 'board',
+    ),
+
+    // =====================================================================
+    // PAIN SYNDROMES — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'Which medication is the ONLY one with FDA approval specifically for neuropathic pain related to spinal cord injury?',
+      options: [
+        'Gabapentin',
+        'Amitriptyline',
+        'Pregabalin',
+        'Duloxetine',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Pregabalin (Lyrica) is the ONLY medication with FDA approval specifically for the treatment of neuropathic pain associated with spinal cord injury. It binds to the alpha-2-delta subunit of voltage-gated calcium channels, reducing excitatory neurotransmitter release. While gabapentin has a similar mechanism, it has not received specific FDA approval for SCI neuropathic pain. Pregabalin has Level 1 evidence (multiple RCTs) supporting its efficacy in SCI neuropathic pain. Common side effects include dizziness, somnolence, weight gain, and peripheral edema.',
+      moduleId: 'pain-syndromes',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'In the ISCIP (International Spinal Cord Injury Pain) classification, Tier 1 categorizes pain as:',
+      options: [
+        'Mild, moderate, or severe',
+        'Nociceptive or neuropathic',
+        'Acute, subacute, or chronic',
+        'Central or peripheral',
+      ],
+      correctIndex: 1,
+      explanation:
+          'The ISCIP classification uses a three-tier system. Tier 1 divides SCI pain into two broad categories: nociceptive and neuropathic. Tier 2 further classifies each type: nociceptive into musculoskeletal and visceral; neuropathic into at-level, below-level, and other neuropathic pain. Tier 3 specifies the primary pain source or pathology (e.g., shoulder impingement, syringomyelia, compressive neuropathy). This systematic classification framework improves communication, guides treatment selection, and facilitates research across centers.',
+      moduleId: 'pain-syndromes',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'At-level neuropathic pain in SCI is defined as pain occurring within how many dermatomes of the neurological level of injury?',
+      options: [
+        'At the exact level only',
+        'Within 1 dermatome above or below',
+        'Within 3 dermatomes above or below (plus/minus 3)',
+        'Within 5 dermatomes below only',
+      ],
+      correctIndex: 2,
+      explanation:
+          'At-level neuropathic pain is defined as neuropathic pain perceived within plus or minus 3 dermatomes of the neurological level of injury (NLI). Pain more than 3 dermatomes below the NLI is classified as below-level neuropathic pain. At-level pain is thought to arise from damage to the nerve roots, dorsal root entry zone, or spinal cord gray matter at the level of injury, while below-level pain is attributed to abnormal processing in the central somatosensory pathways. The two types may respond differently to treatment.',
+      moduleId: 'pain-syndromes',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'DREZ (Dorsal Root Entry Zone) lesioning for intractable at-level neuropathic pain targets which Rexed laminae of the spinal cord?',
+      options: [
+        'Laminae VI-IX (ventral horn motor neurons)',
+        'Laminae I-V (dorsal horn sensory processing)',
+        'Lamina X (central canal region)',
+        'Laminae VII-VIII (intermediate zone)',
+      ],
+      correctIndex: 1,
+      explanation:
+          'DREZ lesioning is a neurosurgical procedure that creates thermal lesions in Rexed laminae I-V of the dorsal horn at the level of injury. These laminae contain the neurons responsible for receiving, processing, and transmitting nociceptive (pain) signals, including the substantia gelatinosa (lamina II) where C-fiber and A-delta afferents synapse. By destroying these hyperactive pain processing neurons, DREZ lesioning can provide significant relief for intractable at-level neuropathic pain, particularly segmental, burning, or lancinating pain. It is most effective for at-level rather than below-level pain.',
+      moduleId: 'pain-syndromes',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Below-level neuropathic pain in SCI is generally the most difficult pain type to treat. Which of the following is true regarding this pain?',
+      options: [
+        'It only occurs in complete (ASIA A) injuries',
+        'It is perceived diffusely below the NLI, is often described as burning or tingling, and may be present in areas with no sensation to examination',
+        'It responds well to NSAIDs and acetaminophen',
+        'Surgical decompression typically resolves it',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Below-level neuropathic pain occurs more than 3 dermatomes below the NLI. It is described as burning, tingling, squeezing, or electric and can be perceived in areas with complete sensory loss on clinical examination (phantom-type pain). It occurs in both complete and incomplete injuries. It is thought to arise from central sensitization and reorganization of spinal cord and supraspinal somatosensory processing. Treatment is challenging; first-line agents include pregabalin and gabapentin, but response rates are moderate at best.',
+      moduleId: 'pain-syndromes',
+      difficulty: 'intermediate',
+    ),
+
+    // =====================================================================
+    // PRESSURE INJURIES — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'According to the NPUAP guidelines, once a pressure injury has been staged, it should:',
+      options: [
+        'Be reverse-staged as it heals (e.g., Stage 4 becomes Stage 3, then Stage 2)',
+        'NOT be reverse-staged; a healing Stage 4 is documented as "healing Stage 4" or "Stage 4 with granulation"',
+        'Be restaged weekly based on current wound appearance',
+        'Be reclassified as unstageable once it begins healing',
+      ],
+      correctIndex: 1,
+      explanation:
+          'The NPUAP explicitly states that pressure injuries should NOT be reverse-staged. A Stage 4 pressure injury that is healing does not become a Stage 3 or Stage 2 because the tissue that fills the wound is granulation and scar tissue, not the muscle, subcutaneous fat, and dermis that were originally lost. Reverse-staging falsely implies that original tissue has been restored. Proper documentation describes the wound as "healing Stage 4" with descriptors of the wound bed (granulation percentage, dimensions, drainage).',
+      moduleId: 'pressure-injuries',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'A pressure injury involving a mucosal membrane (e.g., from a medical device in the mouth or urethra) is classified as:',
+      options: [
+        'Stage 1',
+        'Stage 2',
+        'Mucosal membrane pressure injury (cannot be numerically staged)',
+        'Deep tissue pressure injury',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Mucosal membrane pressure injuries are found on mucous membranes (oral, urethral, vaginal, rectal) with a history of a medical device in use at the location. Due to the anatomy of mucosal tissues (no keratinized epithelium, no subcutaneous tissue layers comparable to skin), these injuries CANNOT be numerically staged using the standard NPUAP staging system. They are simply documented as "mucosal membrane pressure injury." Common causes include endotracheal tubes, nasogastric tubes, urinary catheters, and oral airways.',
+      moduleId: 'pressure-injuries',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The probe-to-bone test for osteomyelitis underlying a pressure injury has an approximate positive predictive value of:',
+      options: [
+        '50%',
+        '65%',
+        '89%',
+        '99%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'The probe-to-bone test (using a sterile metal probe to palpate bone through a wound) has a positive predictive value of approximately 89% for osteomyelitis in the setting of pressure injuries. If the probe touches bone, there is a very high likelihood of osteomyelitis. This simple bedside test can help guide the need for further imaging (MRI is the most sensitive and specific imaging modality) and biopsy (bone biopsy with culture is the gold standard for confirming osteomyelitis and identifying the causative organism). A negative probe-to-bone test does not exclude osteomyelitis.',
+      moduleId: 'pressure-injuries',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'For assessing nutritional status in wound healing, prealbumin (transthyretin) is preferred over albumin because:',
+      options: [
+        'Prealbumin is more abundant in serum',
+        'Prealbumin has a shorter half-life (2-3 days vs. 20 days for albumin), making it a more responsive marker of acute nutritional changes',
+        'Prealbumin is more specific for protein intake',
+        'Albumin is not measurable in standard laboratory tests',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Prealbumin (transthyretin) has a half-life of approximately 2-3 days, compared to albumin\'s half-life of approximately 20 days. This shorter half-life makes prealbumin a more sensitive and responsive indicator of acute changes in nutritional status and response to nutritional interventions. A prealbumin level below 15 mg/dL indicates significant malnutrition and impaired wound healing capacity. Albumin, while useful, reflects nutritional status from weeks ago and is also affected by inflammation, liver disease, and fluid status, reducing its specificity.',
+      moduleId: 'pressure-injuries',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'A Marjolin ulcer should be suspected and biopsy performed when a chronic pressure injury or wound:',
+      options: [
+        'Fails to heal within 2 weeks despite appropriate treatment',
+        'Has been present for over 10 years and shows changes in appearance (raised edges, increased drainage, friable tissue)',
+        'Develops a foul odor during the first month of treatment',
+        'Shows signs of cellulitis around the wound margins',
+      ],
+      correctIndex: 1,
+      explanation:
+          'A Marjolin ulcer is a squamous cell carcinoma (SCC) that arises in chronic wounds, burn scars, or pressure injuries, typically after more than 10 years of chronicity. Warning signs include changes in wound appearance (raised or everted edges, increased or bloody drainage, friable/fungating tissue, failure to heal despite optimal treatment, or new pain in a previously insensate area). Biopsy of any chronic wound that undergoes unexplained changes after prolonged duration is mandatory to rule out malignant transformation. These SCCs are typically aggressive with metastatic potential.',
+      moduleId: 'pressure-injuries',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The recurrence rate of pressure injuries after surgical flap closure is approximately:',
+      options: [
+        '5-10%',
+        '15-20%',
+        '30-60%',
+        '80-90%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Pressure injury recurrence after surgical flap closure is distressingly high, approximately 30-60% depending on the study and follow-up period. This high recurrence rate reflects the persistence of underlying risk factors: ongoing insensibility, immobility, incontinence, malnutrition, and behavioral factors (non-adherence to pressure relief). Successful outcomes require comprehensive patient education, psychosocial support, optimized equipment (pressure-redistributing surfaces), and lifelong commitment to pressure relief. Surgical closure should not be performed unless the patient demonstrates understanding and compliance with prevention strategies.',
+      moduleId: 'pressure-injuries',
+      difficulty: 'board',
+    ),
+
+    // =====================================================================
+    // SEXUALITY & FERTILITY — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'Reflexogenic erections are preserved in approximately what percentage of men with upper motor neuron (suprasacral) SCI?',
+      options: [
+        '25%',
+        '50%',
+        'Greater than 90%',
+        '100%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Reflexogenic erections are preserved in greater than 90% of men with UMN (suprasacral) SCI because the sacral reflex arc (S2-S4) remains intact. In contrast, only approximately 25% of men with LMN (sacral/cauda equina) injuries retain erectile function (psychogenic erections via the T11-L2 sympatholumbar pathway). For erectile dysfunction in SCI, first-line treatment is PDE5 inhibitors (sildenafil, tadalafil); second-line includes intracavernosal injection therapy (alprostadil); third-line includes vacuum erection devices and penile prosthesis implantation.',
+      moduleId: 'sexuality-fertility',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Penile vibratory stimulation (PVS) for sperm retrieval in men with SCI has the highest success rate (approximately 86%) in patients with injuries at or above:',
+      options: [
+        'C5',
+        'T6',
+        'T10',
+        'L1',
+      ],
+      correctIndex: 2,
+      explanation:
+          'PVS success rates are highest (approximately 86%) in men with injuries at T10 and above because the ejaculatory reflex arc (T11-L2 sympathetic, S2-S4 somatic) is intact. Below T10, the success rate drops significantly because the reflex pathway may be partially or completely disrupted. If PVS fails, electroejaculation (EEJ) is the next option. AD precautions are essential during PVS and EEJ in patients with injuries at T6 and above. Nifedipine prophylaxis may be administered prior to the procedure.',
+      moduleId: 'sexuality-fertility',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'In evaluating male infertility after SCI, which semen analysis finding is the worst predictive factor for achieving pregnancy?',
+      options: [
+        'Low sperm count',
+        'Poor motility',
+        'Leukocytospermia (elevated white blood cells in semen)',
+        'Abnormal morphology',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Leukocytospermia (elevated white blood cells in semen) is the worst predictive factor for fertility outcomes in men with SCI. The elevated WBCs produce reactive oxygen species (ROS) that cause oxidative damage to sperm DNA and membranes, significantly reducing sperm viability and fertilization capacity. Men with SCI commonly have abnormal semen parameters including low motility, high WBC counts, and elevated seminal cytokines. Treatment strategies include frequent ejaculation (to reduce stasis), anti-inflammatory agents, and assisted reproductive techniques (IUI, IVF, ICSI).',
+      moduleId: 'sexuality-fertility',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The most common testicular biopsy finding in men with chronic SCI is:',
+      options: [
+        'Sertoli cell-only syndrome',
+        'Normal spermatogenesis',
+        'Seminiferous tubule atrophy (with impaired spermatogenesis)',
+        'Testicular carcinoma in situ',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Seminiferous tubule atrophy with varying degrees of impaired spermatogenesis is the most common histological finding on testicular biopsy in men with chronic SCI. Multiple factors contribute: scrotal hyperthermia (due to prolonged sitting in wheelchair), recurrent UTIs, elevated intrascrotal temperature from impaired thermoregulation, stasis of seminal fluid, and possible endocrine dysfunction. Despite these changes, spermatogenesis is usually sufficient for assisted reproduction (IVF/ICSI) even when natural ejaculation and fertility are impaired.',
+      moduleId: 'sexuality-fertility',
+      difficulty: 'board',
+    ),
+
+    // =====================================================================
+    // MSK COMPLICATIONS & REHAB CONTINUUM — NEW
+    // =====================================================================
+    QuizQuestion(
+      question:
+          'Expected functional outcomes for a patient with C6 complete (ASIA A) SCI include independence in feeding at approximately what rate?',
+      options: [
+        '16%',
+        '50%',
+        '75%',
+        '95%',
+      ],
+      correctIndex: 0,
+      explanation:
+          'According to functional outcome data, only approximately 16% of patients with C6 complete SCI achieve full independence in feeding (without setup or adaptive equipment assistance). However, independence in wheelchair propulsion on flat surfaces is much higher at approximately 88%. C6 patients have intact wrist extensors but lack finger flexors and intrinsics, relying on tenodesis grasp. They typically require adaptive equipment and setup assistance for feeding, can perform some transfers with a sliding board, and can achieve modified independence in grooming and upper body dressing.',
+      moduleId: 'rehab-continuum',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The energy cost of ambulation for a patient with thoracic-level paraplegia using KAFOs and crutches is approximately how many times greater than normal walking?',
+      options: [
+        '2-3 times',
+        '6-12 times',
+        '15-20 times',
+        '25-30 times',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Ambulation at thoracic levels with KAFOs and crutches requires approximately 6-12 times the energy expenditure of normal walking. This enormous energy cost is the primary reason why most thoracic-level paraplegics who initially learn to walk with orthoses ultimately abandon ambulation in favor of wheelchair mobility for community function. The higher the injury level, the greater the energy cost. Only about 5-10% of thoracic-level paraplegics continue to ambulate functionally in the community long-term. Wheelchair mobility is typically 10-20% more efficient than normal walking.',
+      moduleId: 'rehab-continuum',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The earliest laboratory marker to become elevated in heterotopic ossification (HO) is:',
+      options: [
+        'ESR (erythrocyte sedimentation rate)',
+        'C-reactive protein (CRP)',
+        'Serum alkaline phosphatase',
+        'Serum calcium',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Serum alkaline phosphatase is the earliest laboratory marker to rise in HO, often elevating before clinical or radiographic findings are apparent. However, it is not specific for HO (can be elevated in fractures, liver disease, etc.). The triple-phase bone scan is the most sensitive early imaging test, showing uptake before radiographic changes. Plain radiographs may not show HO until 2-6 weeks after onset. CT provides the best anatomical detail for surgical planning. The combination of elevated alkaline phosphatase with clinical suspicion (swelling, warmth, decreased ROM around a joint below the injury level) should prompt bone scan.',
+      moduleId: 'msk-complications',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Carpal tunnel syndrome (CTS) affects approximately what percentage of long-term manual wheelchair users?',
+      options: [
+        '5-10%',
+        '20-30%',
+        '40-66%',
+        '80-90%',
+      ],
+      correctIndex: 2,
+      explanation:
+          'Carpal tunnel syndrome affects approximately 40-66% of long-term manual wheelchair users, making it one of the most prevalent upper extremity overuse injuries in this population. The repetitive forces on the wrist during wheelchair propulsion, transfers, and weight-relief raises cause chronic compression of the median nerve in the carpal tunnel. This is particularly concerning because hand function is critical for independence in SCI. Prevention includes proper wheelchair ergonomics, gloves, ergonomic push rims, limiting repetitive strain, and considering power mobility for longer distances.',
+      moduleId: 'msk-complications',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'The FIM (Functional Independence Measure) maximum total score is 126, which is composed of:',
+      options: [
+        'Motor score 91 + cognitive score 35',
+        'Motor score 100 + cognitive score 26',
+        'Motor score 78 + cognitive score 48',
+        'Motor score 105 + cognitive score 21',
+      ],
+      correctIndex: 0,
+      explanation:
+          'The FIM total maximum score is 126 points, composed of a motor subscale (91 points, 13 items) and a cognitive subscale (35 points, 5 items). Each of the 18 items is scored 1 (total assist) to 7 (complete independence). Motor items cover self-care (eating, grooming, bathing, dressing upper/lower, toileting), sphincter control (bladder, bowel), transfers (bed/chair, toilet, tub/shower), and locomotion (walk/wheelchair, stairs). Cognitive items cover comprehension, expression, social interaction, problem solving, and memory.',
+      moduleId: 'rehab-continuum',
+      difficulty: 'intermediate',
+    ),
+    QuizQuestion(
+      question:
+          'The primary surgical procedure for restoring active elbow extension in C5-C6 tetraplegia involves:',
+      options: [
+        'Biceps to triceps tendon transfer',
+        'Posterior deltoid to triceps tendon transfer',
+        'Latissimus dorsi to triceps transfer',
+        'Brachioradialis to triceps transfer',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Posterior deltoid to triceps tendon transfer is the most common surgical procedure to restore active elbow extension in patients with C5-C6 tetraplegia. The posterior deltoid (innervated by C5-C6, axillary nerve) serves as the donor muscle, and its tendon is lengthened with a graft and attached to the triceps tendon. Restoration of elbow extension greatly improves reach, wheelchair propulsion, transfers, and weight-relief raises. Candidates must have a strong (at least 4/5) posterior deltoid and be at least 6-12 months post-injury with stable neurological status.',
+      moduleId: 'msk-complications',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'Osteoporosis below the level of SCI results in the greatest bone mineral density loss at which skeletal sites?',
+      options: [
+        'Lumbar spine and femoral neck',
+        'Distal femur and proximal tibia',
+        'Calcaneus and metatarsals',
+        'Iliac crest and sacrum',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Sublesional osteoporosis in SCI produces the greatest bone mineral density (BMD) loss at the distal femur and proximal tibia, which are also the most common fracture sites. BMD at these sites can decrease by 25-50% within the first 1-2 years after injury and continues to decline, reaching a steady state at 3-8 years. Notably, the lumbar spine may show falsely normal or elevated BMD on DXA due to degenerative changes, heterotopic ossification, or compression fracture artifact. DXA scanning at the distal femur and proximal tibia is recommended for accurate assessment.',
+      moduleId: 'msk-complications',
+      difficulty: 'board',
+    ),
+    QuizQuestion(
+      question:
+          'A patient with T1 paraplegia should be expected to achieve independence in all of the following EXCEPT:',
+      options: [
+        'Manual wheelchair propulsion on all surfaces',
+        'All transfers including floor-to-wheelchair',
+        'Complete self-care including bowel and bladder programs',
+        'Independent ambulation without assistive devices',
+      ],
+      correctIndex: 3,
+      explanation:
+          'Patients with T1 complete paraplegia have full upper extremity function (including hand intrinsics) and can achieve independence in virtually all wheelchair-level activities: all ADLs, transfers (including floor-to-wheelchair), manual wheelchair propulsion on all surfaces, driving with hand controls, and independent bowel and bladder management. However, they cannot ambulate independently without assistive devices because all lower extremity motor function is absent. Ambulation would require bilateral KAFOs and crutches with extremely high energy cost, making it impractical for community mobility.',
+      moduleId: 'rehab-continuum',
+      difficulty: 'intermediate',
+    ),
+    QuizQuestion(
+      question:
+          'Which imaging modality is most sensitive for early detection of heterotopic ossification AND most specific for confirming the diagnosis?',
+      options: [
+        'Triple-phase bone scan for both sensitivity and specificity',
+        'Triple-phase bone scan is most sensitive early; CT is most specific for anatomical detail',
+        'Plain radiographs for both',
+        'MRI for both sensitivity and specificity',
+      ],
+      correctIndex: 1,
+      explanation:
+          'Triple-phase bone scan is the most sensitive imaging modality for early detection of HO, showing increased uptake in all three phases before any radiographic changes are visible (weeks earlier than plain films). However, it lacks specificity (can be positive with fractures, infection, or DVT). CT scan provides the best anatomical detail and specificity, clearly delineating the extent and maturity of HO and its relationship to neurovascular structures, making it essential for surgical planning. Plain radiographs remain useful for monitoring maturation but are insensitive in early disease.',
+      moduleId: 'msk-complications',
+      difficulty: 'intermediate',
+    ),
   ];
 
   static List<QuizQuestion> getRandomQuiz(int count) {

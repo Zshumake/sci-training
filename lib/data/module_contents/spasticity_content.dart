@@ -482,7 +482,7 @@ final TopicData spasticityContent = TopicData(
           themeColor: const Color(0xFF059669),
           backgroundColor: const Color(0xFFECFDF5),
           points: [
-            'Serial casting: progressive stretch using plaster or fiberglass casts, changed every 3-7 days to increase ROM (especially ankle, elbow, knee)',
+            'Serial casting: progressive sustained stretch using plaster or fiberglass casts, changed every 5-7 days with each successive cast positioning the joint at slightly greater ROM — remodels shortened soft tissues (muscle, tendon, joint capsule); most effective when combined with botulinum toxin to reduce dynamic component; complications include pressure injury under cast (especially in insensate skin), skin maceration, DVT from immobilization',
             'Splinting: static or dynamic splints to maintain range and prevent contracture development',
             'Standing frames and standing programs: prolonged stretch through weight bearing; 30-60 min daily',
             'Cryotherapy: cold application reduces nerve conduction velocity and gamma motor neuron activity (temporary effect)',
@@ -495,6 +495,29 @@ final TopicData spasticityContent = TopicData(
         PearlBlock(
           'Board Pearl: Phenol vs Botox Decision',
           'Choose PHENOL when: (1) the target is a pure motor nerve or motor point, (2) large muscle groups need treatment (exceeding Botox dose limits), (3) immediate effect is needed, (4) cost is a significant factor, or (5) the patient has developed antibodies to botulinum toxin. Choose BOTOX when: (1) targeting mixed sensorimotor nerves (lower dysesthesia risk), (2) the patient prefers delayed painless onset over immediate injection discomfort, or (3) treating small specific muscles requiring precise dosing.',
+        ),
+        PearlBlock(
+          'Board Pearl: Ciprofloxacin + Tizanidine = Contraindicated',
+          'Ciprofloxacin is a potent CYP1A2 inhibitor. Tizanidine is primarily metabolized by CYP1A2. Co-administration increases tizanidine blood levels by approximately 10-FOLD, causing severe hypotension, excessive sedation, and toxicity. This interaction is highly clinically relevant because fluoroquinolones (ciprofloxacin, levofloxacin) are commonly prescribed for UTI in SCI patients who may already be on tizanidine for spasticity. Fluvoxamine (another CYP1A2 inhibitor) is also contraindicated with tizanidine. Always check for this interaction.',
+        ),
+        PearlBlock(
+          'Board Pearl: Cyproheptadine in ITB Withdrawal',
+          'Cyproheptadine (4-8 mg PO every 6-8 hours) is a serotonin antagonist used as an adjunct in ITB pump withdrawal. The rationale: loss of GABA-B-mediated presynaptic inhibition of serotonin release during baclofen withdrawal may produce excessive serotonin activity, contributing to the syndrome that resembles serotonin syndrome and NMS. Cyproheptadine mitigates this serotonergic component. The full ITB withdrawal protocol: restore ITB delivery, oral baclofen (10-20 mg Q2-6h), IV benzodiazepines, cyproheptadine, aggressive IV hydration, and ICU admission.',
+        ),
+        BulletCardBlock(
+          title: 'Serial Casting for Contractures',
+          themeColor: const Color(0xFF7C3AED),
+          backgroundColor: const Color(0xFFF5F3FF),
+          points: [
+            'Conservative orthopedic technique for moderate contracture with some remaining dynamic (spastic) component',
+            'Joint is positioned in a cast at the maximum achievable ROM',
+            'Cast is changed every 5-7 days, with each successive cast at slightly greater range',
+            'Progressive sustained stretch remodels shortened soft tissues (muscle, tendon, joint capsule)',
+            'Most commonly applied to the ankle (equinovarus) and elbow (flexion contracture)',
+            'BEST results when combined with botulinum toxin injection (reduces dynamic component, allowing more effective casting)',
+            'Indicated when Tardieu R2-R1 gap shows mixed dynamic and contracture components',
+            'Complications: pressure injury under cast (especially in insensate skin — must monitor carefully), skin maceration, HO exacerbation, DVT from immobilization',
+          ],
         ),
       ],
     ),

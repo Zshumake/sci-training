@@ -60,7 +60,7 @@ final TopicData painSyndromesContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: ISCIP Classification',
-          'The ISCIP replaced earlier classification systems (Bryce-Ragnarsson, Siddall, Cardenas). Key features: (1) Three-tier hierarchical system. (2) A patient can have MULTIPLE pain types simultaneously. (3) The critical Tier 2 distinction is at-level vs below-level neuropathic pain — this determines treatment approach and prognosis. (4) At-level is within 3 dermatomes of NLI; below-level is >3 dermatomes below NLI.',
+          'The ISCIP replaced earlier classification systems (Bryce-Ragnarsson, Siddall, Cardenas). Key features: (1) Three-tier hierarchical system developed by IASP, ISCoS, and ASIA, published in 2012. (2) A patient can have MULTIPLE pain types simultaneously. (3) The critical Tier 2 distinction is at-level vs below-level neuropathic pain — this determines treatment approach and prognosis. (4) At-level is within 3 dermatomes of NLI; below-level is >3 dermatomes below NLI. Validation: ~79% accuracy for nociceptive pain, ~77% for neuropathic pain, 84% for musculoskeletal subtype at Tier 2.',
         ),
         BulletCardBlock(
           title: 'Pain Epidemiology & Impact',
@@ -152,8 +152,8 @@ final TopicData painSyndromesContent = TopicData(
           themeColor: const Color(0xFF059669),
           backgroundColor: const Color(0xFFECFDF5),
           points: [
-            'Gabapentin (Neurontin): 300-3600 mg/day in divided doses (TID); most studied agent for SCI neuropathic pain; start 100-300 mg at bedtime, titrate weekly',
-            'Pregabalin (Lyrica): 150-600 mg/day in divided doses (BID); ONLY FDA-approved drug specifically for SCI neuropathic pain; more predictable pharmacokinetics than gabapentin (linear absorption)',
+            'Pregabalin (Lyrica): 75-600 mg/day in divided doses (BID); the ONLY FDA-approved medication specifically for SCI neuropathic pain; start 75 mg BID, titrate weekly; linear dose-proportional absorption',
+            'Gabapentin (Neurontin): 300-3600 mg/day in divided doses (TID); OFF-LABEL use for SCI neuropathic pain (no FDA approval for this indication); start 300 mg at bedtime, titrate by 300 mg every 3-7 days; often preferred first due to lower cost despite off-label status',
             'Tricyclic antidepressants (TCAs): amitriptyline 25-150 mg at bedtime; nortriptyline preferred (fewer anticholinergic effects — less sedation, urinary retention, constipation). Mechanism: inhibits serotonin and norepinephrine reuptake + sodium channel blockade',
             'SNRIs: duloxetine (Cymbalta) 60-120 mg daily; venlafaxine 150-225 mg daily — less evidence specifically in SCI but effective for neuropathic pain in general',
           ],
@@ -197,20 +197,26 @@ final TopicData painSyndromesContent = TopicData(
           ],
         ),
         PearlBlock(
+          'Board Pearl: Pregabalin vs Gabapentin — FDA Status',
+          'Pregabalin is the ONLY FDA-approved medication for SCI neuropathic pain. Gabapentin is used OFF-LABEL for the same indication. In clinical practice, gabapentin is equally effective and often preferred as the initial agent due to lower cost, with pregabalin reserved for patients who do not tolerate gabapentin or who prefer twice-daily dosing. This FDA distinction is a high-yield board fact: if asked which medication is FDA-approved for SCI neuropathic pain, the answer is PREGABALIN, not gabapentin.',
+        ),
+        PearlBlock(
           'Board Pearl: Opioid Caution in SCI',
-          'Opioids should be avoided or used only with extreme caution for chronic pain in SCI. Specific concerns: (1) worsen constipation — already a major problem with neurogenic bowel, (2) cause sedation and respiratory depression — dangerous in patients with compromised respiratory function from high-level SCI, (3) high addiction potential in a population with elevated depression rates, (4) NOT first-line for neuropathic pain (gabapentinoids and antidepressants are more effective for neuropathic mechanisms), (5) may impair rehabilitation participation and cognitive function.',
+          'Opioids should be avoided or used only with extreme caution for chronic pain in SCI. Specific concerns: (1) worsen constipation — already a major problem with neurogenic bowel, (2) cause sedation and respiratory depression — dangerous in patients with compromised respiratory function from high-level SCI, (3) high addiction potential in a population with elevated depression rates, (4) NOT first-line for neuropathic pain (gabapentinoids and antidepressants are more effective for neuropathic mechanisms), (5) may impair rehabilitation participation and cognitive function, (6) risk of opioid-induced hyperalgesia worsening central sensitization, (7) endocrine effects including hypogonadism and osteoporosis in a population already at risk.',
         ),
         TableBlock(
           title: 'Neuropathic Pain Pharmacotherapy Ladder',
-          columns: ['Line', 'Agents', 'Evidence Level'],
+          columns: ['Line', 'Agent', 'Dose Range', 'Key Considerations'],
           rows: [
-            ['First-line', 'Pregabalin, gabapentin', 'Strong (Level A) — pregabalin is FDA-approved for SCI pain'],
-            ['First-line', 'TCAs (amitriptyline/nortriptyline)', 'Moderate (Level B) — nortriptyline preferred for fewer side effects'],
-            ['Second-line', 'SNRIs (duloxetine, venlafaxine)', 'Moderate — less SCI-specific evidence'],
-            ['Second-line', 'Tramadol', 'Moderate — mixed opioid/SNRI mechanism'],
-            ['Third-line', 'Lamotrigine', 'Limited — mainly for incomplete SCI'],
-            ['Third-line', 'Strong opioids', 'Use with extreme caution — last resort'],
-            ['Interventional', 'ITB, DREZ, SCS', 'Variable — DREZ best for at-level pain'],
+            ['First', 'Pregabalin', '75-600 mg/day', 'FDA-approved for SCI neuropathic pain; start 75 mg BID, titrate weekly'],
+            ['First', 'Gabapentin', '300-3,600 mg/day', 'OFF-LABEL; start 300 mg QHS, titrate by 300 mg q3-7 days; renal dose adjustment'],
+            ['Second', 'Amitriptyline', '25-150 mg/day', 'Anticholinergic effects; avoid in cardiac disease; monitor for urinary retention'],
+            ['Second', 'Nortriptyline', '25-150 mg/day', 'Fewer anticholinergic effects than amitriptyline; better tolerated'],
+            ['Second', 'Duloxetine', '30-120 mg/day', 'SNRI; dual pain and mood benefits; hepatic metabolism'],
+            ['Third', 'Tramadol', '50-400 mg/day', 'Weak opioid + SNRI properties; seizure risk; serotonin syndrome risk with SSRIs/SNRIs'],
+            ['Adjunctive', 'Topical lidocaine', '5% patch/cream', 'For localized at-level pain; minimal systemic absorption'],
+            ['Adjunctive', 'Capsaicin', '8% high-concentration patch', 'For localized pain; requires clinic application'],
+            ['Last resort', 'Opioids', 'Varies', 'Avoid chronic use; risk of tolerance, dependence, hyperalgesia, constipation'],
           ],
         ),
       ],
@@ -304,7 +310,19 @@ final TopicData painSyndromesContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: Shoulder Pain in SCI',
-          'Shoulder pain is the #1 musculoskeletal complaint in wheelchair users. The supraspinatus tendon is most commonly affected (impingement and rotator cuff tears). Prevention is more important than treatment: proper wheelchair fitting, strengthening of external rotators and scapular stabilizers, long smooth propulsion strokes, and weight management. The PVA Clinical Practice Guidelines for Preservation of Upper Limb Function are the standard reference. For boards, remember: the shoulder is being used as a WEIGHT-BEARING joint in wheelchair users — it was not designed for this.',
+          'Shoulder pain is the #1 musculoskeletal complaint in wheelchair users. The supraspinatus tendon is most commonly affected (impingement and rotator cuff tears). Prevention is more important than treatment: proper wheelchair fitting, strengthening of external rotators and scapular stabilizers, long smooth propulsion strokes, and weight management. The PVA/Consortium for Spinal Cord Medicine Clinical Practice Guidelines for Preservation of Upper Limb Function are the standard reference. Key prevention recommendations: (1) Axle position slightly anterior to shoulder, (2) Seat height allowing 100-120 degrees elbow flexion at push rim top, (3) Long semicircular propulsion strokes allowing hand to drift below push rim during recovery, (4) Minimize total daily transfers, (5) Strengthen external rotators and scapular stabilizers. Active MWC users complete ~2,700 push-rim rotations per day. By 20 years post-injury, up to 72% report shoulder pain.',
+        ),
+        TableBlock(
+          title: 'Distinguishing Features of SCI Pain Types',
+          columns: ['Feature', 'Musculoskeletal', 'Visceral', 'At-Level Neuropathic', 'Below-Level Neuropathic'],
+          rows: [
+            ['Quality', 'Aching, dull, movement-related', 'Cramping, colicky, dull', 'Burning, shooting, electric', 'Burning, tingling, diffuse'],
+            ['Location', 'Specific joint/muscle', 'Abdominal/pelvic', 'Within 3 dermatomes of NLI', 'Diffuse below NLI'],
+            ['Provocation', 'Movement, loading', 'Visceral distention, eating', 'Touch (allodynia), position', 'Often spontaneous'],
+            ['Temporal', 'Intermittent, activity-related', 'Variable, related to function', 'Constant with paroxysms', 'Constant'],
+            ['Response to analgesics', 'NSAIDs, acetaminophen helpful', 'Treat underlying cause', 'Gabapentinoids, TCAs', 'Often refractory'],
+            ['Physical exam', 'Tenderness, reduced ROM', 'Distention, guarding (if sensation preserved)', 'Allodynia, hyperalgesia at NLI', 'Sensory loss with pain'],
+          ],
         ),
       ],
     ),
@@ -373,7 +391,7 @@ final TopicData painSyndromesContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: DREZ Lesioning',
-          'Dorsal Root Entry Zone (DREZ) lesioning is a surgical procedure that ablates the DREZ (Lissauer tract and substantia gelatinosa layers I-V) at the level of injury. It is most effective for AT-LEVEL neuropathic pain (60-80% success rate) because the abnormal neural generators are located at the injury zone. DREZ is NOT effective for BELOW-LEVEL central pain because the pain is generated by thalamic and cortical reorganization ABOVE the surgical site. This distinction is a high-yield board concept.',
+          'Dorsal Root Entry Zone (DREZ) lesioning is a neurosurgical procedure involving selective destruction of the dorsal horn (Rexed laminae I-V) and Lissauer tract at the level of injury. It ablates hyperexcitable second-order nociceptive neurons and disrupts aberrant pain signaling at the zone of injury. DREZ is most effective for segmental AT-LEVEL neuropathic pain with a dermatomal distribution (60-80% success rate for significant pain reduction). It is NOT effective for BELOW-LEVEL central pain because the pain is generated by thalamic and cortical reorganization ABOVE the surgical site. Patient selection is critical — carries risk of additional motor weakness if ventral horn is inadvertently involved.',
         ),
         BulletCardBlock(
           title: 'Emerging Therapies for Central Pain',
@@ -433,6 +451,21 @@ final TopicData painSyndromesContent = TopicData(
             'Self-management programs: education, goal setting, peer support improve long-term outcomes',
             'Sleep hygiene: chronic pain disrupts sleep, and sleep deprivation lowers pain thresholds — bidirectional relationship',
             'Substance abuse screening: elevated risk for opioid misuse, alcohol use, and cannabis use disorder in SCI patients with chronic pain',
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Multidimensional Pain Assessment Tools',
+          themeColor: const Color(0xFF0D9488),
+          backgroundColor: const Color(0xFFF0FDFA),
+          points: [
+            'Pain intensity: Numerical Rating Scale (NRS 0-10), Visual Analog Scale (VAS)',
+            'Neuropathic pain quality: Neuropathic Pain Symptom Inventory (NPSI), Douleur Neuropathique 4 (DN4), Leeds Assessment of Neuropathic Symptoms and Signs (LANSS)',
+            'Pain interference: Brief Pain Inventory (BPI) interference subscale — measures how pain disrupts daily function',
+            'Depression screening: Patient Health Questionnaire-9 (PHQ-9) — pain and depression are strongly bidirectional',
+            'Anxiety screening: Generalized Anxiety Disorder-7 (GAD-7)',
+            'Sleep quality: Pittsburgh Sleep Quality Index (PSQI) or Insomnia Severity Index (ISI)',
+            'Pain interference is often a more clinically meaningful outcome measure than pain intensity alone',
+            'Concurrent TBI (present in up to 60% of traumatic SCI) may impair self-report — use behavioral pain assessment tools',
           ],
         ),
         MnemonicBlock(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_theme.dart';
+import '../../../core/isncsci/isncsci_algorithm.dart';
+import '../../../core/isncsci/isncsci_exam_model.dart' as isncsci;
 
 /// Full list of sensory dermatome levels tested in the ISNCSCI exam.
 const List<String> _sensoryLevels = [
@@ -37,6 +39,7 @@ const List<String> _allLevels = [
 int _levelIndex(String level) => _allLevels.indexOf(level);
 
 /// Returns whichever level is more rostral (lower index).
+// ignore: unused_element
 String _moreRostral(String a, String b) {
   final ia = _levelIndex(a);
   final ib = _levelIndex(b);
@@ -118,6 +121,7 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   /// Determines the sensory level on one side for a given modality map.
   /// The sensory level is the most caudal dermatome with a score of 2 where
   /// all levels rostral to it also score 2.
+  // ignore: unused_element
   String _sensoryLevel(Map<String, int> scores) {
     String level = 'C1'; // intact above C2 by definition
     for (final s in _sensoryLevels) {
@@ -137,6 +141,7 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   ///
   /// For segments without a testable myotome (e.g. T2-L1), motor level is
   /// presumed to follow sensory level if sensory is intact.
+  // ignore: unused_element
   String _motorLevel(
     Map<String, int> motorScores,
     Map<String, int> ltScores,
@@ -184,6 +189,7 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   }
 
   /// Determines whether sacral sparing is present.
+  // ignore: unused_element
   bool get _sacralSparing {
     // Sensation at S4-5 (LT or PP) on either side, or DAP, or VAC.
     final ltRS45 = _ltRight['S45'] ?? 0;
@@ -194,6 +200,7 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   }
 
   /// Counts how many key muscles below [nli] have grade >= 3 on both sides.
+  // ignore: unused_element
   int _motorBelowWithGrade3OrMore(String nli) {
     final nliIdx = _levelIndex(nli);
     int count = 0;
@@ -208,6 +215,7 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   }
 
   /// Total number of key muscles below the NLI (both sides).
+  // ignore: unused_element
   int _totalMotorBelowNLI(String nli) {
     final nliIdx = _levelIndex(nli);
     int count = 0;
@@ -221,6 +229,7 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
 
   /// Whether motor function exists more than 3 levels below the motor level
   /// on either side.
+  // ignore: unused_element
   bool _motorMoreThan3BelowMotorLevel(String motorLevelR, String motorLevelL) {
     bool check(String motorLevel, Map<String, int> scores) {
       final mlIdx = _levelIndex(motorLevel);
@@ -236,145 +245,89 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
     return check(motorLevelR, _motorRight) || check(motorLevelL, _motorLeft);
   }
 
-  /// Computes the full results map.
+  /// Converts the widget's internal score maps to a Praxis ISNCSCI Exam object
+  /// and runs the validated algorithm to compute classification and totals.
   Map<String, String> _computeResults() {
-    // Sensory levels (most caudal intact for each modality, then take most
-    // rostral across modalities for each side).
-    final rLT = _sensoryLevel(_ltRight);
-    final rPP = _sensoryLevel(_ppRight);
-    final lLT = _sensoryLevel(_ltLeft);
-    final lPP = _sensoryLevel(_ppLeft);
+    // Bridge: convert widget int maps to Praxis string-based Exam model.
+    // Widget uses 'S45' key; Praxis uses 'S4_5' field name.
+    String s(int? v) => '${v ?? 0}';
 
-    final sensoryR = _moreRostral(rLT, rPP);
-    final sensoryL = _moreRostral(lLT, lPP);
+    isncsci.Sensory buildSensory(Map<String, int> scores) => isncsci.Sensory(
+          c2: s(scores['C2']), c3: s(scores['C3']), c4: s(scores['C4']),
+          c5: s(scores['C5']), c6: s(scores['C6']), c7: s(scores['C7']),
+          c8: s(scores['C8']), t1: s(scores['T1']), t2: s(scores['T2']),
+          t3: s(scores['T3']), t4: s(scores['T4']), t5: s(scores['T5']),
+          t6: s(scores['T6']), t7: s(scores['T7']), t8: s(scores['T8']),
+          t9: s(scores['T9']), t10: s(scores['T10']), t11: s(scores['T11']),
+          t12: s(scores['T12']), l1: s(scores['L1']), l2: s(scores['L2']),
+          l3: s(scores['L3']), l4: s(scores['L4']), l5: s(scores['L5']),
+          s1: s(scores['S1']), s2: s(scores['S2']), s3: s(scores['S3']),
+          s4_5: s(scores['S45']),
+        );
 
-    // Motor levels.
-    final motorR = _motorLevel(_motorRight, _ltRight, _ppRight);
-    final motorL = _motorLevel(_motorLeft, _ltLeft, _ppLeft);
+    isncsci.Motor buildMotor(Map<String, int> scores) => isncsci.Motor(
+          c5: s(scores['C5']), c6: s(scores['C6']), c7: s(scores['C7']),
+          c8: s(scores['C8']), t1: s(scores['T1']), l2: s(scores['L2']),
+          l3: s(scores['L3']), l4: s(scores['L4']), l5: s(scores['L5']),
+          s1: s(scores['S1']),
+        );
 
-    // NLI is the most rostral of the four.
-    String nli = sensoryR;
-    nli = _moreRostral(nli, sensoryL);
-    nli = _moreRostral(nli, motorR);
-    nli = _moreRostral(nli, motorL);
+    final exam = isncsci.Exam(
+      right: isncsci.ExamSide(
+        motor: buildMotor(_motorRight),
+        lightTouch: buildSensory(_ltRight),
+        pinPrick: buildSensory(_ppRight),
+      ),
+      left: isncsci.ExamSide(
+        motor: buildMotor(_motorLeft),
+        lightTouch: buildSensory(_ltLeft),
+        pinPrick: buildSensory(_ppLeft),
+      ),
+      voluntaryAnalContraction:
+          _vac ? isncsci.BinaryObservation.yes : isncsci.BinaryObservation.no,
+      deepAnalPressure:
+          _dap ? isncsci.BinaryObservation.yes : isncsci.BinaryObservation.no,
+    );
 
-    // AIS classification.
-    String ais;
-    if (!_sacralSparing) {
-      ais = 'A';
-    } else {
-      // Check for motor incomplete.
-      final hasVAC = _vac;
-      final motorBelow3 = _motorMoreThan3BelowMotorLevel(motorR, motorL);
-      final motorIncomplete = hasVAC || motorBelow3;
+    // Run the validated Praxis ISNCSCI algorithm.
+    final result = calculateISNCSCI(exam);
+    final c = result.classification;
+    final t = result.totals;
 
-      if (!motorIncomplete) {
-        // Check if any motor function below NLI.
-        final anyMotorBelow = _motorBelowWithGrade3OrMore(nli) > 0;
-        if (!anyMotorBelow) {
-          ais = 'B';
-        } else {
-          // Edge case: motor function exists below NLI but not > 3 below
-          // motor level and no VAC. Treat as motor incomplete.
-          final totalBelow = _totalMotorBelowNLI(nli);
-          final grade3Below = _motorBelowWithGrade3OrMore(nli);
-          if (totalBelow > 0 && grade3Below >= (totalBelow / 2)) {
-            ais = 'D';
-          } else {
-            ais = 'C';
-          }
-        }
-      } else {
-        // Motor incomplete: C vs D.
-        final totalBelow = _totalMotorBelowNLI(nli);
-        final grade3Below = _motorBelowWithGrade3OrMore(nli);
-        if (totalBelow > 0 && grade3Below >= (totalBelow / 2)) {
-          ais = 'D';
-        } else {
-          ais = 'C';
-        }
-      }
-    }
+    // Normalize level names: Praxis uses 'S4_5', widget displays 'S4-5'.
+    String norm(String level) => level.replaceAll('_', '-');
 
-    // Check for AIS E: all scores normal.
-    bool allNormal = true;
-    for (final level in _sensoryLevels) {
-      if (_ltRight[level] != 2 ||
-          _ltLeft[level] != 2 ||
-          _ppRight[level] != 2 ||
-          _ppLeft[level] != 2) {
-        allNormal = false;
-        break;
-      }
-    }
-    if (allNormal) {
-      for (final entry in _motorLevels) {
-        if ((_motorRight[entry.key] ?? 0) != 5 ||
-            (_motorLeft[entry.key] ?? 0) != 5) {
-          allNormal = false;
-          break;
-        }
-      }
-    }
-    if (allNormal && _dap && _vac) {
-      ais = 'E';
-    }
-
-    // Zone of Partial Preservation (AIS A only).
-    String zppSensoryR = 'N/A';
-    String zppSensoryL = 'N/A';
-    String zppMotorR = 'N/A';
-    String zppMotorL = 'N/A';
-    if (ais == 'A') {
-      zppSensoryR = _zppSensory(_ltRight, _ppRight, sensoryR);
-      zppSensoryL = _zppSensory(_ltLeft, _ppLeft, sensoryL);
-      zppMotorR = _zppMotor(_motorRight, motorR);
-      zppMotorL = _zppMotor(_motorLeft, motorL);
-    }
-
-    // Index scores.
-    int uems = 0;
-    int lems = 0;
-    for (final entry in _motorLevels) {
-      final r = _motorRight[entry.key] ?? 0;
-      final l = _motorLeft[entry.key] ?? 0;
-      final idx = _levelIndex(entry.key);
-      if (idx <= _levelIndex('T1')) {
-        uems += r + l;
-      } else {
-        lems += r + l;
-      }
-    }
-
-    int totalLT = 0;
-    int totalPP = 0;
-    for (final level in _sensoryLevels) {
-      totalLT += (_ltRight[level] ?? 0) + (_ltLeft[level] ?? 0);
-      totalPP += (_ppRight[level] ?? 0) + (_ppLeft[level] ?? 0);
-    }
+    // Compute total motor from UE + LE.
+    final totalMotor = (t.upperExtremity != 'ND' && t.lowerExtremity != 'ND')
+        ? '${int.parse(t.upperExtremity) + int.parse(t.lowerExtremity)}'
+        : 'ND';
+    final totalSensory = (t.lightTouch != 'ND' && t.pinPrick != 'ND')
+        ? '${int.parse(t.lightTouch) + int.parse(t.pinPrick)}'
+        : 'ND';
 
     return {
-      'sensoryR': sensoryR,
-      'sensoryL': sensoryL,
-      'motorR': motorR,
-      'motorL': motorL,
-      'nli': nli,
-      'ais': ais,
-      'zppSensoryR': zppSensoryR,
-      'zppSensoryL': zppSensoryL,
-      'zppMotorR': zppMotorR,
-      'zppMotorL': zppMotorL,
-      'uems': '$uems',
-      'lems': '$lems',
-      'totalMotor': '${uems + lems}',
-      'totalLT': '$totalLT',
-      'totalPP': '$totalPP',
-      'totalSensory': '${totalLT + totalPP}',
+      'sensoryR': norm(c.neurologicalLevels.sensoryRight),
+      'sensoryL': norm(c.neurologicalLevels.sensoryLeft),
+      'motorR': norm(c.neurologicalLevels.motorRight),
+      'motorL': norm(c.neurologicalLevels.motorLeft),
+      'nli': norm(c.neurologicalLevelOfInjury),
+      'ais': c.asiaImpairmentScale,
+      'zppSensoryR': norm(c.zoneOfPartialPreservation.sensoryRight),
+      'zppSensoryL': norm(c.zoneOfPartialPreservation.sensoryLeft),
+      'zppMotorR': norm(c.zoneOfPartialPreservation.motorRight),
+      'zppMotorL': norm(c.zoneOfPartialPreservation.motorLeft),
+      'uems': t.upperExtremity,
+      'lems': t.lowerExtremity,
+      'totalMotor': totalMotor,
+      'totalLT': t.lightTouch,
+      'totalPP': t.pinPrick,
+      'totalSensory': totalSensory,
     };
   }
 
   /// Most caudal level with any sensation (LT or PP > 0) below the sensory
   /// level on that side.
+  // ignore: unused_element
   String _zppSensory(
     Map<String, int> lt,
     Map<String, int> pp,
@@ -395,6 +348,7 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
 
   /// Most caudal key muscle with any motor (> 0) below the motor level on
   /// that side.
+  // ignore: unused_element
   String _zppMotor(Map<String, int> motor, String motorLevel) {
     final mlIdx = _levelIndex(motorLevel);
     String zpp = motorLevel;

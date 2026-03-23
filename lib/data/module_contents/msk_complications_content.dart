@@ -320,7 +320,7 @@ final TopicData mskComplicationsContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: Upper Extremity Preservation',
-          'The PVA Clinical Practice Guidelines emphasize that preservation of upper extremity function is THE most critical long-term goal in wheelchair users. "The arms are the patient\'s legs." The single most important intervention is proper WHEELCHAIR FITTING — correct axle position (forward, under the shoulder), appropriate seat height (100-120 degree elbow angle at push rim), and lightweight rigid frame reduce propulsion forces by 20-30%. Loss of shoulder function in a wheelchair user can mean loss of independence.',
+          'The PVA/Consortium for Spinal Cord Medicine Clinical Practice Guidelines for Preservation of Upper Limb Function emphasize that upper extremity preservation is THE most critical long-term goal. Key guidelines: (1) Wheelchair axle position slightly anterior to the shoulder to minimize propulsion effort. (2) Seat height allows 100-120 degrees elbow flexion at push rim top. (3) Long, smooth semicircular propulsion strokes allowing the hand to drift below the push rim during recovery — NOT short choppy strokes. (4) Minimize total daily transfers and use a transfer board when appropriate. (5) Strengthen external rotators (infraspinatus, teres minor) and scapular stabilizers (lower trapezius, serratus anterior, rhomboids). (6) Consider power-assist wheels or power wheelchair for community distances. Active MWC users complete ~2,700 push-rim rotations per day. By 20 years post-injury, up to 72% report shoulder pain.',
         ),
       ],
     ),
@@ -433,9 +433,32 @@ final TopicData mskComplicationsContent = TopicData(
             '10. Forced ROM/aggressive stretching can WORSEN HO — use gentle ROM only.',
           ],
         ),
+        TableBlock(
+          title: 'Energy Cost of Ambulation by Level',
+          columns: ['Level', 'Energy Cost (Multiple of Normal)', 'Practical Ambulation'],
+          rows: [
+            ['Thoracic (T2-T9)', '6-12x normal', 'Exercise only; NOT practical for daily mobility'],
+            ['T10-L2', '4-6x normal', 'Household ambulation possible; WC for community'],
+            ['L3-L5', '2-4x normal', 'Community ambulation with orthoses'],
+            ['Below L5', '1-2x normal', 'Community ambulation, may be near-normal'],
+          ],
+        ),
+        BulletCardBlock(
+          title: 'Denis 3-Column Spinal Stability Theory',
+          themeColor: const Color(0xFF6366F1),
+          backgroundColor: const Color(0xFFEEF2FF),
+          points: [
+            'ANTERIOR COLUMN: anterior longitudinal ligament (ALL), anterior half of vertebral body and disc',
+            'MIDDLE COLUMN: posterior half of vertebral body and disc, posterior longitudinal ligament (PLL) — most critical for stability',
+            'POSTERIOR COLUMN: pedicles, facets, laminae, spinous processes, ligamentum flavum, interspinous/supraspinous ligaments',
+            'UNSTABLE: disruption of 2 or more columns requires surgical stabilization',
+            'Burst fractures: involve middle column (unstable); Compression fractures: anterior column only (stable)',
+            'Used for stability assessment and surgical decision-making after spinal trauma',
+          ],
+        ),
         PearlBlock(
           'Board Pearl: MSK Complications Summary',
-          'The three MSK complications most likely to appear on boards: (1) HO — know the diagnostic workup (ALP → bone scan → X-ray → CT for surgery), treatment (indomethacin/etidronate), and surgical timing (mature at 12-18 months). (2) Sublesional osteoporosis — DEXA at distal femur/proximal tibia (NOT spine), fractures mimic DVT, treat with padded splints. (3) Shoulder pain — most common MSK complaint, wheelchair fitting is the most important intervention, preserve the upper extremities at all costs.',
+          'The three MSK complications most likely to appear on boards: (1) HO — know the diagnostic workup (ALP → bone scan → X-ray → CT for surgery), treatment (indomethacin/etidronate), and surgical timing (mature at 12-18 months). (2) Sublesional osteoporosis — DEXA at distal femur/proximal tibia (NOT spine), fractures mimic DVT, treat with padded splints. (3) Shoulder pain — most common MSK complaint, wheelchair fitting is the most important intervention, preserve the upper extremities at all costs. Additional: energy cost of ambulation is 6-12x normal at thoracic levels (exercise only). Denis 3-column theory: 2+ columns disrupted = unstable spine.',
         ),
       ],
     ),

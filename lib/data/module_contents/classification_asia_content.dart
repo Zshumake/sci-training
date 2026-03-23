@@ -138,6 +138,27 @@ final TopicData classificationAsiaContent = TopicData(
           'Board Pearl: VAC = At Least AIS C',
           'If voluntary anal contraction is present, the injury is at MINIMUM AIS C (motor incomplete), regardless of other findings. This is because VAC represents preserved motor function at the sacral segments. This is one of the most commonly tested classification pearls.',
         ),
+        HeaderBlock('Non-Key Muscle Functions'),
+        TableBlock(
+          title: 'Non-Key Muscles by Segment (Used for AIS B vs C)',
+          columns: ['Segment', 'Non-Key Muscle Function'],
+          rows: [
+            ['C5', 'Shoulder abduction (deltoid)'],
+            ['C6', 'Forearm supination (supinator, biceps)'],
+            ['C7', 'Wrist flexion (flexor carpi radialis)'],
+            ['C8', 'Finger extension (extensor digitorum), thumb extension'],
+            ['T1', 'Finger adduction (palmar interossei), thumb opposition'],
+            ['L2', 'Hip adduction (adductors)'],
+            ['L3', 'Hip extension/abduction (gluteus medius)'],
+            ['L4', 'Knee flexion (hamstrings)'],
+            ['L5', 'Ankle eversion (peroneus longus), ankle inversion (tibialis posterior)'],
+            ['S1', 'Toe flexion (FHL), hip extension (gluteus maximus)'],
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: Non-Key Muscles',
+          'Non-key muscles are graded as either present (any visible/palpable contraction) or absent (no contraction). They are critically important for distinguishing AIS B from AIS C when all key muscles below the NLI are 0/5 but VAC is present.',
+        ),
         HeaderBlock('3-5. Determining Levels'),
         BulletCardBlock(
           title: 'Sensory Level Determination',
@@ -279,8 +300,8 @@ final TopicData classificationAsiaContent = TopicData(
           ],
         ),
         PearlBlock(
-          'Board Pearl: Pin Prick vs Light Touch',
-          'In AIS B injuries, preserved PIN PRICK sensation is a significantly better predictor of motor recovery than light touch alone. Pin prick travels via the lateral spinothalamic tract, which runs adjacent to the corticospinal tract (motor). Preservation of pin prick suggests partial sparing of the lateral white matter tracts, including nearby motor fibers.',
+          'Board Pearl: Pin Prick vs Light Touch — Conversion Rates',
+          'In AIS B injuries, preserved PIN PRICK predicts motor recovery significantly better than light touch alone. AIS B with pin prick preservation converts to motor incomplete (AIS C or D) in ~50-70% of cases, whereas AIS B with light touch only converts in ~10-20%. This is because the lateral spinothalamic tract (pin prick) runs adjacent to the corticospinal tract (motor) in the lateral funiculus.',
         ),
         HeaderBlock('Timing of Recovery'),
         BulletCardBlock(
@@ -405,7 +426,7 @@ final TopicData classificationAsiaContent = TopicData(
           themeColor: const Color(0xFF3B82F6),
           backgroundColor: const Color(0xFFEFF6FF),
           icon: Icons.center_focus_strong,
-          description: 'MOST COMMON incomplete SCI syndrome. Typically from hyperextension injury in older adults with pre-existing cervical spondylosis/stenosis.',
+          description: 'MOST COMMON incomplete SCI syndrome (~50% of all incomplete injuries, ~9% of all traumatic SCI). Typically from hyperextension injury in older adults with pre-existing cervical spondylosis/stenosis.',
           keyPoints: [
             'Upper extremities affected MORE than lower extremities',
             'Distal UE weaker than proximal UE (hands are worst)',
@@ -426,16 +447,16 @@ final TopicData classificationAsiaContent = TopicData(
           themeColor: const Color(0xFF7C3AED),
           backgroundColor: const Color(0xFFF5F3FF),
           icon: Icons.vertical_split,
-          description: 'Hemisection of the spinal cord. Classic cause: penetrating trauma (stab wound). BEST overall functional prognosis.',
+          description: 'Hemisection of the spinal cord (2-4% of all traumatic SCI). Classic cause: penetrating trauma (stab wound). BEST overall functional prognosis.',
           keyPoints: [
             'IPSILATERAL motor loss (lateral corticospinal tract — crossed in medulla)',
             'IPSILATERAL proprioception/vibration loss (dorsal columns — cross in medulla)',
             'CONTRALATERAL pain/temperature loss 1-2 levels BELOW lesion (lateral spinothalamic tract — crosses at anterior white commissure within 1-2 segments of entry)',
             'IPSILATERAL LMN signs AT the level of lesion (anterior horn cell damage)',
             'IPSILATERAL UMN signs BELOW the level of lesion',
+            'Recovery order: ipsilateral proximal extensors first → distal flexors → contralateral spinothalamic last',
             'BEST functional prognosis of ALL incomplete SCI syndromes',
-            '~90% achieve community ambulation',
-            'Ipsilateral motor function tends to recover well',
+            '75-90% achieve community ambulation',
           ],
         ),
         MnemonicBlock(
@@ -490,7 +511,19 @@ final TopicData classificationAsiaContent = TopicData(
           'Prognosis Ranking: "Brown is Best, Anterior is Awful"',
           'Best to worst prognosis: Brown-Séquard → Central Cord → Posterior Cord → Anterior Cord. Remember: Brown-Séquard is BEST, Anterior is AWFUL.',
         ),
-        HeaderBlock('Conus Medullaris vs Cauda Equina'),
+        HeaderBlock('Epiconus, Conus Medullaris & Cauda Equina'),
+        BulletCardBlock(
+          title: 'Epiconus Syndrome (L4-S1 cord segments)',
+          themeColor: const Color(0xFFEA580C),
+          backgroundColor: const Color(0xFFFFF7ED),
+          points: [
+            'Spinal cord segments L4-S1, located at approximately T11-T12 vertebral level',
+            'Contains LMN pools for the lower extremities',
+            'LE weakness with UMN signs below and LMN at level',
+            'Early bladder involvement (upper motor neuron type)',
+            'Symmetric deficits',
+          ],
+        ),
         TableBlock(
           title: 'Conus Medullaris vs Cauda Equina Syndromes',
           columns: ['Feature', 'Conus Medullaris', 'Cauda Equina'],
@@ -593,6 +626,23 @@ final TopicData classificationAsiaContent = TopicData(
         PearlBlock(
           'Board Pearl: C7 = Independence Level',
           'C7 (triceps = elbow extension) is often considered the "independence level" for tetraplegia. Triceps function enables independent transfers, wheelchair push-ups for pressure relief, and effective manual wheelchair propulsion. The gain from C6 to C7 is one of the most significant single-level improvements in SCI.',
+        ),
+        HeaderBlock('ISNCSCI Revision History'),
+        TableBlock(
+          title: 'Major ISNCSCI Revision Timeline',
+          columns: ['Year', 'Key Changes'],
+          rows: [
+            ['1969', 'Frankel Scale: original 5-grade (A-E) classification'],
+            ['1982', '1st ASIA Standards: standardized motor/sensory exam'],
+            ['1992', 'Tetraplegia replaced quadriplegia; AIS replaced Frankel; sacral sparing defined completeness'],
+            ['2000', 'Clarified AIS B vs C distinction'],
+            ['2011', 'DAP replaced deep anal sensation; motor ZPP clarification; NT designations'],
+            ['2019', '8th Edition: ZPP rule refinement; non-SCI condition guidance; autonomic standards taxonomy'],
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: 2019 ISNCSCI Update',
+          'The 2019 revision (8th edition) expanded the ZPP definition so motor ZPP can be documented in incomplete injuries when VAC is absent (though sensory ZPP still applies only to AIS A). It also added guidance for classifying injuries complicated by non-SCI conditions (peripheral neuropathy, TBI, amputations).',
         ),
       ],
     ),

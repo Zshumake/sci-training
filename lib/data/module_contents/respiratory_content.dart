@@ -125,6 +125,10 @@ final TopicData respiratoryContent = TopicData(
           'Board Pearl: Ascending Edema',
           'In the acute phase of cervical SCI, cord edema can ascend 1-2 spinal segments above the bony level of injury over the first 24-72 hours. A patient with a C5 injury may transiently function at a C3-C4 level. This means respiratory function may DETERIORATE in the first few days post-injury, and a patient who was initially breathing independently may require intubation. Serial FVC monitoring (every 4-6 hours initially) is essential to detect this deterioration.',
         ),
+        PearlBlock(
+          'Board Pearl: VC <1 Liter = Ventilatory Support Needed',
+          'A vital capacity (VC) less than 1 liter (or <15 mL/kg) is the critical threshold indicating the need for ventilatory support. Combined with a negative inspiratory force (NIF) weaker than -20 cmH2O, these parameters define the decision point for intubation and mechanical ventilation. Complete cervical SCI at C4 or above nearly always requires at least temporary mechanical ventilation.',
+        ),
         TableBlock(
           title: 'Indications for Intubation and Mechanical Ventilation',
           columns: ['Parameter', 'Threshold for Intubation'],
@@ -219,11 +223,13 @@ final TopicData respiratoryContent = TopicData(
           backgroundColor: const Color(0xFFF0FDFA),
           points: [
             'Technique where patient uses tongue and pharyngeal muscles to gulp air into the lungs in small boluses',
-            'Each gulp adds 40-200 mL of air; 6-9 gulps can provide a full breath (500-1000 mL)',
-            'Allows ventilator-dependent patients brief periods of ventilator-free breathing (safety measure)',
-            'Can be used as emergency backup if ventilator fails',
+            'Each gulp forces 60-200 mL of air past the glottis; 6-9 consecutive gulps can insufflate the lungs to near-total lung capacity',
+            'Can provide 1-3 HOURS of ventilator-free breathing for ventilator-dependent patients',
+            'Serves as critical emergency backup if ventilator malfunctions or disconnects',
             'Improves cough effectiveness by increasing lung volume before cough effort',
-            'Requires intact glossopharyngeal (CN IX) and vagus (CN X) nerve function',
+            'Requires intact glossopharyngeal (CN IX) and vagus (CN X) nerve function (intact bulbar musculature and functioning glottis)',
+            'CANNOT be performed through a cuffed tracheostomy — cuff must be deflated or tracheostomy capped/fenestrated',
+            'Requires extensive training and practice; not all patients can master the technique',
             'Valuable skill for high cervical SCI patients — should be taught during rehabilitation',
           ],
         ),

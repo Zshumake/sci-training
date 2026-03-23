@@ -163,13 +163,14 @@ final TopicData pathophysiologyContent = TopicData(
           themeColor: const Color(0xFFDC2626),
           backgroundColor: const Color(0xFFFEF2F2),
           points: [
-            'NASCIS II (1990): suggested benefit if given within 8 hours — 30 mg/kg bolus then 5.4 mg/kg/hr × 23 hrs',
-            'NASCIS III (1997): extended to 48 hours if started 3-8 hours post-injury',
-            'Significant methodological criticisms of NASCIS trials',
-            'Current AAOS/AOSpine guidelines: recommend AGAINST routine use',
-            'Considered an OPTION by some, not a standard or guideline',
-            'Risks: infection, GI bleeding, hyperglycemia, wound complications, pneumonia',
-            'Congress of Neurological Surgeons: not recommended as a standard',
+            'NASCIS I (1984): compared low-dose vs high-dose MPSS — no significant difference; NO placebo control',
+            'NASCIS II (1990): MPSS vs naloxone vs placebo — post-hoc analysis showed modest benefit if given within 8 hours',
+            'NASCIS II protocol: 30 mg/kg bolus + 5.4 mg/kg/hr × 23 hrs (if started within 3 hrs) or × 48 hrs (if started 3-8 hrs)',
+            'NASCIS III (1997): 24-hr vs 48-hr MPSS vs tirilazad — post-hoc subgroup analysis only',
+            'If >8 hours since injury: do NOT administer (potential harm)',
+            'AANS/CNS 2013 guidelines: recommend AGAINST routine use',
+            'Risks: wound infection, GI hemorrhage, sepsis, pneumonia, PE, hyperglycemia',
+            'Modest benefit (~4 points on motor scale) of questionable functional significance',
           ],
         ),
         PearlBlock(
@@ -192,7 +193,25 @@ final TopicData pathophysiologyContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: STASCIS Trial',
-          'The STASCIS (Surgical Timing in Acute Spinal Cord Injury Study) trial showed that early surgical decompression (<24 hours after injury) was associated with improved neurological outcomes (≥2 AIS grade improvement) compared to late surgery (>24 hours). This supports the current recommendation for early surgery when feasible.',
+          'The STASCIS trial showed early decompression (<24 hours) patients were 2.8x more likely to achieve ≥2 AIS grade improvement (19.8% vs 8.8% in late surgery). Current AANS/CNS 2024 guidelines recommend early surgical decompression within 24 hours for cervical SCI.',
+        ),
+        HeaderBlock('Succinylcholine Avoidance'),
+        BulletCardBlock(
+          title: 'Life-Threatening Hyperkalemia Risk',
+          themeColor: const Color(0xFFDC2626),
+          backgroundColor: const Color(0xFFFEF2F2),
+          points: [
+            'Succinylcholine is CONTRAINDICATED after 48 hours following SCI',
+            'Denervation supersensitivity → proliferation of extrajunctional acetylcholine receptors across entire muscle membrane',
+            'Succinylcholine depolarizes these receptors → massive potassium efflux → fatal cardiac arrhythmias',
+            'Risk begins ~48 hours post-injury and persists INDEFINITELY',
+            'Safe to use within the first 24-48 hours (before receptor upregulation)',
+            'Alternatives: non-depolarizing agents (rocuronium, vecuronium, cisatracurium)',
+          ],
+        ),
+        PearlBlock(
+          'Board Pearl: Succinylcholine Timing',
+          'Succinylcholine is SAFE within the first 24-48 hours after SCI (before extrajunctional receptor upregulation). After 48 hours, it must be permanently avoided due to the risk of fatal hyperkalemia. Use non-depolarizing agents (rocuronium) instead. This is a classic board question.',
         ),
       ],
     ),
@@ -304,7 +323,7 @@ final TopicData pathophysiologyContent = TopicData(
             'Loss of cardiac sympathetic innervation (T1-T4) worsens bradycardia',
             'Decreased venous return due to venous pooling',
             'Most common and most severe in CERVICAL and HIGH THORACIC injuries',
-            'Duration: typically 1-3 weeks, can last up to 5 weeks',
+            'Duration: typically 1-5 weeks',
           ],
         ),
         BulletCardBlock(
@@ -482,6 +501,27 @@ final TopicData pathophysiologyContent = TopicData(
         PearlBlock(
           'Board Pearl: Fever vs Poikilothermia',
           'In SCI patients above T8, elevated body temperature can be from either infection OR poikilothermia (environmental exposure). Always work up for infection first. Key clinical pearl: poikilothermic temperature elevation responds to environmental cooling; infectious fever does not respond as readily and has other associated signs (elevated WBC, localizing symptoms).',
+        ),
+        HeaderBlock('Key Fracture Pearls for Pathophysiology'),
+        PearlBlock(
+          'Board Pearl: Chance Fracture & Abdominal Injuries',
+          'Chance (flexion-distraction) fractures at T12-L2 are associated with intra-abdominal injuries (solid organ, hollow viscus) in up to 50% of cases, typically from lap seatbelt mechanism. Always evaluate the abdomen when a Chance fracture is identified.',
+        ),
+        PearlBlock(
+          'Board Pearl: SCIWORA — Pediatric Spine Elasticity',
+          'The pediatric vertebral column can stretch up to 5 cm without disruption, but the spinal cord ruptures after only 5-6 mm of stretch. This mismatch explains why children sustain cord injury without radiographic abnormality (SCIWORA). More severe neurologic injury and higher cervical levels occur in children under 8 years.',
+        ),
+        PearlBlock(
+          'Board Pearl: Odontoid Type II Nonunion',
+          'Type II odontoid fractures have a nonunion rate of 26-36% in elderly patients due to poor blood supply at the dens base and osteoporotic bone. Elderly patients may require surgical fixation (anterior odontoid screw or posterior C1-C2 fusion) rather than halo immobilization.',
+        ),
+        PearlBlock(
+          'Board Pearl: SOMI Brace Limitation',
+          'The SOMI brace provides excellent flexion restriction (93%) but poor extension control (only 42%). It is NOT appropriate for extension-type injuries. The halo vest provides the most rigid external immobilization and is best for upper cervical injuries (C1-C2).',
+        ),
+        PearlBlock(
+          'Board Pearl: Halo Vest Complications',
+          'Halo vest complications include: pin loosening, pin site infection, skull penetration (especially in osteoporotic bone and children), ring migration, pressure injuries under the vest, reduced pulmonary function, dysphagia, and pin discomfort. In elderly patients, halo use is associated with higher complication and mortality rates compared to surgical fixation.',
         ),
       ],
     ),

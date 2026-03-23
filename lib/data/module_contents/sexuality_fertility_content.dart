@@ -130,7 +130,7 @@ final TopicData sexualityFertilityContent = TopicData(
             '  • Prostatic fluid stasis — infrequent ejaculation leads to stagnant seminal plasma',
             '  • Testicular hyperthermia — prolonged sitting in wheelchair, impaired thermoregulation',
             '  • Recurrent UTIs — chronic infection/inflammation damages sperm',
-            '  • Abnormal testicular histology — seminiferous tubule atrophy and Sertoli cell dysfunction',
+            '  • Abnormal testicular histology — SEMINIFEROUS TUBULE ATROPHY is the MOST COMMON finding on testicular biopsy in SCI men (may show Sertoli cell-only pattern or maturation arrest). Etiology is multifactorial: vascular compromise, hormonal changes, oxidative stress.',
             '  • HPT axis changes — altered GnRH/LH/FSH/testosterone profiles',
             '  • Anti-sperm antibodies — blood-testis barrier breakdown',
             '  • Medications — anticholinergics, alpha-blockers, opioids impair semen parameters',
@@ -139,21 +139,21 @@ final TopicData sexualityFertilityContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: Worst Predictor of Semen Quality',
-          'Leukocytospermia (WBC >10^6/mL in semen) is the SINGLE WORST predictive factor for poor semen quality in SCI. It indicates chronic inflammation/infection of the accessory glands and produces reactive oxygen species that damage sperm membranes, DNA, and motility. Treatment of UTIs and prostatic infections may improve semen parameters.',
+          'Leukocytospermia (WBC >1 million/mL in semen) is the SINGLE WORST predictive factor for the inability of sperm to PENETRATE THE OVUM in SCI. Reactive oxygen species (ROS) produced by seminal leukocytes cause oxidative damage to sperm membranes, impairing motility, viability, and the ability to undergo the acrosome reaction necessary for oocyte penetration. Treatment includes: antibiotic therapy for concurrent GU infection, anti-inflammatory agents, antioxidant supplementation, and sperm processing techniques (density gradient centrifugation, swim-up) to separate functional sperm from leukocyte-contaminated seminal plasma.',
         ),
         TableBlock(
           title: 'Sperm Retrieval Techniques',
           columns: ['Technique', 'Method', 'Success Rate', 'Key Considerations'],
           rows: [
-            ['PVS (Penile Vibratory Stimulation)', 'High-amplitude vibrator (2.5mm, 100 Hz) applied to frenulum/glans to trigger ejaculatory reflex', '~60-75% in UMN', 'FIRST-LINE. Can be done at home. Requires intact ejaculatory reflex arc (UMN only). Better semen quality than EEJ. Monitor for AD (T6+). NOT effective in LMN.'],
-            ['EEJ (Electroejaculation)', 'Rectal probe delivers graded electrical stimulation to periprostatic nerves/seminal vesicles', '~90% (UMN and LMN)', 'SECOND-LINE (when PVS fails). Works in both UMN and LMN. Requires anesthesia in incomplete injuries (painful). Produces mostly retrograde ejaculation — requires bladder harvest. AD risk (T6+).'],
+            ['PVS (Penile Vibratory Stimulation)', 'High-amplitude vibrator (2.5mm, 100 Hz) applied to frenulum/glans to trigger ejaculatory reflex', '~86% at T10+; ~17% below T10', 'FIRST-LINE. Can be done at home. Requires intact ejaculatory reflex arc (injury at or above T10). Superior semen quality vs EEJ: motility 26% vs 10.7%, viability 25.2% vs 9.7%. Monitor for AD (T6+).'],
+            ['EEJ (Electroejaculation)', 'Rectal probe delivers graded electrical stimulation to periprostatic nerves/seminal vesicles', '~80-90% (UMN and LMN)', 'SECOND-LINE (when PVS fails). Works in both UMN and LMN. Requires general anesthesia in incomplete injuries with retained rectal sensation. Retrograde ejaculation is common — catheterize bladder before and after to harvest sperm. AD risk (T6+).'],
             ['Prostate Massage', 'Digital rectal massage of prostate to express seminal fluid', 'Low yield', 'Rarely used. May yield small quantity for IVF/ICSI. Not a primary retrieval method.'],
             ['Surgical Retrieval (TESA/MESA)', 'Testicular sperm aspiration or microsurgical epididymal sperm aspiration', '~95%+ for retrieval', 'LAST RESORT when PVS and EEJ fail. Requires IVF with ICSI. Invasive. Used for anejaculatory patients unresponsive to other methods.'],
           ],
         ),
         PearlBlock(
           'Board Pearl: PVS vs EEJ',
-          'PVS is first-line because: (1) non-invasive, (2) can be done at home/clinic, (3) produces antegrade ejaculation with BETTER semen quality than EEJ. However, PVS ONLY works in UMN lesions (requires intact sacral reflex arc). EEJ works in both UMN and LMN but produces retrograde ejaculation (bladder catheterization needed to harvest sperm) and requires anesthesia in patients with sensation. BOTH carry risk of autonomic dysreflexia in injuries T6 and above — pretreat with nifedipine and monitor BP.',
+          'PVS is first-line because: (1) non-invasive, (2) can be done at home/clinic, (3) produces antegrade ejaculation with SUPERIOR semen quality vs EEJ (motility 26.0% vs 10.7%, viability 25.2% vs 9.7%). PVS success rate is ~86% for injuries at or above T10 (intact thoracolumbar ejaculation center) but only ~17% below T10. EEJ works in both UMN and LMN but produces retrograde ejaculation (bladder catheterization needed before AND after to harvest sperm) and requires general anesthesia in patients with retained rectal sensation. BOTH carry risk of autonomic dysreflexia in injuries T6 and above — blood pressure monitoring is mandatory; nifedipine 10 mg sublingual should be available.',
         ),
         BulletCardBlock(
           title: 'Assisted Reproduction Options',
@@ -165,6 +165,7 @@ final TopicData sexualityFertilityContent = TopicData(
             'ICSI (intracytoplasmic sperm injection): requires only a SINGLE viable sperm; highest success with poor semen',
             'ICSI has revolutionized fertility outcomes for SCI men — success rates approach general population',
             'Sperm cryopreservation: retrieved sperm can be stored for future use',
+            'Semen quality improves after 2-4 electroejaculations — initial poor quality is partly due to prostatic fluid stasis that clears with repeated ejaculations',
             'Regular PVS programs (2-3x/week) may improve motility over time by reducing stasis',
             'Treat UTIs aggressively and minimize testicular hyperthermia (avoid prolonged hot cushion sitting)',
           ],
