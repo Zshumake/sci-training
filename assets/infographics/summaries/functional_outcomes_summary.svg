@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1100" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="800" height="65" fill="#1A1F2E"/>
+  <text x="400" y="30" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="1">FUNCTIONAL OUTCOMES BY LEVEL</text>
+  <text x="400" y="50" text-anchor="middle" fill="#5A6575" font-size="12">Expected Motor Function, ADLs &amp; Equipment</text>
+  <line x1="100" y1="62" x2="700" y2="62" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- Table Header -->
+  <rect x="20" y="75" width="760" height="30" fill="#22D3EE" fill-opacity="0.15" rx="5"/>
+  <text x="60" y="95" text-anchor="middle" fill="#22D3EE" font-size="11" font-weight="700">Level</text>
+  <text x="175" y="95" text-anchor="middle" fill="#22D3EE" font-size="11" font-weight="700">Key Muscle</text>
+  <text x="370" y="95" text-anchor="middle" fill="#22D3EE" font-size="11" font-weight="700">Functional Capability</text>
+  <text x="580" y="95" text-anchor="middle" fill="#22D3EE" font-size="11" font-weight="700">Equipment</text>
+  <text x="730" y="95" text-anchor="middle" fill="#22D3EE" font-size="11" font-weight="700">FIM</text>
+
+  <!-- C1-C3 -->
+  <rect x="20" y="110" width="760" height="65" fill="#1A1F2E" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="135" text-anchor="middle" fill="#EF4444" font-size="13" font-weight="700">C1-C3</text>
+  <text x="175" y="130" text-anchor="middle" fill="#E8ECF1" font-size="10">Neck muscles</text>
+  <text x="175" y="145" text-anchor="middle" fill="#9CA3AF" font-size="9">(trap, SCM)</text>
+  <text x="370" y="125" text-anchor="middle" fill="#E8ECF1" font-size="10">Ventilator dependent</text>
+  <text x="370" y="140" text-anchor="middle" fill="#E8ECF1" font-size="10">Dependent for all ADLs</text>
+  <text x="370" y="155" text-anchor="middle" fill="#9CA3AF" font-size="9">Head/mouth control for tech</text>
+  <text x="580" y="130" text-anchor="middle" fill="#E8ECF1" font-size="9">Power w/c (head/sip-puff)</text>
+  <text x="580" y="145" text-anchor="middle" fill="#E8ECF1" font-size="9">Vent, suction, 24hr care</text>
+  <text x="730" y="140" text-anchor="middle" fill="#EF4444" font-size="11" font-weight="600">18</text>
+
+  <!-- C4 -->
+  <rect x="20" y="180" width="760" height="65" fill="#0F1419" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="210" text-anchor="middle" fill="#F97316" font-size="13" font-weight="700">C4</text>
+  <text x="175" y="205" text-anchor="middle" fill="#E8ECF1" font-size="10">Diaphragm</text>
+  <text x="175" y="220" text-anchor="middle" fill="#9CA3AF" font-size="9">(partial)</text>
+  <text x="370" y="195" text-anchor="middle" fill="#E8ECF1" font-size="10">May wean from vent</text>
+  <text x="370" y="210" text-anchor="middle" fill="#E8ECF1" font-size="10">Dependent ADLs, some mouth stick</text>
+  <text x="370" y="225" text-anchor="middle" fill="#9CA3AF" font-size="9">Voice-activated environment controls</text>
+  <text x="580" y="200" text-anchor="middle" fill="#E8ECF1" font-size="9">Power w/c (chin/head)</text>
+  <text x="580" y="215" text-anchor="middle" fill="#E8ECF1" font-size="9">Mouth stick, ECU</text>
+  <text x="730" y="210" text-anchor="middle" fill="#F97316" font-size="11" font-weight="600">18-25</text>
+
+  <!-- C5 -->
+  <rect x="20" y="250" width="760" height="65" fill="#1A1F2E" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="280" text-anchor="middle" fill="#F59E0B" font-size="13" font-weight="700">C5</text>
+  <text x="175" y="270" text-anchor="middle" fill="#E8ECF1" font-size="10">Biceps, deltoid</text>
+  <text x="175" y="285" text-anchor="middle" fill="#9CA3AF" font-size="9">(elbow flex, shoulder)</text>
+  <text x="370" y="265" text-anchor="middle" fill="#E8ECF1" font-size="10">Feed with setup (mobile arm support)</text>
+  <text x="370" y="280" text-anchor="middle" fill="#E8ECF1" font-size="10">Assist grooming, light keyboard</text>
+  <text x="370" y="295" text-anchor="middle" fill="#9CA3AF" font-size="9">Assist with upper body dressing</text>
+  <text x="580" y="270" text-anchor="middle" fill="#E8ECF1" font-size="9">Power w/c (hand control)</text>
+  <text x="580" y="285" text-anchor="middle" fill="#E8ECF1" font-size="9">MAS, universal cuff</text>
+  <text x="730" y="280" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="600">25-40</text>
+
+  <!-- C6 -->
+  <rect x="20" y="320" width="760" height="65" fill="#0F1419" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="350" text-anchor="middle" fill="#22D3EE" font-size="13" font-weight="700">C6</text>
+  <text x="175" y="340" text-anchor="middle" fill="#E8ECF1" font-size="10">Wrist extensors</text>
+  <text x="175" y="355" text-anchor="middle" fill="#9CA3AF" font-size="9">(ECRL, tenodesis)</text>
+  <text x="370" y="335" text-anchor="middle" fill="#E8ECF1" font-size="10">Independent feeding, grooming</text>
+  <text x="370" y="350" text-anchor="middle" fill="#E8ECF1" font-size="10">Some dressing, assist transfers</text>
+  <text x="370" y="365" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">Drive with hand controls</text>
+  <text x="580" y="340" text-anchor="middle" fill="#E8ECF1" font-size="9">Manual w/c (flat terrain)</text>
+  <text x="580" y="355" text-anchor="middle" fill="#E8ECF1" font-size="9">Tenodesis splint, transfer board</text>
+  <text x="730" y="350" text-anchor="middle" fill="#22D3EE" font-size="11" font-weight="600">40-60</text>
+
+  <!-- C7 -->
+  <rect x="20" y="390" width="760" height="65" fill="#1A1F2E" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="420" text-anchor="middle" fill="#34D399" font-size="13" font-weight="700">C7</text>
+  <text x="175" y="410" text-anchor="middle" fill="#E8ECF1" font-size="10">Triceps, wrist flex</text>
+  <text x="175" y="425" text-anchor="middle" fill="#9CA3AF" font-size="9">(elbow extension)</text>
+  <text x="370" y="405" text-anchor="middle" fill="#E8ECF1" font-size="10">Independent most ADLs</text>
+  <text x="370" y="420" text-anchor="middle" fill="#E8ECF1" font-size="10">Independent transfers (level)</text>
+  <text x="370" y="435" text-anchor="middle" fill="#34D399" font-size="10" font-weight="600">Often live independently</text>
+  <text x="580" y="410" text-anchor="middle" fill="#E8ECF1" font-size="9">Manual w/c (all terrain)</text>
+  <text x="580" y="425" text-anchor="middle" fill="#E8ECF1" font-size="9">Modified vehicle</text>
+  <text x="730" y="420" text-anchor="middle" fill="#34D399" font-size="11" font-weight="600">60-80</text>
+
+  <!-- C8-T1 -->
+  <rect x="20" y="460" width="760" height="65" fill="#0F1419" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="490" text-anchor="middle" fill="#3B82F6" font-size="13" font-weight="700">C8-T1</text>
+  <text x="175" y="480" text-anchor="middle" fill="#E8ECF1" font-size="10">Hand intrinsics</text>
+  <text x="175" y="495" text-anchor="middle" fill="#9CA3AF" font-size="9">(finger flex/abd)</text>
+  <text x="370" y="475" text-anchor="middle" fill="#E8ECF1" font-size="10">Independent all ADLs, fine motor</text>
+  <text x="370" y="490" text-anchor="middle" fill="#E8ECF1" font-size="10">Independent w/c mobility</text>
+  <text x="370" y="505" text-anchor="middle" fill="#3B82F6" font-size="10" font-weight="600">Full UE function, independent living</text>
+  <text x="580" y="480" text-anchor="middle" fill="#E8ECF1" font-size="9">Manual w/c</text>
+  <text x="580" y="495" text-anchor="middle" fill="#E8ECF1" font-size="9">Standard vehicle mods</text>
+  <text x="730" y="490" text-anchor="middle" fill="#3B82F6" font-size="11" font-weight="600">80-100</text>
+
+  <!-- T2-T6 -->
+  <rect x="20" y="530" width="760" height="60" fill="#1A1F2E" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="558" text-anchor="middle" fill="#A78BFA" font-size="13" font-weight="700">T2-T6</text>
+  <text x="175" y="553" text-anchor="middle" fill="#E8ECF1" font-size="10">Upper intercostals</text>
+  <text x="175" y="568" text-anchor="middle" fill="#9CA3AF" font-size="9">(partial trunk)</text>
+  <text x="370" y="548" text-anchor="middle" fill="#E8ECF1" font-size="10">Independent ADLs, limited trunk control</text>
+  <text x="370" y="563" text-anchor="middle" fill="#E8ECF1" font-size="10">AD risk, impaired cough</text>
+  <text x="370" y="578" text-anchor="middle" fill="#9CA3AF" font-size="9">Community wheelchair ambulation</text>
+  <text x="580" y="558" text-anchor="middle" fill="#E8ECF1" font-size="9">Lightweight manual w/c</text>
+  <text x="730" y="558" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="600">100-110</text>
+
+  <!-- T7-T12 -->
+  <rect x="20" y="595" width="760" height="60" fill="#0F1419" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="623" text-anchor="middle" fill="#EC4899" font-size="13" font-weight="700">T7-T12</text>
+  <text x="175" y="618" text-anchor="middle" fill="#E8ECF1" font-size="10">Abdominals,</text>
+  <text x="175" y="633" text-anchor="middle" fill="#9CA3AF" font-size="9">full intercostals</text>
+  <text x="370" y="613" text-anchor="middle" fill="#E8ECF1" font-size="10">Good trunk stability, strong cough</text>
+  <text x="370" y="628" text-anchor="middle" fill="#E8ECF1" font-size="10">Standing frame, therapeutic walking</text>
+  <text x="370" y="643" text-anchor="middle" fill="#9CA3AF" font-size="9">Household ambulation with KAFOs (limited)</text>
+  <text x="580" y="618" text-anchor="middle" fill="#E8ECF1" font-size="9">Manual w/c, KAFOs</text>
+  <text x="580" y="633" text-anchor="middle" fill="#E8ECF1" font-size="9">Standing frame</text>
+  <text x="730" y="623" text-anchor="middle" fill="#EC4899" font-size="11" font-weight="600">110-120</text>
+
+  <!-- L1-L2 -->
+  <rect x="20" y="660" width="760" height="60" fill="#1A1F2E" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="688" text-anchor="middle" fill="#34D399" font-size="13" font-weight="700">L1-L2</text>
+  <text x="175" y="683" text-anchor="middle" fill="#E8ECF1" font-size="10">Hip flexors</text>
+  <text x="175" y="698" text-anchor="middle" fill="#9CA3AF" font-size="9">(iliopsoas)</text>
+  <text x="370" y="678" text-anchor="middle" fill="#E8ECF1" font-size="10">Household/limited community ambulation</text>
+  <text x="370" y="693" text-anchor="middle" fill="#E8ECF1" font-size="10">KAFOs + forearm crutches</text>
+  <text x="370" y="708" text-anchor="middle" fill="#34D399" font-size="10" font-weight="600">W/c for community distances</text>
+  <text x="580" y="683" text-anchor="middle" fill="#E8ECF1" font-size="9">KAFOs, crutches</text>
+  <text x="580" y="698" text-anchor="middle" fill="#E8ECF1" font-size="9">W/c for community</text>
+  <text x="730" y="690" text-anchor="middle" fill="#34D399" font-size="11" font-weight="600">115-125</text>
+
+  <!-- L3-L4 -->
+  <rect x="20" y="725" width="760" height="55" fill="#0F1419" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="750" text-anchor="middle" fill="#3B82F6" font-size="13" font-weight="700">L3-L4</text>
+  <text x="175" y="748" text-anchor="middle" fill="#E8ECF1" font-size="10">Quads, tib ant</text>
+  <text x="370" y="743" text-anchor="middle" fill="#E8ECF1" font-size="10">Community ambulation with AFOs</text>
+  <text x="370" y="758" text-anchor="middle" fill="#E8ECF1" font-size="10">Independent mobility</text>
+  <text x="580" y="748" text-anchor="middle" fill="#E8ECF1" font-size="9">AFOs, cane/crutch</text>
+  <text x="730" y="750" text-anchor="middle" fill="#3B82F6" font-size="11" font-weight="600">120-126</text>
+
+  <!-- L5-S1 -->
+  <rect x="20" y="785" width="760" height="50" fill="#1A1F2E" stroke="#3A4255" stroke-width="0.5" rx="3"/>
+  <text x="60" y="810" text-anchor="middle" fill="#A78BFA" font-size="13" font-weight="700">L5-S1</text>
+  <text x="175" y="808" text-anchor="middle" fill="#E8ECF1" font-size="10">Toe ext, gastroc</text>
+  <text x="370" y="805" text-anchor="middle" fill="#E8ECF1" font-size="10">Near-normal ambulation, may need AFO</text>
+  <text x="370" y="820" text-anchor="middle" fill="#9CA3AF" font-size="9">Bowel/bladder issues may persist</text>
+  <text x="580" y="810" text-anchor="middle" fill="#E8ECF1" font-size="9">AFO or shoe insert</text>
+  <text x="730" y="810" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="600">124-126</text>
+
+  <!-- FIM scale note -->
+  <rect x="30" y="850" rx="8" width="740" height="45" fill="#1A1F2E" stroke="#F59E0B" stroke-width="1"/>
+  <text x="400" y="870" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="700">FIM SCORE: 18 (total assistance) to 126 (complete independence)</text>
+  <text x="400" y="887" text-anchor="middle" fill="#FDE68A" font-size="10">13 motor items (max 91) + 5 cognitive items (max 35) = max 126</text>
+
+  <!-- Key abbreviations -->
+  <rect x="30" y="905" rx="6" width="740" height="35" fill="#0F1419" stroke="#3A4255" stroke-width="1"/>
+  <text x="400" y="928" text-anchor="middle" fill="#9CA3AF" font-size="10">MAS=Mobile Arm Support | ECU=Environmental Control Unit | KAFO=Knee-Ankle-Foot Orthosis | AFO=Ankle-Foot Orthosis</text>
+</svg>

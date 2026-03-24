@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22D3EE"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#EF4444"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34D399"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="1100" fill="#0F1419"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#EF4444" font-size="22" font-weight="700" letter-spacing="0.5">AUTONOMIC DYSREFLEXIA MANAGEMENT</text>
+  <text x="400" y="58" text-anchor="middle" fill="#5A6575" font-size="12">Emergency Stepwise Algorithm - SBP &gt;20mmHg above baseline or &gt;150mmHg</text>
+  <line x1="100" y1="68" x2="700" y2="68" stroke="#EF4444" stroke-width="1" opacity="0.4"/>
+
+  <!-- STEP 1: Sit Upright -->
+  <rect x="230" y="85" width="340" height="55" rx="10" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <text x="260" y="105" fill="#EF4444" font-size="11" font-weight="700">STEP 1</text>
+  <text x="400" y="115" text-anchor="middle" fill="#E8ECF1" font-size="13" font-weight="600">Sit patient UPRIGHT</text>
+  <text x="400" y="130" text-anchor="middle" fill="#9CA3AF" font-size="10">Lower legs if possible - orthostatic effect</text>
+
+  <line x1="400" y1="140" x2="400" y2="165" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- STEP 2: Loosen constrictives -->
+  <rect x="230" y="170" width="340" height="55" rx="10" fill="#1A1F2E" stroke="#22D3EE" stroke-width="2"/>
+  <text x="260" y="190" fill="#22D3EE" font-size="11" font-weight="700">STEP 2</text>
+  <text x="400" y="200" text-anchor="middle" fill="#E8ECF1" font-size="13" font-weight="600">Loosen all constrictives</text>
+  <text x="400" y="215" text-anchor="middle" fill="#9CA3AF" font-size="10">Abdominal binder, leg bag straps, tight clothing</text>
+
+  <line x1="400" y1="225" x2="400" y2="250" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- STEP 3: Check BP -->
+  <rect x="230" y="255" width="340" height="50" rx="10" fill="#1A1F2E" stroke="#22D3EE" stroke-width="2"/>
+  <text x="260" y="275" fill="#22D3EE" font-size="11" font-weight="700">STEP 3</text>
+  <text x="400" y="285" text-anchor="middle" fill="#E8ECF1" font-size="13" font-weight="600">Monitor BP every 2-5 minutes</text>
+  <text x="400" y="298" text-anchor="middle" fill="#9CA3AF" font-size="10">Document baseline and ongoing</text>
+
+  <line x1="400" y1="305" x2="400" y2="330" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Decision: SBP > 150? -->
+  <polygon points="400,340 510,380 400,420 290,380" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <text x="400" y="376" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="600">SBP still</text>
+  <text x="400" y="390" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="600">&gt;150 mmHg?</text>
+
+  <!-- NO branch -->
+  <line x1="510" y1="380" x2="620" y2="380" stroke="#34D399" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="560" y="370" fill="#34D399" font-size="11" font-weight="700">NO</text>
+  <rect x="625" y="360" width="155" height="40" rx="8" fill="#1A1F2E" stroke="#34D399" stroke-width="1.5"/>
+  <text x="702" y="378" text-anchor="middle" fill="#34D399" font-size="10" font-weight="600">Monitor and resolve</text>
+  <text x="702" y="393" text-anchor="middle" fill="#6EE7B7" font-size="9">Continue q5min BP checks</text>
+
+  <!-- YES arrow down -->
+  <line x1="400" y1="420" x2="400" y2="450" stroke="#EF4444" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="415" y="442" fill="#EF4444" font-size="11" font-weight="700">YES</text>
+
+  <!-- STEP 4: Bladder first -->
+  <rect x="200" y="455" width="400" height="70" rx="10" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <text x="230" y="475" fill="#EF4444" font-size="11" font-weight="700">STEP 4 - BLADDER FIRST (#1 Cause)</text>
+  <text x="400" y="492" text-anchor="middle" fill="#E8ECF1" font-size="11">If catheterized: check for kinks, irrigate, replace</text>
+  <text x="400" y="507" text-anchor="middle" fill="#E8ECF1" font-size="11">If not catheterized: straight catheterize immediately</text>
+  <text x="400" y="520" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">Use lidocaine jelly on catheter</text>
+
+  <line x1="400" y1="525" x2="400" y2="550" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Decision: Resolved? -->
+  <polygon points="400,560 490,590 400,620 310,590" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <text x="400" y="593" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="600">Resolved?</text>
+
+  <line x1="490" y1="590" x2="620" y2="590" stroke="#34D399" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="550" y="582" fill="#34D399" font-size="10" font-weight="700">YES</text>
+  <rect x="625" y="575" width="100" height="30" rx="8" fill="#1A1F2E" stroke="#34D399" stroke-width="1.5"/>
+  <text x="675" y="595" text-anchor="middle" fill="#34D399" font-size="10" font-weight="600">Resolved</text>
+
+  <line x1="400" y1="620" x2="400" y2="645" stroke="#EF4444" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="415" y="638" fill="#EF4444" font-size="10" font-weight="700">NO</text>
+
+  <!-- STEP 5: Bowel -->
+  <rect x="200" y="650" width="400" height="65" rx="10" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <text x="230" y="670" fill="#EF4444" font-size="11" font-weight="700">STEP 5 - BOWEL (#2 Cause)</text>
+  <text x="400" y="687" text-anchor="middle" fill="#E8ECF1" font-size="11">Digital rectal exam - disimpaction if loaded</text>
+  <text x="400" y="702" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">Apply 2% lidocaine gel first, wait 2 min</text>
+
+  <line x1="400" y1="715" x2="400" y2="740" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- STEP 6: Skin/Other -->
+  <rect x="200" y="745" width="400" height="65" rx="10" fill="#1A1F2E" stroke="#22D3EE" stroke-width="2"/>
+  <text x="230" y="765" fill="#22D3EE" font-size="11" font-weight="700">STEP 6 - SKIN &amp; OTHER TRIGGERS</text>
+  <text x="400" y="780" text-anchor="middle" fill="#E8ECF1" font-size="11">Skin: pressure injury, ingrown toenail, burns</text>
+  <text x="400" y="795" text-anchor="middle" fill="#E8ECF1" font-size="11">Other: DVT, fracture, appendicitis, UTI</text>
+
+  <line x1="400" y1="810" x2="400" y2="835" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Decision: Still elevated? -->
+  <polygon points="400,845 500,880 400,915 300,880" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <text x="400" y="876" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="600">SBP still</text>
+  <text x="400" y="890" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="600">elevated?</text>
+
+  <line x1="400" y1="915" x2="400" y2="940" stroke="#EF4444" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="415" y="933" fill="#EF4444" font-size="10" font-weight="700">YES</text>
+
+  <!-- STEP 7: Pharmacologic -->
+  <rect x="150" y="945" width="500" height="100" rx="10" fill="#1A1F2E" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="180" y="965" fill="#EF4444" font-size="12" font-weight="700">STEP 7 - PHARMACOLOGIC MANAGEMENT</text>
+  <line x1="170" y1="975" x2="630" y2="975" stroke="#EF4444" stroke-width="0.5" opacity="0.4"/>
+  <text x="400" y="993" text-anchor="middle" fill="#E8ECF1" font-size="11">1st line: Nitropaste 2% (1 inch above NLI) - wipe off when resolved</text>
+  <text x="400" y="1010" text-anchor="middle" fill="#E8ECF1" font-size="11">2nd line: Nifedipine 10mg (bite and swallow, NOT sublingual)</text>
+  <text x="400" y="1027" text-anchor="middle" fill="#FCA5A5" font-size="11" font-weight="600">3rd line: IV agents - labetalol, hydralazine, phentolamine</text>
+  <text x="400" y="1042" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">If refractory: ICU for continuous monitoring + IV drip</text>
+
+  <!-- Warning box -->
+  <rect x="20" y="85" width="190" height="130" fill="#1A1F2E" stroke="#EF4444" stroke-width="2" rx="8"/>
+  <text x="115" y="105" text-anchor="middle" fill="#EF4444" font-size="13" font-weight="700">AD SYMPTOMS</text>
+  <line x1="35" y1="113" x2="195" y2="113" stroke="#EF4444" stroke-width="0.5" opacity="0.4"/>
+  <text x="35" y="130" fill="#FCA5A5" font-size="10">- Severe headache</text>
+  <text x="35" y="145" fill="#FCA5A5" font-size="10">- Flushing above NLI</text>
+  <text x="35" y="160" fill="#FCA5A5" font-size="10">- Sweating above NLI</text>
+  <text x="35" y="175" fill="#FCA5A5" font-size="10">- Piloerection</text>
+  <text x="35" y="190" fill="#FCA5A5" font-size="10">- Nasal congestion</text>
+  <text x="35" y="205" fill="#FCA5A5" font-size="10">- Blurred vision</text>
+
+  <!-- Triggers box -->
+  <rect x="20" y="230" width="190" height="110" fill="#1A1F2E" stroke="#F59E0B" stroke-width="1.5" rx="8"/>
+  <text x="115" y="250" text-anchor="middle" fill="#F59E0B" font-size="12" font-weight="700">COMMON TRIGGERS</text>
+  <line x1="35" y1="258" x2="195" y2="258" stroke="#F59E0B" stroke-width="0.5" opacity="0.4"/>
+  <text x="35" y="275" fill="#FDE68A" font-size="10">1. Bladder distension (85%)</text>
+  <text x="35" y="290" fill="#FDE68A" font-size="10">2. Bowel impaction</text>
+  <text x="35" y="305" fill="#FDE68A" font-size="10">3. Skin irritation</text>
+  <text x="35" y="320" fill="#FDE68A" font-size="10">4. Tight clothing</text>
+  <text x="35" y="335" fill="#FDE68A" font-size="10">5. Sexual activity</text>
+
+  <!-- Danger note -->
+  <rect x="20" y="1060" rx="8" width="760" height="30" fill="#EF4444" fill-opacity="0.15" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="400" y="1080" text-anchor="middle" fill="#EF4444" font-size="12" font-weight="700">MEDICAL EMERGENCY: Uncontrolled AD can cause stroke, seizures, retinal hemorrhage, or death</text>
+</svg>

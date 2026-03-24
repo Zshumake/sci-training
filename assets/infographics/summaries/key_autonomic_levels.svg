@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="900" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="800" height="65" fill="#1A1F2E"/>
+  <text x="400" y="30" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="1">KEY AUTONOMIC LEVELS</text>
+  <text x="400" y="50" text-anchor="middle" fill="#5A6575" font-size="12">Critical Spinal Levels for Autonomic Function</text>
+  <line x1="100" y1="62" x2="700" y2="62" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- Vertical spinal column -->
+  <rect x="290" y="85" width="70" height="750" rx="10" fill="#1E2A3A" stroke="#3A4255" stroke-width="2"/>
+
+  <!-- Vertebral body segments -->
+  <!-- Cervical C1-C8 -->
+  <rect x="295" y="90" width="60" height="110" rx="5" fill="#3B82F6" fill-opacity="0.08" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="325" y="105" text-anchor="middle" fill="#3B82F6" font-size="10" font-weight="600">C1</text>
+  <line x1="300" y1="108" x2="350" y2="108" stroke="#3A4255" stroke-width="0.5"/>
+  <text x="325" y="122" text-anchor="middle" fill="#3B82F6" font-size="10" font-weight="600">C3-C5</text>
+  <line x1="300" y1="145" x2="350" y2="145" stroke="#3A4255" stroke-width="0.5"/>
+  <text x="325" y="157" text-anchor="middle" fill="#3B82F6" font-size="10" font-weight="600">C6</text>
+  <line x1="300" y1="168" x2="350" y2="168" stroke="#3A4255" stroke-width="0.5"/>
+  <text x="325" y="182" text-anchor="middle" fill="#3B82F6" font-size="10" font-weight="600">C8</text>
+
+  <!-- T1-T4 (Cardiac) -->
+  <rect x="295" y="200" width="60" height="90" rx="5" fill="#EF4444" fill-opacity="0.15" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="325" y="218" text-anchor="middle" fill="#EF4444" font-size="11" font-weight="700">T1</text>
+  <line x1="300" y1="228" x2="350" y2="228" stroke="#3A4255" stroke-width="0.5"/>
+  <text x="325" y="248" text-anchor="middle" fill="#EF4444" font-size="11" font-weight="700">T4</text>
+
+  <!-- T5-T6 (AD threshold zone) -->
+  <rect x="290" y="290" width="70" height="50" rx="5" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="325" y="312" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="700">T5</text>
+  <text x="325" y="332" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="700">T6</text>
+
+  <!-- T7-T9 -->
+  <rect x="295" y="340" width="60" height="70" rx="5" fill="#F97316" fill-opacity="0.1" stroke="#F97316" stroke-width="1"/>
+  <text x="325" y="380" text-anchor="middle" fill="#F97316" font-size="10" font-weight="600">T7-T9</text>
+
+  <!-- T10 -->
+  <rect x="295" y="410" width="60" height="35" rx="5" fill="#A78BFA" fill-opacity="0.1" stroke="#A78BFA" stroke-width="1"/>
+  <text x="325" y="432" text-anchor="middle" fill="#A78BFA" font-size="10" font-weight="600">T10</text>
+
+  <!-- T11-L2 (Sympathetic) -->
+  <rect x="295" y="445" width="60" height="100" rx="5" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="1.5"/>
+  <text x="325" y="470" text-anchor="middle" fill="#F97316" font-size="10" font-weight="600">T11</text>
+  <line x1="300" y1="478" x2="350" y2="478" stroke="#3A4255" stroke-width="0.5"/>
+  <text x="325" y="498" text-anchor="middle" fill="#F97316" font-size="10" font-weight="600">T12</text>
+  <line x1="300" y1="508" x2="350" y2="508" stroke="#3A4255" stroke-width="0.5"/>
+  <text x="325" y="525" text-anchor="middle" fill="#F97316" font-size="10" font-weight="600">L1</text>
+  <line x1="300" y1="532" x2="350" y2="532" stroke="#3A4255" stroke-width="0.5"/>
+  <text x="325" y="542" text-anchor="middle" fill="#F97316" font-size="10" font-weight="600">L2</text>
+
+  <!-- L3-L5 -->
+  <rect x="295" y="545" width="60" height="60" rx="5" fill="#3A4255" fill-opacity="0.3"/>
+  <text x="325" y="580" text-anchor="middle" fill="#9CA3AF" font-size="10">L3-L5</text>
+
+  <!-- S2-S4 (Parasympathetic) -->
+  <rect x="295" y="620" width="60" height="85" rx="5" fill="#34D399" fill-opacity="0.15" stroke="#34D399" stroke-width="1.5"/>
+  <text x="325" y="645" text-anchor="middle" fill="#34D399" font-size="10" font-weight="600">S2</text>
+  <line x1="300" y1="655" x2="350" y2="655" stroke="#3A4255" stroke-width="0.5"/>
+  <text x="325" y="672" text-anchor="middle" fill="#34D399" font-size="10" font-weight="600">S3</text>
+  <line x1="300" y1="680" x2="350" y2="680" stroke="#3A4255" stroke-width="0.5"/>
+  <text x="325" y="697" text-anchor="middle" fill="#34D399" font-size="10" font-weight="600">S4</text>
+
+  <!-- S5/Coccyx -->
+  <rect x="295" y="705" width="60" height="35" rx="5" fill="#3A4255" fill-opacity="0.3"/>
+  <text x="325" y="727" text-anchor="middle" fill="#9CA3AF" font-size="9">S5/Co</text>
+
+  <!-- Conus medullaris marker -->
+  <text x="325" y="755" text-anchor="middle" fill="#5A6575" font-size="9">Conus</text>
+  <text x="325" y="768" text-anchor="middle" fill="#5A6575" font-size="9">(L1-L2)</text>
+  <!-- Cauda equina -->
+  <line x1="325" y1="770" x2="315" y2="810" stroke="#5A6575" stroke-width="1"/>
+  <line x1="325" y1="770" x2="325" y2="810" stroke="#5A6575" stroke-width="1"/>
+  <line x1="325" y1="770" x2="335" y2="810" stroke="#5A6575" stroke-width="1"/>
+  <text x="325" y="825" text-anchor="middle" fill="#5A6575" font-size="9">Cauda equina</text>
+
+  <!-- ===== LABEL BOXES (RIGHT SIDE) ===== -->
+
+  <!-- C3-C5 Phrenic -->
+  <line x1="355" y1="130" x2="400" y2="130" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="400" y="110" rx="8" width="280" height="45" fill="#1A1F2E" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="540" y="130" text-anchor="middle" fill="#3B82F6" font-size="12" font-weight="700">C3-C5: Phrenic Nerve</text>
+  <text x="540" y="147" text-anchor="middle" fill="#93C5FD" font-size="10">Diaphragm innervation - breathing</text>
+
+  <!-- T1-T4 Cardiac -->
+  <line x1="355" y1="235" x2="400" y2="235" stroke="#EF4444" stroke-width="1.5"/>
+  <rect x="400" y="205" rx="8" width="380" height="65" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <text x="590" y="225" text-anchor="middle" fill="#EF4444" font-size="13" font-weight="700">T1-T4: Cardiac Sympathetic</text>
+  <text x="590" y="243" text-anchor="middle" fill="#FCA5A5" font-size="10">Cardioacceleratory nerves - HR, contractility</text>
+  <text x="590" y="258" text-anchor="middle" fill="#FCA5A5" font-size="10">Loss = bradycardia (cervical SCI)</text>
+  <text x="590" y="268" text-anchor="middle" fill="#9CA3AF" font-size="9">May need atropine or pacing</text>
+
+  <!-- T6 AD Threshold -->
+  <line x1="360" y1="315" x2="400" y2="315" stroke="#F59E0B" stroke-width="2.5"/>
+  <rect x="400" y="285" rx="8" width="380" height="65" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2.5"/>
+  <text x="590" y="308" text-anchor="middle" fill="#F59E0B" font-size="14" font-weight="700">T6: AD THRESHOLD</text>
+  <text x="590" y="326" text-anchor="middle" fill="#FDE68A" font-size="11">Injuries AT or ABOVE T6: AD risk</text>
+  <text x="590" y="342" text-anchor="middle" fill="#FDE68A" font-size="10">Splanchnic bed (T5-T9) unopposed</text>
+
+  <!-- T10 Abdominal reflex -->
+  <line x1="355" y1="425" x2="400" y2="425" stroke="#A78BFA" stroke-width="1.5"/>
+  <rect x="400" y="410" rx="8" width="280" height="35" fill="#1A1F2E" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="540" y="430" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="700">T10: Abdominal Reflex</text>
+  <text x="540" y="442" text-anchor="middle" fill="#C4B5FD" font-size="9">Lower abdominal reflex cutoff</text>
+
+  <!-- T11-L2 Sympathetic outflow -->
+  <line x1="355" y1="490" x2="400" y2="490" stroke="#F97316" stroke-width="1.5"/>
+  <rect x="400" y="460" rx="8" width="380" height="65" fill="#1A1F2E" stroke="#F97316" stroke-width="1.5"/>
+  <text x="590" y="480" text-anchor="middle" fill="#F97316" font-size="12" font-weight="700">T11-L2: Thoracolumbar Sympathetic</text>
+  <text x="590" y="498" text-anchor="middle" fill="#FDBA74" font-size="10">Bladder: hypogastric n. (IUS, detrusor relaxation)</text>
+  <text x="590" y="513" text-anchor="middle" fill="#FDBA74" font-size="10">Sexual: ejaculation ("Shoot")</text>
+  <text x="590" y="523" text-anchor="middle" fill="#FDBA74" font-size="9">Lower limb vasomotor, sudomotor</text>
+
+  <!-- S2-S4 Parasympathetic -->
+  <line x1="355" y1="660" x2="400" y2="660" stroke="#34D399" stroke-width="1.5"/>
+  <rect x="400" y="630" rx="8" width="380" height="80" fill="#1A1F2E" stroke="#34D399" stroke-width="2"/>
+  <text x="590" y="650" text-anchor="middle" fill="#34D399" font-size="13" font-weight="700">S2-S4: Sacral Parasympathetic</text>
+  <text x="590" y="668" text-anchor="middle" fill="#6EE7B7" font-size="10">Bladder: pelvic n. (detrusor contraction)</text>
+  <text x="590" y="683" text-anchor="middle" fill="#6EE7B7" font-size="10">Bowel: pelvic n. (distal colon peristalsis)</text>
+  <text x="590" y="698" text-anchor="middle" fill="#6EE7B7" font-size="10">Sexual: erection ("Point")</text>
+  <text x="590" y="710" text-anchor="middle" fill="#6EE7B7" font-size="9">Pudendal n. (EUS, EAS - somatic)</text>
+
+  <!-- ===== LEFT SIDE LABELS ===== -->
+  <!-- Cervical zone -->
+  <line x1="290" y1="145" x2="260" y2="145" stroke="#3B82F6" stroke-width="1"/>
+  <rect x="30" y="85" rx="8" width="225" height="120" fill="#1A1F2E" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="142" y="108" text-anchor="middle" fill="#3B82F6" font-size="12" font-weight="700">CERVICAL SCI EFFECTS</text>
+  <line x1="45" y1="116" x2="240" y2="116" stroke="#3B82F6" stroke-width="0.5" opacity="0.4"/>
+  <text x="45" y="133" fill="#93C5FD" font-size="9">Loss of ALL sympathetic outflow</text>
+  <text x="45" y="148" fill="#93C5FD" font-size="9">Neurogenic shock (acute)</text>
+  <text x="45" y="163" fill="#93C5FD" font-size="9">Bradycardia, hypotension</text>
+  <text x="45" y="178" fill="#93C5FD" font-size="9">Poikilothermia</text>
+  <text x="45" y="193" fill="#93C5FD" font-size="9">Anhidrosis below lesion</text>
+
+  <!-- Color-coded zones legend -->
+  <rect x="30" y="750" rx="8" width="225" height="130" fill="#1A1F2E" stroke="#3A4255" stroke-width="1.5"/>
+  <text x="142" y="773" text-anchor="middle" fill="#E8ECF1" font-size="12" font-weight="700">COLOR ZONES</text>
+  <line x1="45" y1="782" x2="240" y2="782" stroke="#3A4255" stroke-width="0.5" opacity="0.4"/>
+  <rect x="45" y="793" width="14" height="10" rx="2" fill="#EF4444" opacity="0.5"/>
+  <text x="65" y="803" fill="#FCA5A5" font-size="10">Cardiac sympathetic</text>
+  <rect x="45" y="812" width="14" height="10" rx="2" fill="#F59E0B" opacity="0.5"/>
+  <text x="65" y="822" fill="#FDE68A" font-size="10">AD threshold</text>
+  <rect x="45" y="831" width="14" height="10" rx="2" fill="#F97316" opacity="0.5"/>
+  <text x="65" y="841" fill="#FDBA74" font-size="10">Thoracolumbar sympathetic</text>
+  <rect x="45" y="850" width="14" height="10" rx="2" fill="#34D399" opacity="0.5"/>
+  <text x="65" y="860" fill="#6EE7B7" font-size="10">Sacral parasympathetic</text>
+  <rect x="45" y="869" width="14" height="10" rx="2" fill="#3B82F6" opacity="0.5"/>
+  <text x="65" y="879" fill="#93C5FD" font-size="10">Phrenic / cervical</text>
+</svg>

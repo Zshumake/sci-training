@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 750" width="800" height="750" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="750" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="800" height="65" fill="#1A1F2E"/>
+  <text x="400" y="30" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="1">INCOMPLETE SCI SYNDROMES</text>
+  <text x="400" y="50" text-anchor="middle" fill="#5A6575" font-size="12">Spinal Cord Cross-Section Patterns</text>
+  <line x1="100" y1="62" x2="700" y2="62" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- ===== 1. CENTRAL CORD SYNDROME ===== -->
+  <rect x="20" y="80" rx="10" width="370" height="300" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <text x="205" y="105" text-anchor="middle" fill="#EF4444" font-size="15" font-weight="700">CENTRAL CORD SYNDROME</text>
+
+  <!-- Cross section -->
+  <ellipse cx="205" cy="200" rx="100" ry="85" fill="#1E2A3A" stroke="#3A4255" stroke-width="1.5"/>
+  <!-- Gray matter outline -->
+  <path d="M185,155 L183,140 Q182,132 190,130 L195,130 Q197,132 196,140 L194,155Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M218,155 L220,140 Q221,132 215,130 L210,130 Q208,132 209,140 L211,155Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M182,170 Q182,180 205,180 Q228,180 228,170 L228,155 Q228,148 215,146 L195,146 Q182,148 182,155Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M182,180 L170,220 Q167,235 175,240 L183,243 Q187,244 188,238 L186,220 L182,180Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M228,180 L240,220 Q243,235 235,240 L227,243 Q223,244 222,238 L224,220 L228,180Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <rect x="192" y="172" width="26" height="10" rx="2" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+
+  <!-- Central affected area (red) -->
+  <ellipse cx="205" cy="185" rx="35" ry="30" fill="#EF4444" fill-opacity="0.35" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="205" y="190" text-anchor="middle" fill="#EF4444" font-size="9" font-weight="700">Affected</text>
+
+  <!-- Orientation -->
+  <text x="205" y="120" text-anchor="middle" fill="#5A6575" font-size="8">Dorsal</text>
+  <text x="205" y="275" text-anchor="middle" fill="#5A6575" font-size="8">Ventral</text>
+
+  <!-- Description -->
+  <text x="35" y="300" fill="#E8ECF1" font-size="10" font-weight="600">Most common incomplete syndrome</text>
+  <text x="35" y="316" fill="#E8ECF1" font-size="10">UE weakness &gt; LE (somatotopy)</text>
+  <text x="35" y="332" fill="#9CA3AF" font-size="10">Cause: hyperextension, elderly, stenosis</text>
+  <text x="35" y="348" fill="#34D399" font-size="10" font-weight="600">Best prognosis: LE recovers first</text>
+  <text x="35" y="364" fill="#FCA5A5" font-size="10">"Cape-like" sensory loss, bladder dysfunction</text>
+
+  <!-- ===== 2. BROWN-SEQUARD SYNDROME ===== -->
+  <rect x="410" y="80" rx="10" width="370" height="300" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <text x="595" y="105" text-anchor="middle" fill="#F59E0B" font-size="15" font-weight="700">BROWN-SEQUARD SYNDROME</text>
+
+  <!-- Cross section -->
+  <ellipse cx="595" cy="200" rx="100" ry="85" fill="#1E2A3A" stroke="#3A4255" stroke-width="1.5"/>
+  <!-- Gray matter -->
+  <path d="M575,155 L573,140 Q572,132 580,130 L585,130 Q587,132 586,140 L584,155Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M608,155 L610,140 Q611,132 605,130 L600,130 Q598,132 599,140 L601,155Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M572,170 Q572,180 595,180 Q618,180 618,170 L618,155 Q618,148 605,146 L585,146 Q572,148 572,155Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M572,180 L560,220 Q557,235 565,240 L573,243 Q577,244 578,238 L576,220 L572,180Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M618,180 L630,220 Q633,235 625,240 L617,243 Q613,244 612,238 L614,220 L618,180Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <rect x="582" y="172" width="26" height="10" rx="2" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+
+  <!-- Left half affected (hemisection) -->
+  <path d="M595,115 Q495,115 495,200 Q495,285 595,285 Z" fill="#F59E0B" fill-opacity="0.3" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="545" y="200" text-anchor="middle" fill="#F59E0B" font-size="9" font-weight="700">IPSI</text>
+
+  <!-- Orientation -->
+  <text x="595" y="120" text-anchor="middle" fill="#5A6575" font-size="8">Dorsal</text>
+  <text x="595" y="275" text-anchor="middle" fill="#5A6575" font-size="8">Ventral</text>
+
+  <!-- Description -->
+  <text x="425" y="300" fill="#E8ECF1" font-size="10" font-weight="600">Hemisection of spinal cord</text>
+  <text x="425" y="316" fill="#E8ECF1" font-size="10">Ipsilateral: motor loss + proprioception</text>
+  <text x="425" y="332" fill="#E8ECF1" font-size="10">Contralateral: pain/temp loss</text>
+  <text x="425" y="348" fill="#9CA3AF" font-size="10">Cause: penetrating injury, tumor</text>
+  <text x="425" y="364" fill="#34D399" font-size="10" font-weight="600">Good prognosis: 75%+ walk independently</text>
+
+  <!-- ===== 3. ANTERIOR CORD SYNDROME ===== -->
+  <rect x="20" y="395" rx="10" width="370" height="340" fill="#1A1F2E" stroke="#A78BFA" stroke-width="2"/>
+  <text x="205" y="420" text-anchor="middle" fill="#A78BFA" font-size="15" font-weight="700">ANTERIOR CORD SYNDROME</text>
+
+  <!-- Cross section -->
+  <ellipse cx="205" cy="520" rx="100" ry="85" fill="#1E2A3A" stroke="#3A4255" stroke-width="1.5"/>
+  <!-- Gray matter -->
+  <path d="M185,475 L183,460 Q182,452 190,450 L195,450 Q197,452 196,460 L194,475Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M218,475 L220,460 Q221,452 215,450 L210,450 Q208,452 209,460 L211,475Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M182,490 Q182,500 205,500 Q228,500 228,490 L228,475 Q228,468 215,466 L195,466 Q182,468 182,475Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M182,500 L170,540 Q167,555 175,560 L183,563 Q187,564 188,558 L186,540 L182,500Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M228,500 L240,540 Q243,555 235,560 L227,563 Q223,564 222,558 L224,540 L228,500Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <rect x="192" y="492" width="26" height="10" rx="2" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+
+  <!-- Anterior 2/3 affected -->
+  <path d="M105,490 Q105,605 205,605 Q305,605 305,490 L305,520 Q305,500 295,490 L115,490 Q105,500 105,490Z" fill="#A78BFA" fill-opacity="0.3" stroke="#A78BFA" stroke-width="1.5"/>
+  <!-- Horizontal divider at dorsal columns (posterior 1/3 spared) -->
+  <line x1="110" y1="490" x2="300" y2="490" stroke="#A78BFA" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="205" y="558" text-anchor="middle" fill="#A78BFA" font-size="9" font-weight="700">Affected</text>
+  <text x="205" y="455" text-anchor="middle" fill="#34D399" font-size="8" font-weight="600">SPARED</text>
+
+  <!-- Orientation -->
+  <text x="205" y="440" text-anchor="middle" fill="#5A6575" font-size="8">Dorsal</text>
+  <text x="205" y="598" text-anchor="middle" fill="#5A6575" font-size="8">Ventral</text>
+
+  <!-- Description -->
+  <text x="35" y="625" fill="#E8ECF1" font-size="10" font-weight="600">Anterior 2/3 of cord (ASA territory)</text>
+  <text x="35" y="641" fill="#E8ECF1" font-size="10">LOST: motor + pain/temp (bilateral)</text>
+  <text x="35" y="657" fill="#34D399" font-size="10" font-weight="600">PRESERVED: proprioception, vibration</text>
+  <text x="35" y="673" fill="#9CA3AF" font-size="10">Cause: ASA occlusion, burst fracture</text>
+  <text x="35" y="689" fill="#FCA5A5" font-size="10" font-weight="600">Worst prognosis: only 10-20% walk</text>
+  <text x="35" y="705" fill="#9CA3AF" font-size="10">Aortic surgery risk, flexion injuries</text>
+
+  <!-- ===== 4. POSTERIOR CORD SYNDROME ===== -->
+  <rect x="410" y="395" rx="10" width="370" height="340" fill="#1A1F2E" stroke="#34D399" stroke-width="2"/>
+  <text x="595" y="420" text-anchor="middle" fill="#34D399" font-size="15" font-weight="700">POSTERIOR CORD SYNDROME</text>
+
+  <!-- Cross section -->
+  <ellipse cx="595" cy="520" rx="100" ry="85" fill="#1E2A3A" stroke="#3A4255" stroke-width="1.5"/>
+  <!-- Gray matter -->
+  <path d="M575,475 L573,460 Q572,452 580,450 L585,450 Q587,452 586,460 L584,475Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M608,475 L610,460 Q611,452 605,450 L600,450 Q598,452 599,460 L601,475Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M572,490 Q572,500 595,500 Q618,500 618,490 L618,475 Q618,468 605,466 L585,466 Q572,468 572,475Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M572,500 L560,540 Q557,555 565,560 L573,563 Q577,564 578,558 L576,540 L572,500Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <path d="M618,500 L630,540 Q633,555 625,560 L617,563 Q613,564 612,558 L614,540 L618,500Z" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+  <rect x="582" y="492" width="26" height="10" rx="2" fill="#4B5563" stroke="#6B7280" stroke-width="0.8"/>
+
+  <!-- Posterior columns affected -->
+  <path d="M555,440 L555,475 Q555,490 595,490 Q635,490 635,475 L635,440 Q635,435 595,435 Q555,435 555,440Z" fill="#34D399" fill-opacity="0.35" stroke="#34D399" stroke-width="1.5"/>
+  <text x="595" y="465" text-anchor="middle" fill="#34D399" font-size="9" font-weight="700">Affected</text>
+
+  <!-- Orientation -->
+  <text x="595" y="440" text-anchor="middle" fill="#5A6575" font-size="8">Dorsal</text>
+  <text x="595" y="598" text-anchor="middle" fill="#5A6575" font-size="8">Ventral</text>
+
+  <!-- Description -->
+  <text x="425" y="625" fill="#E8ECF1" font-size="10" font-weight="600">Posterior columns (dorsal columns)</text>
+  <text x="425" y="641" fill="#E8ECF1" font-size="10">LOST: proprioception, vibration, fine touch</text>
+  <text x="425" y="657" fill="#34D399" font-size="10" font-weight="600">PRESERVED: motor, pain, temperature</text>
+  <text x="425" y="673" fill="#9CA3AF" font-size="10">Cause: PSA occlusion, B12 deficiency,</text>
+  <text x="425" y="689" fill="#9CA3AF" font-size="10">tabes dorsalis, MS, hyperextension</text>
+  <text x="425" y="705" fill="#F59E0B" font-size="10" font-weight="600">Rarest incomplete syndrome</text>
+  <text x="425" y="721" fill="#E8ECF1" font-size="10">Sensory ataxia, wide-based gait</text>
+</svg>

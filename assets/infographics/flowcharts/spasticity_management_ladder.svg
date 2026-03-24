@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22D3EE"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="900" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700">SPASTICITY MANAGEMENT LADDER</text>
+  <text x="400" y="58" text-anchor="middle" fill="#5A6575" font-size="12">Stepwise Approach - Conservative to Surgical</text>
+  <line x1="150" y1="68" x2="650" y2="68" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- Step 1 (bottom of ladder - most conservative) -->
+  <rect x="200" y="740" width="400" height="65" rx="10" fill="#1A1F2E" stroke="#34D399" stroke-width="2.5"/>
+  <rect x="200" y="740" width="50" height="65" rx="10" fill="#34D399" fill-opacity="0.15"/>
+  <text x="225" y="770" text-anchor="middle" fill="#34D399" font-size="20" font-weight="700">1</text>
+  <text x="420" y="763" text-anchor="middle" fill="#34D399" font-size="14" font-weight="700">Stretching / ROM / Positioning</text>
+  <text x="420" y="782" text-anchor="middle" fill="#E8ECF1" font-size="10">Daily stretching program, proper positioning</text>
+  <text x="420" y="796" text-anchor="middle" fill="#9CA3AF" font-size="9">Standing frame, serial casting, splinting</text>
+
+  <line x1="400" y1="735" x2="400" y2="720" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 2 -->
+  <rect x="200" y="640" width="400" height="75" rx="10" fill="#1A1F2E" stroke="#3B82F6" stroke-width="2.5"/>
+  <rect x="200" y="640" width="50" height="75" rx="10" fill="#3B82F6" fill-opacity="0.15"/>
+  <text x="225" y="675" text-anchor="middle" fill="#3B82F6" font-size="20" font-weight="700">2</text>
+  <text x="420" y="660" text-anchor="middle" fill="#3B82F6" font-size="14" font-weight="700">Oral Medications</text>
+  <text x="420" y="678" text-anchor="middle" fill="#E8ECF1" font-size="10">Baclofen (1st line): 5mg TID, titrate to 80mg/day</text>
+  <text x="420" y="693" text-anchor="middle" fill="#E8ECF1" font-size="10">Tizanidine (2nd): 2mg TID, titrate to 36mg/day</text>
+  <text x="420" y="708" text-anchor="middle" fill="#9CA3AF" font-size="9">Others: dantrolene (hepatotoxicity), diazepam, gabapentin, clonidine</text>
+
+  <line x1="400" y1="635" x2="400" y2="620" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 3 -->
+  <rect x="200" y="545" width="400" height="70" rx="10" fill="#1A1F2E" stroke="#A78BFA" stroke-width="2.5"/>
+  <rect x="200" y="545" width="50" height="70" rx="10" fill="#A78BFA" fill-opacity="0.15"/>
+  <text x="225" y="578" text-anchor="middle" fill="#A78BFA" font-size="20" font-weight="700">3</text>
+  <text x="420" y="565" text-anchor="middle" fill="#A78BFA" font-size="14" font-weight="700">Botulinum Toxin Injection</text>
+  <text x="420" y="583" text-anchor="middle" fill="#E8ECF1" font-size="10">OnabotulinumtoxinA (Botox) for focal spasticity</text>
+  <text x="420" y="598" text-anchor="middle" fill="#E8ECF1" font-size="10">Target specific muscles (e.g., hamstrings, adductors)</text>
+  <text x="420" y="611" text-anchor="middle" fill="#9CA3AF" font-size="9">Effect 3-6 months, repeat as needed, max 400U total</text>
+
+  <line x1="400" y1="540" x2="400" y2="525" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 4 -->
+  <rect x="200" y="450" width="400" height="70" rx="10" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2.5"/>
+  <rect x="200" y="450" width="50" height="70" rx="10" fill="#F59E0B" fill-opacity="0.15"/>
+  <text x="225" y="483" text-anchor="middle" fill="#F59E0B" font-size="20" font-weight="700">4</text>
+  <text x="420" y="470" text-anchor="middle" fill="#F59E0B" font-size="14" font-weight="700">ITB Pump Trial</text>
+  <text x="420" y="488" text-anchor="middle" fill="#E8ECF1" font-size="10">Intrathecal baclofen bolus trial (50-100 mcg)</text>
+  <text x="420" y="503" text-anchor="middle" fill="#E8ECF1" font-size="10">Positive = Ashworth drop by 1+ point</text>
+  <text x="420" y="516" text-anchor="middle" fill="#9CA3AF" font-size="9">More effective than oral, fewer systemic side effects</text>
+
+  <line x1="400" y1="445" x2="400" y2="430" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 5 -->
+  <rect x="200" y="355" width="400" height="70" rx="10" fill="#1A1F2E" stroke="#F97316" stroke-width="2.5"/>
+  <rect x="200" y="355" width="50" height="70" rx="10" fill="#F97316" fill-opacity="0.15"/>
+  <text x="225" y="388" text-anchor="middle" fill="#F97316" font-size="20" font-weight="700">5</text>
+  <text x="420" y="378" text-anchor="middle" fill="#F97316" font-size="14" font-weight="700">ITB Pump Implant</text>
+  <text x="420" y="396" text-anchor="middle" fill="#E8ECF1" font-size="10">Programmable pump, subcutaneous abdominal pocket</text>
+  <text x="420" y="411" text-anchor="middle" fill="#E8ECF1" font-size="10">Catheter tip at T10-T12 (LE) or C5-C7 (all four)</text>
+  <text x="420" y="421" text-anchor="middle" fill="#F59E0B" font-size="9" font-weight="600">Refill q1-6 months, monitor for withdrawal</text>
+
+  <line x1="400" y1="350" x2="400" y2="335" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 6 -->
+  <rect x="200" y="260" width="400" height="70" rx="10" fill="#1A1F2E" stroke="#EF4444" stroke-width="2.5"/>
+  <rect x="200" y="260" width="50" height="70" rx="10" fill="#EF4444" fill-opacity="0.15"/>
+  <text x="225" y="293" text-anchor="middle" fill="#EF4444" font-size="20" font-weight="700">6</text>
+  <text x="420" y="283" text-anchor="middle" fill="#EF4444" font-size="14" font-weight="700">Surgical Interventions</text>
+  <text x="420" y="301" text-anchor="middle" fill="#E8ECF1" font-size="10">Tendon lengthening / release</text>
+  <text x="420" y="316" text-anchor="middle" fill="#E8ECF1" font-size="10">DREZ (dorsal root entry zone) lesion</text>
+  <text x="420" y="327" text-anchor="middle" fill="#9CA3AF" font-size="9">Selective dorsal rhizotomy, neurectomy</text>
+
+  <!-- Escalation arrow on left -->
+  <text x="175" y="550" text-anchor="middle" fill="#5A6575" font-size="12" font-weight="600" transform="rotate(-90 175 550)">ESCALATING INVASIVENESS</text>
+  <line x1="185" y1="740" x2="185" y2="290" stroke="#5A6575" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <polygon points="182,295 185,280 188,295" fill="#5A6575"/>
+
+  <!-- ===== RED FLAGS SIDEBAR ===== -->
+  <rect x="20" y="85" rx="8" width="160" height="190" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <text x="100" y="107" text-anchor="middle" fill="#EF4444" font-size="13" font-weight="700">RED FLAGS</text>
+  <text x="100" y="120" text-anchor="middle" fill="#EF4444" font-size="10">Rule out before treating</text>
+  <line x1="35" y1="128" x2="165" y2="128" stroke="#EF4444" stroke-width="0.5" opacity="0.4"/>
+  <text x="35" y="145" fill="#FCA5A5" font-size="10">- UTI</text>
+  <text x="35" y="162" fill="#FCA5A5" font-size="10">- Pressure injury</text>
+  <text x="35" y="179" fill="#FCA5A5" font-size="10">- Fracture</text>
+  <text x="35" y="196" fill="#FCA5A5" font-size="10">- Bowel impaction</text>
+  <text x="35" y="213" fill="#FCA5A5" font-size="10">- DVT</text>
+  <text x="35" y="230" fill="#FCA5A5" font-size="10">- Kidney stone</text>
+  <text x="35" y="247" fill="#FCA5A5" font-size="10">- Syringomyelia</text>
+  <text x="35" y="264" fill="#F59E0B" font-size="9" font-weight="600">New/worsening spasticity</text>
+  <text x="35" y="274" fill="#F59E0B" font-size="9" font-weight="600">= noxious stimulus!</text>
+
+  <!-- ITB Withdrawal warning -->
+  <rect x="620" y="85" rx="8" width="160" height="140" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <text x="700" y="107" text-anchor="middle" fill="#EF4444" font-size="12" font-weight="700">ITB WITHDRAWAL</text>
+  <text x="700" y="120" text-anchor="middle" fill="#EF4444" font-size="10">Life-threatening!</text>
+  <line x1="635" y1="128" x2="765" y2="128" stroke="#EF4444" stroke-width="0.5" opacity="0.4"/>
+  <text x="635" y="145" fill="#FCA5A5" font-size="9">Rebound spasticity</text>
+  <text x="635" y="160" fill="#FCA5A5" font-size="9">Hyperthermia</text>
+  <text x="635" y="175" fill="#FCA5A5" font-size="9">Rhabdomyolysis</text>
+  <text x="635" y="190" fill="#FCA5A5" font-size="9">Multi-organ failure</text>
+  <text x="635" y="208" fill="#F59E0B" font-size="9" font-weight="600">Treatment: oral/IV</text>
+  <text x="635" y="220" fill="#F59E0B" font-size="9" font-weight="600">baclofen, cyproheptadine,</text>
+  <text x="635" y="232" fill="#F59E0B" font-size="9" font-weight="600">benzodiazepines, ICU</text>
+
+  <!-- Functional spasticity note -->
+  <rect x="100" y="830" rx="8" width="600" height="50" fill="#1A1F2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="400" y="850" text-anchor="middle" fill="#F59E0B" font-size="12" font-weight="700">FUNCTIONAL SPASTICITY MAY BE BENEFICIAL</text>
+  <text x="400" y="868" text-anchor="middle" fill="#FDE68A" font-size="10">Standing support, DVT prevention, muscle bulk preservation - do not over-treat</text>
+</svg>

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="0.5">SPINAL CORD VASCULAR SUPPLY</text>
+  <text x="400" y="56" text-anchor="middle" fill="#5A6575" font-size="12">Arterial Distribution &amp; Watershed Zones</text>
+  <line x1="150" y1="66" x2="650" y2="66" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- Orientation -->
+  <text x="400" y="88" text-anchor="middle" fill="#5A6575" font-size="10" font-weight="600">ANTERIOR</text>
+  <text x="400" y="540" text-anchor="middle" fill="#5A6575" font-size="10" font-weight="600">POSTERIOR</text>
+
+  <!-- Outer spinal cord -->
+  <ellipse cx="400" cy="310" rx="160" ry="140" fill="#1E2A3A" stroke="#3A4255" stroke-width="2"/>
+
+  <!-- Gray matter H-shape simplified -->
+  <path d="M375,250 L370,210 Q368,195 380,192 L384,192 Q387,195 385,210 L381,250Z" fill="#4B5563" stroke="#6B7280" stroke-width="1"/>
+  <path d="M419,250 L424,210 Q426,195 416,192 L412,192 Q409,195 411,210 L415,250Z" fill="#4B5563" stroke="#6B7280" stroke-width="1"/>
+  <rect x="373" y="295" width="54" height="15" rx="3" fill="#4B5563" stroke="#6B7280" stroke-width="1"/>
+  <path d="M373,310 L355,370 Q350,390 360,398 L372,402 Q378,404 380,395 L378,370 L373,310Z" fill="#4B5563" stroke="#6B7280" stroke-width="1"/>
+  <path d="M427,310 L445,370 Q450,390 440,398 L428,402 Q422,404 420,395 L422,370 L427,310Z" fill="#4B5563" stroke="#6B7280" stroke-width="1"/>
+  <path d="M373,250 L373,295 Q373,305 400,305 Q427,305 427,295 L427,250 Q427,240 415,238 L385,238 Q373,240 373,250Z" fill="#4B5563" stroke="#6B7280" stroke-width="1"/>
+
+  <!-- Central canal -->
+  <circle cx="400" cy="302" r="4" fill="#0F1419" stroke="#6B7280" stroke-width="1"/>
+
+  <!-- ASA territory overlay (anterior 2/3) -->
+  <path d="M240,310 Q240,180 400,175 Q560,180 560,310 L560,400 Q560,460 400,460 Q340,460 300,440" fill="#EF4444" fill-opacity="0.1" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <!-- Territory division line -->
+  <line x1="250" y1="250" x2="550" y2="250" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+
+  <!-- Anterior Spinal Artery (single, midline, anterior) -->
+  <circle cx="400" cy="168" r="8" fill="#EF4444" stroke="#EF4444" stroke-width="2"/>
+  <circle cx="400" cy="168" r="4" fill="#0F1419"/>
+  <!-- Sulcal/central arteries branching into cord -->
+  <line x1="400" y1="176" x2="400" y2="290" stroke="#EF4444" stroke-width="2"/>
+  <line x1="400" y1="220" x2="380" y2="260" stroke="#EF4444" stroke-width="1" opacity="0.7"/>
+  <line x1="400" y1="220" x2="420" y2="260" stroke="#EF4444" stroke-width="1" opacity="0.7"/>
+  <line x1="400" y1="250" x2="370" y2="290" stroke="#EF4444" stroke-width="1" opacity="0.7"/>
+  <line x1="400" y1="250" x2="430" y2="290" stroke="#EF4444" stroke-width="1" opacity="0.7"/>
+
+  <!-- Posterior Spinal Arteries (paired, posterior) -->
+  <circle cx="370" cy="455" r="6" fill="#3B82F6" stroke="#3B82F6" stroke-width="2"/>
+  <circle cx="370" cy="455" r="3" fill="#0F1419"/>
+  <circle cx="430" cy="455" r="6" fill="#3B82F6" stroke="#3B82F6" stroke-width="2"/>
+  <circle cx="430" cy="455" r="3" fill="#0F1419"/>
+  <!-- PSA branches into posterior cord -->
+  <line x1="370" y1="449" x2="375" y2="410" stroke="#3B82F6" stroke-width="1.5"/>
+  <line x1="430" y1="449" x2="425" y2="410" stroke="#3B82F6" stroke-width="1.5"/>
+
+  <!-- PSA territory overlay (posterior 1/3) -->
+  <path d="M300,440 Q240,460 240,310 L240,280" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <path d="M500,440 Q560,460 560,310 L560,280" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- Radicular arteries from sides -->
+  <path d="M180,300 Q200,290 240,300" fill="none" stroke="#F97316" stroke-width="2.5"/>
+  <path d="M180,310 Q200,320 240,315" fill="none" stroke="#F97316" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="180" cy="305" r="4" fill="#F97316"/>
+
+  <!-- ASA Label -->
+  <line x1="400" y1="160" x2="530" y2="100" stroke="#EF4444" stroke-width="1"/>
+  <rect x="530" y="82" rx="6" width="220" height="52" fill="#1A1F2E" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="640" y="100" text-anchor="middle" fill="#EF4444" font-size="12" font-weight="700">Anterior Spinal Artery (ASA)</text>
+  <text x="640" y="115" text-anchor="middle" fill="#FCA5A5" font-size="10">Supplies anterior 2/3 of cord</text>
+  <text x="640" y="128" text-anchor="middle" fill="#FCA5A5" font-size="10">Sulcal arteries branch centrally</text>
+
+  <!-- PSA Label -->
+  <line x1="430" y1="455" x2="560" y2="500" stroke="#3B82F6" stroke-width="1"/>
+  <rect x="560" y="482" rx="6" width="220" height="52" fill="#1A1F2E" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="670" y="500" text-anchor="middle" fill="#3B82F6" font-size="12" font-weight="700">Posterior Spinal Arteries (PSAs)</text>
+  <text x="670" y="515" text-anchor="middle" fill="#93C5FD" font-size="10">Paired - supply posterior 1/3</text>
+  <text x="670" y="528" text-anchor="middle" fill="#93C5FD" font-size="10">Dorsal columns &amp; dorsal horns</text>
+
+  <!-- Radicular artery label -->
+  <line x1="180" y1="305" x2="80" y2="250" stroke="#F97316" stroke-width="1"/>
+  <rect x="15" y="220" rx="6" width="180" height="45" fill="#1A1F2E" stroke="#F97316" stroke-width="1.5"/>
+  <text x="105" y="238" text-anchor="middle" fill="#F97316" font-size="11" font-weight="700">Radicular Arteries</text>
+  <text x="105" y="253" text-anchor="middle" fill="#FDBA74" font-size="9">Segmental feeders from aorta</text>
+
+  <!-- Artery of Adamkiewicz box -->
+  <rect x="15" y="340" rx="8" width="195" height="95" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <text x="112" y="360" text-anchor="middle" fill="#F59E0B" font-size="12" font-weight="700">Artery of Adamkiewicz</text>
+  <line x1="30" y1="368" x2="195" y2="368" stroke="#F59E0B" stroke-width="0.5" opacity="0.4"/>
+  <text x="112" y="385" text-anchor="middle" fill="#FDE68A" font-size="10">Largest radicular artery</text>
+  <text x="112" y="400" text-anchor="middle" fill="#FDE68A" font-size="10">Arises T9-T12 (usually T10)</text>
+  <text x="112" y="415" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">LEFT side in ~80% of patients</text>
+  <text x="112" y="430" text-anchor="middle" fill="#FCA5A5" font-size="9">At risk in aortic surgery</text>
+
+  <!-- Watershed Zone -->
+  <rect x="15" y="470" rx="8" width="195" height="65" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <text x="112" y="490" text-anchor="middle" fill="#EF4444" font-size="12" font-weight="700">Watershed Zone</text>
+  <line x1="30" y1="498" x2="195" y2="498" stroke="#EF4444" stroke-width="0.5" opacity="0.4"/>
+  <text x="112" y="513" text-anchor="middle" fill="#FCA5A5" font-size="10">T4-T8 most vulnerable</text>
+  <text x="112" y="528" text-anchor="middle" fill="#FCA5A5" font-size="10">Fewest radicular feeders</text>
+
+  <!-- Territory zones text -->
+  <text x="400" y="220" text-anchor="middle" fill="#EF4444" font-size="10" font-weight="600" opacity="0.6">ASA Territory</text>
+  <text x="400" y="430" text-anchor="middle" fill="#3B82F6" font-size="10" font-weight="600" opacity="0.6">PSA Territory</text>
+</svg>

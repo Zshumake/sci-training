@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="0.5">SPINAL CORD CROSS SECTION</text>
+  <text x="400" y="56" text-anchor="middle" fill="#5A6575" font-size="12">Major Ascending &amp; Descending Tracts with Somatotopy</text>
+  <line x1="150" y1="66" x2="650" y2="66" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- Orientation Labels -->
+  <text x="400" y="90" text-anchor="middle" fill="#5A6575" font-size="11" font-weight="600">DORSAL (Posterior)</text>
+  <text x="400" y="560" text-anchor="middle" fill="#5A6575" font-size="11" font-weight="600">VENTRAL (Anterior)</text>
+  <text x="130" y="310" text-anchor="middle" fill="#5A6575" font-size="11" font-weight="600" transform="rotate(-90 130 310)">LEFT</text>
+  <text x="670" y="310" text-anchor="middle" fill="#5A6575" font-size="11" font-weight="600" transform="rotate(90 670 310)">RIGHT</text>
+
+  <!-- Outer white matter oval -->
+  <ellipse cx="400" cy="310" rx="200" ry="170" fill="#1E2A3A" stroke="#3A4255" stroke-width="2.5"/>
+
+  <!-- Dorsal Columns (blue) - posterior funiculus -->
+  <path d="M360,155 L360,280 Q360,300 400,300 Q440,300 440,280 L440,155 Q440,145 400,140 Q360,145 360,155Z" fill="#3B82F6" fill-opacity="0.5" stroke="#3B82F6" stroke-width="1.5"/>
+  <!-- Fasciculus gracilis (medial) -->
+  <line x1="400" y1="145" x2="400" y2="295" stroke="#60A5FA" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="383" y="220" text-anchor="middle" fill="#93C5FD" font-size="8" font-weight="600">FG</text>
+  <text x="417" y="220" text-anchor="middle" fill="#93C5FD" font-size="8" font-weight="600">FC</text>
+  <!-- Somatotopy labels -->
+  <text x="383" y="235" text-anchor="middle" fill="#BFDBFE" font-size="7">Leg</text>
+  <text x="417" y="235" text-anchor="middle" fill="#BFDBFE" font-size="7">Arm</text>
+
+  <!-- Gray matter H-shape -->
+  <!-- Dorsal horns -->
+  <path d="M370,270 L370,300 Q370,310 380,315 L420,315 Q430,310 430,300 L430,270 Q430,260 415,255 L385,255 Q370,260 370,270Z" fill="#6B7280" stroke="#9CA3AF" stroke-width="1.5"/>
+  <!-- Dorsal horn tips (narrower, pointing back) -->
+  <path d="M378,255 L372,200 Q370,185 380,180 L385,180 Q388,185 386,200 L382,255Z" fill="#6B7280" stroke="#9CA3AF" stroke-width="1"/>
+  <path d="M418,255 L424,200 Q426,185 416,180 L412,180 Q409,185 411,200 L415,255Z" fill="#6B7280" stroke="#9CA3AF" stroke-width="1"/>
+  <!-- Ventral horns (wider, pointing forward) -->
+  <path d="M365,315 L345,380 Q338,405 350,415 L365,420 Q375,422 378,410 L380,380 L370,315Z" fill="#6B7280" stroke="#9CA3AF" stroke-width="1"/>
+  <path d="M435,315 L455,380 Q462,405 450,415 L435,420 Q425,422 422,410 L420,380 L430,315Z" fill="#6B7280" stroke="#9CA3AF" stroke-width="1"/>
+  <!-- Commissure connecting -->
+  <rect x="390" y="305" width="20" height="15" fill="#6B7280" stroke="#9CA3AF" stroke-width="1"/>
+
+  <!-- Central Canal -->
+  <circle cx="400" cy="312" r="5" fill="#0F1419" stroke="#9CA3AF" stroke-width="1.5"/>
+
+  <!-- Lateral Corticospinal Tract (red) - dorsolateral -->
+  <path d="M310,190 Q280,220 270,280 Q265,320 280,360 Q290,380 310,390" fill="none" stroke="#EF4444" stroke-width="10" stroke-linecap="round" opacity="0.5"/>
+  <path d="M490,190 Q520,220 530,280 Q535,320 520,360 Q510,380 490,390" fill="none" stroke="#EF4444" stroke-width="10" stroke-linecap="round" opacity="0.5"/>
+  <!-- Somatotopy arrows for LCST -->
+  <text x="265" y="260" text-anchor="middle" fill="#FCA5A5" font-size="8">Arm</text>
+  <text x="275" y="340" text-anchor="middle" fill="#FCA5A5" font-size="8">Leg</text>
+  <text x="535" y="260" text-anchor="middle" fill="#FCA5A5" font-size="8">Arm</text>
+  <text x="525" y="340" text-anchor="middle" fill="#FCA5A5" font-size="8">Leg</text>
+
+  <!-- Spinothalamic Tract (green) - anterolateral -->
+  <path d="M310,400 Q290,420 280,440 Q275,455 290,460" fill="none" stroke="#22C55E" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+  <path d="M490,400 Q510,420 520,440 Q525,455 510,460" fill="none" stroke="#22C55E" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+  <!-- Somatotopy for STT -->
+  <text x="275" y="430" text-anchor="middle" fill="#86EFAC" font-size="8">Arm</text>
+  <text x="295" y="460" text-anchor="middle" fill="#86EFAC" font-size="8">Leg</text>
+  <text x="525" y="430" text-anchor="middle" fill="#86EFAC" font-size="8">Arm</text>
+  <text x="505" y="460" text-anchor="middle" fill="#86EFAC" font-size="8">Leg</text>
+
+  <!-- Anterior Corticospinal Tract (orange) - anteromedial -->
+  <path d="M385,420 L385,465 Q385,475 395,475 L405,475 Q415,475 415,465 L415,420" fill="#F97316" fill-opacity="0.4" stroke="#F97316" stroke-width="1.5"/>
+
+  <!-- Label Boxes -->
+  <!-- Dorsal Columns label -->
+  <line x1="400" y1="160" x2="400" y2="105" stroke="#3B82F6" stroke-width="1"/>
+  <rect x="310" y="95" rx="6" width="180" height="30" fill="#1A1F2E" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="400" y="115" text-anchor="middle" fill="#3B82F6" font-size="11" font-weight="700">Dorsal Columns</text>
+  <text x="508" y="115" fill="#93C5FD" font-size="9">Proprioception, vibration, fine touch</text>
+
+  <!-- LCST label -->
+  <line x1="270" y1="290" x2="105" y2="210" stroke="#EF4444" stroke-width="1"/>
+  <circle cx="270" cy="290" r="3" fill="#EF4444"/>
+  <rect x="15" y="170" rx="6" width="180" height="55" fill="#1A1F2E" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="105" y="190" text-anchor="middle" fill="#EF4444" font-size="11" font-weight="700">Lateral CST</text>
+  <text x="105" y="205" text-anchor="middle" fill="#FCA5A5" font-size="9">Voluntary motor (contralat.)</text>
+  <text x="105" y="218" text-anchor="middle" fill="#FCA5A5" font-size="9">85% of CST fibers</text>
+
+  <!-- Spinothalamic label -->
+  <line x1="285" y1="445" x2="105" y2="480" stroke="#22C55E" stroke-width="1"/>
+  <circle cx="285" cy="445" r="3" fill="#22C55E"/>
+  <rect x="15" y="460" rx="6" width="180" height="55" fill="#1A1F2E" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="105" y="480" text-anchor="middle" fill="#22C55E" font-size="11" font-weight="700">Spinothalamic Tract</text>
+  <text x="105" y="495" text-anchor="middle" fill="#86EFAC" font-size="9">Pain, temperature</text>
+  <text x="105" y="508" text-anchor="middle" fill="#86EFAC" font-size="9">Crosses 1-2 levels above entry</text>
+
+  <!-- Anterior CST label -->
+  <line x1="400" y1="475" x2="400" y2="530" stroke="#F97316" stroke-width="1"/>
+  <rect x="310" y="520" rx="6" width="180" height="40" fill="#1A1F2E" stroke="#F97316" stroke-width="1.5"/>
+  <text x="400" y="538" text-anchor="middle" fill="#F97316" font-size="11" font-weight="700">Anterior CST</text>
+  <text x="400" y="553" text-anchor="middle" fill="#FDBA74" font-size="9">Voluntary motor (ipsilat.), ~15%</text>
+
+  <!-- Gray matter label -->
+  <line x1="450" y1="410" x2="620" y2="450" stroke="#9CA3AF" stroke-width="1"/>
+  <circle cx="450" cy="410" r="3" fill="#9CA3AF"/>
+  <rect x="620" y="430" rx="6" width="165" height="55" fill="#1A1F2E" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="702" y="450" text-anchor="middle" fill="#E8ECF1" font-size="11" font-weight="700">Gray Matter</text>
+  <text x="702" y="465" text-anchor="middle" fill="#9CA3AF" font-size="9">Dorsal horn: sensory</text>
+  <text x="702" y="478" text-anchor="middle" fill="#9CA3AF" font-size="9">Ventral horn: motor (LMN)</text>
+
+  <!-- Central canal label -->
+  <line x1="405" y1="312" x2="620" y2="340" stroke="#5A6575" stroke-width="1"/>
+  <rect x="620" y="320" rx="6" width="140" height="30" fill="#1A1F2E" stroke="#5A6575" stroke-width="1.5"/>
+  <text x="690" y="340" text-anchor="middle" fill="#E8ECF1" font-size="10" font-weight="600">Central Canal</text>
+
+  <!-- Legend -->
+  <rect x="620" y="100" rx="6" width="165" height="100" fill="#1A1F2E" stroke="#3A4255" stroke-width="1"/>
+  <text x="702" y="118" text-anchor="middle" fill="#E8ECF1" font-size="10" font-weight="700">LEGEND</text>
+  <rect x="632" y="128" width="12" height="8" rx="2" fill="#3B82F6" opacity="0.6"/>
+  <text x="650" y="136" fill="#93C5FD" font-size="9">Dorsal Columns</text>
+  <rect x="632" y="145" width="12" height="8" rx="2" fill="#EF4444" opacity="0.6"/>
+  <text x="650" y="153" fill="#FCA5A5" font-size="9">Lateral CST</text>
+  <rect x="632" y="162" width="12" height="8" rx="2" fill="#22C55E" opacity="0.6"/>
+  <text x="650" y="170" fill="#86EFAC" font-size="9">Spinothalamic</text>
+  <rect x="632" y="179" width="12" height="8" rx="2" fill="#F97316" opacity="0.6"/>
+  <text x="650" y="187" fill="#FDBA74" font-size="9">Anterior CST</text>
+</svg>

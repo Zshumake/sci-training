@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 950" width="800" height="950" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22D3EE"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#EF4444"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="950" fill="#0F1419"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700">PRESSURE INJURY PREVENTION</text>
+  <text x="400" y="58" text-anchor="middle" fill="#5A6575" font-size="12">Prevention Protocol &amp; Stage-Based Treatment</text>
+  <line x1="150" y1="68" x2="650" y2="68" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- ===== PREVENTION PROTOCOL (TOP) ===== -->
+  <text x="400" y="95" text-anchor="middle" fill="#34D399" font-size="16" font-weight="700">PREVENTION PROTOCOL</text>
+
+  <!-- 5 prevention pillars -->
+  <!-- 1. Repositioning -->
+  <rect x="30" y="115" width="145" height="110" rx="8" fill="#1A1F2E" stroke="#34D399" stroke-width="2"/>
+  <circle cx="102" cy="140" r="16" fill="#34D399" fill-opacity="0.15" stroke="#34D399" stroke-width="1.5"/>
+  <text x="102" y="145" text-anchor="middle" fill="#34D399" font-size="14" font-weight="700">1</text>
+  <text x="102" y="168" text-anchor="middle" fill="#34D399" font-size="11" font-weight="700">Repositioning</text>
+  <text x="102" y="185" text-anchor="middle" fill="#6EE7B7" font-size="9">q2h in bed</text>
+  <text x="102" y="198" text-anchor="middle" fill="#6EE7B7" font-size="9">30-degree lateral tilt</text>
+  <text x="102" y="211" text-anchor="middle" fill="#6EE7B7" font-size="9">Avoid shear forces</text>
+
+  <!-- 2. Pressure relief -->
+  <rect x="185" y="115" width="145" height="110" rx="8" fill="#1A1F2E" stroke="#3B82F6" stroke-width="2"/>
+  <circle cx="257" cy="140" r="16" fill="#3B82F6" fill-opacity="0.15" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="257" y="145" text-anchor="middle" fill="#3B82F6" font-size="14" font-weight="700">2</text>
+  <text x="257" y="168" text-anchor="middle" fill="#3B82F6" font-size="11" font-weight="700">Pressure Relief</text>
+  <text x="257" y="185" text-anchor="middle" fill="#93C5FD" font-size="9">q15-30 min in chair</text>
+  <text x="257" y="198" text-anchor="middle" fill="#93C5FD" font-size="9">Weight shifts (lean/tilt)</text>
+  <text x="257" y="211" text-anchor="middle" fill="#93C5FD" font-size="9">2 min each shift</text>
+
+  <!-- 3. Skin inspection -->
+  <rect x="340" y="115" width="145" height="110" rx="8" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="412" cy="140" r="16" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="412" y="145" text-anchor="middle" fill="#F59E0B" font-size="14" font-weight="700">3</text>
+  <text x="412" y="168" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="700">Skin Inspection</text>
+  <text x="412" y="185" text-anchor="middle" fill="#FDE68A" font-size="9">Daily full body check</text>
+  <text x="412" y="198" text-anchor="middle" fill="#FDE68A" font-size="9">Mirror for hard-to-see</text>
+  <text x="412" y="211" text-anchor="middle" fill="#FDE68A" font-size="9">Bony prominences focus</text>
+
+  <!-- 4. Nutrition -->
+  <rect x="495" y="115" width="145" height="110" rx="8" fill="#1A1F2E" stroke="#A78BFA" stroke-width="2"/>
+  <circle cx="567" cy="140" r="16" fill="#A78BFA" fill-opacity="0.15" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="567" y="145" text-anchor="middle" fill="#A78BFA" font-size="14" font-weight="700">4</text>
+  <text x="567" y="168" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="700">Nutrition</text>
+  <text x="567" y="185" text-anchor="middle" fill="#C4B5FD" font-size="9">Protein 1.25-1.5 g/kg/d</text>
+  <text x="567" y="198" text-anchor="middle" fill="#C4B5FD" font-size="9">Albumin &gt;3.5 g/dL</text>
+  <text x="567" y="211" text-anchor="middle" fill="#C4B5FD" font-size="9">Vit C + Zinc supplement</text>
+
+  <!-- 5. Support surfaces -->
+  <rect x="650" y="115" width="130" height="110" rx="8" fill="#1A1F2E" stroke="#EC4899" stroke-width="2"/>
+  <circle cx="715" cy="140" r="16" fill="#EC4899" fill-opacity="0.15" stroke="#EC4899" stroke-width="1.5"/>
+  <text x="715" y="145" text-anchor="middle" fill="#EC4899" font-size="14" font-weight="700">5</text>
+  <text x="715" y="168" text-anchor="middle" fill="#EC4899" font-size="11" font-weight="700">Support Surface</text>
+  <text x="715" y="185" text-anchor="middle" fill="#F9A8D4" font-size="9">Specialty mattress</text>
+  <text x="715" y="198" text-anchor="middle" fill="#F9A8D4" font-size="9">Wheelchair cushion</text>
+  <text x="715" y="211" text-anchor="middle" fill="#F9A8D4" font-size="9">Pressure mapping</text>
+
+  <!-- ===== STAGE-BASED TREATMENT (BOTTOM) ===== -->
+  <text x="400" y="265" text-anchor="middle" fill="#EF4444" font-size="16" font-weight="700">STAGE-BASED TREATMENT</text>
+
+  <!-- Stage I -->
+  <rect x="30" y="285" width="360" height="110" rx="8" fill="#1A1F2E" stroke="#34D399" stroke-width="2"/>
+  <rect x="30" y="285" width="60" height="35" rx="8" fill="#34D399" fill-opacity="0.2"/>
+  <text x="60" y="308" text-anchor="middle" fill="#34D399" font-size="14" font-weight="700">Stage I</text>
+  <text x="210" y="310" text-anchor="middle" fill="#34D399" font-size="12" font-weight="700">Non-Blanchable Erythema</text>
+  <line x1="45" y1="325" x2="375" y2="325" stroke="#34D399" stroke-width="0.5" opacity="0.4"/>
+  <text x="45" y="342" fill="#E8ECF1" font-size="10">- Offload immediately (do NOT position on area)</text>
+  <text x="45" y="358" fill="#E8ECF1" font-size="10">- Transparent film dressing</text>
+  <text x="45" y="374" fill="#E8ECF1" font-size="10">- Moisturize surrounding skin</text>
+  <text x="45" y="390" fill="#6EE7B7" font-size="10" font-weight="600">Monitor: should resolve in 72 hrs</text>
+
+  <!-- Stage II -->
+  <rect x="410" y="285" width="370" height="110" rx="8" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="410" y="285" width="65" height="35" rx="8" fill="#F59E0B" fill-opacity="0.2"/>
+  <text x="442" y="308" text-anchor="middle" fill="#F59E0B" font-size="14" font-weight="700">Stage II</text>
+  <text x="595" y="310" text-anchor="middle" fill="#F59E0B" font-size="12" font-weight="700">Partial Thickness / Blister</text>
+  <line x1="425" y1="325" x2="765" y2="325" stroke="#F59E0B" stroke-width="0.5" opacity="0.4"/>
+  <text x="425" y="342" fill="#E8ECF1" font-size="10">- Offload, moist wound healing</text>
+  <text x="425" y="358" fill="#E8ECF1" font-size="10">- Hydrocolloid or foam dressing</text>
+  <text x="425" y="374" fill="#E8ECF1" font-size="10">- Keep blisters intact if possible</text>
+  <text x="425" y="390" fill="#FDE68A" font-size="10" font-weight="600">Healing: 2-4 weeks with proper care</text>
+
+  <!-- Stage III -->
+  <rect x="30" y="410" width="360" height="120" rx="8" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <rect x="30" y="410" width="65" height="35" rx="8" fill="#EF4444" fill-opacity="0.2"/>
+  <text x="62" y="433" text-anchor="middle" fill="#EF4444" font-size="14" font-weight="700">Stage III</text>
+  <text x="210" y="435" text-anchor="middle" fill="#EF4444" font-size="12" font-weight="700">Full Thickness Skin Loss</text>
+  <line x1="45" y1="450" x2="375" y2="450" stroke="#EF4444" stroke-width="0.5" opacity="0.4"/>
+  <text x="45" y="468" fill="#E8ECF1" font-size="10">- Debridement (sharp/enzymatic/autolytic)</text>
+  <text x="45" y="484" fill="#E8ECF1" font-size="10">- Wound VAC (negative pressure)</text>
+  <text x="45" y="500" fill="#E8ECF1" font-size="10">- Alginate for exudate, foam overlay</text>
+  <text x="45" y="516" fill="#FCA5A5" font-size="10" font-weight="600">May need surgical consultation</text>
+  <text x="45" y="528" fill="#FCA5A5" font-size="9">Rule out osteomyelitis (MRI, ESR/CRP)</text>
+
+  <!-- Stage IV -->
+  <rect x="410" y="410" width="370" height="120" rx="8" fill="#1A1F2E" stroke="#A855F7" stroke-width="2"/>
+  <rect x="410" y="410" width="65" height="35" rx="8" fill="#A855F7" fill-opacity="0.2"/>
+  <text x="442" y="433" text-anchor="middle" fill="#A855F7" font-size="14" font-weight="700">Stage IV</text>
+  <text x="595" y="435" text-anchor="middle" fill="#A855F7" font-size="12" font-weight="700">Full Thickness Tissue Loss</text>
+  <line x1="425" y1="450" x2="765" y2="450" stroke="#A855F7" stroke-width="0.5" opacity="0.4"/>
+  <text x="425" y="468" fill="#E8ECF1" font-size="10">- Surgical debridement + flap closure</text>
+  <text x="425" y="484" fill="#E8ECF1" font-size="10">- Wound VAC as bridge to surgery</text>
+  <text x="425" y="500" fill="#E8ECF1" font-size="10">- Bone biopsy r/o osteomyelitis</text>
+  <text x="425" y="516" fill="#D8B4FE" font-size="10" font-weight="600">Flap options: gluteal, posterior thigh,</text>
+  <text x="425" y="528" fill="#D8B4FE" font-size="10" font-weight="600">TFL, gracilis musculocutaneous</text>
+
+  <!-- DTPI -->
+  <rect x="30" y="545" width="360" height="85" rx="8" fill="#1A1F2E" stroke="#EC4899" stroke-width="2"/>
+  <rect x="30" y="545" width="55" height="35" rx="8" fill="#EC4899" fill-opacity="0.2"/>
+  <text x="57" y="568" text-anchor="middle" fill="#EC4899" font-size="13" font-weight="700">DTPI</text>
+  <text x="210" y="570" text-anchor="middle" fill="#EC4899" font-size="12" font-weight="700">Deep Tissue Pressure Injury</text>
+  <line x1="45" y1="583" x2="375" y2="583" stroke="#EC4899" stroke-width="0.5" opacity="0.4"/>
+  <text x="45" y="600" fill="#E8ECF1" font-size="10">- Strict offloading, serial monitoring</text>
+  <text x="45" y="616" fill="#E8ECF1" font-size="10">- May evolve into Stage III/IV</text>
+  <text x="45" y="628" fill="#F9A8D4" font-size="10" font-weight="600">Purple/maroon intact skin or blood-filled blister</text>
+
+  <!-- Unstageable -->
+  <rect x="410" y="545" width="370" height="85" rx="8" fill="#1A1F2E" stroke="#6B7280" stroke-width="2"/>
+  <text x="595" y="570" text-anchor="middle" fill="#9CA3AF" font-size="13" font-weight="700">UNSTAGEABLE</text>
+  <line x1="425" y1="583" x2="765" y2="583" stroke="#6B7280" stroke-width="0.5" opacity="0.4"/>
+  <text x="425" y="600" fill="#E8ECF1" font-size="10">- Obscured by slough/eschar</text>
+  <text x="425" y="616" fill="#E8ECF1" font-size="10">- Must debride to stage accurately</text>
+  <text x="425" y="628" fill="#9CA3AF" font-size="10" font-weight="600">Stable eschar on heel: do NOT remove</text>
+
+  <!-- Support surface selection -->
+  <rect x="30" y="650" rx="10" width="740" height="130" fill="#1A1F2E" stroke="#22D3EE" stroke-width="1.5"/>
+  <text x="400" y="675" text-anchor="middle" fill="#22D3EE" font-size="14" font-weight="700">SUPPORT SURFACE SELECTION</text>
+  <line x1="50" y1="685" x2="750" y2="685" stroke="#22D3EE" stroke-width="0.5" opacity="0.4"/>
+
+  <rect x="50" y="695" rx="5" width="160" height="70" fill="#0F1419" stroke="#34D399" stroke-width="1"/>
+  <text x="130" y="712" text-anchor="middle" fill="#34D399" font-size="10" font-weight="700">GROUP 1</text>
+  <text x="130" y="727" text-anchor="middle" fill="#6EE7B7" font-size="9">Static support</text>
+  <text x="130" y="742" text-anchor="middle" fill="#6EE7B7" font-size="9">Foam, gel overlays</text>
+  <text x="130" y="757" text-anchor="middle" fill="#9CA3AF" font-size="8">Stage I-II prevention</text>
+
+  <rect x="230" y="695" rx="5" width="160" height="70" fill="#0F1419" stroke="#F59E0B" stroke-width="1"/>
+  <text x="310" y="712" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="700">GROUP 2</text>
+  <text x="310" y="727" text-anchor="middle" fill="#FDE68A" font-size="9">Alternating pressure</text>
+  <text x="310" y="742" text-anchor="middle" fill="#FDE68A" font-size="9">Powered pressure</text>
+  <text x="310" y="757" text-anchor="middle" fill="#9CA3AF" font-size="8">Stage II-III treatment</text>
+
+  <rect x="410" y="695" rx="5" width="160" height="70" fill="#0F1419" stroke="#EF4444" stroke-width="1"/>
+  <text x="490" y="712" text-anchor="middle" fill="#EF4444" font-size="10" font-weight="700">GROUP 3</text>
+  <text x="490" y="727" text-anchor="middle" fill="#FCA5A5" font-size="9">Air-fluidized</text>
+  <text x="490" y="742" text-anchor="middle" fill="#FCA5A5" font-size="9">Low-air-loss</text>
+  <text x="490" y="757" text-anchor="middle" fill="#9CA3AF" font-size="8">Stage III-IV, flap care</text>
+
+  <rect x="590" y="695" rx="5" width="160" height="70" fill="#0F1419" stroke="#A78BFA" stroke-width="1"/>
+  <text x="670" y="712" text-anchor="middle" fill="#A78BFA" font-size="10" font-weight="700">WHEELCHAIR</text>
+  <text x="670" y="727" text-anchor="middle" fill="#C4B5FD" font-size="9">ROHO, Jay, Varilite</text>
+  <text x="670" y="742" text-anchor="middle" fill="#C4B5FD" font-size="9">Pressure mapping assess</text>
+  <text x="670" y="757" text-anchor="middle" fill="#9CA3AF" font-size="8">Custom for high risk</text>
+
+  <!-- Bottom note -->
+  <rect x="100" y="800" rx="8" width="600" height="45" fill="#1A1F2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="400" y="820" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="700">HEALING TARGETS</text>
+  <text x="400" y="836" text-anchor="middle" fill="#FDE68A" font-size="10">30% reduction in wound area by week 2 = adequate progress. If not, reassess plan.</text>
+
+  <!-- Recurrence warning -->
+  <rect x="100" y="860" rx="8" width="600" height="35" fill="#EF4444" fill-opacity="0.1" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="400" y="883" text-anchor="middle" fill="#EF4444" font-size="11" font-weight="700">Recurrence rate: 30-40% within 2 years. Lifetime prevention education is essential.</text>
+</svg>

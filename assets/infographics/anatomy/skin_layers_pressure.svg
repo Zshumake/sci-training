@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D4A574"/>
+      <stop offset="15%" stop-color="#C4956A"/>
+      <stop offset="40%" stop-color="#B08060"/>
+      <stop offset="100%" stop-color="#8B6040"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="700" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="0.5">SKIN LAYERS &amp; PRESSURE INJURY</text>
+  <text x="400" y="56" text-anchor="middle" fill="#5A6575" font-size="12">Tissue Layers, Pressure Vectors &amp; NPUAP Staging</text>
+  <line x1="150" y1="66" x2="650" y2="66" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- ===== SKIN CROSS SECTION ===== -->
+
+  <!-- Epidermis layer -->
+  <rect x="150" y="100" width="400" height="40" rx="2" fill="#D4A574" stroke="#E8B98A" stroke-width="1.5"/>
+  <text x="350" y="125" text-anchor="middle" fill="#1A1F2E" font-size="12" font-weight="700">EPIDERMIS</text>
+
+  <!-- Dermis layer -->
+  <rect x="150" y="140" width="400" height="80" rx="2" fill="#C4856A" stroke="#D49580" stroke-width="1.5"/>
+  <!-- Blood vessels in dermis -->
+  <path d="M200,165 Q220,155 240,165 Q260,175 280,165" fill="none" stroke="#EF4444" stroke-width="1.5" opacity="0.7"/>
+  <path d="M320,180 Q340,170 360,180 Q380,190 400,180" fill="none" stroke="#3B82F6" stroke-width="1.5" opacity="0.7"/>
+  <!-- Nerve fibers -->
+  <path d="M440,160 L460,150 L480,165 L500,155" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.6"/>
+  <text x="350" y="175" text-anchor="middle" fill="#1A1F2E" font-size="12" font-weight="700">DERMIS</text>
+  <text x="350" y="195" text-anchor="middle" fill="#2A1A0E" font-size="9">Blood vessels, nerves, hair follicles</text>
+
+  <!-- Subcutaneous tissue -->
+  <rect x="150" y="220" width="400" height="80" rx="2" fill="#F59E0B" fill-opacity="0.2" stroke="#F59E0B" stroke-width="1.5" opacity="0.6"/>
+  <!-- Fat lobules -->
+  <circle cx="200" cy="260" r="15" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="0.5" opacity="0.5"/>
+  <circle cx="250" cy="250" r="18" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="0.5" opacity="0.5"/>
+  <circle cx="310" cy="260" r="16" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="0.5" opacity="0.5"/>
+  <circle cx="370" cy="255" r="17" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="0.5" opacity="0.5"/>
+  <circle cx="430" cy="260" r="15" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="0.5" opacity="0.5"/>
+  <circle cx="490" cy="250" r="16" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="0.5" opacity="0.5"/>
+  <text x="350" y="265" text-anchor="middle" fill="#F59E0B" font-size="12" font-weight="700">SUBCUTANEOUS TISSUE</text>
+  <text x="350" y="280" text-anchor="middle" fill="#FDBA74" font-size="9">Adipose, larger vessels</text>
+
+  <!-- Muscle layer -->
+  <rect x="150" y="300" width="400" height="70" rx="2" fill="#EF4444" fill-opacity="0.15" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+  <!-- Muscle fibers -->
+  <line x1="170" y1="320" x2="530" y2="320" stroke="#EF4444" stroke-width="0.5" opacity="0.3"/>
+  <line x1="170" y1="330" x2="530" y2="330" stroke="#EF4444" stroke-width="0.5" opacity="0.3"/>
+  <line x1="170" y1="340" x2="530" y2="340" stroke="#EF4444" stroke-width="0.5" opacity="0.3"/>
+  <line x1="170" y1="350" x2="530" y2="350" stroke="#EF4444" stroke-width="0.5" opacity="0.3"/>
+  <text x="350" y="340" text-anchor="middle" fill="#EF4444" font-size="12" font-weight="700">MUSCLE</text>
+
+  <!-- Bone -->
+  <rect x="150" y="370" width="400" height="50" rx="2" fill="#E8ECF1" fill-opacity="0.1" stroke="#E8ECF1" stroke-width="1.5" opacity="0.5"/>
+  <text x="350" y="400" text-anchor="middle" fill="#E8ECF1" font-size="12" font-weight="700">BONE</text>
+
+  <!-- ===== PRESSURE VECTORS ===== -->
+  <!-- Downward arrows (body weight) -->
+  <line x1="350" y1="80" x2="350" y2="100" stroke="#EF4444" stroke-width="3"/>
+  <polygon points="343,95 350,105 357,95" fill="#EF4444"/>
+  <line x1="300" y1="80" x2="300" y2="100" stroke="#EF4444" stroke-width="3"/>
+  <polygon points="293,95 300,105 307,95" fill="#EF4444"/>
+  <line x1="400" y1="80" x2="400" y2="100" stroke="#EF4444" stroke-width="3"/>
+  <polygon points="393,95 400,105 407,95" fill="#EF4444"/>
+  <text x="350" y="75" text-anchor="middle" fill="#EF4444" font-size="11" font-weight="700">Body Weight / Pressure</text>
+
+  <!-- Upward arrows (surface reaction) -->
+  <line x1="300" y1="440" x2="300" y2="420" stroke="#3B82F6" stroke-width="3"/>
+  <polygon points="293,425 300,415 307,425" fill="#3B82F6"/>
+  <line x1="350" y1="440" x2="350" y2="420" stroke="#3B82F6" stroke-width="3"/>
+  <polygon points="343,425 350,415 357,425" fill="#3B82F6"/>
+  <line x1="400" y1="440" x2="400" y2="420" stroke="#3B82F6" stroke-width="3"/>
+  <polygon points="393,425 400,415 407,425" fill="#3B82F6"/>
+  <text x="350" y="455" text-anchor="middle" fill="#3B82F6" font-size="11" font-weight="700">Support Surface Reaction</text>
+
+  <!-- Ischemia zone (cone-shaped) -->
+  <path d="M310,120 L280,370 L420,370 L390,120Z" fill="#EF4444" fill-opacity="0.06" stroke="#EF4444" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="460" y="250" fill="#EF4444" font-size="10" font-weight="600" transform="rotate(15 460 250)">Ischemia Zone</text>
+  <text x="475" y="265" fill="#FCA5A5" font-size="8" transform="rotate(15 475 265)">Tissue compression</text>
+
+  <!-- Layer labels (right side) -->
+  <line x1="550" y1="120" x2="590" y2="120" stroke="#E8B98A" stroke-width="1"/>
+  <text x="595" y="124" fill="#E8B98A" font-size="10">~0.1 mm</text>
+
+  <line x1="550" y1="180" x2="590" y2="180" stroke="#D49580" stroke-width="1"/>
+  <text x="595" y="184" fill="#D49580" font-size="10">1-4 mm</text>
+
+  <line x1="550" y1="260" x2="590" y2="260" stroke="#F59E0B" stroke-width="1"/>
+  <text x="595" y="264" fill="#F59E0B" font-size="10">Variable</text>
+
+  <!-- ===== NPUAP STAGING (BOTTOM) ===== -->
+  <rect x="20" y="475" rx="10" width="760" height="210" fill="#1A1F2E" stroke="#22D3EE" stroke-width="1.5"/>
+  <text x="400" y="498" text-anchor="middle" fill="#22D3EE" font-size="14" font-weight="700">NPUAP PRESSURE INJURY STAGING</text>
+  <line x1="40" y1="507" x2="760" y2="507" stroke="#22D3EE" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Stage I -->
+  <rect x="35" y="515" rx="6" width="135" height="80" fill="#0F1419" stroke="#34D399" stroke-width="1.5"/>
+  <text x="102" y="533" text-anchor="middle" fill="#34D399" font-size="12" font-weight="700">Stage I</text>
+  <text x="102" y="548" text-anchor="middle" fill="#6EE7B7" font-size="9">Non-blanchable erythema</text>
+  <text x="102" y="561" text-anchor="middle" fill="#6EE7B7" font-size="9">Intact skin</text>
+  <rect x="50" y="570" width="105" height="8" rx="2" fill="#D4A574"/>
+  <rect x="65" y="570" width="75" height="8" rx="2" fill="#EF4444" fill-opacity="0.4"/>
+  <text x="102" y="590" text-anchor="middle" fill="#9CA3AF" font-size="8">Epidermis only</text>
+
+  <!-- Stage II -->
+  <rect x="185" y="515" rx="6" width="135" height="80" fill="#0F1419" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="252" y="533" text-anchor="middle" fill="#F59E0B" font-size="12" font-weight="700">Stage II</text>
+  <text x="252" y="548" text-anchor="middle" fill="#FDE68A" font-size="9">Partial-thickness loss</text>
+  <text x="252" y="561" text-anchor="middle" fill="#FDE68A" font-size="9">Blister or shallow ulcer</text>
+  <rect x="200" y="570" width="105" height="8" rx="2" fill="#D4A574"/>
+  <rect x="225" y="570" width="55" height="15" rx="2" fill="#EF4444" fill-opacity="0.5"/>
+  <text x="252" y="590" text-anchor="middle" fill="#9CA3AF" font-size="8">Epidermis + dermis</text>
+
+  <!-- Stage III -->
+  <rect x="335" y="515" rx="6" width="135" height="80" fill="#0F1419" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="402" y="533" text-anchor="middle" fill="#EF4444" font-size="12" font-weight="700">Stage III</text>
+  <text x="402" y="548" text-anchor="middle" fill="#FCA5A5" font-size="9">Full-thickness skin loss</text>
+  <text x="402" y="561" text-anchor="middle" fill="#FCA5A5" font-size="9">Subcut fat visible</text>
+  <rect x="350" y="570" width="105" height="8" rx="2" fill="#D4A574"/>
+  <rect x="370" y="570" width="65" height="22" rx="2" fill="#EF4444" fill-opacity="0.6"/>
+  <text x="402" y="590" text-anchor="middle" fill="#9CA3AF" font-size="8">Through subcutaneous</text>
+
+  <!-- Stage IV -->
+  <rect x="485" y="515" rx="6" width="135" height="80" fill="#0F1419" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="552" y="533" text-anchor="middle" fill="#A855F7" font-size="12" font-weight="700">Stage IV</text>
+  <text x="552" y="548" text-anchor="middle" fill="#D8B4FE" font-size="9">Full-thickness tissue loss</text>
+  <text x="552" y="561" text-anchor="middle" fill="#D8B4FE" font-size="9">Bone/tendon exposed</text>
+  <rect x="500" y="570" width="105" height="8" rx="2" fill="#D4A574"/>
+  <rect x="515" y="570" width="75" height="28" rx="2" fill="#A855F7" fill-opacity="0.5"/>
+  <text x="552" y="590" text-anchor="middle" fill="#9CA3AF" font-size="8">To muscle/bone</text>
+
+  <!-- DTPI -->
+  <rect x="635" y="515" rx="6" width="135" height="80" fill="#0F1419" stroke="#EC4899" stroke-width="1.5"/>
+  <text x="702" y="533" text-anchor="middle" fill="#EC4899" font-size="11" font-weight="700">DTPI</text>
+  <text x="702" y="548" text-anchor="middle" fill="#F9A8D4" font-size="9">Deep Tissue Pressure</text>
+  <text x="702" y="561" text-anchor="middle" fill="#F9A8D4" font-size="9">Injury - maroon/purple</text>
+  <rect x="650" y="570" width="105" height="8" rx="2" fill="#D4A574"/>
+  <rect x="680" y="582" width="45" height="10" rx="2" fill="#EC4899" fill-opacity="0.5"/>
+  <text x="702" y="590" text-anchor="middle" fill="#9CA3AF" font-size="8">Deep - intact surface</text>
+
+  <!-- Key risk factors -->
+  <rect x="35" y="605" rx="6" width="730" height="65" fill="#0F1419" stroke="#F59E0B" stroke-width="1"/>
+  <text x="400" y="625" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="700">KEY RISK FACTORS IN SCI</text>
+  <text x="400" y="643" text-anchor="middle" fill="#FDE68A" font-size="10">Absent sensation + immobility + moisture + malnutrition + spasticity/contractures</text>
+  <text x="400" y="660" text-anchor="middle" fill="#FCA5A5" font-size="10" font-weight="600">Most common sites: sacrum, ischium, trochanter, heel, occiput</text>
+</svg>

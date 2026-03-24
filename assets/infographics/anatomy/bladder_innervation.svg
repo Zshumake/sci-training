@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22D3EE"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34D399"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#A78BFA"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#F97316"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="700" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="0.5">BLADDER INNERVATION</text>
+  <text x="400" y="56" text-anchor="middle" fill="#5A6575" font-size="12">Neural Control of Micturition - Three Pathways</text>
+  <line x1="150" y1="66" x2="650" y2="66" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- Brain (PMC) -->
+  <ellipse cx="400" cy="110" rx="50" ry="30" fill="#1A1F2E" stroke="#22D3EE" stroke-width="2"/>
+  <text x="400" y="106" text-anchor="middle" fill="#22D3EE" font-size="10" font-weight="700">Brain</text>
+  <text x="400" y="118" text-anchor="middle" fill="#67E8F9" font-size="9">(PMC - Barrington's)</text>
+
+  <!-- Spinal cord -->
+  <rect x="390" y="140" width="20" height="350" rx="5" fill="#2A3545" stroke="#3A4255" stroke-width="1.5"/>
+
+  <!-- T11-L2 sympathetic level marker -->
+  <rect x="380" y="220" width="40" height="50" rx="3" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="1"/>
+  <text x="375" y="250" text-anchor="end" fill="#F97316" font-size="10" font-weight="700">T11-L2</text>
+
+  <!-- S2-S4 parasympathetic/somatic level marker -->
+  <rect x="380" y="380" width="40" height="60" rx="3" fill="#34D399" fill-opacity="0.15" stroke="#34D399" stroke-width="1"/>
+  <text x="375" y="415" text-anchor="end" fill="#34D399" font-size="10" font-weight="700">S2-S4</text>
+
+  <!-- Bladder outline -->
+  <path d="M350,560 Q300,530 290,580 Q280,640 400,660 Q520,640 510,580 Q500,530 450,560Z" fill="#1A1F2E" stroke="#E8ECF1" stroke-width="2"/>
+  <text x="400" y="610" text-anchor="middle" fill="#E8ECF1" font-size="13" font-weight="600">Bladder</text>
+  <text x="400" y="625" text-anchor="middle" fill="#9CA3AF" font-size="10">(Detrusor muscle)</text>
+
+  <!-- IUS (Internal Urethral Sphincter) -->
+  <rect x="385" y="660" width="30" height="12" rx="4" fill="#F97316" fill-opacity="0.4" stroke="#F97316" stroke-width="1.5"/>
+  <text x="440" y="670" fill="#FDBA74" font-size="9" font-weight="600">IUS</text>
+
+  <!-- EUS (External Urethral Sphincter) -->
+  <rect x="382" y="677" width="36" height="12" rx="4" fill="#A78BFA" fill-opacity="0.4" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="440" y="687" fill="#C4B5FD" font-size="9" font-weight="600">EUS</text>
+
+  <!-- ===== PATHWAY 1: Parasympathetic (Green) S2-S4 → Pelvic nerve → Detrusor ===== -->
+  <path d="M410,420 Q450,440 470,480 Q490,520 460,560 Q440,580 420,590" fill="none" stroke="#34D399" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <!-- Pelvic nerve label -->
+  <rect x="470" y="470" rx="6" width="140" height="52" fill="#1A1F2E" stroke="#34D399" stroke-width="1.5"/>
+  <text x="540" y="488" text-anchor="middle" fill="#34D399" font-size="11" font-weight="700">Pelvic Nerve</text>
+  <text x="540" y="502" text-anchor="middle" fill="#6EE7B7" font-size="9">Parasympathetic S2-S4</text>
+  <text x="540" y="515" text-anchor="middle" fill="#6EE7B7" font-size="9">Detrusor CONTRACTION</text>
+
+  <!-- Receptor label for parasympathetic -->
+  <rect x="480" y="575" rx="4" width="85" height="22" fill="#1A1F2E" stroke="#34D399" stroke-width="1"/>
+  <text x="522" y="590" text-anchor="middle" fill="#34D399" font-size="10" font-weight="700">M3 receptor</text>
+
+  <!-- ===== PATHWAY 2: Sympathetic (Orange) T11-L2 → Hypogastric → IUS ===== -->
+  <path d="M410,245 Q500,260 560,340 Q600,400 540,500 Q510,540 440,590" fill="none" stroke="#F97316" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+  <!-- Hypogastric nerve label -->
+  <rect x="580" y="340" rx="6" width="180" height="68" fill="#1A1F2E" stroke="#F97316" stroke-width="1.5"/>
+  <text x="670" y="358" text-anchor="middle" fill="#F97316" font-size="11" font-weight="700">Hypogastric Nerve</text>
+  <text x="670" y="372" text-anchor="middle" fill="#FDBA74" font-size="9">Sympathetic T11-L2</text>
+  <line x1="595" y1="380" x2="745" y2="380" stroke="#F97316" stroke-width="0.5" opacity="0.4"/>
+  <text x="670" y="393" text-anchor="middle" fill="#FDBA74" font-size="9">IUS contraction (alpha-1)</text>
+  <text x="670" y="406" text-anchor="middle" fill="#FDBA74" font-size="9">Detrusor RELAXATION (beta-3)</text>
+
+  <!-- Receptor labels for sympathetic -->
+  <rect x="288" y="640" rx="4" width="100" height="22" fill="#1A1F2E" stroke="#F97316" stroke-width="1"/>
+  <text x="338" y="655" text-anchor="middle" fill="#F97316" font-size="9" font-weight="600">Alpha-1 (IUS)</text>
+  <rect x="180" y="610" rx="4" width="100" height="22" fill="#1A1F2E" stroke="#F97316" stroke-width="1"/>
+  <text x="230" y="625" text-anchor="middle" fill="#F97316" font-size="9" font-weight="600">Beta-3 (detrusor)</text>
+
+  <!-- ===== PATHWAY 3: Somatic (Purple) S2-S4 → Pudendal → EUS ===== -->
+  <path d="M390,420 Q340,450 310,500 Q290,540 350,600 Q370,620 385,650" fill="none" stroke="#A78BFA" stroke-width="2.5" marker-end="url(#arrowPurple)"/>
+  <!-- Pudendal nerve label -->
+  <rect x="140" y="480" rx="6" width="150" height="52" fill="#1A1F2E" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="215" y="498" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="700">Pudendal Nerve</text>
+  <text x="215" y="512" text-anchor="middle" fill="#C4B5FD" font-size="9">Somatic S2-S4</text>
+  <text x="215" y="525" text-anchor="middle" fill="#C4B5FD" font-size="9">EUS CONTRACTION (voluntary)</text>
+
+  <!-- Receptor label for somatic -->
+  <rect x="145" y="545" rx="4" width="110" height="22" fill="#1A1F2E" stroke="#A78BFA" stroke-width="1"/>
+  <text x="200" y="560" text-anchor="middle" fill="#A78BFA" font-size="9" font-weight="700">Nicotinic receptor</text>
+
+  <!-- Brain to cord arrows -->
+  <line x1="400" y1="140" x2="400" y2="220" stroke="#22D3EE" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Storage vs Voiding summary box -->
+  <rect x="20" y="85" rx="8" width="175" height="110" fill="#1A1F2E" stroke="#22D3EE" stroke-width="1.5"/>
+  <text x="107" y="105" text-anchor="middle" fill="#22D3EE" font-size="12" font-weight="700">STORAGE PHASE</text>
+  <line x1="35" y1="112" x2="180" y2="112" stroke="#22D3EE" stroke-width="0.5" opacity="0.4"/>
+  <text x="107" y="128" text-anchor="middle" fill="#F97316" font-size="10">Sympathetic active</text>
+  <text x="107" y="143" text-anchor="middle" fill="#FDBA74" font-size="9">Detrusor relaxed (beta-3)</text>
+  <text x="107" y="156" text-anchor="middle" fill="#FDBA74" font-size="9">IUS contracted (alpha-1)</text>
+  <text x="107" y="169" text-anchor="middle" fill="#C4B5FD" font-size="9">EUS contracted (somatic)</text>
+  <text x="107" y="185" text-anchor="middle" fill="#86EFAC" font-size="9">Parasympathetic inhibited</text>
+
+  <rect x="20" y="210" rx="8" width="175" height="95" fill="#1A1F2E" stroke="#34D399" stroke-width="1.5"/>
+  <text x="107" y="230" text-anchor="middle" fill="#34D399" font-size="12" font-weight="700">VOIDING PHASE</text>
+  <line x1="35" y1="237" x2="180" y2="237" stroke="#34D399" stroke-width="0.5" opacity="0.4"/>
+  <text x="107" y="253" text-anchor="middle" fill="#6EE7B7" font-size="10">Parasympathetic active</text>
+  <text x="107" y="268" text-anchor="middle" fill="#6EE7B7" font-size="9">Detrusor contracts (M3)</text>
+  <text x="107" y="281" text-anchor="middle" fill="#6EE7B7" font-size="9">IUS + EUS relax</text>
+  <text x="107" y="294" text-anchor="middle" fill="#FDBA74" font-size="9">Sympathetic inhibited</text>
+</svg>

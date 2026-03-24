@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" width="800" height="650" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#EF4444"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34D399"/>
+    </marker>
+    <marker id="arrowCyan" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22D3EE"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="650" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="0.5">CARDIAC INNERVATION IN SCI</text>
+  <text x="400" y="56" text-anchor="middle" fill="#5A6575" font-size="12">Sympathetic &amp; Parasympathetic Control of Heart Rate</text>
+  <line x1="150" y1="66" x2="650" y2="66" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- Heart shape -->
+  <path d="M350,280 Q350,230 390,210 Q420,200 440,220 Q460,200 480,210 Q520,230 520,280 Q520,350 435,420 Q350,350 350,280Z" fill="#1E2A3A" stroke="#EF4444" stroke-width="2"/>
+  <!-- SA node -->
+  <circle cx="480" cy="240" r="8" fill="#F59E0B" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="480" y="244" text-anchor="middle" fill="#0F1419" font-size="7" font-weight="700">SA</text>
+  <!-- AV node -->
+  <circle cx="435" cy="300" r="7" fill="#F59E0B" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="435" y="304" text-anchor="middle" fill="#0F1419" font-size="6" font-weight="700">AV</text>
+  <!-- Heart label -->
+  <text x="435" y="370" text-anchor="middle" fill="#E8ECF1" font-size="12" font-weight="600">Heart</text>
+
+  <!-- ===== SYMPATHETIC PATHWAY (T1-T4) ===== -->
+  <!-- Spinal cord segment -->
+  <rect x="140" y="180" width="16" height="100" rx="4" fill="#2A3545" stroke="#3A4255" stroke-width="1"/>
+  <rect x="134" y="190" width="28" height="80" rx="3" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-width="1"/>
+  <text x="130" y="235" text-anchor="end" fill="#F97316" font-size="10" font-weight="700">T1-T4</text>
+
+  <!-- Sympathetic chain ganglia -->
+  <circle cx="200" cy="210" r="6" fill="#F97316" fill-opacity="0.5" stroke="#F97316" stroke-width="1"/>
+  <circle cx="200" cy="235" r="6" fill="#F97316" fill-opacity="0.5" stroke="#F97316" stroke-width="1"/>
+  <circle cx="200" cy="260" r="6" fill="#F97316" fill-opacity="0.5" stroke="#F97316" stroke-width="1"/>
+  <line x1="200" y1="216" x2="200" y2="229" stroke="#F97316" stroke-width="1"/>
+  <line x1="200" y1="241" x2="200" y2="254" stroke="#F97316" stroke-width="1"/>
+
+  <!-- Sympathetic nerves to heart -->
+  <path d="M206,235 Q260,240 340,260" fill="none" stroke="#F97316" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+  <text x="270" y="230" fill="#F97316" font-size="10" font-weight="600">Cardioacceleratory</text>
+  <text x="270" y="244" fill="#FDBA74" font-size="9">nerves (sympathetic)</text>
+
+  <!-- Sympathetic effects -->
+  <rect x="20" y="310" rx="8" width="210" height="80" fill="#1A1F2E" stroke="#F97316" stroke-width="1.5"/>
+  <text x="125" y="330" text-anchor="middle" fill="#F97316" font-size="12" font-weight="700">Sympathetic Effects</text>
+  <line x1="35" y1="338" x2="215" y2="338" stroke="#F97316" stroke-width="0.5" opacity="0.4"/>
+  <text x="35" y="355" fill="#FDBA74" font-size="10">+ Heart rate (chronotropy)</text>
+  <text x="35" y="370" fill="#FDBA74" font-size="10">+ Contractility (inotropy)</text>
+  <text x="35" y="385" fill="#FDBA74" font-size="10">+ Conduction velocity</text>
+
+  <!-- ===== VAGUS NERVE (Parasympathetic) ===== -->
+  <!-- Brain/brainstem -->
+  <ellipse cx="600" cy="120" rx="35" ry="20" fill="#1A1F2E" stroke="#22D3EE" stroke-width="1.5"/>
+  <text x="600" y="124" text-anchor="middle" fill="#22D3EE" font-size="9" font-weight="700">Brainstem</text>
+
+  <!-- Vagus nerve path -->
+  <path d="M600,140 Q580,180 530,220 Q510,240 490,250" fill="none" stroke="#34D399" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="570" y="185" fill="#34D399" font-size="11" font-weight="700">Vagus (CN X)</text>
+  <text x="550" y="200" fill="#6EE7B7" font-size="9">Parasympathetic</text>
+
+  <!-- Parasympathetic effects -->
+  <rect x="580" y="310" rx="8" width="200" height="80" fill="#1A1F2E" stroke="#34D399" stroke-width="1.5"/>
+  <text x="680" y="330" text-anchor="middle" fill="#34D399" font-size="12" font-weight="700">Parasympathetic Effects</text>
+  <line x1="595" y1="338" x2="765" y2="338" stroke="#34D399" stroke-width="0.5" opacity="0.4"/>
+  <text x="595" y="355" fill="#6EE7B7" font-size="10">- Heart rate (vagal tone)</text>
+  <text x="595" y="370" fill="#6EE7B7" font-size="10">- Conduction (AV node)</text>
+  <text x="595" y="385" fill="#6EE7B7" font-size="10">Always active via CN X</text>
+
+  <!-- ===== CERVICAL SCI CONSEQUENCE BOX ===== -->
+  <rect x="180" y="440" rx="10" width="440" height="90" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <text x="400" y="462" text-anchor="middle" fill="#EF4444" font-size="14" font-weight="700">CERVICAL SCI: CARDIAC EFFECTS</text>
+  <line x1="200" y1="470" x2="600" y2="470" stroke="#EF4444" stroke-width="0.5" opacity="0.4"/>
+  <text x="400" y="490" text-anchor="middle" fill="#FCA5A5" font-size="11">Loss of T1-T4 sympathetic output to heart</text>
+  <text x="400" y="508" text-anchor="middle" fill="#F59E0B" font-size="12" font-weight="600">Unopposed vagal tone = BRADYCARDIA</text>
+  <text x="400" y="524" text-anchor="middle" fill="#FCA5A5" font-size="10">May require atropine or pacing in acute phase</text>
+
+  <!-- ===== BARORECEPTOR REFLEX ARC ===== -->
+  <rect x="20" y="545" rx="8" width="760" height="90" fill="#1A1F2E" stroke="#22D3EE" stroke-width="1.5"/>
+  <text x="400" y="568" text-anchor="middle" fill="#22D3EE" font-size="13" font-weight="700">BARORECEPTOR REFLEX ARC</text>
+  <line x1="40" y1="576" x2="760" y2="576" stroke="#22D3EE" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Reflex arc steps -->
+  <rect x="40" y="585" rx="5" width="110" height="35" fill="#0F1419" stroke="#3B82F6" stroke-width="1"/>
+  <text x="95" y="600" text-anchor="middle" fill="#3B82F6" font-size="9" font-weight="600">BP drop detected</text>
+  <text x="95" y="612" text-anchor="middle" fill="#93C5FD" font-size="8">Carotid/aortic</text>
+
+  <text x="165" y="602" fill="#5A6575" font-size="14">&#8594;</text>
+
+  <rect x="180" y="585" rx="5" width="110" height="35" fill="#0F1419" stroke="#22D3EE" stroke-width="1"/>
+  <text x="235" y="600" text-anchor="middle" fill="#22D3EE" font-size="9" font-weight="600">Afferent to NTS</text>
+  <text x="235" y="612" text-anchor="middle" fill="#67E8F9" font-size="8">CN IX, X</text>
+
+  <text x="305" y="602" fill="#5A6575" font-size="14">&#8594;</text>
+
+  <rect x="320" y="585" rx="5" width="120" height="35" fill="#0F1419" stroke="#F97316" stroke-width="1"/>
+  <text x="380" y="600" text-anchor="middle" fill="#F97316" font-size="9" font-weight="600">Sympathetic output</text>
+  <text x="380" y="612" text-anchor="middle" fill="#FDBA74" font-size="8">T1-T4 to heart</text>
+
+  <text x="455" y="602" fill="#5A6575" font-size="14">&#8594;</text>
+
+  <rect x="470" y="585" rx="5" width="110" height="35" fill="#0F1419" stroke="#34D399" stroke-width="1"/>
+  <text x="525" y="600" text-anchor="middle" fill="#34D399" font-size="9" font-weight="600">HR increases</text>
+  <text x="525" y="612" text-anchor="middle" fill="#6EE7B7" font-size="8">BP normalizes</text>
+
+  <text x="595" y="602" fill="#EF4444" font-size="14">&#10007;</text>
+
+  <rect x="610" y="585" rx="5" width="150" height="35" fill="#0F1419" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="685" y="600" text-anchor="middle" fill="#EF4444" font-size="9" font-weight="700">BROKEN in cervical SCI</text>
+  <text x="685" y="612" text-anchor="middle" fill="#FCA5A5" font-size="8">Cannot reach T1-T4</text>
+</svg>

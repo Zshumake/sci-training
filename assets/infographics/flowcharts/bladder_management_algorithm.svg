@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22D3EE"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#EF4444"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="900" fill="#0F1419"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700">BLADDER MANAGEMENT ALGORITHM</text>
+  <text x="400" y="58" text-anchor="middle" fill="#5A6575" font-size="12">UMN vs LMN Neurogenic Bladder Decision Tree</text>
+  <line x1="150" y1="68" x2="650" y2="68" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- Starting decision: UMN vs LMN -->
+  <polygon points="400,90 540,140 400,190 260,140" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <text x="400" y="133" text-anchor="middle" fill="#F59E0B" font-size="13" font-weight="700">Lesion Type?</text>
+  <text x="400" y="150" text-anchor="middle" fill="#FDE68A" font-size="10">(Urodynamics)</text>
+
+  <!-- UMN Branch (LEFT) -->
+  <line x1="310" y1="165" x2="200" y2="215" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="240" y="185" fill="#22D3EE" font-size="11" font-weight="700">UMN</text>
+
+  <rect x="60" y="220" width="280" height="60" rx="10" fill="#1A1F2E" stroke="#22D3EE" stroke-width="2"/>
+  <text x="200" y="243" text-anchor="middle" fill="#22D3EE" font-size="13" font-weight="700">UMN (Spastic) Bladder</text>
+  <text x="200" y="260" text-anchor="middle" fill="#9CA3AF" font-size="10">Above sacral cord (conus), DSD present</text>
+  <text x="200" y="272" text-anchor="middle" fill="#9CA3AF" font-size="9">Reflex detrusor contractions, high pressure</text>
+
+  <line x1="200" y1="280" x2="200" y2="310" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- CIC + Anticholinergic -->
+  <rect x="70" y="315" width="260" height="55" rx="8" fill="#1A1F2E" stroke="#34D399" stroke-width="2"/>
+  <text x="200" y="335" text-anchor="middle" fill="#34D399" font-size="12" font-weight="700">CIC + Anticholinergic</text>
+  <text x="200" y="350" text-anchor="middle" fill="#6EE7B7" font-size="10">Oxybutynin 5mg TID or</text>
+  <text x="200" y="363" text-anchor="middle" fill="#6EE7B7" font-size="10">Mirabegron (beta-3 agonist)</text>
+
+  <line x1="200" y1="370" x2="200" y2="395" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Decision: Adequate? -->
+  <polygon points="200,405 280,435 200,465 120,435" fill="#1A1F2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="200" y="435" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">Adequate?</text>
+
+  <!-- Yes -->
+  <line x1="120" y1="435" x2="35" y2="435" stroke="#34D399" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <text x="65" y="427" fill="#34D399" font-size="10" font-weight="700">YES</text>
+  <text x="30" y="455" fill="#34D399" font-size="9">Continue</text>
+  <text x="30" y="467" fill="#34D399" font-size="9">regimen</text>
+
+  <!-- No -->
+  <line x1="200" y1="465" x2="200" y2="495" stroke="#EF4444" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="215" y="485" fill="#EF4444" font-size="10" font-weight="700">NO</text>
+
+  <!-- Botox -->
+  <rect x="80" y="500" width="240" height="55" rx="8" fill="#1A1F2E" stroke="#A78BFA" stroke-width="2"/>
+  <text x="200" y="520" text-anchor="middle" fill="#A78BFA" font-size="12" font-weight="700">Botulinum Toxin A</text>
+  <text x="200" y="535" text-anchor="middle" fill="#C4B5FD" font-size="10">200U intradetrusor injection</text>
+  <text x="200" y="548" text-anchor="middle" fill="#C4B5FD" font-size="10">Repeat q6-9 months</text>
+
+  <line x1="200" y1="555" x2="200" y2="580" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Refractory? -->
+  <polygon points="200,590 280,620 200,650 120,620" fill="#1A1F2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="200" y="623" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">Refractory?</text>
+
+  <line x1="200" y1="650" x2="200" y2="675" stroke="#EF4444" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="215" y="668" fill="#EF4444" font-size="10" font-weight="700">YES</text>
+
+  <!-- Augmentation cystoplasty -->
+  <rect x="60" y="680" width="280" height="50" rx="8" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <text x="200" y="700" text-anchor="middle" fill="#EF4444" font-size="12" font-weight="700">Augmentation Cystoplasty</text>
+  <text x="200" y="716" text-anchor="middle" fill="#FCA5A5" font-size="10">Ileal segment bladder augmentation</text>
+  <text x="200" y="728" text-anchor="middle" fill="#FCA5A5" font-size="9">Must continue CIC post-op</text>
+
+  <!-- ===== LMN Branch (RIGHT) ===== -->
+  <line x1="490" y1="165" x2="600" y2="215" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="560" y="185" fill="#F97316" font-size="11" font-weight="700">LMN</text>
+
+  <rect x="460" y="220" width="280" height="60" rx="10" fill="#1A1F2E" stroke="#F97316" stroke-width="2"/>
+  <text x="600" y="243" text-anchor="middle" fill="#F97316" font-size="13" font-weight="700">LMN (Flaccid) Bladder</text>
+  <text x="600" y="260" text-anchor="middle" fill="#9CA3AF" font-size="10">At or below sacral cord, no DSD</text>
+  <text x="600" y="272" text-anchor="middle" fill="#9CA3AF" font-size="9">Areflexic, overflow incontinence</text>
+
+  <line x1="600" y1="280" x2="600" y2="310" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- CIC primary -->
+  <rect x="470" y="315" width="260" height="55" rx="8" fill="#1A1F2E" stroke="#34D399" stroke-width="2"/>
+  <text x="600" y="335" text-anchor="middle" fill="#34D399" font-size="12" font-weight="700">CIC (Primary)</text>
+  <text x="600" y="350" text-anchor="middle" fill="#6EE7B7" font-size="10">q4-6h, volumes &lt;500mL</text>
+  <text x="600" y="363" text-anchor="middle" fill="#6EE7B7" font-size="10">+/- Crede/Valsalva (if no reflux)</text>
+
+  <line x1="600" y1="370" x2="600" y2="395" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Alpha blocker option -->
+  <rect x="470" y="400" width="260" height="50" rx="8" fill="#1A1F2E" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="600" y="420" text-anchor="middle" fill="#3B82F6" font-size="11" font-weight="700">+/- Alpha Blocker</text>
+  <text x="600" y="435" text-anchor="middle" fill="#93C5FD" font-size="10">Tamsulosin 0.4mg for IUS relaxation</text>
+  <text x="600" y="446" text-anchor="middle" fill="#93C5FD" font-size="9">Facilitates drainage</text>
+
+  <line x1="600" y1="450" x2="600" y2="480" stroke="#22D3EE" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Inadequate? -->
+  <polygon points="600,490 680,520 600,550 520,520" fill="#1A1F2E" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="600" y="523" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">Adequate?</text>
+
+  <line x1="600" y1="550" x2="600" y2="580" stroke="#EF4444" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="615" y="570" fill="#EF4444" font-size="10" font-weight="700">NO</text>
+
+  <!-- Surgical options -->
+  <rect x="460" y="585" width="280" height="80" rx="8" fill="#1A1F2E" stroke="#A78BFA" stroke-width="2"/>
+  <text x="600" y="605" text-anchor="middle" fill="#A78BFA" font-size="12" font-weight="700">Surgical Options</text>
+  <line x1="475" y1="613" x2="725" y2="613" stroke="#A78BFA" stroke-width="0.5" opacity="0.4"/>
+  <text x="600" y="630" text-anchor="middle" fill="#C4B5FD" font-size="10">Sphincterotomy (males)</text>
+  <text x="600" y="645" text-anchor="middle" fill="#C4B5FD" font-size="10">Mitrofanoff (continent catheterizable stoma)</text>
+  <text x="600" y="660" text-anchor="middle" fill="#C4B5FD" font-size="10">Suprapubic catheter</text>
+
+  <!-- Key principles box -->
+  <rect x="250" y="775" rx="10" width="300" height="115" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <text x="400" y="798" text-anchor="middle" fill="#F59E0B" font-size="13" font-weight="700">KEY PRINCIPLES</text>
+  <line x1="265" y1="806" x2="535" y2="806" stroke="#F59E0B" stroke-width="0.5" opacity="0.4"/>
+  <text x="400" y="825" text-anchor="middle" fill="#FDE68A" font-size="10">Goal: low pressure storage + complete emptying</text>
+  <text x="400" y="842" text-anchor="middle" fill="#FDE68A" font-size="10">Detrusor pressure &lt;40 cmH2O</text>
+  <text x="400" y="859" text-anchor="middle" fill="#FDE68A" font-size="10">CIC volume &lt;500mL per cath</text>
+  <text x="400" y="876" text-anchor="middle" fill="#FCA5A5" font-size="10" font-weight="600">Annual renal US + urodynamics</text>
+</svg>

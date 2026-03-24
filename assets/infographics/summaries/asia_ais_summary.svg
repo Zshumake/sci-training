@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 950" width="800" height="950" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="950" fill="url(#bgGrad)"/>
+
+  <!-- Title Banner -->
+  <rect x="0" y="0" width="800" height="65" fill="#1A1F2E"/>
+  <text x="400" y="30" text-anchor="middle" fill="#22D3EE" font-size="24" font-weight="700" letter-spacing="1">ASIA IMPAIRMENT SCALE (AIS)</text>
+  <text x="400" y="50" text-anchor="middle" fill="#5A6575" font-size="13">Classification of Spinal Cord Injury Severity</text>
+  <line x1="100" y1="62" x2="700" y2="62" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- AIS A -->
+  <rect x="30" y="80" rx="10" width="740" height="90" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <rect x="30" y="80" rx="10" width="70" height="90" fill="#EF4444" fill-opacity="0.15"/>
+  <text x="65" y="120" text-anchor="middle" fill="#EF4444" font-size="36" font-weight="700">A</text>
+  <text x="65" y="148" text-anchor="middle" fill="#EF4444" font-size="12" font-weight="700">Complete</text>
+  <text x="120" y="110" fill="#E8ECF1" font-size="14" font-weight="600">No motor or sensory function preserved in sacral segments S4-S5</text>
+  <text x="120" y="130" fill="#9CA3AF" font-size="11">No voluntary anal contraction (VAC)</text>
+  <text x="120" y="147" fill="#9CA3AF" font-size="11">No deep anal pressure (DAP)</text>
+  <text x="120" y="162" fill="#FCA5A5" font-size="10" font-weight="600">No sacral sparing = Complete injury</text>
+
+  <!-- AIS B -->
+  <rect x="30" y="182" rx="10" width="740" height="90" fill="#1A1F2E" stroke="#F97316" stroke-width="2"/>
+  <rect x="30" y="182" rx="10" width="70" height="90" fill="#F97316" fill-opacity="0.15"/>
+  <text x="65" y="222" text-anchor="middle" fill="#F97316" font-size="36" font-weight="700">B</text>
+  <text x="65" y="252" text-anchor="middle" fill="#F97316" font-size="11" font-weight="700">Sensory</text>
+  <text x="65" y="264" text-anchor="middle" fill="#F97316" font-size="11" font-weight="700">Incomplete</text>
+  <text x="120" y="212" fill="#E8ECF1" font-size="14" font-weight="600">Sensory but NO motor function preserved below NLI</text>
+  <text x="120" y="232" fill="#9CA3AF" font-size="11">Includes sacral segments S4-S5 (sacral sparing)</text>
+  <text x="120" y="249" fill="#9CA3AF" font-size="11">DAP present OR light touch/pin prick at S4-S5</text>
+  <text x="120" y="264" fill="#FDBA74" font-size="10" font-weight="600">No motor function &gt;3 levels below motor NLI</text>
+
+  <!-- AIS C -->
+  <rect x="30" y="284" rx="10" width="740" height="90" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="30" y="284" rx="10" width="70" height="90" fill="#F59E0B" fill-opacity="0.15"/>
+  <text x="65" y="324" text-anchor="middle" fill="#F59E0B" font-size="36" font-weight="700">C</text>
+  <text x="65" y="354" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="700">Motor</text>
+  <text x="65" y="366" text-anchor="middle" fill="#F59E0B" font-size="11" font-weight="700">Incomplete</text>
+  <text x="120" y="314" fill="#E8ECF1" font-size="14" font-weight="600">Motor function preserved below NLI</text>
+  <text x="120" y="334" fill="#9CA3AF" font-size="11">More than half of key muscles below NLI have grade &lt;3</text>
+  <text x="120" y="351" fill="#FDE68A" font-size="10" font-weight="600">Majority of muscles CANNOT move against gravity</text>
+  <text x="120" y="368" fill="#9CA3AF" font-size="10">Must have sacral sparing (sensory or motor at S4-S5)</text>
+
+  <!-- AIS D -->
+  <rect x="30" y="386" rx="10" width="740" height="90" fill="#1A1F2E" stroke="#34D399" stroke-width="2"/>
+  <rect x="30" y="386" rx="10" width="70" height="90" fill="#34D399" fill-opacity="0.15"/>
+  <text x="65" y="426" text-anchor="middle" fill="#34D399" font-size="36" font-weight="700">D</text>
+  <text x="65" y="456" text-anchor="middle" fill="#34D399" font-size="11" font-weight="700">Motor</text>
+  <text x="65" y="468" text-anchor="middle" fill="#34D399" font-size="11" font-weight="700">Incomplete</text>
+  <text x="120" y="416" fill="#E8ECF1" font-size="14" font-weight="600">Motor function preserved below NLI</text>
+  <text x="120" y="436" fill="#9CA3AF" font-size="11">At least half of key muscles below NLI have grade &gt;=3</text>
+  <text x="120" y="453" fill="#6EE7B7" font-size="10" font-weight="600">Majority of muscles CAN move against gravity</text>
+  <text x="120" y="470" fill="#9CA3AF" font-size="10">Best functional prognosis among incomplete injuries</text>
+
+  <!-- AIS E -->
+  <rect x="30" y="488" rx="10" width="740" height="75" fill="#1A1F2E" stroke="#3B82F6" stroke-width="2"/>
+  <rect x="30" y="488" rx="10" width="70" height="75" fill="#3B82F6" fill-opacity="0.15"/>
+  <text x="65" y="528" text-anchor="middle" fill="#3B82F6" font-size="36" font-weight="700">E</text>
+  <text x="65" y="550" text-anchor="middle" fill="#3B82F6" font-size="11" font-weight="700">Normal</text>
+  <text x="120" y="518" fill="#E8ECF1" font-size="14" font-weight="600">Motor and sensory function normal</text>
+  <text x="120" y="538" fill="#9CA3AF" font-size="11">All ISNCSCI segments test normal</text>
+  <text x="120" y="555" fill="#93C5FD" font-size="10" font-weight="600">Patient had prior deficit that has recovered</text>
+
+  <!-- ===== SACRAL SPARING DEFINITION ===== -->
+  <rect x="30" y="580" rx="10" width="350" height="145" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <text x="205" y="605" text-anchor="middle" fill="#F59E0B" font-size="14" font-weight="700">SACRAL SPARING</text>
+  <text x="205" y="620" text-anchor="middle" fill="#F59E0B" font-size="11">(Determines Complete vs Incomplete)</text>
+  <line x1="45" y1="630" x2="365" y2="630" stroke="#F59E0B" stroke-width="0.5" opacity="0.4"/>
+  <text x="50" y="650" fill="#E8ECF1" font-size="11">ANY of the following at S4-S5:</text>
+  <text x="60" y="670" fill="#FDE68A" font-size="10">1. Voluntary anal contraction (VAC)</text>
+  <text x="60" y="688" fill="#FDE68A" font-size="10">2. Deep anal pressure (DAP)</text>
+  <text x="60" y="706" fill="#FDE68A" font-size="10">3. Light touch at S4-S5</text>
+  <text x="60" y="720" fill="#FCA5A5" font-size="10" font-weight="600">If ANY present: Incomplete (B, C, or D)</text>
+
+  <!-- ===== NLI DETERMINATION ===== -->
+  <rect x="400" y="580" rx="10" width="370" height="145" fill="#1A1F2E" stroke="#22D3EE" stroke-width="2"/>
+  <text x="585" y="605" text-anchor="middle" fill="#22D3EE" font-size="14" font-weight="700">NLI DETERMINATION</text>
+  <text x="585" y="620" text-anchor="middle" fill="#22D3EE" font-size="11">(Neurological Level of Injury)</text>
+  <line x1="415" y1="630" x2="755" y2="630" stroke="#22D3EE" stroke-width="0.5" opacity="0.4"/>
+  <text x="415" y="650" fill="#E8ECF1" font-size="11">Steps:</text>
+  <text x="425" y="668" fill="#67E8F9" font-size="10">1. Determine sensory levels (R + L)</text>
+  <text x="425" y="686" fill="#67E8F9" font-size="10">2. Determine motor levels (R + L)</text>
+  <text x="425" y="704" fill="#67E8F9" font-size="10">3. Single NLI = most rostral of all four</text>
+  <text x="425" y="720" fill="#9CA3AF" font-size="9">Motor level requires grade 3+ with all rostral = 5</text>
+
+  <!-- Key muscles reminder -->
+  <rect x="30" y="740" rx="10" width="740" height="195" fill="#1A1F2E" stroke="#3A4255" stroke-width="1.5"/>
+  <text x="400" y="762" text-anchor="middle" fill="#22D3EE" font-size="13" font-weight="700">KEY MUSCLES FOR MOTOR LEVEL</text>
+  <line x1="50" y1="770" x2="750" y2="770" stroke="#22D3EE" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Upper extremity -->
+  <text x="200" y="790" text-anchor="middle" fill="#3B82F6" font-size="12" font-weight="700">Upper Extremity</text>
+  <text x="60" y="810" fill="#E8ECF1" font-size="10">C5: Elbow flexors (biceps)</text>
+  <text x="60" y="827" fill="#E8ECF1" font-size="10">C6: Wrist extensors (ECRL/B)</text>
+  <text x="60" y="844" fill="#E8ECF1" font-size="10">C7: Elbow extensors (triceps)</text>
+  <text x="60" y="861" fill="#E8ECF1" font-size="10">C8: Finger flexors (FDP to middle)</text>
+  <text x="60" y="878" fill="#E8ECF1" font-size="10">T1: Small finger abductor (ADM)</text>
+
+  <!-- Lower extremity -->
+  <text x="600" y="790" text-anchor="middle" fill="#34D399" font-size="12" font-weight="700">Lower Extremity</text>
+  <text x="440" y="810" fill="#E8ECF1" font-size="10">L2: Hip flexors (iliopsoas)</text>
+  <text x="440" y="827" fill="#E8ECF1" font-size="10">L3: Knee extensors (quadriceps)</text>
+  <text x="440" y="844" fill="#E8ECF1" font-size="10">L4: Ankle dorsiflexors (tib. anterior)</text>
+  <text x="440" y="861" fill="#E8ECF1" font-size="10">L5: Long toe extensors (EHL)</text>
+  <text x="440" y="878" fill="#E8ECF1" font-size="10">S1: Ankle plantar flexors (gastroc)</text>
+
+  <!-- Grading scale -->
+  <text x="400" y="910" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">Muscle grading: 0=total paralysis, 1=palpable contraction, 2=full ROM gravity eliminated</text>
+  <text x="400" y="925" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">3=full ROM against gravity, 4=active movement against resistance, 5=normal</text>
+</svg>

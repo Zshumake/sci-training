@@ -6,6 +6,7 @@ import 'widgets/dermatome_map_widget.dart';
 import 'widgets/ais_practice_widget.dart';
 import 'widgets/isncsci_classification_trainer.dart';
 import 'widgets/isncsci_worksheet.dart';
+import 'widgets/sci_anatomy_gallery_view.dart';
 
 class TopicContentView extends StatelessWidget {
   final TopicData topicData;
@@ -736,6 +737,12 @@ class TopicContentView extends StatelessWidget {
           appBar: AppBar(title: const Text('ISNCSCI Worksheet')),
           body: const ISNCSCIWorksheet(),
         );
+      case CustomWidgetType.anatomyGallery:
+        title = 'Anatomy Gallery';
+        subtitle = '3D models, diagrams, and interactive layers';
+        icon = Icons.view_in_ar_rounded;
+        color = AppTheme.pathophysColor;
+        builder = (_) => const SCIAnatomyGalleryView();
       default:
         title = 'Interactive Tool';
         subtitle = 'Coming soon';

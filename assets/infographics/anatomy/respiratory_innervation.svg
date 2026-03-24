@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="700" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="38" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="0.5">RESPIRATORY INNERVATION IN SCI</text>
+  <text x="400" y="56" text-anchor="middle" fill="#5A6575" font-size="12">Respiratory Muscles, Innervation Levels &amp; FVC by Injury Level</text>
+  <line x1="150" y1="66" x2="650" y2="66" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- Anterior torso outline -->
+  <path d="M280,120 L240,140 Q200,180 190,250 Q180,350 200,450 Q210,500 230,530 L370,530 Q390,500 400,450 Q420,500 410,530 L570,530 Q590,500 600,450 Q620,350 610,250 Q600,180 560,140 L520,120" fill="none" stroke="#3A4255" stroke-width="1.5"/>
+
+  <!-- Head/neck outline -->
+  <path d="M350,120 Q350,85 400,80 Q450,85 450,120" fill="none" stroke="#3A4255" stroke-width="1.5"/>
+
+  <!-- Spinal cord (center, behind torso) -->
+  <rect x="393" y="80" width="14" height="460" rx="4" fill="#2A3545" stroke="#3A4255" stroke-width="1"/>
+
+  <!-- Level markers -->
+  <text x="390" y="100" text-anchor="end" fill="#9CA3AF" font-size="9">C1</text>
+  <text x="390" y="118" text-anchor="end" fill="#9CA3AF" font-size="9">C3</text>
+  <text x="390" y="145" text-anchor="end" fill="#9CA3AF" font-size="9">C5</text>
+  <text x="390" y="175" text-anchor="end" fill="#9CA3AF" font-size="9">C8</text>
+  <text x="390" y="210" text-anchor="end" fill="#9CA3AF" font-size="9">T1</text>
+  <text x="390" y="310" text-anchor="end" fill="#9CA3AF" font-size="9">T6</text>
+  <text x="390" y="400" text-anchor="end" fill="#9CA3AF" font-size="9">T11</text>
+  <text x="390" y="440" text-anchor="end" fill="#9CA3AF" font-size="9">T12</text>
+
+  <!-- ===== ACCESSORY MUSCLES (C1-C8) ===== -->
+  <!-- SCM -->
+  <path d="M360,100 Q340,115 330,135" fill="none" stroke="#A78BFA" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M440,100 Q460,115 470,135" fill="none" stroke="#A78BFA" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Trapezius -->
+  <path d="M330,130 Q280,150 250,170" fill="none" stroke="#A78BFA" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  <path d="M470,130 Q520,150 550,170" fill="none" stroke="#A78BFA" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Scalenes (neck lateral) -->
+  <path d="M365,95 Q345,105 340,125" fill="none" stroke="#A78BFA" stroke-width="2" opacity="0.4"/>
+  <path d="M435,95 Q455,105 460,125" fill="none" stroke="#A78BFA" stroke-width="2" opacity="0.4"/>
+
+  <!-- ===== PHRENIC NERVE (C3-C5) → DIAPHRAGM ===== -->
+  <!-- Diaphragm -->
+  <path d="M200,340 Q300,290 400,310 Q500,290 600,340" fill="#EF4444" fill-opacity="0.15" stroke="#EF4444" stroke-width="2.5"/>
+  <text x="400" y="335" text-anchor="middle" fill="#EF4444" font-size="11" font-weight="700">DIAPHRAGM</text>
+
+  <!-- Phrenic nerves -->
+  <path d="M400,118 Q350,200 310,310" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="6,3"/>
+  <path d="M400,118 Q450,200 490,310" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="6,3"/>
+
+  <!-- ===== INTERCOSTALS (T1-T11) ===== -->
+  <line x1="220" y1="220" x2="290" y2="220" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+  <line x1="220" y1="245" x2="290" y2="245" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+  <line x1="220" y1="270" x2="290" y2="270" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+  <line x1="220" y1="295" x2="290" y2="295" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+  <line x1="510" y1="220" x2="580" y2="220" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+  <line x1="510" y1="245" x2="580" y2="245" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+  <line x1="510" y1="270" x2="580" y2="270" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+  <line x1="510" y1="295" x2="580" y2="295" stroke="#3B82F6" stroke-width="2" opacity="0.5"/>
+
+  <!-- ===== ABDOMINALS (T6-T12) ===== -->
+  <rect x="310" y="370" width="180" height="140" rx="5" fill="#34D399" fill-opacity="0.08" stroke="#34D399" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="400" y="440" text-anchor="middle" fill="#34D399" font-size="10" font-weight="600">Abdominals</text>
+  <text x="400" y="455" text-anchor="middle" fill="#6EE7B7" font-size="9">(T6-T12)</text>
+
+  <!-- ===== LABEL BOXES ===== -->
+
+  <!-- Phrenic nerve label -->
+  <rect x="20" y="90" rx="8" width="200" height="70" fill="#1A1F2E" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="120" y="110" text-anchor="middle" fill="#EF4444" font-size="12" font-weight="700">Phrenic Nerve (C3-C5)</text>
+  <line x1="35" y1="118" x2="205" y2="118" stroke="#EF4444" stroke-width="0.5" opacity="0.4"/>
+  <text x="120" y="134" text-anchor="middle" fill="#FCA5A5" font-size="10">Primary respiratory muscle</text>
+  <text x="120" y="149" text-anchor="middle" fill="#FCA5A5" font-size="10">"C3, 4, 5 keeps the diaphragm alive"</text>
+
+  <!-- Accessory muscles label -->
+  <rect x="20" y="180" rx="8" width="200" height="60" fill="#1A1F2E" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="120" y="200" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="700">Accessory Muscles (C1-C8)</text>
+  <line x1="35" y1="208" x2="205" y2="208" stroke="#A78BFA" stroke-width="0.5" opacity="0.4"/>
+  <text x="120" y="224" text-anchor="middle" fill="#C4B5FD" font-size="9">SCM, trapezius, scalenes</text>
+  <text x="120" y="236" text-anchor="middle" fill="#C4B5FD" font-size="9">Accessory breathing in high SCI</text>
+
+  <!-- Intercostals label -->
+  <rect x="600" y="200" rx="8" width="185" height="50" fill="#1A1F2E" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="692" y="220" text-anchor="middle" fill="#3B82F6" font-size="11" font-weight="700">Intercostals (T1-T11)</text>
+  <text x="692" y="235" text-anchor="middle" fill="#93C5FD" font-size="9">Chest wall expansion + forced exp.</text>
+  <text x="692" y="245" text-anchor="middle" fill="#93C5FD" font-size="9">Cough effectiveness</text>
+
+  <!-- Abdominals label -->
+  <rect x="600" y="370" rx="8" width="185" height="60" fill="#1A1F2E" stroke="#34D399" stroke-width="1.5"/>
+  <text x="692" y="390" text-anchor="middle" fill="#34D399" font-size="11" font-weight="700">Abdominals (T6-T12)</text>
+  <text x="692" y="405" text-anchor="middle" fill="#6EE7B7" font-size="9">Forced expiration &amp; cough</text>
+  <text x="692" y="418" text-anchor="middle" fill="#6EE7B7" font-size="9">Rectus, obliques, transversus</text>
+  <text x="692" y="428" text-anchor="middle" fill="#F59E0B" font-size="9">Lost in thoracic &amp; cervical SCI</text>
+
+  <!-- ===== FVC BAR CHART ===== -->
+  <rect x="20" y="530" rx="8" width="760" height="155" fill="#1A1F2E" stroke="#3A4255" stroke-width="1.5"/>
+  <text x="400" y="555" text-anchor="middle" fill="#22D3EE" font-size="13" font-weight="700">FVC PRESERVED BY INJURY LEVEL</text>
+
+  <!-- Bar chart -->
+  <!-- C1-C2: ~0% -->
+  <rect x="70" y="640" width="60" height="5" rx="2" fill="#EF4444"/>
+  <text x="100" y="635" text-anchor="middle" fill="#EF4444" font-size="10" font-weight="600">~5%</text>
+  <text x="100" y="660" text-anchor="middle" fill="#9CA3AF" font-size="9">C1-C2</text>
+
+  <!-- C3-C4: ~20% -->
+  <rect x="155" y="624" width="60" height="21" rx="2" fill="#F97316"/>
+  <text x="185" y="620" text-anchor="middle" fill="#F97316" font-size="10" font-weight="600">~20%</text>
+  <text x="185" y="660" text-anchor="middle" fill="#9CA3AF" font-size="9">C3-C4</text>
+
+  <!-- C5-C6: ~30-40% -->
+  <rect x="240" y="610" width="60" height="35" rx="2" fill="#F59E0B"/>
+  <text x="270" y="605" text-anchor="middle" fill="#F59E0B" font-size="10" font-weight="600">~35%</text>
+  <text x="270" y="660" text-anchor="middle" fill="#9CA3AF" font-size="9">C5-C6</text>
+
+  <!-- C7-C8: ~50% -->
+  <rect x="325" y="595" width="60" height="50" rx="2" fill="#22D3EE"/>
+  <text x="355" y="590" text-anchor="middle" fill="#22D3EE" font-size="10" font-weight="600">~50%</text>
+  <text x="355" y="660" text-anchor="middle" fill="#9CA3AF" font-size="9">C7-C8</text>
+
+  <!-- T1-T6: ~60-70% -->
+  <rect x="410" y="580" width="60" height="65" rx="2" fill="#34D399"/>
+  <text x="440" y="575" text-anchor="middle" fill="#34D399" font-size="10" font-weight="600">~65%</text>
+  <text x="440" y="660" text-anchor="middle" fill="#9CA3AF" font-size="9">T1-T6</text>
+
+  <!-- T7-T12: ~80-90% -->
+  <rect x="495" y="565" width="60" height="80" rx="2" fill="#3B82F6"/>
+  <text x="525" y="560" text-anchor="middle" fill="#3B82F6" font-size="10" font-weight="600">~85%</text>
+  <text x="525" y="660" text-anchor="middle" fill="#9CA3AF" font-size="9">T7-T12</text>
+
+  <!-- L1+: ~100% -->
+  <rect x="580" y="555" width="60" height="90" rx="2" fill="#A78BFA"/>
+  <text x="610" y="550" text-anchor="middle" fill="#A78BFA" font-size="10" font-weight="600">~95%</text>
+  <text x="610" y="660" text-anchor="middle" fill="#9CA3AF" font-size="9">L1+</text>
+
+  <!-- Normal reference line -->
+  <line x1="60" y1="555" x2="660" y2="555" stroke="#5A6575" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="680" y="559" fill="#5A6575" font-size="9">Normal FVC</text>
+
+  <!-- FVC axis -->
+  <text x="50" y="648" text-anchor="middle" fill="#5A6575" font-size="9">0%</text>
+  <text x="50" y="560" text-anchor="middle" fill="#5A6575" font-size="9">100%</text>
+</svg>

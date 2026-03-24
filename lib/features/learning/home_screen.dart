@@ -5,6 +5,7 @@ import '../../core/theme/app_theme.dart';
 import '../../core/widgets/content_card.dart';
 import '../../core/widgets/quiz_session_view.dart';
 import 'module_content_screen.dart';
+import 'widgets/sci_anatomy_gallery_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -114,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             const SizedBox(width: 10),
                             _buildStatPill('50+', 'QUESTIONS'),
                             const SizedBox(width: 10),
-                            _buildStatPill('3', 'TOOLS'),
+                            _buildStatPill('4', 'TOOLS'),
                           ],
                         ),
                       ],
@@ -170,6 +171,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       subtitle: 'Soon',
                       accentColor: AppTheme.warningAmber,
                       showSoonChip: true,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  // Anatomy gallery
+                  Expanded(
+                    child: _StudyToolCard(
+                      label: 'Anatomy',
+                      subtitle: '3D & Layers',
+                      accentColor: AppTheme.pathophysColor,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const SCIAnatomyGalleryView(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                   const SizedBox(width: 8),

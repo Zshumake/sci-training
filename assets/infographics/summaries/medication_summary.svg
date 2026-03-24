@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 950" width="800" height="950" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1419"/>
+      <stop offset="100%" stop-color="#131820"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="950" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="800" height="65" fill="#1A1F2E"/>
+  <text x="400" y="30" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="1">SCI MEDICATION REFERENCE</text>
+  <text x="400" y="50" text-anchor="middle" fill="#5A6575" font-size="12">Key Medications by System</text>
+  <line x1="100" y1="62" x2="700" y2="62" stroke="#22D3EE" stroke-width="1" opacity="0.4"/>
+
+  <!-- ===== BLADDER MEDICATIONS ===== -->
+  <rect x="20" y="80" rx="10" width="370" height="230" fill="#1A1F2E" stroke="#3B82F6" stroke-width="2"/>
+  <rect x="20" y="80" rx="10" width="370" height="35" fill="#3B82F6" fill-opacity="0.15"/>
+  <text x="205" y="104" text-anchor="middle" fill="#3B82F6" font-size="14" font-weight="700">BLADDER</text>
+
+  <text x="35" y="133" fill="#93C5FD" font-size="11" font-weight="700">Anticholinergics (reduce detrusor contraction)</text>
+  <text x="45" y="150" fill="#E8ECF1" font-size="10">Oxybutynin (Ditropan): 5mg BID-TID</text>
+  <text x="55" y="165" fill="#9CA3AF" font-size="9">SE: dry mouth, constipation, cognitive</text>
+  <text x="45" y="182" fill="#E8ECF1" font-size="10">Tolterodine (Detrol): 2mg BID</text>
+  <text x="45" y="199" fill="#E8ECF1" font-size="10">Solifenacin (VESIcare): 5-10mg daily</text>
+
+  <text x="35" y="222" fill="#93C5FD" font-size="11" font-weight="700">Beta-3 Agonist (relax detrusor)</text>
+  <text x="45" y="239" fill="#E8ECF1" font-size="10">Mirabegron (Myrbetriq): 25-50mg daily</text>
+  <text x="55" y="254" fill="#9CA3AF" font-size="9">Fewer anticholinergic SE, can combine</text>
+
+  <text x="35" y="274" fill="#93C5FD" font-size="11" font-weight="700">Alpha Blocker (relax IUS/bladder neck)</text>
+  <text x="45" y="291" fill="#E8ECF1" font-size="10">Tamsulosin (Flomax): 0.4mg daily</text>
+  <text x="55" y="304" fill="#9CA3AF" font-size="9">For LMN bladder, facilitates emptying</text>
+
+  <!-- ===== SPASTICITY MEDICATIONS ===== -->
+  <rect x="410" y="80" rx="10" width="370" height="230" fill="#1A1F2E" stroke="#A78BFA" stroke-width="2"/>
+  <rect x="410" y="80" rx="10" width="370" height="35" fill="#A78BFA" fill-opacity="0.15"/>
+  <text x="595" y="104" text-anchor="middle" fill="#A78BFA" font-size="14" font-weight="700">SPASTICITY</text>
+
+  <text x="425" y="133" fill="#C4B5FD" font-size="11" font-weight="700">GABA-B Agonist (1st line)</text>
+  <text x="435" y="150" fill="#E8ECF1" font-size="10">Baclofen: 5mg TID, titrate to 80mg/day</text>
+  <text x="445" y="165" fill="#9CA3AF" font-size="9">Do NOT stop abruptly (withdrawal seizures)</text>
+
+  <text x="425" y="185" fill="#C4B5FD" font-size="11" font-weight="700">Alpha-2 Agonist</text>
+  <text x="435" y="202" fill="#E8ECF1" font-size="10">Tizanidine (Zanaflex): 2mg TID, max 36mg</text>
+  <text x="445" y="217" fill="#9CA3AF" font-size="9">SE: sedation, hepatotoxicity (LFTs)</text>
+
+  <text x="425" y="237" fill="#C4B5FD" font-size="11" font-weight="700">Peripheral Acting</text>
+  <text x="435" y="254" fill="#E8ECF1" font-size="10">Dantrolene: 25mg daily, titrate to 100mg QID</text>
+  <text x="445" y="269" fill="#9CA3AF" font-size="9">SE: hepatotoxicity (LFTs q6mo), weakness</text>
+
+  <text x="425" y="289" fill="#C4B5FD" font-size="11" font-weight="700">Focal Injection</text>
+  <text x="435" y="304" fill="#E8ECF1" font-size="10">Botulinum toxin A: target specific muscles</text>
+
+  <!-- ===== PAIN MEDICATIONS ===== -->
+  <rect x="20" y="325" rx="10" width="370" height="210" fill="#1A1F2E" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="20" y="325" rx="10" width="370" height="35" fill="#F59E0B" fill-opacity="0.15"/>
+  <text x="205" y="349" text-anchor="middle" fill="#F59E0B" font-size="14" font-weight="700">NEUROPATHIC PAIN</text>
+
+  <text x="35" y="378" fill="#FDE68A" font-size="11" font-weight="700">Anticonvulsants (1st line for NP)</text>
+  <text x="45" y="395" fill="#E8ECF1" font-size="10">Pregabalin (Lyrica): 75mg BID, max 600mg/day</text>
+  <text x="55" y="410" fill="#9CA3AF" font-size="9">FDA-approved for SCI neuropathic pain</text>
+  <text x="45" y="427" fill="#E8ECF1" font-size="10">Gabapentin (Neurontin): 300mg TID, max 3600mg</text>
+  <text x="55" y="442" fill="#9CA3AF" font-size="9">Titrate slowly, renal dosing required</text>
+
+  <text x="35" y="462" fill="#FDE68A" font-size="11" font-weight="700">Antidepressants (adjunct)</text>
+  <text x="45" y="479" fill="#E8ECF1" font-size="10">Duloxetine (Cymbalta): 30-60mg daily</text>
+  <text x="45" y="496" fill="#E8ECF1" font-size="10">Amitriptyline: 10-75mg qHS</text>
+  <text x="55" y="511" fill="#9CA3AF" font-size="9">Anticholinergic SE, caution with bladder meds</text>
+
+  <text x="35" y="528" fill="#FCA5A5" font-size="10" font-weight="600">Avoid: chronic opioids when possible</text>
+
+  <!-- ===== CARDIOVASCULAR ===== -->
+  <rect x="410" y="325" rx="10" width="370" height="210" fill="#1A1F2E" stroke="#EF4444" stroke-width="2"/>
+  <rect x="410" y="325" rx="10" width="370" height="35" fill="#EF4444" fill-opacity="0.15"/>
+  <text x="595" y="349" text-anchor="middle" fill="#EF4444" font-size="14" font-weight="700">CARDIOVASCULAR</text>
+
+  <text x="425" y="378" fill="#FCA5A5" font-size="11" font-weight="700">Orthostatic Hypotension</text>
+  <text x="435" y="395" fill="#E8ECF1" font-size="10">Midodrine: 2.5-10mg TID (alpha-1 agonist)</text>
+  <text x="445" y="410" fill="#9CA3AF" font-size="9">Last dose by 4pm (supine hypertension)</text>
+  <text x="435" y="427" fill="#E8ECF1" font-size="10">Fludrocortisone: 0.1-0.2mg daily</text>
+  <text x="445" y="442" fill="#9CA3AF" font-size="9">Volume expander, monitor K+ and edema</text>
+
+  <text x="425" y="462" fill="#FCA5A5" font-size="11" font-weight="700">Autonomic Dysreflexia</text>
+  <text x="435" y="479" fill="#E8ECF1" font-size="10">Nitropaste 2%: 1 inch above NLI</text>
+  <text x="435" y="496" fill="#E8ECF1" font-size="10">Nifedipine 10mg: bite and swallow</text>
+  <text x="445" y="511" fill="#9CA3AF" font-size="9">Contraindicated with PDE5 inhibitors</text>
+
+  <text x="425" y="528" fill="#FCA5A5" font-size="11" font-weight="700">Bradycardia</text>
+  <text x="435" y="543" fill="#E8ECF1" font-size="10">Atropine 0.5mg IV PRN</text>
+
+  <!-- ===== BOWEL MEDICATIONS ===== -->
+  <rect x="20" y="550" rx="10" width="370" height="175" fill="#1A1F2E" stroke="#34D399" stroke-width="2"/>
+  <rect x="20" y="550" rx="10" width="370" height="35" fill="#34D399" fill-opacity="0.15"/>
+  <text x="205" y="574" text-anchor="middle" fill="#34D399" font-size="14" font-weight="700">BOWEL</text>
+
+  <text x="35" y="603" fill="#6EE7B7" font-size="11" font-weight="700">Stool Softeners</text>
+  <text x="45" y="620" fill="#E8ECF1" font-size="10">Docusate sodium: 100mg BID</text>
+
+  <text x="35" y="640" fill="#6EE7B7" font-size="11" font-weight="700">Stimulant Laxatives</text>
+  <text x="45" y="657" fill="#E8ECF1" font-size="10">Senna: 8.6-17.2mg qHS</text>
+  <text x="45" y="672" fill="#E8ECF1" font-size="10">Bisacodyl: 10mg suppository or tab</text>
+
+  <text x="35" y="692" fill="#6EE7B7" font-size="11" font-weight="700">Osmotic</text>
+  <text x="45" y="709" fill="#E8ECF1" font-size="10">PEG 3350 (MiraLAX): 17g daily</text>
+  <text x="55" y="722" fill="#9CA3AF" font-size="9">Titrate to stool consistency</text>
+
+  <!-- ===== DVT PROPHYLAXIS ===== -->
+  <rect x="410" y="550" rx="10" width="370" height="175" fill="#1A1F2E" stroke="#F97316" stroke-width="2"/>
+  <rect x="410" y="550" rx="10" width="370" height="35" fill="#F97316" fill-opacity="0.15"/>
+  <text x="595" y="574" text-anchor="middle" fill="#F97316" font-size="14" font-weight="700">DVT PROPHYLAXIS</text>
+
+  <text x="425" y="603" fill="#FDBA74" font-size="11" font-weight="700">LMWH (preferred)</text>
+  <text x="435" y="620" fill="#E8ECF1" font-size="10">Enoxaparin: 30mg BID (or 40mg daily)</text>
+  <text x="445" y="635" fill="#9CA3AF" font-size="9">Start at 72 hrs, continue 8-12 weeks</text>
+
+  <text x="425" y="655" fill="#FDBA74" font-size="11" font-weight="700">UFH (if renal impairment)</text>
+  <text x="435" y="672" fill="#E8ECF1" font-size="10">Heparin: 5000U SQ q8h</text>
+  <text x="445" y="687" fill="#9CA3AF" font-size="9">Less effective than LMWH, monitor aPTT</text>
+
+  <text x="425" y="707" fill="#FDBA74" font-size="11" font-weight="700">Mechanical</text>
+  <text x="435" y="722" fill="#E8ECF1" font-size="10">SCDs + TED hose from day 0</text>
+
+  <!-- ===== OTHER MEDICATIONS ===== -->
+  <rect x="20" y="740" rx="10" width="760" height="100" fill="#1A1F2E" stroke="#22D3EE" stroke-width="1.5"/>
+  <rect x="20" y="740" rx="10" width="760" height="35" fill="#22D3EE" fill-opacity="0.1"/>
+  <text x="400" y="764" text-anchor="middle" fill="#22D3EE" font-size="14" font-weight="700">OTHER IMPORTANT MEDICATIONS</text>
+
+  <text x="45" y="795" fill="#67E8F9" font-size="10" font-weight="600">Sexual Function:</text>
+  <text x="170" y="795" fill="#E8ECF1" font-size="10">Sildenafil 50-100mg, Tadalafil 10-20mg (PDE5 inhibitors for erectile dysfunction)</text>
+
+  <text x="45" y="815" fill="#67E8F9" font-size="10" font-weight="600">Bone Health:</text>
+  <text x="130" y="815" fill="#E8ECF1" font-size="10">Calcium 1200mg + Vitamin D 1000IU daily, bisphosphonates if DXA T-score &lt;-2.5</text>
+
+  <text x="45" y="835" fill="#67E8F9" font-size="10" font-weight="600">Heterotopic Ossification:</text>
+  <text x="215" y="835" fill="#E8ECF1" font-size="10">Indomethacin 75mg/day x 3 weeks or Etidronate for prophylaxis</text>
+
+  <!-- Warning -->
+  <rect x="20" y="855" rx="8" width="760" height="35" fill="#EF4444" fill-opacity="0.1" stroke="#EF4444" stroke-width="1"/>
+  <text x="400" y="878" text-anchor="middle" fill="#EF4444" font-size="11" font-weight="700">Always consider drug interactions: anticholinergic burden, sedation stacking, QTc prolongation</text>
+</svg>

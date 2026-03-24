@@ -126,6 +126,7 @@ enum CustomWidgetType {
   spasticityLadder,
   pressureInjuryStaging,
   functionalOutcomesChart,
+  anatomyGallery,
 }
 
 class CustomWidgetBlock extends ContentBlock {
