@@ -12,6 +12,8 @@ final TopicData classificationAsiaContent = TopicData(
       title: 'ISNCSCI Exam',
       blocks: [
         CustomWidgetBlock(CustomWidgetType.asiaExamTool),
+        CustomWidgetBlock(CustomWidgetType.isncsciWorksheet),
+        CustomWidgetBlock(CustomWidgetType.classificationTrainer),
         HeaderBlock('International Standards for Neurological Classification of SCI'),
         TextBlock(
           'The ISNCSCI exam (formerly known as the ASIA exam) is the gold standard for classifying spinal cord injury. It provides a systematic method for determining sensory levels, motor levels, neurological level of injury (NLI), completeness, and AIS grade. The exam should be performed with the patient in the supine position.',

@@ -4,6 +4,8 @@ import '../../core/theme/app_theme.dart';
 import 'widgets/isncsci_scoring_tool.dart';
 import 'widgets/dermatome_map_widget.dart';
 import 'widgets/ais_practice_widget.dart';
+import 'widgets/isncsci_classification_trainer.dart';
+import 'widgets/isncsci_worksheet.dart';
 
 class TopicContentView extends StatelessWidget {
   final TopicData topicData;
@@ -715,6 +717,24 @@ class TopicContentView extends StatelessWidget {
         builder = (_) => Scaffold(
           appBar: AppBar(title: const Text('AIS Practice Cases')),
           body: const AISPracticeWidget(),
+        );
+      case CustomWidgetType.classificationTrainer:
+        title = 'ISNCSCI Classification Trainer';
+        subtitle = '30 cases — step-by-step guided classification';
+        icon = Icons.school_rounded;
+        color = const Color(0xFF6366F1);
+        builder = (_) => Scaffold(
+          appBar: AppBar(title: const Text('Classification Trainer')),
+          body: const ISNCSCIClassificationTrainer(),
+        );
+      case CustomWidgetType.isncsciWorksheet:
+        title = 'ISNCSCI Worksheet';
+        subtitle = 'Official exam form — enter scores, auto-classify';
+        icon = Icons.assignment_rounded;
+        color = const Color(0xFF059669);
+        builder = (_) => Scaffold(
+          appBar: AppBar(title: const Text('ISNCSCI Worksheet')),
+          body: const ISNCSCIWorksheet(),
         );
       default:
         title = 'Interactive Tool';

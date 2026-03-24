@@ -118,6 +118,8 @@ enum CustomWidgetType {
   asiaExamTool,
   dermatomalMap,
   myotomalMap,
+  classificationTrainer,
+  isncsciWorksheet,
   bladderManagementAlgorithm,
   bowelProgramAlgorithm,
   adManagementFlowchart,
