@@ -1,3 +1,4 @@
+import '../core/isncsci/isncsci_constants.dart' as constants;
 import '../core/isncsci/isncsci_exam_model.dart';
 
 /// A complete ISNCSCI training case with exam data and metadata.
@@ -23,13 +24,6 @@ class ISNCSCITrainingCase {
 // Helper: build a Sensory with normal values down to a cutoff, then abnormal
 // ---------------------------------------------------------------------------
 
-const List<String> _sensoryOrder = [
-  'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8',
-  'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10', 'T11', 'T12',
-  'L1', 'L2', 'L3', 'L4', 'L5',
-  'S1', 'S2', 'S3', 'S4_5',
-];
-
 /// Build a Sensory where levels down to [lastNormal] are '2',
 /// the next [impairedCount] levels are [impairedValue] (default '1'),
 /// and everything below is [belowValue] (default '0').
@@ -40,15 +34,15 @@ Sensory _buildSensory({
   String belowValue = '0',
   Map<String, String>? overrides,
 }) {
-  final idx = _sensoryOrder.indexOf(lastNormal);
+  final idx = constants.sensoryExamLevels.indexOf(lastNormal);
   final map = <String, String>{};
-  for (int i = 0; i < _sensoryOrder.length; i++) {
+  for (int i = 0; i < constants.sensoryExamLevels.length; i++) {
     if (i <= idx) {
-      map[_sensoryOrder[i]] = '2';
+      map[constants.sensoryExamLevels[i]] = '2';
     } else if (i <= idx + impairedCount) {
-      map[_sensoryOrder[i]] = impairedValue;
+      map[constants.sensoryExamLevels[i]] = impairedValue;
     } else {
-      map[_sensoryOrder[i]] = belowValue;
+      map[constants.sensoryExamLevels[i]] = belowValue;
     }
   }
   if (overrides != null) map.addAll(overrides);
@@ -64,7 +58,6 @@ Sensory _buildSensory({
   );
 }
 
-const List<String> _motorOrder = ['C5', 'C6', 'C7', 'C8', 'T1', 'L2', 'L3', 'L4', 'L5', 'S1'];
 
 /// Build a Motor where key muscles down to [lastNormal] are '5',
 /// the next [weakCount] muscles are [weakValue] (default '3'),
@@ -76,15 +69,15 @@ Motor _buildMotor({
   String belowValue = '0',
   Map<String, String>? overrides,
 }) {
-  final idx = lastNormal != null ? _motorOrder.indexOf(lastNormal) : -1;
+  final idx = lastNormal != null ? constants.motorLevels.indexOf(lastNormal) : -1;
   final map = <String, String>{};
-  for (int i = 0; i < _motorOrder.length; i++) {
+  for (int i = 0; i < constants.motorLevels.length; i++) {
     if (i <= idx) {
-      map[_motorOrder[i]] = '5';
+      map[constants.motorLevels[i]] = '5';
     } else if (i <= idx + weakCount) {
-      map[_motorOrder[i]] = weakValue;
+      map[constants.motorLevels[i]] = weakValue;
     } else {
-      map[_motorOrder[i]] = belowValue;
+      map[constants.motorLevels[i]] = belowValue;
     }
   }
   if (overrides != null) map.addAll(overrides);

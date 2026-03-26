@@ -1,19 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/models/module_model.dart';
-import '../../data/module_contents/sci_fundamentals_content.dart';
-import '../../data/module_contents/classification_asia_content.dart';
-import '../../data/module_contents/pathophysiology_content.dart';
-import '../../data/module_contents/neurogenic_bladder_content.dart';
-import '../../data/module_contents/neurogenic_bowel_content.dart';
-import '../../data/module_contents/autonomic_dysreflexia_content.dart';
-import '../../data/module_contents/respiratory_content.dart';
-import '../../data/module_contents/cardiovascular_content.dart';
-import '../../data/module_contents/spasticity_content.dart';
-import '../../data/module_contents/pain_syndromes_content.dart';
-import '../../data/module_contents/pressure_injuries_content.dart';
-import '../../data/module_contents/sexuality_fertility_content.dart';
-import '../../data/module_contents/msk_complications_content.dart';
-import '../../data/module_contents/rehab_continuum_content.dart';
+import '../../data/module_registry.dart';
 import 'topic_content_view.dart';
 import '../../data/models/topic_content_model.dart';
 import '../../core/theme/app_theme.dart';
@@ -24,38 +11,7 @@ class ModuleContentScreen extends StatelessWidget {
   const ModuleContentScreen({super.key, required this.module});
 
   TopicData? _getTopicData() {
-    switch (module.id) {
-      case 'sci-fundamentals':
-        return sciFundamentalsContent;
-      case 'classification-asia':
-        return classificationAsiaContent;
-      case 'pathophysiology':
-        return pathophysiologyContent;
-      case 'neurogenic-bladder':
-        return neurogenicBladderContent;
-      case 'neurogenic-bowel':
-        return neurogenicBowelContent;
-      case 'autonomic-dysreflexia':
-        return autonomicDysreflexiaContent;
-      case 'respiratory':
-        return respiratoryContent;
-      case 'cardiovascular':
-        return cardiovascularContent;
-      case 'spasticity':
-        return spasticityContent;
-      case 'pain-syndromes':
-        return painSyndromesContent;
-      case 'pressure-injuries':
-        return pressureInjuriesContent;
-      case 'sexuality-fertility':
-        return sexualityFertilityContent;
-      case 'msk-complications':
-        return mskComplicationsContent;
-      case 'rehab-continuum':
-        return rehabContinuumContent;
-      default:
-        return null;
-    }
+    return moduleContentRegistry[module.id]?.call();
   }
 
   @override

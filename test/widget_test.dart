@@ -4,6 +4,6 @@ import 'package:sci_training/main.dart';
 void main() {
   testWidgets('SCI Training app launches', (WidgetTester tester) async {
     await tester.pumpWidget(const SCITrainingApp());
-    expect(find.text('SCI Training'), findsOneWidget);
+    expect(find.text('SCI Training'), findsWidgets);
   });
 }

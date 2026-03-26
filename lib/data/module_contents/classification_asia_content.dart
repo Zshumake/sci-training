@@ -556,7 +556,7 @@ final TopicData classificationAsiaContent = TopicData(
     TopicTab(
       title: 'Board Pearls',
       blocks: [
-        CustomWidgetBlock(CustomWidgetType.bladderManagementAlgorithm),
+        CustomWidgetBlock(CustomWidgetType.aisPractice),
         HeaderBlock('High-Yield Classification Pearls'),
         TextBlock(
           'This tab consolidates the most frequently tested ISNCSCI and AIS classification concepts for board examination preparation.',

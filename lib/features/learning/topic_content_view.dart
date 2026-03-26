@@ -45,20 +45,19 @@ class TopicContentView extends StatelessWidget {
     );
   }
 
-  Widget _buildBlock(ContentBlock block, BuildContext context) {
-    if (block is HeaderBlock) return _buildHeader(block);
-    if (block is TextBlock) return _buildText(block);
-    if (block is PearlBlock) return _buildPearl(block);
-    if (block is BulletCardBlock) return _buildBulletCard(block);
-    if (block is TableBlock) return _buildTable(block);
-    if (block is MnemonicBlock) return _buildMnemonic(block);
-    if (block is NumberedListBlock) return _buildNumberedList(block);
-    if (block is MedicationCardBlock) return _buildMedicationCard(block);
-    if (block is ComparisonCardBlock) return _buildComparisonCard(block);
-    if (block is ScaleBlock) return _buildScaleBlock(block);
-    if (block is CustomWidgetBlock) return _buildCustomWidget(block, context);
-    return const SizedBox.shrink();
-  }
+  Widget _buildBlock(ContentBlock block, BuildContext context) => switch (block) {
+    HeaderBlock b => _buildHeader(b),
+    TextBlock b => _buildText(b),
+    PearlBlock b => _buildPearl(b),
+    BulletCardBlock b => _buildBulletCard(b),
+    TableBlock b => _buildTable(b),
+    MnemonicBlock b => _buildMnemonic(b),
+    NumberedListBlock b => _buildNumberedList(b),
+    MedicationCardBlock b => _buildMedicationCard(b),
+    ComparisonCardBlock b => _buildComparisonCard(b),
+    ScaleBlock b => _buildScaleBlock(b),
+    CustomWidgetBlock b => _buildCustomWidget(b, context),
+  };
 
   Widget _buildHeader(HeaderBlock block) {
     return Padding(
@@ -710,7 +709,7 @@ class TopicContentView extends StatelessWidget {
           appBar: AppBar(title: const Text('Dermatome Map')),
           body: const DermatomeMapWidget(),
         );
-      case CustomWidgetType.bladderManagementAlgorithm:
+      case CustomWidgetType.aisPractice:
         title = 'AIS Classification Practice';
         subtitle = '12 clinical scenarios — classify the AIS grade';
         icon = Icons.quiz_rounded;

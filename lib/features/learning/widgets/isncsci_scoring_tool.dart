@@ -2,51 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_theme.dart';
 import '../../../core/isncsci/isncsci_algorithm.dart';
+import '../../../core/isncsci/isncsci_constants.dart' as constants;
 import '../../../core/isncsci/isncsci_exam_model.dart' as isncsci;
 
-/// Full list of sensory dermatome levels tested in the ISNCSCI exam.
-const List<String> _sensoryLevels = [
-  'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8',
-  'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10', 'T11', 'T12',
-  'L1', 'L2', 'L3', 'L4', 'L5',
-  'S1', 'S2', 'S3', 'S45',
-];
+/// Converts a canonical level name (e.g. 'S4_5') to display form ('S4-5').
+String _displayLevel(String level) => level.replaceAll('_', '-');
 
-/// Motor key muscle levels and their corresponding muscle group names.
-const List<MapEntry<String, String>> _motorLevels = [
-  MapEntry('C5', 'Elbow flexors'),
-  MapEntry('C6', 'Wrist extensors'),
-  MapEntry('C7', 'Elbow extensors'),
-  MapEntry('C8', 'Finger flexors'),
-  MapEntry('T1', 'Finger abductors'),
-  MapEntry('L2', 'Hip flexors'),
-  MapEntry('L3', 'Knee extensors'),
-  MapEntry('L4', 'Ankle dorsiflexors'),
-  MapEntry('L5', 'Toe extensors'),
-  MapEntry('S1', 'Ankle plantarflexors'),
-];
-
-/// Canonical ordering of all neurological levels for comparison purposes.
-const List<String> _allLevels = [
-  'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8',
-  'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10', 'T11', 'T12',
-  'L1', 'L2', 'L3', 'L4', 'L5',
-  'S1', 'S2', 'S3', 'S45',
-];
-
-/// Returns the ordinal index for a neurological level string.
+/// Returns the ordinal index for a neurological level string using the
+/// canonical level list from isncsci_constants.
 /// Lower index = more rostral. Returns -1 if not found.
-int _levelIndex(String level) => _allLevels.indexOf(level);
-
-/// Returns whichever level is more rostral (lower index).
-// ignore: unused_element
-String _moreRostral(String a, String b) {
-  final ia = _levelIndex(a);
-  final ib = _levelIndex(b);
-  if (ia < 0) return b;
-  if (ib < 0) return a;
-  return ia <= ib ? a : b;
-}
+int _levelIndex(String level) => constants.sensoryLevels.indexOf(level);
 
 /// Interactive ISNCSCI (International Standards for Neurological Classification
 /// of Spinal Cord Injury) scoring tool.
@@ -88,15 +53,15 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   }
 
   void _initScores() {
-    for (final level in _sensoryLevels) {
+    for (final level in constants.sensoryExamLevels) {
       _ltRight[level] = 2;
       _ltLeft[level] = 2;
       _ppRight[level] = 2;
       _ppLeft[level] = 2;
     }
-    for (final entry in _motorLevels) {
-      _motorRight[entry.key] = 5;
-      _motorLeft[entry.key] = 5;
+    for (final level in constants.motorLevels) {
+      _motorRight[level] = 5;
+      _motorLeft[level] = 5;
     }
     _dap = true;
     _vac = true;
@@ -124,7 +89,7 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   // ignore: unused_element
   String _sensoryLevel(Map<String, int> scores) {
     String level = 'C1'; // intact above C2 by definition
-    for (final s in _sensoryLevels) {
+    for (final s in constants.sensoryExamLevels) {
       if (scores[s] == 2) {
         level = s;
       } else {
@@ -149,10 +114,10 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   ) {
     // Walk through all levels using the sensory list as the backbone.
     // Between motor-testable segments, motor function is inferred from sensory.
-    final motorKeys = _motorLevels.map((e) => e.key).toSet();
+    final motorKeys = constants.motorLevels.toSet();
     String level = 'C1';
 
-    for (final s in _sensoryLevels) {
+    for (final s in constants.sensoryExamLevels) {
       if (motorKeys.contains(s)) {
         // This level has a testable myotome.
         final motor = motorScores[s] ?? 0;
@@ -179,10 +144,10 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   /// Returns true if every motor-testable key muscle rostral to [level] scores 5.
   bool _allAboveMotorNormal(String level, Map<String, int> scores) {
     final idx = _levelIndex(level);
-    for (final entry in _motorLevels) {
-      final mi = _levelIndex(entry.key);
+    for (final ml in constants.motorLevels) {
+      final mi = _levelIndex(ml);
       if (mi < idx) {
-        if ((scores[entry.key] ?? 0) < 5) return false;
+        if ((scores[ml] ?? 0) < 5) return false;
       }
     }
     return true;
@@ -192,10 +157,10 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   // ignore: unused_element
   bool get _sacralSparing {
     // Sensation at S4-5 (LT or PP) on either side, or DAP, or VAC.
-    final ltRS45 = _ltRight['S45'] ?? 0;
-    final ltLS45 = _ltLeft['S45'] ?? 0;
-    final ppRS45 = _ppRight['S45'] ?? 0;
-    final ppLS45 = _ppLeft['S45'] ?? 0;
+    final ltRS45 = _ltRight['S4_5'] ?? 0;
+    final ltLS45 = _ltLeft['S4_5'] ?? 0;
+    final ppRS45 = _ppRight['S4_5'] ?? 0;
+    final ppLS45 = _ppLeft['S4_5'] ?? 0;
     return ltRS45 > 0 || ltLS45 > 0 || ppRS45 > 0 || ppLS45 > 0 || _dap || _vac;
   }
 
@@ -204,11 +169,11 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   int _motorBelowWithGrade3OrMore(String nli) {
     final nliIdx = _levelIndex(nli);
     int count = 0;
-    for (final entry in _motorLevels) {
-      final mi = _levelIndex(entry.key);
+    for (final ml in constants.motorLevels) {
+      final mi = _levelIndex(ml);
       if (mi > nliIdx) {
-        if ((_motorRight[entry.key] ?? 0) >= 3) count++;
-        if ((_motorLeft[entry.key] ?? 0) >= 3) count++;
+        if ((_motorRight[ml] ?? 0) >= 3) count++;
+        if ((_motorLeft[ml] ?? 0) >= 3) count++;
       }
     }
     return count;
@@ -219,8 +184,8 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   int _totalMotorBelowNLI(String nli) {
     final nliIdx = _levelIndex(nli);
     int count = 0;
-    for (final entry in _motorLevels) {
-      if (_levelIndex(entry.key) > nliIdx) {
+    for (final ml in constants.motorLevels) {
+      if (_levelIndex(ml) > nliIdx) {
         count += 2; // left and right
       }
     }
@@ -233,10 +198,10 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   bool _motorMoreThan3BelowMotorLevel(String motorLevelR, String motorLevelL) {
     bool check(String motorLevel, Map<String, int> scores) {
       final mlIdx = _levelIndex(motorLevel);
-      for (final entry in _motorLevels) {
-        final mi = _levelIndex(entry.key);
+      for (final ml in constants.motorLevels) {
+        final mi = _levelIndex(ml);
         if (mi > mlIdx + 3) {
-          if ((scores[entry.key] ?? 0) >= 1) return true;
+          if ((scores[ml] ?? 0) >= 1) return true;
         }
       }
       return false;
@@ -262,7 +227,7 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
           t12: s(scores['T12']), l1: s(scores['L1']), l2: s(scores['L2']),
           l3: s(scores['L3']), l4: s(scores['L4']), l5: s(scores['L5']),
           s1: s(scores['S1']), s2: s(scores['S2']), s3: s(scores['S3']),
-          s4_5: s(scores['S45']),
+          s4_5: s(scores['S4_5']),
         );
 
     isncsci.Motor buildMotor(Map<String, int> scores) => isncsci.Motor(
@@ -335,7 +300,7 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   ) {
     final slIdx = _levelIndex(sensoryLevel);
     String zpp = sensoryLevel;
-    for (final level in _sensoryLevels) {
+    for (final level in constants.sensoryExamLevels) {
       final idx = _levelIndex(level);
       if (idx > slIdx) {
         if ((lt[level] ?? 0) > 0 || (pp[level] ?? 0) > 0) {
@@ -352,11 +317,11 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
   String _zppMotor(Map<String, int> motor, String motorLevel) {
     final mlIdx = _levelIndex(motorLevel);
     String zpp = motorLevel;
-    for (final entry in _motorLevels) {
-      final idx = _levelIndex(entry.key);
+    for (final ml in constants.motorLevels) {
+      final idx = _levelIndex(ml);
       if (idx > mlIdx) {
-        if ((motor[entry.key] ?? 0) > 0) {
-          zpp = entry.key;
+        if ((motor[ml] ?? 0) > 0) {
+          zpp = ml;
         }
       }
     }
@@ -579,9 +544,9 @@ class _SensoryModality extends StatelessWidget {
         ),
         Expanded(
           child: ListView.builder(
-            itemCount: _sensoryLevels.length,
+            itemCount: constants.sensoryExamLevels.length,
             itemBuilder: (context, index) {
-              final level = _sensoryLevels[index];
+              final level = constants.sensoryExamLevels[index];
               return _SensoryRow(
                 level: level,
                 rightScore: rightScores[level] ?? 0,
@@ -620,7 +585,7 @@ class _SensoryRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isEvenIndex = _sensoryLevels.indexOf(level).isEven;
+    final isEvenIndex = constants.sensoryExamLevels.indexOf(level).isEven;
     return Container(
       color: isEvenIndex ? Colors.white : const Color(0xFFF8FAFC),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
@@ -637,7 +602,7 @@ class _SensoryRow extends StatelessWidget {
           SizedBox(
             width: 48,
             child: Text(
-              level,
+              _displayLevel(level),
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontWeight: FontWeight.w700,
@@ -726,10 +691,10 @@ class _MotorTab extends StatelessWidget {
         Expanded(
           child: ListView.separated(
             padding: const EdgeInsets.only(bottom: 16),
-            itemCount: _motorLevels.length,
+            itemCount: constants.motorLevels.length,
             separatorBuilder: (_, _) => const Divider(height: 1),
             itemBuilder: (context, index) {
-              final entry = _motorLevels[index];
+              final level = constants.motorLevels[index];
               // Visual separator between upper and lower extremity.
               final showSection = index == 0 || index == 5;
               return Column(
@@ -755,16 +720,16 @@ class _MotorTab extends StatelessWidget {
                       ),
                     ),
                   _MotorRow(
-                    level: entry.key,
-                    muscleName: entry.value,
-                    rightScore: motorRight[entry.key] ?? 0,
-                    leftScore: motorLeft[entry.key] ?? 0,
+                    level: level,
+                    muscleName: constants.motorLevelToMuscle[level] ?? level,
+                    rightScore: motorRight[level] ?? 0,
+                    leftScore: motorLeft[level] ?? 0,
                     onRightChanged: (v) {
-                      motorRight[entry.key] = v;
+                      motorRight[level] = v;
                       onScoreChanged();
                     },
                     onLeftChanged: (v) {
-                      motorLeft[entry.key] = v;
+                      motorLeft[level] = v;
                       onScoreChanged();
                     },
                   ),

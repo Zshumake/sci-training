@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // --- Generic Block Types ---
 
-abstract class ContentBlock {}
+sealed class ContentBlock {}
 
 class HeaderBlock extends ContentBlock {
   final String title;
@@ -120,6 +120,7 @@ enum CustomWidgetType {
   myotomalMap,
   classificationTrainer,
   isncsciWorksheet,
+  aisPractice,
   bladderManagementAlgorithm,
   bowelProgramAlgorithm,
   adManagementFlowchart,
