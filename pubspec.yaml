@@ -64,8 +64,6 @@ flutter:
     - assets/images/
     - assets/audio/
     - assets/infographics/anatomy/
-    - assets/infographics/flowcharts/
-    - assets/infographics/summaries/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

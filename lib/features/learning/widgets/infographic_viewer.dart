@@ -25,10 +25,15 @@ class InfographicViewer extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(16),
-            child: SvgPicture.asset(
-              infographic.assetPath,
-              fit: BoxFit.contain,
-            ),
+            child: infographic.assetPath.endsWith('.svg')
+                ? SvgPicture.asset(
+                    infographic.assetPath,
+                    fit: BoxFit.contain,
+                  )
+                : Image.asset(
+                    infographic.assetPath,
+                    fit: BoxFit.contain,
+                  ),
           ),
         ),
       ),
