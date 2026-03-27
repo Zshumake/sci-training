@@ -27,6 +27,87 @@ final TopicData pressureInjuriesContent = TopicData(
           ],
           boardPearl: 'Staging landmarks: Stage 1 = intact skin, non-blanchable redness. Stage 2 = partial thickness (epidermis/dermis) — think "blister or shallow crater." Stage 3 = full thickness into fat — bone/tendon/muscle NOT visible. Stage 4 = full thickness WITH exposed bone/tendon/muscle. Unstageable = can\'t see the bottom (slough/eschar covers it). DTPI = deep purple/maroon under intact skin (damage is deep-to-superficial, originating at bone-muscle interface).',
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/servier_skin_layers.png',
+          caption: 'Skin Layers and Pressure Injury Depth',
+          description:
+              'Pressure injuries are staged by the deepest tissue layer involved. Understanding skin anatomy — epidermis, dermis, subcutaneous fat, fascia, muscle, and bone — is essential for accurate staging.',
+          annotations: [
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.10,
+              label: 'Epidermis',
+              description:
+                  'Outermost layer. Stage 1: intact with non-blanchable erythema. Stage 2: partial-thickness loss of epidermis/dermis.',
+              color: Color(0xFF059669),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.25,
+              label: 'Dermis',
+              description:
+                  'Contains blood vessels, nerves, hair follicles. Stage 2 extends into dermis. Blister or shallow crater appearance.',
+              color: Color(0xFF3B82F6),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.45,
+              label: 'Subcutaneous Fat',
+              description:
+                  'Stage 3: full-thickness loss through dermis into subcutaneous fat. Fat visible but bone/tendon/muscle NOT exposed.',
+              color: Color(0xFFEA580C),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.65,
+              label: 'Muscle/Fascia',
+              description:
+                  'Stage 4: full-thickness loss with exposed muscle, tendon, or fascia. DTPI originates at bone-muscle interface.',
+              color: Color(0xFFDC2626),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.85,
+              label: 'Bone',
+              description:
+                  'Stage 4: bone may be exposed or directly palpable. High risk for osteomyelitis. Probe-to-bone test PPV ~89%.',
+              color: Color(0xFF7C3AED),
+            ),
+          ],
+        ),
+        ComparisonDiagramBlock(
+          title: 'Stage I-II vs Stage III-IV Pressure Injuries',
+          description:
+              'Understanding the distinction between superficial and deep pressure injuries guides treatment decisions and prognosis.',
+          left: ComparisonSide(
+            title: 'Stage I-II (Superficial)',
+            features: [
+              'Stage 1: intact skin, non-blanchable erythema',
+              'Stage 2: partial-thickness (epidermis/dermis)',
+              'Blister or shallow pink/red crater',
+              'No slough or eschar in Stage 2',
+              'Conservative treatment usually sufficient',
+              'Heal within days to weeks with offloading',
+              'Group 1 support surface adequate',
+              'Low osteomyelitis risk',
+            ],
+            themeColor: Color(0xFFEA580C),
+          ),
+          right: ComparisonSide(
+            title: 'Stage III-IV (Deep)',
+            features: [
+              'Stage 3: full-thickness into subcutaneous fat',
+              'Stage 4: exposed bone, tendon, or muscle',
+              'Undermining and tunneling common',
+              'Slough and eschar may be present',
+              'May require surgical flap repair',
+              'Healing takes weeks to months',
+              'Group 2-3 support surface needed',
+              'High osteomyelitis risk (Stage 4)',
+            ],
+            themeColor: Color(0xFFDC2626),
+          ),
+        ),
         PearlBlock(
           'Board Pearl: Staging Rules — Critical Concepts',
           'Five essential staging rules for boards: (1) Pressure injuries are NEVER reverse-staged (a healing Stage 4 is documented as "healing Stage 4," NOT downstaged to Stage 3 or 2, because granulation tissue is not true anatomic tissue replacement — lost muscle, fat, and dermis are replaced by scar, not regenerated). (2) MUCOSAL MEMBRANE pressure injury is a separate NPIAP category — injuries to mucous membranes (e.g., from O2 tubing, ETT, Foley catheter, nasogastric tube) are NOT staged using the numerical system. Document as "mucosal membrane pressure injury." These cannot be staged because the mucosal anatomy does not have the same tissue layers as skin. (3) Stable, dry, adherent eschar on the HEEL should NOT be debrided — it serves as a natural biological cover (the HEEL EXCEPTION). (4) Medical device-related pressure injuries are staged using the same system and documented as "medical device-related." (5) A wound with slough/eschar obscuring the base is UNSTAGEABLE until debrided.',
@@ -117,6 +198,62 @@ final TopicData pressureInjuriesContent = TopicData(
             ['Side-lying', 'LATERAL KNEE (fibular head)', 'Peroneal nerve compression also a concern at this location'],
             ['Prone', 'Anterior knee, chest, anterior iliac spine, toes', 'Less common position for SCI patients'],
             ['Any position', 'MEDICAL DEVICE-RELATED', 'Cervical collars, halo pins, O2 tubing (nose/ears), Foley catheter (urethral meatus/thigh), cast edges, splints'],
+          ],
+        ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/servier_adult_body_posterior.png',
+          caption: 'Common Pressure Injury Locations',
+          description:
+              'Pressure injuries develop over bony prominences where sustained pressure exceeds capillary closing pressure (~32 mmHg). Location depends on patient position: sitting, supine, or side-lying.',
+          annotations: [
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.08,
+              label: 'Occiput',
+              description:
+                  'Risk in supine position — especially with cervical collar, halo vest, or rigid backboard. Common in acute cervical SCI.',
+              color: Color(0xFF7C3AED),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.30,
+              label: 'Scapulae',
+              description:
+                  'Risk in supine position with poor padding. Less common overall but important in thin or malnourished patients.',
+              color: Color(0xFF6366F1),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.45,
+              label: 'Sacrum / Coccyx',
+              description:
+                  '#1 location in supine/bed-bound patients. #1 in acute SCI. Head-of-bed elevation >30 degrees increases shear forces.',
+              color: Color(0xFFDC2626),
+            ),
+            AnnotationPoint(
+              x: 0.35,
+              y: 0.50,
+              label: 'Greater Trochanter',
+              description:
+                  '#1 location in side-lying position. Use 30-degree lateral tilt (NOT 90-degree side-lying) to redistribute pressure.',
+              color: Color(0xFFEA580C),
+            ),
+            AnnotationPoint(
+              x: 0.55,
+              y: 0.55,
+              label: 'Ischial Tuberosities',
+              description:
+                  '#1 location in SCI wheelchair users — the MOST TESTED PI fact on boards. Pressures of 100-300 mmHg during sitting.',
+              color: Color(0xFFDC2626),
+            ),
+            AnnotationPoint(
+              x: 0.45,
+              y: 0.90,
+              label: 'Heels',
+              description:
+                  '#2 supine location. ALWAYS float heels off bed surface with pillows or suspension device. Stable heel eschar should NOT be debrided.',
+              color: Color(0xFF3B82F6),
+            ),
           ],
         ),
         PearlBlock(
@@ -218,6 +355,77 @@ final TopicData pressureInjuriesContent = TopicData(
             'ZINC: 220 mg daily (or 15-40 mg elemental zinc) — supports immune function, cell proliferation, and collagen synthesis; excess zinc can cause copper deficiency',
             'IRON/ANEMIA correction: hemoglobin <10 g/dL significantly impairs tissue oxygenation and healing',
             'Dietary consultation for ALL SCI patients with pressure injuries or at high risk',
+          ],
+        ),
+        FlowchartBlock(
+          title: 'Pressure Injury Prevention & Staging Algorithm',
+          description:
+              'Systematic approach to PI prevention and management by stage, from risk assessment through surgical intervention.',
+          nodes: [
+            FlowchartNode(
+              id: 'risk',
+              text: 'Risk Assessment\n(Braden Scale)',
+              type: FlowchartNodeType.start,
+              color: Color(0xFF3B82F6),
+            ),
+            FlowchartNode(
+              id: 'prevention',
+              text: 'Prevention Program\n(Pressure relief, skin inspection,\nnutrition, support surfaces)',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF059669),
+            ),
+            FlowchartNode(
+              id: 'pi_found',
+              text: 'Pressure injury\nidentified?',
+              type: FlowchartNodeType.decision,
+              color: Color(0xFFEA580C),
+            ),
+            FlowchartNode(
+              id: 'stage_check',
+              text: 'Stage the injury\n(NPIAP system)',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF7C3AED),
+            ),
+            FlowchartNode(
+              id: 'stage12',
+              text: 'Stage 1-2:\nConservative care,\nGroup 1 surface, offload',
+              type: FlowchartNodeType.outcome,
+              color: Color(0xFFEA580C),
+            ),
+            FlowchartNode(
+              id: 'stage34',
+              text: 'Stage 3-4:\nWound care, debridement,\nGroup 2-3 surface, nutrition',
+              type: FlowchartNodeType.action,
+              color: Color(0xFFDC2626),
+            ),
+            FlowchartNode(
+              id: 'healing_check',
+              text: 'Progressing\nwith conservative\nmanagement?',
+              type: FlowchartNodeType.decision,
+              color: Color(0xFFEA580C),
+            ),
+            FlowchartNode(
+              id: 'surgery',
+              text: 'Surgical Flap Repair\n(after optimization)',
+              type: FlowchartNodeType.outcome,
+              color: Color(0xFFDC2626),
+            ),
+          ],
+          edges: [
+            FlowchartEdge(fromId: 'risk', toId: 'prevention'),
+            FlowchartEdge(fromId: 'prevention', toId: 'pi_found'),
+            FlowchartEdge(
+                fromId: 'pi_found', toId: 'prevention', label: 'No — continue'),
+            FlowchartEdge(fromId: 'pi_found', toId: 'stage_check', label: 'Yes'),
+            FlowchartEdge(
+                fromId: 'stage_check', toId: 'stage12', label: 'Stage 1-2'),
+            FlowchartEdge(
+                fromId: 'stage_check', toId: 'stage34', label: 'Stage 3-4'),
+            FlowchartEdge(fromId: 'stage34', toId: 'healing_check'),
+            FlowchartEdge(
+                fromId: 'healing_check', toId: 'stage34', label: 'Yes — continue'),
+            FlowchartEdge(
+                fromId: 'healing_check', toId: 'surgery', label: 'No — 2-4 weeks'),
           ],
         ),
         PearlBlock(

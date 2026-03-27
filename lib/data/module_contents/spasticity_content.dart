@@ -52,6 +52,54 @@ final TopicData spasticityContent = TopicData(
             'Muscle and soft tissue changes develop secondarily: fibrosis, contracture, loss of sarcomeres',
           ],
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
+          caption: 'Common Spasticity Patterns in SCI',
+          description:
+              'Spasticity distribution varies by injury level and completeness. UMN injuries above the conus produce velocity-dependent hypertonia in the muscles below the lesion. The most clinically significant patterns involve hip adductors, knee extensors/flexors, and ankle plantarflexors.',
+          annotations: [
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.22,
+              label: 'Elbow Flexors',
+              description:
+                  'Biceps/brachialis spasticity — common in cervical SCI. Produces flexion posture. Treated with botulinum toxin or phenol to musculocutaneous nerve.',
+              color: Color(0xFF3B82F6),
+            ),
+            AnnotationPoint(
+              x: 0.35,
+              y: 0.35,
+              label: 'Wrist/Finger Flexors',
+              description:
+                  'Wrist flexion and clenched fist — impairs hygiene, skin care. Note: in C6 tetraplegia, finger flexor tone may provide beneficial tenodesis grasp.',
+              color: Color(0xFF7C3AED),
+            ),
+            AnnotationPoint(
+              x: 0.45,
+              y: 0.52,
+              label: 'Hip Adductors',
+              description:
+                  'Adductor spasticity causes scissoring of legs — impairs catheterization, hygiene, positioning. Most common phenol target (obturator nerve block).',
+              color: Color(0xFFDC2626),
+            ),
+            AnnotationPoint(
+              x: 0.55,
+              y: 0.65,
+              label: 'Knee Extensors/Flexors',
+              description:
+                  'Quadriceps and hamstring spasticity — extensor tone may assist standing transfers (beneficial). Flexor spasms disrupt sitting and sleep.',
+              color: Color(0xFFEA580C),
+            ),
+            AnnotationPoint(
+              x: 0.45,
+              y: 0.85,
+              label: 'Ankle Plantarflexors',
+              description:
+                  'Gastrocnemius/soleus spasticity causes equinovarus foot posture — impairs footplate positioning, shoe wear, and ambulation potential.',
+              color: Color(0xFF059669),
+            ),
+          ],
+        ),
         ScaleBlock(
           scaleName: 'Modified Ashworth Scale (MAS)',
           description: 'The most commonly used clinical scale to grade spasticity. Measures resistance encountered during passive muscle stretch. The limb is moved through its full ROM at a moderate, consistent speed over approximately 1 second.',
@@ -136,6 +184,35 @@ final TopicData spasticityContent = TopicData(
             'Impairs catheterization and bowel care',
           ],
         ),
+        ComparisonDiagramBlock(
+          title: 'Beneficial vs Harmful Spasticity',
+          description:
+              'Treatment decisions depend on whether spasticity serves a functional purpose. Always assess functional impact before initiating antispasticity treatment.',
+          left: ComparisonSide(
+            title: 'Beneficial Spasticity',
+            features: [
+              'Extensor tone assists standing transfers',
+              'Maintains muscle bulk and bone density',
+              'Promotes venous return (reduces DVT risk)',
+              'Provides trunk postural support in wheelchair',
+              'Finger flexor tone aids tenodesis grasp (C6)',
+              'Should be PRESERVED — do not over-treat',
+            ],
+            themeColor: Color(0xFF059669),
+          ),
+          right: ComparisonSide(
+            title: 'Harmful Spasticity',
+            features: [
+              'Interferes with ADLs and wheelchair mobility',
+              'Causes pain, disrupts sleep',
+              'Leads to contractures and skin breakdown',
+              'Impairs hygiene and catheterization',
+              'Triggers autonomic dysreflexia',
+              'Requires stepwise treatment approach',
+            ],
+            themeColor: Color(0xFFDC2626),
+          ),
+        ),
         PearlBlock(
           'Board Pearl: Sudden Increase in Spasticity',
           'A sudden worsening of spasticity in a chronic SCI patient is a RED FLAG that should prompt immediate search for a noxious stimulus BELOW the level of injury. The differential is identical to AD triggers: UTI/bladder distension, bowel impaction/constipation, pressure injury, ingrown toenail, DVT, occult fracture, tight clothing/equipment, kidney stone, appendicitis, or syringomyelia. TREAT THE CAUSE rather than simply increasing antispasticity medications.',
@@ -158,6 +235,70 @@ final TopicData spasticityContent = TopicData(
           MapEntry('Step 5: Intrathecal Baclofen (ITB)', 'Programmable pump for severe, diffuse spasticity refractory to oral medications'),
           MapEntry('Step 6: Surgical', 'Tendon lengthening/release, selective dorsal rhizotomy (rare in SCI), orthopedic procedures for fixed contractures'),
         ]),
+        FlowchartBlock(
+          title: 'Spasticity Management Ladder',
+          description:
+              'Stepwise approach from conservative to invasive interventions. Always start with noxious stimulus removal and non-pharmacologic measures before escalating.',
+          nodes: [
+            FlowchartNode(
+              id: 'noxious',
+              text: 'Step 1: Remove\nNoxious Stimuli',
+              type: FlowchartNodeType.start,
+              color: Color(0xFFDC2626),
+            ),
+            FlowchartNode(
+              id: 'nonpharm',
+              text: 'Step 2: Non-Pharmacologic\n(Stretching, ROM, positioning,\nserial casting, modalities)',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF059669),
+            ),
+            FlowchartNode(
+              id: 'oral',
+              text: 'Step 3: Oral Medications\n(Baclofen, tizanidine,\ndantrolene, diazepam)',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF3B82F6),
+            ),
+            FlowchartNode(
+              id: 'focal_check',
+              text: 'Focal or diffuse\nspasticity?',
+              type: FlowchartNodeType.decision,
+              color: Color(0xFFEA580C),
+            ),
+            FlowchartNode(
+              id: 'botox',
+              text: 'Step 4: Botulinum Toxin\nor Phenol/Alcohol Block',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF7C3AED),
+            ),
+            FlowchartNode(
+              id: 'itb',
+              text: 'Step 5: Intrathecal\nBaclofen Pump',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF6366F1),
+            ),
+            FlowchartNode(
+              id: 'surgery',
+              text: 'Step 6: Surgery\n(Tendon release, rhizotomy)',
+              type: FlowchartNodeType.outcome,
+              color: Color(0xFFDC2626),
+            ),
+          ],
+          edges: [
+            FlowchartEdge(fromId: 'noxious', toId: 'nonpharm'),
+            FlowchartEdge(
+                fromId: 'nonpharm', toId: 'oral', label: 'If inadequate'),
+            FlowchartEdge(fromId: 'oral', toId: 'focal_check',
+                label: 'If refractory'),
+            FlowchartEdge(
+                fromId: 'focal_check', toId: 'botox', label: 'Focal (1-3 muscles)'),
+            FlowchartEdge(
+                fromId: 'focal_check', toId: 'itb', label: 'Diffuse'),
+            FlowchartEdge(
+                fromId: 'botox', toId: 'surgery', label: 'If refractory'),
+            FlowchartEdge(
+                fromId: 'itb', toId: 'surgery', label: 'If refractory'),
+          ],
+        ),
         MedicationCardBlock(
           name: 'Baclofen (Lioresal)',
           drugClass: 'GABA-B receptor agonist',

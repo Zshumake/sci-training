@@ -113,6 +113,101 @@ class MedicationCardBlock extends ContentBlock {
   });
 }
 
+// --- Visual Content Blocks ---
+
+class AnnotationPoint {
+  final double x; // 0.0-1.0 relative to image width
+  final double y; // 0.0-1.0 relative to image height
+  final String label;
+  final String description;
+  final Color? color;
+  const AnnotationPoint({
+    required this.x,
+    required this.y,
+    required this.label,
+    required this.description,
+    this.color,
+  });
+}
+
+class AnnotatedImageBlock extends ContentBlock {
+  final String assetPath;
+  final String caption;
+  final List<AnnotationPoint> annotations;
+  final String? description;
+  AnnotatedImageBlock({
+    required this.assetPath,
+    required this.caption,
+    this.annotations = const [],
+    this.description,
+  });
+}
+
+enum FlowchartNodeType { start, decision, action, outcome }
+
+class FlowchartNode {
+  final String id;
+  final String text;
+  final FlowchartNodeType type;
+  final Color? color;
+  const FlowchartNode({
+    required this.id,
+    required this.text,
+    required this.type,
+    this.color,
+  });
+}
+
+class FlowchartEdge {
+  final String fromId;
+  final String toId;
+  final String? label;
+  const FlowchartEdge({
+    required this.fromId,
+    required this.toId,
+    this.label,
+  });
+}
+
+class FlowchartBlock extends ContentBlock {
+  final String title;
+  final List<FlowchartNode> nodes;
+  final List<FlowchartEdge> edges;
+  final String? description;
+  FlowchartBlock({
+    required this.title,
+    required this.nodes,
+    required this.edges,
+    this.description,
+  });
+}
+
+class ComparisonSide {
+  final String title;
+  final String? imagePath;
+  final List<String> features;
+  final Color themeColor;
+  const ComparisonSide({
+    required this.title,
+    this.imagePath,
+    required this.features,
+    required this.themeColor,
+  });
+}
+
+class ComparisonDiagramBlock extends ContentBlock {
+  final String title;
+  final ComparisonSide left;
+  final ComparisonSide right;
+  final String? description;
+  ComparisonDiagramBlock({
+    required this.title,
+    required this.left,
+    required this.right,
+    this.description,
+  });
+}
+
 // Enum for bespoke custom widgets
 enum CustomWidgetType {
   asiaExamTool,

@@ -29,6 +29,19 @@ final TopicData pathophysiologyContent = TopicData(
             'Shear: rotational forces causing axonal injury and vascular disruption',
           ],
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/servier_brain_sagittal.png',
+          caption: 'Spinal Cord Cross-Section — Major Tracts',
+          description: 'The spinal cord is organized with white matter (tracts) surrounding a central butterfly-shaped gray matter core. Understanding tract locations is essential for predicting injury patterns.',
+          annotations: [
+            AnnotationPoint(x: 0.50, y: 0.30, label: 'Dorsal Columns (Posterior)', description: 'Fasciculus gracilis (medial, LE) and cuneatus (lateral, UE). Carry proprioception, vibration, discriminative touch. Preserved in anterior cord syndrome.', color: Color(0xFF3B82F6)),
+            AnnotationPoint(x: 0.25, y: 0.50, label: 'Lateral Corticospinal Tract', description: 'Voluntary motor. Somatotopic: cervical fibers medial, sacral lateral. Central cord syndrome preferentially damages cervical (UE) fibers.', color: Color(0xFFDC2626)),
+            AnnotationPoint(x: 0.30, y: 0.65, label: 'Lateral Spinothalamic Tract', description: 'Pain and temperature. Crosses within 1-2 segments at the anterior white commissure. Lost in anterior cord syndrome.', color: Color(0xFFEA580C)),
+            AnnotationPoint(x: 0.50, y: 0.70, label: 'Anterior Horn (Gray Matter)', description: 'Contains alpha and gamma motor neurons (LMN). More vulnerable than white matter due to higher metabolic demand. Central hemorrhagic necrosis begins here.', color: Color(0xFF7C3AED)),
+            AnnotationPoint(x: 0.50, y: 0.40, label: 'Dorsal Horn (Gray Matter)', description: 'Receives sensory afferent input. Substantia gelatinosa (Lamina II) modulates pain (gate control theory).', color: Color(0xFF059669)),
+            AnnotationPoint(x: 0.70, y: 0.55, label: 'IML Column (T1-L2)', description: 'Intermediolateral cell column contains sympathetic preganglionic neurons. Critical for understanding autonomic dysreflexia.', color: Color(0xFF0D9488)),
+          ],
+        ),
         HeaderBlock('Biomechanical Injury Patterns'),
         TableBlock(
           title: 'Mechanism → Fracture → SCI Syndrome',
@@ -78,6 +91,38 @@ final TopicData pathophysiologyContent = TopicData(
         TextBlock(
           'Secondary injury refers to the cascade of biochemical, cellular, and molecular events that occur in the hours to weeks following primary injury. These processes expand the zone of tissue damage and represent the primary therapeutic targets for neuroprotection.',
           isIntro: true,
+        ),
+        ComparisonDiagramBlock(
+          title: 'Primary vs Secondary Injury',
+          description: 'Primary injury is immediate and irreversible. Secondary injury is a progressive cascade that represents the therapeutic window for neuroprotection.',
+          left: ComparisonSide(
+            title: 'Primary Injury',
+            features: [
+              'Immediate mechanical damage',
+              'Irreversible at the moment of impact',
+              'Compression, contusion, laceration',
+              'Cell membrane disruption',
+              'Central hemorrhagic necrosis',
+              'Axonal shearing',
+              'Gray matter more vulnerable',
+              'Prevention is the only strategy',
+            ],
+            themeColor: Color(0xFFDC2626),
+          ),
+          right: ComparisonSide(
+            title: 'Secondary Injury',
+            features: [
+              'Hours to weeks after trauma',
+              'Potentially modifiable (therapeutic target)',
+              'Excitotoxicity (glutamate/calcium)',
+              'Free radical damage',
+              'Inflammatory cascades',
+              'Apoptosis (peak 7-14 days)',
+              'Glial scar formation',
+              'MAP 85-90 mmHg for 5-7 days',
+            ],
+            themeColor: Color(0xFFEA580C),
+          ),
         ),
         BulletCardBlock(
           title: 'Vascular Mechanisms',
@@ -311,6 +356,38 @@ final TopicData pathophysiologyContent = TopicData(
         TextBlock(
           'Neurogenic shock is a cardiovascular/hemodynamic phenomenon caused by loss of sympathetic tone after SCI. It is distinct from spinal shock (neurological areflexia) though they often coexist. Distinguishing neurogenic shock from hemorrhagic shock in trauma patients is critical.',
           isIntro: true,
+        ),
+        ComparisonDiagramBlock(
+          title: 'Spinal Shock vs Neurogenic Shock',
+          description: 'These are two completely different phenomena that commonly coexist in acute cervical SCI. Confusing the two is a common board trap.',
+          left: ComparisonSide(
+            title: 'Spinal Shock',
+            features: [
+              'NEUROLOGICAL phenomenon',
+              'Transient areflexia below injury',
+              'Flaccid paralysis (even in UMN)',
+              'Occurs at ANY SCI level',
+              'Duration: hours to weeks',
+              'End marker: BCR return',
+              'Treatment: observation/wait',
+              'Cannot classify AIS during',
+            ],
+            themeColor: Color(0xFF3B82F6),
+          ),
+          right: ComparisonSide(
+            title: 'Neurogenic Shock',
+            features: [
+              'CARDIOVASCULAR phenomenon',
+              'Hypotension + bradycardia + warm skin',
+              'Loss of sympathetic tone',
+              'Only with T6 AND ABOVE injuries',
+              'Duration: 1-5 weeks',
+              'End: hemodynamic stability',
+              'Treatment: fluids + vasopressors',
+              'Target MAP 85-90 mmHg x 5-7 days',
+            ],
+            themeColor: Color(0xFFDC2626),
+          ),
         ),
         BulletCardBlock(
           title: 'Pathophysiology',

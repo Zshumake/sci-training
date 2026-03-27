@@ -203,6 +203,105 @@ final TopicData cardiovascularContent = TopicData(
             'Complications of IVC filters: filter migration, IVC thrombosis, filter fracture, penetration of IVC wall',
           ],
         ),
+        FlowchartBlock(
+          title: 'DVT Prophylaxis Algorithm for Acute SCI',
+          description:
+              'Stepwise VTE prophylaxis protocol starting within 72 hours of injury, progressing from mechanical to pharmacologic prophylaxis, with IVC filter reserved for anticoagulation contraindications.',
+          nodes: [
+            FlowchartNode(
+              id: 'start',
+              text: 'Acute SCI Admission',
+              type: FlowchartNodeType.start,
+              color: Color(0xFF3B82F6),
+            ),
+            FlowchartNode(
+              id: 'mech',
+              text: 'Start Mechanical Prophylaxis\n(SCDs + compression stockings)',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF0D9488),
+            ),
+            FlowchartNode(
+              id: 'bleed_check',
+              text: 'Active hemorrhage or\nsurgical contraindication?',
+              type: FlowchartNodeType.decision,
+              color: Color(0xFFEA580C),
+            ),
+            FlowchartNode(
+              id: 'lmwh',
+              text: 'Start LMWH within 72h\n(Enoxaparin 40mg SQ daily)',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF059669),
+            ),
+            FlowchartNode(
+              id: 'ivc',
+              text: 'Consider IVC Filter\n(retrievable preferred)',
+              type: FlowchartNodeType.action,
+              color: Color(0xFFDC2626),
+            ),
+            FlowchartNode(
+              id: 'complete_check',
+              text: 'Motor complete\n(AIS A/B)?',
+              type: FlowchartNodeType.decision,
+              color: Color(0xFFEA580C),
+            ),
+            FlowchartNode(
+              id: 'twelve_wk',
+              text: 'Continue LMWH\n12 weeks',
+              type: FlowchartNodeType.outcome,
+              color: Color(0xFF7C3AED),
+            ),
+            FlowchartNode(
+              id: 'eight_wk',
+              text: 'Continue LMWH\n8 weeks or until mobilizing',
+              type: FlowchartNodeType.outcome,
+              color: Color(0xFF7C3AED),
+            ),
+          ],
+          edges: [
+            FlowchartEdge(fromId: 'start', toId: 'mech', label: 'Immediately'),
+            FlowchartEdge(fromId: 'mech', toId: 'bleed_check'),
+            FlowchartEdge(fromId: 'bleed_check', toId: 'lmwh', label: 'No'),
+            FlowchartEdge(fromId: 'bleed_check', toId: 'ivc', label: 'Yes'),
+            FlowchartEdge(fromId: 'lmwh', toId: 'complete_check'),
+            FlowchartEdge(
+                fromId: 'complete_check', toId: 'twelve_wk', label: 'Yes'),
+            FlowchartEdge(
+                fromId: 'complete_check', toId: 'eight_wk', label: 'No'),
+          ],
+        ),
+        ComparisonDiagramBlock(
+          title: 'Neurogenic Shock vs Hemorrhagic Shock',
+          description:
+              'Both can present with hypotension in acute SCI — distinguishing them is critical for appropriate resuscitation.',
+          left: ComparisonSide(
+            title: 'Neurogenic Shock',
+            features: [
+              'Loss of sympathetic tone below injury',
+              'Warm, flushed, dry skin (vasodilation)',
+              'BRADYCARDIA (unopposed vagal tone)',
+              'Hypotension with wide pulse pressure',
+              'Cervical/upper thoracic SCI',
+              'Responds to vasopressors (phenylephrine, norepinephrine)',
+              'IV fluids may worsen (pulmonary edema risk)',
+              'Atropine for symptomatic bradycardia',
+            ],
+            themeColor: Color(0xFF3B82F6),
+          ),
+          right: ComparisonSide(
+            title: 'Hemorrhagic Shock',
+            features: [
+              'Blood loss (internal or external hemorrhage)',
+              'Cool, clammy, pale skin (vasoconstriction)',
+              'TACHYCARDIA (compensatory sympathetic response)',
+              'Hypotension with narrow pulse pressure',
+              'Any injury with blood loss',
+              'Responds to IV fluids and blood products',
+              'Source control (surgery, embolization)',
+              'May coexist with neurogenic shock in polytrauma',
+            ],
+            themeColor: Color(0xFFDC2626),
+          ),
+        ),
         PearlBlock(
           'Board Pearl: IVC Filter Indications',
           'IVC filters in SCI are indicated when pharmacologic anticoagulation is CONTRAINDICATED (e.g., active hemorrhage, impending surgery, severe thrombocytopenia) AND the patient is at high risk for PE. They are NOT a substitute for pharmacologic prophylaxis. Retrievable filters should be removed once anticoagulation can be resumed. Prophylactic IVC filter placement in all SCI patients is NOT recommended.',
@@ -283,6 +382,46 @@ final TopicData cardiovascularContent = TopicData(
             ['Sympathetic', 'T1-T4 (IML cell column)', 'Increases HR, contractility, conduction', 'LOST (interrupted above T1)'],
             ['Parasympathetic', 'Vagus nerve (CN X, medulla)', 'Decreases HR, AV conduction', 'INTACT (exits brainstem)'],
             ['Net Effect', '—', '—', 'Unopposed vagal tone → bradycardia'],
+          ],
+        ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/servier_cardiomyocyte.png',
+          caption: 'Cardiac Innervation: Sympathetic (T1-T4) vs Parasympathetic (Vagus)',
+          description:
+              'Sympathetic cardiac accelerator fibers originate from T1-T4 and travel via the stellate ganglion to the SA node, AV node, and myocardium. The vagus nerve (CN X) provides parasympathetic innervation. In cervical SCI, sympathetic input is lost while vagal tone remains intact, producing unopposed bradycardia.',
+          annotations: [
+            AnnotationPoint(
+              x: 0.35,
+              y: 0.15,
+              label: 'Vagus Nerve (CN X)',
+              description:
+                  'Parasympathetic innervation — exits brainstem, INTACT in cervical SCI. Decreases HR and AV conduction.',
+              color: Color(0xFF3B82F6),
+            ),
+            AnnotationPoint(
+              x: 0.65,
+              y: 0.25,
+              label: 'T1-T4 Sympathetic',
+              description:
+                  'Cardiac accelerator fibers from IML cell column. LOST in cervical SCI — interrupted above T1.',
+              color: Color(0xFFDC2626),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.50,
+              label: 'SA Node',
+              description:
+                  'Primary pacemaker. Receives both sympathetic (T1-T4) and parasympathetic (vagus) input. In cervical SCI, only vagal tone remains → resting HR 50-60 bpm.',
+              color: Color(0xFF7C3AED),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.70,
+              label: 'Stellate Ganglion',
+              description:
+                  'Sympathetic chain ganglion — relay for cardiac postganglionic fibers. Cervical SCI interrupts preganglionic input.',
+              color: Color(0xFFEA580C),
+            ),
           ],
         ),
         BulletCardBlock(

@@ -36,6 +36,46 @@ final TopicData mskComplicationsContent = TopicData(
             ['Elbow', 'Rare in SCI', 'More common in TBI and burns. Can severely limit self-feeding and grooming.'],
           ],
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
+          caption: 'Common Sites of Heterotopic Ossification in SCI',
+          description:
+              'HO forms in periarticular soft tissues BELOW the level of neurological injury. The hip is by far the most commonly affected joint (70-80% of cases), followed by the knee. HO forms between muscle planes, not within the muscle itself.',
+          annotations: [
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.48,
+              label: 'Hip (70-80%)',
+              description:
+                  'Most common HO site by far. Anterior/medial HO limits flexion — impairs sitting, transfers, and hygiene. Can progress to complete ankylosis.',
+              color: Color(0xFFDC2626),
+            ),
+            AnnotationPoint(
+              x: 0.55,
+              y: 0.62,
+              label: 'Knee (15-20%)',
+              description:
+                  'Second most common site. Limits flexion and extension — impairs wheelchair positioning and transfers.',
+              color: Color(0xFFEA580C),
+            ),
+            AnnotationPoint(
+              x: 0.35,
+              y: 0.22,
+              label: 'Shoulder (rare in SCI)',
+              description:
+                  'More common in TBI than SCI. When present, limits ROM for self-care and wheelchair propulsion.',
+              color: Color(0xFF3B82F6),
+            ),
+            AnnotationPoint(
+              x: 0.65,
+              y: 0.30,
+              label: 'Elbow (rare in SCI)',
+              description:
+                  'More common in TBI and burns. Can severely limit self-feeding and grooming if it occurs.',
+              color: Color(0xFF7C3AED),
+            ),
+          ],
+        ),
         BulletCardBlock(
           title: 'Risk Factors',
           themeColor: const Color(0xFF7C3AED),
@@ -82,6 +122,39 @@ final TopicData mskComplicationsContent = TopicData(
             'HO and DVT can COEXIST — HO is itself a risk factor for DVT',
             'When in doubt, obtain BOTH bone scan and duplex ultrasound',
           ],
+        ),
+        ComparisonDiagramBlock(
+          title: 'HO vs DVT Presentation',
+          description:
+              'Both present with a swollen, warm, erythematous paralyzed limb. Distinguishing them is a classic board question — and they can coexist.',
+          left: ComparisonSide(
+            title: 'Heterotopic Ossification',
+            features: [
+              'Swelling is PERIARTICULAR (around a joint)',
+              'DECREASED range of motion at joint',
+              'Palpable firm mass may develop',
+              'Elevated alkaline phosphatase (earliest lab)',
+              'Triple-phase bone scan: most sensitive early imaging',
+              'X-ray positive at 4-6 weeks (delayed)',
+              'Onset 1-4 months post-injury',
+              'HO is itself a risk factor for DVT',
+            ],
+            themeColor: Color(0xFFEA580C),
+          ),
+          right: ComparisonSide(
+            title: 'Deep Vein Thrombosis',
+            features: [
+              'Swelling is DIFFUSE (entire limb)',
+              'ROM typically PRESERVED early',
+              'No palpable mass',
+              'Elevated D-dimer (nonspecific in acute SCI)',
+              'Duplex ultrasound is diagnostic',
+              'Peak risk: first 2 weeks post-injury',
+              'May present as only asymmetric leg swelling',
+              'Can coexist with HO or fracture',
+            ],
+            themeColor: Color(0xFFDC2626),
+          ),
         ),
         TableBlock(
           title: 'Diagnostic Workup for HO',
@@ -196,6 +269,39 @@ final TopicData mskComplicationsContent = TopicData(
             'Low-energy spiral fractures of the femoral shaft during transfers',
             'MUST have high index of suspicion — any new limb swelling warrants X-ray',
           ],
+        ),
+        ComparisonDiagramBlock(
+          title: 'Osteoporotic Fracture vs DVT',
+          description:
+              'Both conditions present with unilateral limb swelling in an insensate patient. Pain is absent in both. A high index of suspicion is essential.',
+          left: ComparisonSide(
+            title: 'Osteoporotic Fracture',
+            features: [
+              'History of minimal trauma (transfer, ROM)',
+              'May have crepitus or bony deformity',
+              'Swelling variable — can be localized or diffuse',
+              'New-onset increased spasticity (noxious stimulus)',
+              'X-ray is diagnostic',
+              'Most common: supracondylar femur, proximal tibia',
+              'Treat with padded splints (NO circumferential casts)',
+              'Fracture itself is a DVT risk factor',
+            ],
+            themeColor: Color(0xFFEA580C),
+          ),
+          right: ComparisonSide(
+            title: 'Deep Vein Thrombosis',
+            features: [
+              'No trauma history required',
+              'No bony deformity or crepitus',
+              'Swelling is diffuse (entire limb)',
+              'May present with low-grade fever',
+              'Duplex ultrasound is diagnostic',
+              'Peak risk: first 2 weeks post-injury',
+              'Treat with anticoagulation (LMWH)',
+              'Can coexist with fracture',
+            ],
+            themeColor: Color(0xFFDC2626),
+          ),
         ),
         ComparisonCardBlock(
           title: 'Fracture vs DVT vs HO: The Swollen Limb DDx',

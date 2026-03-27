@@ -13,6 +13,78 @@ final TopicData rehabContinuumContent = TopicData(
           'Predicting functional outcomes based on the neurological level of injury is a core PM&R board competency. The following outcomes assume a motor-complete injury (AIS A or B), adequate motivation, good body habitus, and standard inpatient rehabilitation. Incomplete injuries generally achieve significantly higher function than predicted by level alone. These tables reflect Cuccurullo Tables 7-6 and 7-7.',
           isIntro: true,
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
+          caption: 'Functional Levels of SCI: Key Muscle & Milestone Map',
+          description:
+              'Each neurological level corresponds to specific key muscles and functional milestones. Understanding these relationships is essential for predicting outcomes and guiding rehabilitation goals.',
+          annotations: [
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.05,
+              label: 'C3-C5: Diaphragm',
+              description:
+                  'Phrenic nerve innervation. C1-C2: ventilator-dependent. C3: may wean. C4: intact diaphragm, not vent-dependent. Determines respiratory independence.',
+              color: Color(0xFFDC2626),
+            ),
+            AnnotationPoint(
+              x: 0.35,
+              y: 0.18,
+              label: 'C5: Biceps/Deltoid',
+              description:
+                  'Elbow flexion allows hand-to-mouth with universal cuff. Can feed with setup. Power WC primary. Manual WC flat only with quad pegs.',
+              color: Color(0xFF3B82F6),
+            ),
+            AnnotationPoint(
+              x: 0.65,
+              y: 0.25,
+              label: 'C6: Wrist Extensors',
+              description:
+                  'TENODESIS GRASP — the game-changer. Highest level for independent living with motivation. Do NOT stretch finger flexors.',
+              color: Color(0xFF7C3AED),
+            ),
+            AnnotationPoint(
+              x: 0.35,
+              y: 0.30,
+              label: 'C7: Triceps',
+              description:
+                  'USUAL independence level. Triceps enable depression transfers, independent WC on all surfaces, pressure reliefs.',
+              color: Color(0xFF059669),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.42,
+              label: 'T2-T12: Trunk Muscles',
+              description:
+                  'T2-T9: independent ADLs, exercise-only ambulation. T10-T12: full trunk control, household ambulation possible with KAFOs.',
+              color: Color(0xFFEA580C),
+            ),
+            AnnotationPoint(
+              x: 0.45,
+              y: 0.55,
+              label: 'L1-L2: Hip Flexors',
+              description:
+                  'Iliopsoas activation. Household to limited community ambulation with KAFOs and crutches. WC for long distances.',
+              color: Color(0xFF6366F1),
+            ),
+            AnnotationPoint(
+              x: 0.55,
+              y: 0.68,
+              label: 'L3-L4: Quadriceps',
+              description:
+                  'GATEWAY TO COMMUNITY AMBULATION. Knee extension dramatically reduces energy cost. AFOs + crutches/cane. May not need WC.',
+              color: Color(0xFF059669),
+            ),
+            AnnotationPoint(
+              x: 0.45,
+              y: 0.82,
+              label: 'L5-S1: Ankle Dorsiflexors',
+              description:
+                  'Near-normal gait. May have foot drop requiring AFO. Community ambulation with AFO +/- cane. Bladder/bowel may still be neurogenic.',
+              color: Color(0xFF3B82F6),
+            ),
+          ],
+        ),
         TableBlock(
           title: 'Complete Tetraplegia: Functional Outcomes (C1-C4)',
           columns: ['Level', 'Key Muscles', 'Mobility', 'Self-Care', 'Bladder/Bowel'],
@@ -97,6 +169,39 @@ final TopicData rehabContinuumContent = TopicData(
             ['L5-S1', 'Ankle dorsiflexors (tibialis anterior), hip abductors, hamstrings', 'Community ambulation with AFOs +/- cane. May not need WC.', 'COMMUNITY ambulation: AFOs + cane or no assistive device needed.', 'Near-normal gait pattern. May have foot drop requiring AFO. Bladder/bowel may still be neurogenic.'],
           ],
         ),
+        ComparisonDiagramBlock(
+          title: 'Tetraplegia vs Paraplegia Functional Outcomes',
+          description:
+              'Fundamental distinction in SCI rehabilitation. Level of injury determines upper extremity function, respiratory status, mobility method, and independence level.',
+          left: ComparisonSide(
+            title: 'Complete Tetraplegia (C1-C8)',
+            features: [
+              'Upper AND lower extremity involvement',
+              'C1-C4: ventilator risk, power WC, total assist ADLs',
+              'C5: feed with setup, power WC primary',
+              'C6: tenodesis grasp, highest independent living level',
+              'C7: triceps = usual independence level',
+              'Respiratory compromise (reduced vital capacity)',
+              'Higher risk: AD, bradycardia, OH, thermoregulatory dysfunction',
+              'Higher attendant care needs (6-24 hrs/day)',
+            ],
+            themeColor: Color(0xFF3B82F6),
+          ),
+          right: ComparisonSide(
+            title: 'Complete Paraplegia (T1+)',
+            features: [
+              'LOWER extremity involvement only',
+              'Full upper extremity function preserved',
+              'Independent ALL ADLs',
+              'Independent manual WC all surfaces',
+              'Ambulation potential depends on level (T10+ possible)',
+              'Respiratory function preserved (T2+)',
+              'Lower risk of cardiovascular autonomic complications',
+              'Lower attendant care needs (0-6 hrs/day)',
+            ],
+            themeColor: Color(0xFF059669),
+          ),
+        ),
         PearlBlock(
           'Board Pearl: Ambulation Potential by Level',
           'The most tested concept: T2-T9 paraplegia = exercise-only ambulation (too energy-costly for functional use). T10-L2 = household ambulation possible with KAFOs. L3+ = community ambulation likely (quadriceps are the key — knee extension dramatically reduces energy cost). Remember: energy cost of ambulation INCREASES DRAMATICALLY with higher SCI level. A T6 paraplegic using bilateral KAFOs expends 6-12x normal energy — this is not sustainable for daily mobility.',
@@ -152,6 +257,39 @@ final TopicData rehabContinuumContent = TopicData(
             ['C7-C8', 'Ultra-lightweight rigid-frame manual', 'Standard rims', 'Fully independent all surfaces including curbs; quick-release wheels; sport-style'],
             ['T1+', 'Ultra-lightweight rigid-frame manual', 'Standard rims', 'Active/sport configuration; camber for stability; lightweight for car loading'],
           ],
+        ),
+        ComparisonDiagramBlock(
+          title: 'Manual vs Power Wheelchair',
+          description:
+              'Wheelchair selection depends on neurological level, upper extremity strength, body habitus, environment, and activity goals. Many patients benefit from having both.',
+          left: ComparisonSide(
+            title: 'Manual Wheelchair',
+            features: [
+              'Appropriate for C6-C7 and below',
+              'Ultra-lightweight rigid frame preferred',
+              'Promotes upper extremity exercise and fitness',
+              'Easier to transport (folds or disassembles)',
+              'Lower cost and maintenance',
+              'Requires adequate UE strength and endurance',
+              'Risk of shoulder overuse injury (30-70%)',
+              'C6: flat/slight grades only; C7+: all surfaces',
+            ],
+            themeColor: Color(0xFF059669),
+          ),
+          right: ComparisonSide(
+            title: 'Power Wheelchair',
+            features: [
+              'Required for C1-C5 (primary mobility)',
+              'Useful for C6 distance/outdoors',
+              'Tilt/recline for pressure relief (no shear with tilt)',
+              'Seat elevation for access and transfers',
+              'Preserves upper extremity joints',
+              'Heavier — requires accessible van transport',
+              'Higher cost and maintenance requirements',
+              'Drive controls: sip-puff, chin, head, joystick',
+            ],
+            themeColor: Color(0xFF3B82F6),
+          ),
         ),
         ComparisonCardBlock(
           title: 'Tilt-in-Space vs Recline',

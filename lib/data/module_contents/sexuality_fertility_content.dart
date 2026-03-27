@@ -45,6 +45,85 @@ final TopicData sexualityFertilityContent = TopicData(
             'May be augmented by intact genital sensation in incomplete injuries',
           ],
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/servier_urinary_male.png',
+          caption: 'Male Reproductive Innervation: Erection & Ejaculation Pathways',
+          description:
+              'Two distinct neurological pathways control erectile function. The sacral parasympathetic pathway (S2-S4) mediates reflexogenic erections via the pelvic nerve, while the thoracolumbar sympathetic pathway (T11-L2) mediates psychogenic erections and ejaculation via the hypogastric nerve.',
+          annotations: [
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.15,
+              label: 'T11-L2 Sympathetic',
+              description:
+                  'Thoracolumbar sympathetic outflow. Mediates psychogenic erection (descending from cortex) and ejaculation/emission. "Sympathetic = Shoot."',
+              color: Color(0xFF7C3AED),
+            ),
+            AnnotationPoint(
+              x: 0.35,
+              y: 0.35,
+              label: 'Hypogastric Nerve',
+              description:
+                  'Sympathetic efferent pathway carrying T11-L2 signals. Controls emission (seminal vesicle/prostate contraction) and bladder neck closure during ejaculation.',
+              color: Color(0xFFEA580C),
+            ),
+            AnnotationPoint(
+              x: 0.65,
+              y: 0.55,
+              label: 'S2-S4 Parasympathetic',
+              description:
+                  'Sacral parasympathetic outflow. Mediates reflexogenic erection via pelvic nerve (nervi erigentes). "Parasympathetic = Point."',
+              color: Color(0xFF3B82F6),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.70,
+              label: 'Pelvic Nerve',
+              description:
+                  'Parasympathetic efferent pathway. Releases nitric oxide and VIP causing cavernosal smooth muscle relaxation and vasodilation.',
+              color: Color(0xFF059669),
+            ),
+            AnnotationPoint(
+              x: 0.50,
+              y: 0.85,
+              label: 'Pudendal Nerve (S2-S4)',
+              description:
+                  'Somatic nerve carrying both afferent (genital sensation for reflex arc) and efferent (bulbocavernosus contraction for ejaculation expulsion phase).',
+              color: Color(0xFFDC2626),
+            ),
+          ],
+        ),
+        ComparisonDiagramBlock(
+          title: 'Reflexogenic vs Psychogenic Erections',
+          description:
+              'Understanding which erection type is preserved based on injury level and completeness is a core board-tested concept.',
+          left: ComparisonSide(
+            title: 'Reflexogenic Erection',
+            features: [
+              'Mediated by S2-S4 parasympathetic arc',
+              'Triggered by direct tactile genital stimulation',
+              'Does NOT require conscious awareness',
+              'Preserved in >90% of UMN (suprasacral) lesions',
+              'ABSENT in complete LMN (sacral) lesions',
+              'Reflex arc: pudendal nerve afferent → S2-S4 → pelvic nerve efferent',
+              'Most commonly preserved type in complete UMN SCI',
+            ],
+            themeColor: Color(0xFF3B82F6),
+          ),
+          right: ComparisonSide(
+            title: 'Psychogenic Erection',
+            features: [
+              'Mediated by T11-L2 sympathetic outflow',
+              'Triggered by visual, auditory, or mental arousal',
+              'Requires intact descending pathways from brain',
+              'NOT seen in complete UMN above T11',
+              'May be present in ~25% of complete LMN',
+              'Pathway: cortex → T11-L2 IML → hypogastric nerve',
+              'Often produces less rigid erections',
+            ],
+            themeColor: Color(0xFF7C3AED),
+          ),
+        ),
         MnemonicBlock(
           'Point and Shoot',
           'Parasympathetic = POINT (erection via pelvic nerve, S2-S4 sacral parasympathetic outflow). Sympathetic = SHOOT (ejaculation/emission via hypogastric nerve, T11-L2 thoracolumbar sympathetic outflow). This is the single most tested mnemonic for sexual function in SCI. Remember: the parasympathetic system points the weapon (erection) and the sympathetic system pulls the trigger (ejaculation).',
@@ -150,6 +229,39 @@ final TopicData sexualityFertilityContent = TopicData(
             ['Prostate Massage', 'Digital rectal massage of prostate to express seminal fluid', 'Low yield', 'Rarely used. May yield small quantity for IVF/ICSI. Not a primary retrieval method.'],
             ['Surgical Retrieval (TESA/MESA)', 'Testicular sperm aspiration or microsurgical epididymal sperm aspiration', '~95%+ for retrieval', 'LAST RESORT when PVS and EEJ fail. Requires IVF with ICSI. Invasive. Used for anejaculatory patients unresponsive to other methods.'],
           ],
+        ),
+        ComparisonDiagramBlock(
+          title: 'PVS vs EEJ for Sperm Retrieval',
+          description:
+              'PVS is first-line; EEJ is second-line when PVS fails. Choice depends on injury level and intact reflex arc.',
+          left: ComparisonSide(
+            title: 'PVS (Penile Vibratory Stimulation)',
+            features: [
+              'FIRST-LINE sperm retrieval',
+              'Non-invasive — can be done at home',
+              'Requires intact ejaculatory reflex arc',
+              'Success: ~86% at T10 and above',
+              'Only ~17% success below T10',
+              'Produces ANTEGRADE ejaculation',
+              'SUPERIOR semen quality (motility 26%)',
+              'AD risk in T6+ — monitor BP',
+            ],
+            themeColor: Color(0xFF3B82F6),
+          ),
+          right: ComparisonSide(
+            title: 'EEJ (Electroejaculation)',
+            features: [
+              'SECOND-LINE (when PVS fails)',
+              'Rectal probe electrical stimulation',
+              'Works in BOTH UMN and LMN injuries',
+              'Success: ~80-90% overall',
+              'Requires general anesthesia if sensation retained',
+              'Produces RETROGRADE ejaculation (catheterize)',
+              'Inferior semen quality (motility 10.7%)',
+              'AD risk in T6+ — monitor BP',
+            ],
+            themeColor: Color(0xFF7C3AED),
+          ),
         ),
         PearlBlock(
           'Board Pearl: PVS vs EEJ',

@@ -62,6 +62,37 @@ final TopicData painSyndromesContent = TopicData(
           'Board Pearl: ISCIP Classification',
           'The ISCIP replaced earlier classification systems (Bryce-Ragnarsson, Siddall, Cardenas). Key features: (1) Three-tier hierarchical system developed by IASP, ISCoS, and ASIA, published in 2012. (2) A patient can have MULTIPLE pain types simultaneously. (3) The critical Tier 2 distinction is at-level vs below-level neuropathic pain — this determines treatment approach and prognosis. (4) At-level is within 3 dermatomes of NLI; below-level is >3 dermatomes below NLI. Validation: ~79% accuracy for nociceptive pain, ~77% for neuropathic pain, 84% for musculoskeletal subtype at Tier 2.',
         ),
+        ComparisonDiagramBlock(
+          title: 'Nociceptive vs Neuropathic Pain',
+          description:
+              'The fundamental Tier 1 distinction in ISCIP classification. Each type requires a different treatment approach.',
+          left: ComparisonSide(
+            title: 'Nociceptive Pain',
+            features: [
+              'Normal somatosensory system activation',
+              'Actual or potential tissue damage',
+              'Dull, aching, movement-related quality',
+              'Musculoskeletal or visceral subtypes',
+              'Located above or at level (innervated areas)',
+              'Responds to NSAIDs, PT, analgesics',
+              'Most COMMON pain type in SCI overall',
+            ],
+            themeColor: Color(0xFF3B82F6),
+          ),
+          right: ComparisonSide(
+            title: 'Neuropathic Pain',
+            features: [
+              'Damaged somatosensory nervous system',
+              'Abnormal pain signal generation',
+              'Burning, shooting, electric quality',
+              'At-level or below-level subtypes',
+              'May be felt in insensate areas',
+              'Responds to gabapentinoids, TCAs, SNRIs',
+              'Most CHALLENGING pain type to treat',
+            ],
+            themeColor: Color(0xFFDC2626),
+          ),
+        ),
         BulletCardBlock(
           title: 'Pain Epidemiology & Impact',
           themeColor: const Color(0xFFEA580C),
@@ -127,6 +158,39 @@ final TopicData painSyndromesContent = TopicData(
             'Affects 30-50% of all SCI patients; refractory to most treatments',
             'Severe quality of life impact — many patients describe it as worse than the paralysis itself',
           ],
+        ),
+        ComparisonDiagramBlock(
+          title: 'At-Level vs Below-Level Neuropathic Pain',
+          description:
+              'The critical Tier 2 distinction. At-level pain may have a treatable structural cause; below-level pain represents central neuropathic pain that is often refractory.',
+          left: ComparisonSide(
+            title: 'At-Level Neuropathic Pain',
+            features: [
+              'Within 3 dermatomes of NLI',
+              'Segmental, band-like distribution',
+              'May have radicular component',
+              'Allodynia common in transitional zone',
+              'May have structural cause (nerve root, syrinx)',
+              'MRI indicated to find treatable pathology',
+              'DREZ lesioning may be effective (60-80%)',
+              'Onset: first few months post-injury',
+            ],
+            themeColor: Color(0xFFDC2626),
+          ),
+          right: ComparisonSide(
+            title: 'Below-Level Neuropathic Pain',
+            features: [
+              'More than 3 dermatomes below NLI',
+              'Diffuse, poorly localized',
+              'Central pain — spinothalamic tract damage',
+              'Perceived in insensate areas',
+              'No treatable structural cause',
+              'Thalamic reorganization drives pain',
+              'DREZ NOT effective (pain generated above)',
+              'Onset may be delayed months to years',
+            ],
+            themeColor: Color(0xFF6366F1),
+          ),
         ),
         PearlBlock(
           'Board Pearl: The 3-Dermatome Rule',
@@ -426,6 +490,76 @@ final TopicData painSyndromesContent = TopicData(
           MapEntry('Step 5: Second-Line & Combination Therapy', 'Combine agents with different mechanisms. Add tramadol, lamotrigine, or topical agents. Consider intrathecal therapy for refractory cases.'),
           MapEntry('Step 6: Interventional Procedures', 'Nerve blocks, DREZ lesioning (at-level pain), spinal cord stimulation, intrathecal drug delivery. Reserved for refractory pain after exhausting conservative options.'),
         ]),
+        FlowchartBlock(
+          title: 'SCI Pain Treatment Algorithm',
+          description:
+              'Systematic approach to SCI pain management starting with classification and reversible cause identification, then escalating through pharmacologic and interventional options.',
+          nodes: [
+            FlowchartNode(
+              id: 'assess',
+              text: 'Comprehensive Pain Assessment\n(ISCIP Classification)',
+              type: FlowchartNodeType.start,
+              color: Color(0xFF3B82F6),
+            ),
+            FlowchartNode(
+              id: 'type_check',
+              text: 'Pain type?',
+              type: FlowchartNodeType.decision,
+              color: Color(0xFFEA580C),
+            ),
+            FlowchartNode(
+              id: 'nociceptive',
+              text: 'Nociceptive\n(Musculoskeletal/Visceral)',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF059669),
+            ),
+            FlowchartNode(
+              id: 'neuropathic',
+              text: 'Neuropathic\n(At-level/Below-level)',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF7C3AED),
+            ),
+            FlowchartNode(
+              id: 'noci_tx',
+              text: 'PT, NSAIDs, acetaminophen,\ntreat underlying cause,\ncorticosteroid injection',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF059669),
+            ),
+            FlowchartNode(
+              id: 'neuro_first',
+              text: 'First-Line:\nPregabalin or Gabapentin\n+/- TCA (amitriptyline)',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF3B82F6),
+            ),
+            FlowchartNode(
+              id: 'neuro_second',
+              text: 'Second-Line:\nSNRI (duloxetine),\ntramadol, lamotrigine',
+              type: FlowchartNodeType.action,
+              color: Color(0xFF6366F1),
+            ),
+            FlowchartNode(
+              id: 'interventional',
+              text: 'Interventional:\nDREZ (at-level), ITB,\nSCS, neuromodulation',
+              type: FlowchartNodeType.outcome,
+              color: Color(0xFFDC2626),
+            ),
+          ],
+          edges: [
+            FlowchartEdge(fromId: 'assess', toId: 'type_check'),
+            FlowchartEdge(
+                fromId: 'type_check', toId: 'nociceptive', label: 'Nociceptive'),
+            FlowchartEdge(
+                fromId: 'type_check', toId: 'neuropathic', label: 'Neuropathic'),
+            FlowchartEdge(fromId: 'nociceptive', toId: 'noci_tx'),
+            FlowchartEdge(fromId: 'neuropathic', toId: 'neuro_first'),
+            FlowchartEdge(
+                fromId: 'neuro_first', toId: 'neuro_second', label: 'If inadequate'),
+            FlowchartEdge(
+                fromId: 'neuro_second',
+                toId: 'interventional',
+                label: 'If refractory'),
+          ],
+        ),
         TableBlock(
           title: 'Pain Type-Specific Treatment Summary',
           columns: ['Pain Type', 'First-Line', 'Second-Line', 'Interventional'],

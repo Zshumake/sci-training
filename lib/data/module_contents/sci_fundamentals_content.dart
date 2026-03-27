@@ -261,6 +261,19 @@ final TopicData sciFundamentalsContent = TopicData(
           'A thorough understanding of spinal cord and vertebral column anatomy is fundamental to localizing lesions, predicting deficits, and guiding rehabilitation.',
           isIntro: true,
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
+          caption: 'Vertebral Column — Anterior View',
+          description: 'Tap the labeled points to review key anatomical regions of the vertebral column and their clinical significance in SCI.',
+          annotations: [
+            AnnotationPoint(x: 0.50, y: 0.06, label: 'Cervical (C1-C7)', description: '7 vertebrae; most mobile region; most common site of traumatic SCI (~58%). C5 is the most common single neurological level of injury.', color: Color(0xFFDC2626)),
+            AnnotationPoint(x: 0.50, y: 0.28, label: 'Thoracic (T1-T12)', description: '12 vertebrae; relatively rigid (ribcage stabilization); T12 is the most common level for paraplegia. Thoracolumbar junction (T11-L2) is a common fracture site.', color: Color(0xFFEA580C)),
+            AnnotationPoint(x: 0.50, y: 0.42, label: 'Lumbar (L1-L5)', description: '5 vertebrae; conus medullaris terminates at L1-L2 in adults. Below L2 contains only cauda equina (peripheral nerve roots, not spinal cord).', color: Color(0xFF3B82F6)),
+            AnnotationPoint(x: 0.50, y: 0.50, label: 'Sacrum & Coccyx', description: '5 fused sacral + 4 fused coccygeal vertebrae. S2-S4 contains critical parasympathetic outflow for bladder, bowel, and sexual function.', color: Color(0xFF7C3AED)),
+            AnnotationPoint(x: 0.35, y: 0.18, label: 'Cervical Enlargement (C5-T1)', description: 'Larger of the two spinal cord enlargements. Innervates the upper extremities via the brachial plexus.', color: Color(0xFF059669)),
+            AnnotationPoint(x: 0.35, y: 0.38, label: 'Lumbar Enlargement (L1-S3)', description: 'Innervates the lower extremities via the lumbosacral plexus.', color: Color(0xFF0D9488)),
+          ],
+        ),
         BulletCardBlock(
           title: 'Vertebral Column',
           themeColor: const Color(0xFF3B82F6),
@@ -422,6 +435,38 @@ final TopicData sciFundamentalsContent = TopicData(
           'Board Pearl: Mixed UMN/LMN',
           'Lesions of the upper lumbar vertebral bodies can produce MIXED UMN and LMN findings because they damage the conus medullaris (containing both cord segments and nerve roots). This is a classic board question — do not assume all SCI is purely UMN or purely LMN.',
         ),
+        ComparisonDiagramBlock(
+          title: 'Cervical vs Thoracic vs Lumbar Injury Patterns',
+          description: 'Injury level determines the pattern of motor, sensory, and autonomic deficits. Cervical injuries are the most common (~58%) and produce the most severe functional limitations.',
+          left: ComparisonSide(
+            title: 'Cervical (C1-C8)',
+            features: [
+              'Tetraplegia (all 4 limbs)',
+              'Respiratory compromise (C3-C5 = diaphragm)',
+              'Autonomic dysreflexia risk (above T6)',
+              'Neurogenic shock (bradycardia + hypotension)',
+              'Orthostatic hypotension',
+              'Poikilothermia (above T8)',
+              'Highest mortality and cost',
+              'Most common region (~58%)',
+            ],
+            themeColor: Color(0xFFDC2626),
+          ),
+          right: ComparisonSide(
+            title: 'Thoracolumbar (T1-L5)',
+            features: [
+              'Paraplegia (lower limbs only)',
+              'Respiratory function usually preserved',
+              'AD risk only if above T6',
+              'Neurogenic shock unlikely below T6',
+              'Better cardiovascular stability',
+              'Temperature regulation often intact',
+              'Better prognosis for independence',
+              'Thoracic ~32%, Lumbar ~10%',
+            ],
+            themeColor: Color(0xFF3B82F6),
+          ),
+        ),
       ],
     ),
     // ==========================================
@@ -434,6 +479,18 @@ final TopicData sciFundamentalsContent = TopicData(
         TextBlock(
           'Understanding the vascular supply of the spinal cord is critical for recognizing ischemic syndromes and understanding surgical risk, particularly during aortic procedures.',
           isIntro: true,
+        ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/servier_brain_arteries.png',
+          caption: 'Vascular Supply to the Spinal Cord',
+          description: 'The spinal cord receives blood from one anterior and two posterior spinal arteries, reinforced by segmental radicular arteries.',
+          annotations: [
+            AnnotationPoint(x: 0.50, y: 0.15, label: 'Vertebral Arteries', description: 'Give rise to the anterior spinal artery (ASA) and posterior spinal arteries (PSAs) at the level of the medulla.', color: Color(0xFFDC2626)),
+            AnnotationPoint(x: 0.40, y: 0.35, label: 'Anterior Spinal Artery', description: 'Single midline artery supplying the anterior TWO-THIRDS of the cord. Occlusion causes anterior cord syndrome.', color: Color(0xFFEA580C)),
+            AnnotationPoint(x: 0.60, y: 0.35, label: 'Posterior Spinal Arteries', description: 'Paired arteries supplying the posterior ONE-THIRD. Arise from vertebral arteries or PICA.', color: Color(0xFF3B82F6)),
+            AnnotationPoint(x: 0.35, y: 0.65, label: 'Artery of Adamkiewicz', description: 'Largest segmental artery; arises from LEFT side in ~80%; typically at T9-T12. Provides major blood supply to lower two-thirds of cord. Vulnerable during aortic surgery.', color: Color(0xFF7C3AED)),
+            AnnotationPoint(x: 0.55, y: 0.50, label: 'Watershed Zone (T4-T8)', description: 'Mid-thoracic cord has the fewest radicular reinforcements and is most vulnerable to ischemia during hypoperfusion.', color: Color(0xFFDC2626)),
+          ],
         ),
         BulletCardBlock(
           title: 'Arterial Supply Overview',
