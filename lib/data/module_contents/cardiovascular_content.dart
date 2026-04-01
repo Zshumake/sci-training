@@ -107,6 +107,18 @@ final TopicData cardiovascularContent = TopicData(
             ['Caffeine', 'Adenosine antagonist', '15-30 min', 'Easily accessible', 'Tolerance, insomnia'],
           ],
         ),
+        AnimatedWalkthroughBlock(
+          title: 'Orthostatic Hypotension Mechanism in SCI',
+          baseImagePath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
+          themeColor: const Color(0xFFEA580C),
+          steps: [
+            WalkthroughStep(title: 'Upright Position', description: 'When the patient is moved from supine to sitting or standing, gravity causes ~500-800 mL of blood to pool in the abdomen and lower extremities. In able-bodied individuals, this triggers an immediate compensatory response.'),
+            WalkthroughStep(title: 'Baroreceptor Detection', description: 'Carotid and aortic baroreceptors detect the drop in blood pressure. They signal the brainstem (nucleus tractus solitarius → rostral ventrolateral medulla) to increase sympathetic outflow.'),
+            WalkthroughStep(title: 'Interrupted Sympathetic Response', description: 'In SCI above T6, the descending sympathetic signal cannot reach the IML cell column (T1-L2). The splanchnic vascular bed (the largest venous reservoir) cannot vasoconstrict. Heart rate increase is also blunted if injury is above T1-T4.'),
+            WalkthroughStep(title: 'Hemodynamic Collapse', description: 'Without compensatory vasoconstriction: decreased venous return → decreased preload → decreased cardiac output → systemic hypotension. SBP drops >20 mmHg or DBP >10 mmHg within 3 minutes of upright positioning.'),
+            WalkthroughStep(title: 'Management Ladder', description: 'Non-pharmacologic first: gradual mobilization, compression stockings, abdominal binder, fluid/salt loading. Pharmacologic: midodrine (alpha-1 agonist, 2.5-10 mg TID), fludrocortisone (0.1-0.4 mg daily), droxidopa (100-600 mg TID). Key: OH often improves over weeks-months as compensatory mechanisms develop.'),
+          ],
+        ),
       ],
     ),
     TopicTab(
@@ -309,6 +321,17 @@ final TopicData cardiovascularContent = TopicData(
         MnemonicBlock(
           'VTE Prevention: "CLOTS STOP"',
           'C = Compression devices (SCDs, TED hose)\nL = LMWH preferred over UFH\nO = Onset within 72 hours of injury\nT = Twelve weeks minimum for motor-complete\nS = Screening duplex US considered\n\nS = SCI engages all of Virchow\'s triad\nT = Two weeks = peak risk period\nO = Only IVC filter if anticoagulation contraindicated\nP = PE is a leading cause of death in acute SCI',
+        ),
+        AnimatedWalkthroughBlock(
+          title: 'DVT Formation: Virchow\'s Triad in SCI',
+          themeColor: const Color(0xFFDC2626),
+          steps: [
+            WalkthroughStep(title: 'Venous Stasis', description: 'Paralysis eliminates the calf muscle pump that normally propels venous blood upward. Blood pools in the deep veins of the lower extremities. Immobility during acute hospitalization compounds the stasis. This is the primary contributor in SCI.'),
+            WalkthroughStep(title: 'Endothelial Injury', description: 'Venous stasis causes endothelial damage from hypoxia. Associated injuries (fractures, surgery) directly damage vessel walls. Catheterization and other interventions may cause iatrogenic endothelial injury.'),
+            WalkthroughStep(title: 'Hypercoagulability', description: 'Tissue injury activates the coagulation cascade. Inflammatory cytokines from the spinal cord injury promote a prothrombotic state. Factor VIII, fibrinogen, and von Willebrand factor levels are elevated in the acute phase.'),
+            WalkthroughStep(title: 'Thrombus Formation', description: 'Platelet adhesion at the site of endothelial injury. Fibrin mesh traps red blood cells, forming a red thrombus. The thrombus grows proximally in the direction of blood flow. Most common locations: calf veins → popliteal → femoral → iliac.'),
+            WalkthroughStep(title: 'Embolization → Pulmonary Embolism', description: 'A thrombus fragment breaks off and travels through the IVC → right heart → pulmonary arteries. PE is the leading cause of preventable death in acute SCI. Prophylaxis: mechanical compression within 72 hours, LMWH at 72 hours (when hemostasis achieved), continue for 8-12 weeks post-injury.'),
+          ],
         ),
       ],
     ),

@@ -45,6 +45,20 @@ final TopicData autonomicDysreflexiaContent = TopicData(
             '10. This imbalance continues until the noxious stimulus is identified and REMOVED',
           ],
         ),
+        AnimatedWalkthroughBlock(
+          title: 'Autonomic Dysreflexia Cascade',
+          baseImagePath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
+          themeColor: Color(0xFFDC2626),
+          steps: [
+            WalkthroughStep(title: 'Noxious Stimulus Below Lesion', description: 'A stimulus below the level of injury (most commonly bladder distension at 75-85%) activates peripheral nociceptors and sends afferent signals via the spinothalamic tract toward the brain.'),
+            WalkthroughStep(title: 'Afferent Signal Ascends', description: 'The pain signal ascends through the spinal cord but cannot reach the brainstem due to the injury. It instead triggers a massive reflex sympathetic discharge from the intermediolateral (IML) cell column.'),
+            WalkthroughStep(title: 'Unopposed Sympathetic Outflow', description: 'Without descending inhibition from the brainstem, the sympathetic nervous system fires unchecked below the level of injury. The splanchnic bed (25% of cardiac output) vasoconstricts, causing severe hypertension.'),
+            WalkthroughStep(title: 'Vasoconstriction Below Lesion', description: 'Arterioles below the injury constrict, causing pale, cool, piloerected skin. Blood pressure rises rapidly — systolic may exceed 200-300 mmHg. This is the life-threatening phase.'),
+            WalkthroughStep(title: 'Baroreceptor Detection', description: 'Carotid and aortic baroreceptors detect the hypertension and signal the brainstem (nucleus tractus solitarius) to activate a parasympathetic response via the vagus nerve.'),
+            WalkthroughStep(title: 'Parasympathetic Response Above Lesion', description: 'The vagus nerve causes bradycardia. Above the injury level, parasympathetic vasodilation produces flushing, sweating, nasal congestion, and pounding headache. Below the lesion, sympathetic vasoconstriction persists because the descending inhibitory signals cannot cross the injury.'),
+            WalkthroughStep(title: 'Clinical Presentation', description: 'The classic triad: hypertension + bradycardia + symptoms above the lesion (headache, flushing, sweating) with signs below the lesion (pallor, piloerection, cool skin). This persists until the noxious stimulus is identified and removed.'),
+          ],
+        ),
         PearlBlock(
           'Board Pearl: Why T6? — Splanchnic Nerve Anatomy',
           'The T6 threshold exists because of the splanchnic nerve origins: greater splanchnic (T5-T9), lesser splanchnic (T10-T11), and least splanchnic (T12). These innervate the celiac, superior mesenteric, and inferior mesenteric ganglia, controlling ~25% of cardiac output at rest. Injuries at T6+ leave this entire massive vascular bed under uninhibited spinal reflex control. More COMPLETE lesions produce MORE severe AD.',

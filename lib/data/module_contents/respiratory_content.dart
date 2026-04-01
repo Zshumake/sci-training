@@ -201,6 +201,19 @@ final TopicData respiratoryContent = TopicData(
             'Decannulation criteria: FVC >15 mL/kg, adequate cough, no ongoing need for suctioning, stable respiratory status for >24 hours',
           ],
         ),
+        AnimatedWalkthroughBlock(
+          title: 'Respiratory Failure Cascade in Acute Cervical SCI',
+          baseImagePath: 'assets/infographics/anatomy/servier_lung_airways.png',
+          themeColor: const Color(0xFFB85C2F),
+          steps: [
+            WalkthroughStep(title: 'Loss of Respiratory Muscles', description: 'Cervical SCI denervates intercostal muscles (T1-T11) and abdominal muscles (T6-T12). The diaphragm (C3-C5) may be partially or fully intact depending on level. FVC decreases approximately 50% acutely in cervical injuries. Paradoxical breathing pattern develops: abdomen moves out while chest wall collapses on inspiration.'),
+            WalkthroughStep(title: 'Ineffective Cough', description: 'Loss of abdominal and intercostal muscles eliminates the ability to generate forceful expiration. Peak cough flow drops below the critical 270 L/min threshold needed to clear secretions. Retained secretions accumulate in the airways.'),
+            WalkthroughStep(title: 'Mucus Plugging', description: 'Without effective cough, mucus accumulates and forms plugs in segmental and subsegmental bronchi. The combination of retained secretions + supine positioning + possible aspiration creates a perfect environment for bacterial colonization.'),
+            WalkthroughStep(title: 'Atelectasis', description: 'Mucus plugs cause segmental atelectasis — the MOST COMMON acute pulmonary complication in SCI. Collapsed lung segments create intrapulmonary shunt (blood flows through non-ventilated lung). Hypoxemia worsens.'),
+            WalkthroughStep(title: 'Pneumonia', description: 'Atelectatic lung segments with retained secretions become infected. Pneumonia is the NUMBER ONE cause of death in both acute and chronic SCI. Risk increases with: higher injury level, complete injury, pre-existing lung disease, mechanical ventilation.'),
+            WalkthroughStep(title: 'Respiratory Failure', description: 'Progressive pneumonia + atelectasis + weak respiratory muscles → hypoxemic and hypercapnic respiratory failure. Ventilatory support indicated when VC < 1 liter or NIF weaker than -20 cmH2O. Management: aggressive secretion clearance (MI-E/CoughAssist, quad cough), early mobilization, abdominal binder (apply upright, remove supine), vaccination.'),
+          ],
+        ),
       ],
     ),
     TopicTab(

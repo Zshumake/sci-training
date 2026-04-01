@@ -7,6 +7,12 @@ import 'widgets/ais_practice_widget.dart';
 import 'widgets/isncsci_classification_trainer.dart';
 import 'widgets/isncsci_worksheet.dart';
 import 'widgets/sci_anatomy_gallery_view.dart';
+import 'widgets/ad_management_flowchart.dart';
+import 'widgets/bladder_management_algorithm.dart';
+import 'widgets/bowel_program_algorithm.dart';
+import 'widgets/spasticity_ladder_widget.dart';
+import 'widgets/pressure_injury_staging_widget.dart';
+import 'widgets/functional_outcomes_widget.dart';
 
 class TopicContentView extends StatelessWidget {
   final TopicData topicData;
@@ -59,6 +65,7 @@ class TopicContentView extends StatelessWidget {
     AnnotatedImageBlock b => _buildAnnotatedImage(b, context),
     FlowchartBlock b => _buildFlowchart(b),
     ComparisonDiagramBlock b => _buildComparisonDiagram(b),
+    AnimatedWalkthroughBlock b => _buildAnimatedWalkthrough(b),
     CustomWidgetBlock b => _buildCustomWidget(b, context),
   };
 
@@ -745,6 +752,60 @@ class TopicContentView extends StatelessWidget {
         icon = Icons.view_in_ar_rounded;
         color = AppTheme.pathophysColor;
         builder = (_) => const SCIAnatomyGalleryView();
+      case CustomWidgetType.adManagementFlowchart:
+        title = 'AD Emergency Management';
+        subtitle = 'Interactive simulator — step-by-step with BP response';
+        icon = Icons.emergency_rounded;
+        color = AppTheme.adColor;
+        builder = (_) => Scaffold(
+          appBar: AppBar(title: const Text('AD Emergency Management')),
+          body: const ADManagementFlowchart(),
+        );
+      case CustomWidgetType.bladderManagementAlgorithm:
+        title = 'Bladder Management Algorithm';
+        subtitle = 'Interactive decision tree — UMN vs LMN bladder';
+        icon = Icons.account_tree_rounded;
+        color = AppTheme.bladderColor;
+        builder = (_) => Scaffold(
+          appBar: AppBar(title: const Text('Bladder Management Algorithm')),
+          body: const BladderManagementAlgorithm(),
+        );
+      case CustomWidgetType.bowelProgramAlgorithm:
+        title = 'Bowel Program Builder';
+        subtitle = 'Interactive program builder with timeline & troubleshooting';
+        icon = Icons.playlist_add_check_rounded;
+        color = AppTheme.bowelColor;
+        builder = (_) => Scaffold(
+          appBar: AppBar(title: const Text('Bowel Program Builder')),
+          body: const BowelProgramAlgorithm(),
+        );
+      case CustomWidgetType.spasticityLadder:
+        title = 'Spasticity Management Ladder';
+        subtitle = '6-step escalation with red flags & medication details';
+        icon = Icons.stairs_rounded;
+        color = const Color(0xFF0EA5E9);
+        builder = (_) => Scaffold(
+          appBar: AppBar(title: const Text('Spasticity Management Ladder')),
+          body: const SpasticityLadderWidget(),
+        );
+      case CustomWidgetType.pressureInjuryStaging:
+        title = 'Pressure Injury Staging Tool';
+        subtitle = 'NPUAP staging practice, body map & Braden calculator';
+        icon = Icons.healing_rounded;
+        color = const Color(0xFFEA580C);
+        builder = (_) => Scaffold(
+          appBar: AppBar(title: const Text('Pressure Injury Staging Tool')),
+          body: const PressureInjuryStagingWidget(),
+        );
+      case CustomWidgetType.functionalOutcomesChart:
+        title = 'Functional Outcomes by Level';
+        subtitle = 'Interactive level-by-level outcomes with comparison mode';
+        icon = Icons.accessibility_new_rounded;
+        color = AppTheme.accentTeal;
+        builder = (_) => Scaffold(
+          appBar: AppBar(title: const Text('Functional Outcomes by Level')),
+          body: const FunctionalOutcomesWidget(),
+        );
       default:
         title = 'Interactive Tool';
         subtitle = 'Coming soon';
@@ -1150,4 +1211,250 @@ class TopicContentView extends StatelessWidget {
     );
   }
 
+  // --- Animated Walkthrough Block ---
+  Widget _buildAnimatedWalkthrough(AnimatedWalkthroughBlock block) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        color: AppTheme.cardBackground,
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(color: AppTheme.borderSubtle, width: 1),
+      ),
+      child: _AnimatedWalkthroughWidget(block: block),
+    );
+  }
+}
+
+class _AnimatedWalkthroughWidget extends StatefulWidget {
+  final AnimatedWalkthroughBlock block;
+  const _AnimatedWalkthroughWidget({required this.block});
+
+  @override
+  State<_AnimatedWalkthroughWidget> createState() => _AnimatedWalkthroughWidgetState();
+}
+
+class _AnimatedWalkthroughWidgetState extends State<_AnimatedWalkthroughWidget> with SingleTickerProviderStateMixin {
+  int _currentStep = 0;
+  bool _autoPlay = false;
+  late AnimationController _fadeController;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _fadeController = AnimationController(vsync: this, duration: const Duration(milliseconds: 300));
+    _fadeAnimation = CurvedAnimation(parent: _fadeController, curve: Curves.easeIn);
+    _fadeController.forward();
+  }
+
+  @override
+  void dispose() {
+    _fadeController.dispose();
+    super.dispose();
+  }
+
+  void _goToStep(int step) {
+    if (step < 0 || step >= widget.block.steps.length) return;
+    _fadeController.reset();
+    setState(() => _currentStep = step);
+    _fadeController.forward();
+    if (_autoPlay) {
+      Future.delayed(const Duration(seconds: 4), () {
+        if (mounted && _autoPlay && _currentStep < widget.block.steps.length - 1) {
+          _goToStep(_currentStep + 1);
+        } else if (mounted) {
+          setState(() => _autoPlay = false);
+        }
+      });
+    }
+  }
+
+  void _toggleAutoPlay() {
+    setState(() => _autoPlay = !_autoPlay);
+    if (_autoPlay && _currentStep < widget.block.steps.length - 1) {
+      Future.delayed(const Duration(seconds: 4), () {
+        if (mounted && _autoPlay) _goToStep(_currentStep + 1);
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final steps = widget.block.steps;
+    final step = steps[_currentStep];
+    final themeColor = widget.block.themeColor ?? AppTheme.accentTeal;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Title bar
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+          decoration: BoxDecoration(
+            color: AppTheme.primaryNavy,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(5)),
+          ),
+          child: Row(
+            children: [
+              const Icon(Icons.play_circle_outline_rounded, color: Colors.white, size: 18),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(widget.block.title, style: AppTheme.displayFont(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white)),
+              ),
+              GestureDetector(
+                onTap: _toggleAutoPlay,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: _autoPlay ? Colors.white.withValues(alpha: 0.2) : Colors.transparent,
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.4)),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(_autoPlay ? Icons.pause : Icons.play_arrow, color: Colors.white, size: 14),
+                      const SizedBox(width: 4),
+                      Text(_autoPlay ? 'Pause' : 'Auto', style: AppTheme.monoFont(fontSize: 10, color: Colors.white)),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+
+        // Animation area
+        Padding(
+          padding: const EdgeInsets.all(14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Base image + overlays
+              if (widget.block.baseImagePath != null)
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: Image.asset(
+                    widget.block.baseImagePath!,
+                    width: double.infinity,
+                    fit: BoxFit.contain,
+                    errorBuilder: (_, e, s) => const SizedBox(height: 120),
+                  ),
+                ),
+
+              const SizedBox(height: 12),
+
+              // Step content with fade
+              FadeTransition(
+                opacity: _fadeAnimation,
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: themeColor.withValues(alpha: 0.08),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border(left: BorderSide(color: themeColor, width: 3)),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: themeColor,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            child: Text(
+                              'STEP ${_currentStep + 1}',
+                              style: AppTheme.monoFont(fontSize: 10, fontWeight: FontWeight.w700, color: Colors.white),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(step.title, style: AppTheme.displayFont(fontSize: 13, fontWeight: FontWeight.w700)),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 6),
+                      Text(step.description, style: AppTheme.bodyFont(fontSize: 13, height: 1.5, color: AppTheme.textPrimary)),
+                    ],
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 12),
+
+              // Step indicator dots + controls
+              Row(
+                children: [
+                  // Previous
+                  GestureDetector(
+                    onTap: _currentStep > 0 ? () => _goToStep(_currentStep - 1) : null,
+                    child: Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: _currentStep > 0 ? AppTheme.surfaceMuted : AppTheme.surfaceLight,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Icon(Icons.chevron_left, size: 18, color: _currentStep > 0 ? AppTheme.textPrimary : AppTheme.borderSubtle),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+
+                  // Dots
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(steps.length, (i) {
+                        final isActive = i == _currentStep;
+                        final isPast = i < _currentStep;
+                        return Container(
+                          width: isActive ? 16 : 8,
+                          height: 8,
+                          margin: const EdgeInsets.symmetric(horizontal: 2),
+                          decoration: BoxDecoration(
+                            color: isActive ? themeColor : isPast ? themeColor.withValues(alpha: 0.4) : AppTheme.borderSubtle,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+
+                  const SizedBox(width: 8),
+
+                  // Next
+                  GestureDetector(
+                    onTap: _currentStep < steps.length - 1 ? () => _goToStep(_currentStep + 1) : null,
+                    child: Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: _currentStep < steps.length - 1 ? themeColor : AppTheme.surfaceLight,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Icon(Icons.chevron_right, size: 18, color: _currentStep < steps.length - 1 ? Colors.white : AppTheme.borderSubtle),
+                    ),
+                  ),
+                ],
+              ),
+
+              // Step counter
+              Padding(
+                padding: const EdgeInsets.only(top: 6),
+                child: Center(
+                  child: Text(
+                    'Step ${_currentStep + 1} of ${steps.length}',
+                    style: AppTheme.monoFont(fontSize: 11, color: AppTheme.textSecondary),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
 }

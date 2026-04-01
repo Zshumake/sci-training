@@ -111,6 +111,19 @@ final TopicData neurogenicBladderContent = TopicData(
             'This coordinated switch from storage to voiding is lost in suprasacral SCI → DSD',
           ],
         ),
+        AnimatedWalkthroughBlock(
+          title: 'Micturition Reflex: Normal vs SCI',
+          baseImagePath: 'assets/infographics/anatomy/servier_bladder.png',
+          themeColor: Color(0xFF4F52B0),
+          steps: [
+            WalkthroughStep(title: 'Normal: Filling Phase (Storage)', description: 'As the bladder fills, stretch receptors send afferent signals via the pelvic nerve (S2-S4) to the pontine micturition center (PMC). The sympathetic nervous system (T11-L2, hypogastric nerve) keeps the detrusor relaxed (beta-3 receptors) and the internal sphincter contracted (alpha-1 receptors). The guarding reflex activates pudendal nerve → EUS contraction.'),
+            WalkthroughStep(title: 'Normal: Voiding Phase', description: 'When the brain decides to void, the PMC coordinates: parasympathetic activation (S2-S4, pelvic nerve) contracts the detrusor via M3 muscarinic receptors. Simultaneously, sympathetic tone is inhibited and the pudendal nerve relaxes the EUS. This coordinated relaxation + contraction = normal voiding.'),
+            WalkthroughStep(title: 'UMN Bladder (Lesion Above S2)', description: 'The spinal reflex arc (S2-S4) is intact but disconnected from the PMC. The bladder contracts reflexively when full, but the EUS also contracts simultaneously (detrusor-sphincter dyssynergia, DSD). Result: high intravesical pressures, incomplete emptying, risk of VUR and renal damage when DLPP exceeds 40 cmH2O.'),
+            WalkthroughStep(title: 'LMN Bladder (Lesion at/below S2)', description: 'The sacral reflex arc itself is damaged. No detrusor contraction occurs — the bladder becomes a flaccid, high-capacity, low-pressure bag. The EUS is also denervated (flaccid). Overflow incontinence occurs when bladder capacity is exceeded. Emptying requires Credé maneuver or catheterization.'),
+            WalkthroughStep(title: 'Management Principle', description: 'UMN bladder: reduce storage pressure (anticholinergics, botox) + empty regularly (CIC q4-6h). LMN bladder: assist emptying (CIC, Credé/Valsalva if no DSD). Goal: keep DLPP < 40 cmH2O to protect the upper tracts. CIC is the gold standard for both types.'),
+            WalkthroughStep(title: 'Board Pearl: The 2x2 Framework', description: 'Classify bladder dysfunction in a 2x2 matrix: Incontinence due to bladder (overactive detrusor) vs sphincter (incompetent sphincter), and Retention due to bladder (acontractile detrusor) vs sphincter (DSD or fixed obstruction). This framework guides pharmacologic and surgical management.'),
+          ],
+        ),
       ],
     ),
     TopicTab(

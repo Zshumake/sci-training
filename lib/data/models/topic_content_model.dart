@@ -208,6 +208,53 @@ class ComparisonDiagramBlock extends ContentBlock {
   });
 }
 
+// --- Animated Walkthrough Blocks ---
+
+enum VisualElementType { arrow, label, highlight, regionColor }
+
+class WalkthroughVisualElement {
+  final VisualElementType type;
+  final double x1;
+  final double y1;
+  final double? x2;
+  final double? y2;
+  final String? text;
+  final Color color;
+  const WalkthroughVisualElement({
+    required this.type,
+    required this.x1,
+    required this.y1,
+    this.x2,
+    this.y2,
+    this.text,
+    required this.color,
+  });
+}
+
+class WalkthroughStep {
+  final String title;
+  final String description;
+  final List<WalkthroughVisualElement> elements;
+  const WalkthroughStep({
+    required this.title,
+    required this.description,
+    this.elements = const [],
+  });
+}
+
+class AnimatedWalkthroughBlock extends ContentBlock {
+  final String title;
+  final String? baseImagePath;
+  final List<WalkthroughStep> steps;
+  final Color? themeColor;
+  AnimatedWalkthroughBlock({
+    required this.title,
+    required this.steps,
+    this.baseImagePath,
+    this.themeColor,
+  });
+}
+
 // Enum for bespoke custom widgets
 enum CustomWidgetType {
   asiaExamTool,

@@ -124,6 +124,18 @@ final TopicData pathophysiologyContent = TopicData(
             themeColor: Color(0xFFEA580C),
           ),
         ),
+        AnimatedWalkthroughBlock(
+          title: 'Secondary Injury Cascade',
+          themeColor: Color(0xFF7C3AED),
+          steps: [
+            WalkthroughStep(title: 'Vascular Disruption (Minutes)', description: 'Hemorrhage in the central gray matter (most vulnerable due to higher metabolic demand). Vasospasm and thrombosis of the anterior spinal artery and sulcal arteries. Loss of autoregulation causes ischemia spreading centrifugally from the injury epicenter.'),
+            WalkthroughStep(title: 'Excitotoxicity (Minutes-Hours)', description: 'Damaged neurons release massive amounts of glutamate. Overstimulation of NMDA and AMPA receptors causes uncontrolled calcium influx into cells. Intracellular calcium activates destructive enzymes (calpains, phospholipases) that digest cell membranes.'),
+            WalkthroughStep(title: 'Free Radical Damage (Hours)', description: 'Lipid peroxidation of cell membranes by reactive oxygen species (ROS). Iron released from hemorrhage catalyzes Fenton reaction producing hydroxyl radicals. This was the rationale for methylprednisolone in NASCIS trials (anti-inflammatory, free radical scavenger).'),
+            WalkthroughStep(title: 'Inflammatory Response (Hours-Days)', description: 'Neutrophils infiltrate within 6-12 hours. Microglia activation. Release of pro-inflammatory cytokines (TNF-alpha, IL-1beta, IL-6). Blood-spinal cord barrier breakdown allows immune cell invasion. Inflammation is dual-edged: clears debris but also damages surviving tissue.'),
+            WalkthroughStep(title: 'Apoptosis (Days-Weeks)', description: 'Programmed cell death of oligodendrocytes causes delayed demyelination of surviving axons. Wallerian degeneration of severed axon segments. Caspase-mediated apoptosis extends the zone of injury beyond the initial mechanical damage.'),
+            WalkthroughStep(title: 'Cavitation (Weeks-Months)', description: 'Necrotic tissue is cleared by macrophages, leaving fluid-filled cysts (syrinx). Astrocytic glial scar forms around the cavity, creating both a physical and chemical barrier to axon regeneration. This is the target of experimental therapies (chondroitinase ABC, anti-Nogo antibodies, stem cells).'),
+          ],
+        ),
         BulletCardBlock(
           title: 'Vascular Mechanisms',
           themeColor: const Color(0xFFDC2626),
@@ -297,6 +309,17 @@ final TopicData pathophysiologyContent = TopicData(
           MapEntry('Phase 3', '1-4 weeks: EARLY HYPERREFLEXIA — Deep tendon reflexes return. Muscle stretch reflexes become active. Detrusor hyperreflexia may begin. Babinski sign may appear.'),
           MapEntry('Phase 4', '1-12 months: SPASTICITY — Muscle stretch reflexes become hyperactive. Full UMN pattern established: hyperreflexia, clonus, Babinski sign, spasticity. Flexor then extensor spasms develop.'),
         ]),
+        AnimatedWalkthroughBlock(
+          title: 'Spinal Shock: Ditunno 4-Phase Model',
+          themeColor: Color(0xFF6366F1),
+          steps: [
+            WalkthroughStep(title: 'Phase 1: Areflexia (0-24 hours)', description: 'Complete loss of all reflexes below the injury. Flaccid paralysis, absent bulbocavernosus reflex (BCR), absent deep tendon reflexes. Caused by sudden loss of tonic descending facilitation from the brainstem.'),
+            WalkthroughStep(title: 'Phase 2: Initial Reflex Return (1-3 days)', description: 'Cutaneous reflexes begin returning: bulbocavernosus reflex, cremasteric reflex, delayed plantar response. BCR return traditionally marks the "end" of spinal shock for classification purposes. DTRs remain absent.'),
+            WalkthroughStep(title: 'Phase 3: Early Hyperreflexia (1-4 weeks)', description: 'Deep tendon reflexes return and become hyperactive. Babinski sign appears. Denervation supersensitivity develops as postsynaptic receptors upregulate in response to loss of input. This is the transition from LMN-pattern to UMN-pattern findings.'),
+            WalkthroughStep(title: 'Phase 4: Spasticity (1-12 months)', description: 'Full UMN syndrome develops: spasticity, clonus, hyperreflexia, flexor and extensor spasms. New synaptic circuits form below the injury. Spasticity may be beneficial (assists transfers, prevents DVT) or harmful (interferes with function, causes pain).'),
+            WalkthroughStep(title: 'Clinical Significance', description: 'ISNCSCI classification should ideally occur after Phase 2 (BCR return) to distinguish true complete injury (AIS A) from spinal shock. Premature classification during Phase 1 may misclassify incomplete injuries as complete. The BCR is the earliest reflex to return — test it at 24-48 hours.'),
+          ],
+        ),
         HeaderBlock('Reflex Return After Spinal Shock'),
         BulletCardBlock(
           title: 'Delayed Plantar Response',
