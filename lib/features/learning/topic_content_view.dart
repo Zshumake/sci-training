@@ -895,111 +895,91 @@ class TopicContentView extends StatelessWidget {
 
   // --- Annotated Image Block ---
   Widget _buildAnnotatedImage(AnnotatedImageBlock block, BuildContext context) {
-    return StatefulBuilder(
-      builder: (context, setState) {
-        return Container(
-          margin: const EdgeInsets.symmetric(vertical: 10),
-          decoration: BoxDecoration(
-            color: AppTheme.cardBackground,
-            borderRadius: BorderRadius.circular(6),
-            border: Border.all(color: AppTheme.borderSubtle, width: 1),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(5)),
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    return Stack(
-                      children: [
-                        block.assetPath.endsWith('.svg')
-                          ? SvgPicture.asset(
-                              block.assetPath,
-                              width: constraints.maxWidth,
-                              fit: BoxFit.contain,
-                            )
-                          : Image.asset(
-                              block.assetPath,
-                              width: constraints.maxWidth,
-                              fit: BoxFit.contain,
-                              errorBuilder: (_, error, stack) => Container(
-                                height: 200,
-                                color: AppTheme.surfaceLight,
-                                child: Center(
-                                  child: Text('Image not found', style: AppTheme.bodyFont(fontSize: 12, color: AppTheme.textSecondary)),
-                                ),
-                              ),
-                            ),
-                        ...block.annotations.map((a) {
-                          return Positioned(
-                            left: a.x * constraints.maxWidth - 10,
-                            top: a.y * 200 - 10,
-                            child: GestureDetector(
-                              onTap: () {
-                                showModalBottomSheet(
-                                  context: context,
-                                  backgroundColor: AppTheme.cardBackground,
-                                  shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
-                                  ),
-                                  builder: (_) => Padding(
-                                    padding: const EdgeInsets.all(20),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(a.label, style: AppTheme.displayFont(fontSize: 16, fontWeight: FontWeight.w700)),
-                                        const SizedBox(height: 8),
-                                        Text(a.description, style: AppTheme.bodyFont(fontSize: 14, height: 1.5)),
-                                        const SizedBox(height: 16),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                width: 20,
-                                height: 20,
-                                decoration: BoxDecoration(
-                                  color: (a.color ?? AppTheme.accentTeal).withValues(alpha: 0.9),
-                                  shape: BoxShape.circle,
-                                  border: Border.all(color: Colors.white, width: 2),
-                                  boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.3), blurRadius: 4)],
-                                ),
-                              ),
-                            ),
-                          );
-                        }),
-                      ],
-                    );
-                  },
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(block.caption, style: AppTheme.bodyFont(fontSize: 12, fontStyle: FontStyle.italic, color: AppTheme.textSecondary)),
-                    if (block.description != null) ...[
-                      const SizedBox(height: 6),
-                      Text(block.description!, style: AppTheme.bodyFont(fontSize: 13, color: AppTheme.textPrimary)),
-                    ],
-                    if (block.annotations.isNotEmpty) ...[
-                      const SizedBox(height: 8),
-                      Text(
-                        'Tap the colored dots to learn more',
-                        style: AppTheme.bodyFont(fontSize: 11, color: AppTheme.textSecondary, fontStyle: FontStyle.italic),
+    // Show the image at a constrained size with a labeled legend below
+    // instead of positioned dots (which can't reliably align to varied images).
+    const double maxImageHeight = 280;
+
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        color: AppTheme.cardBackground,
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(color: AppTheme.borderSubtle, width: 1),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Constrained image with rounded top corners
+          ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(5)),
+            child: Container(
+              constraints: const BoxConstraints(maxHeight: maxImageHeight),
+              width: double.infinity,
+              color: Colors.white,
+              child: block.assetPath.endsWith('.svg')
+                ? SvgPicture.asset(
+                    block.assetPath,
+                    fit: BoxFit.contain,
+                  )
+                : Image.asset(
+                    block.assetPath,
+                    fit: BoxFit.contain,
+                    errorBuilder: (_, error, stack) => SizedBox(
+                      height: 160,
+                      child: Center(
+                        child: Text('Image not found', style: AppTheme.bodyFont(fontSize: 12, color: AppTheme.textSecondary)),
                       ),
-                    ],
-                  ],
-                ),
-              ),
-            ],
+                    ),
+                  ),
+            ),
           ),
-        );
-      },
+          // Caption and annotations as labeled legend
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(block.caption, style: AppTheme.bodyFont(fontSize: 12, fontStyle: FontStyle.italic, color: AppTheme.textSecondary)),
+                if (block.description != null) ...[
+                  const SizedBox(height: 6),
+                  Text(block.description!, style: AppTheme.bodyFont(fontSize: 13, color: AppTheme.textPrimary)),
+                ],
+                if (block.annotations.isNotEmpty) ...[
+                  const SizedBox(height: 10),
+                  Container(height: 1, color: AppTheme.borderSubtle),
+                  const SizedBox(height: 10),
+                  ...block.annotations.map((a) => Padding(
+                    padding: const EdgeInsets.only(bottom: 6),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 8,
+                          height: 8,
+                          margin: const EdgeInsets.only(top: 4, right: 8),
+                          decoration: BoxDecoration(
+                            color: a.color ?? AppTheme.accentTeal,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(a.label, style: AppTheme.displayFont(fontSize: 12, fontWeight: FontWeight.w600)),
+                              Text(a.description, style: AppTheme.bodyFont(fontSize: 11, color: AppTheme.textSecondary, height: 1.3)),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+                ],
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 
