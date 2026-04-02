@@ -913,9 +913,10 @@ class TopicContentView extends StatelessWidget {
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(5)),
             child: Container(
-              constraints: const BoxConstraints(maxHeight: maxImageHeight),
+              height: maxImageHeight,
               width: double.infinity,
-              color: Colors.white,
+              color: const Color(0xFFF8F8F8),
+              padding: const EdgeInsets.all(12),
               child: block.assetPath.endsWith('.svg')
                 ? SvgPicture.asset(
                     block.assetPath,
@@ -924,10 +925,14 @@ class TopicContentView extends StatelessWidget {
                 : Image.asset(
                     block.assetPath,
                     fit: BoxFit.contain,
-                    errorBuilder: (_, error, stack) => SizedBox(
-                      height: 160,
-                      child: Center(
-                        child: Text('Image not found', style: AppTheme.bodyFont(fontSize: 12, color: AppTheme.textSecondary)),
+                    errorBuilder: (_, error, stack) => Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.image_not_supported_outlined, size: 32, color: AppTheme.textSecondary),
+                          const SizedBox(height: 8),
+                          Text('Image: ${block.assetPath.split('/').last}', style: AppTheme.bodyFont(fontSize: 11, color: AppTheme.textSecondary)),
+                        ],
                       ),
                     ),
                   ),
