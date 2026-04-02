@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 import '../../../data/anatomy/spinal_cord_layers.dart';
 import '../../../data/models/infographic_model.dart';
 import '../../../data/models/sci_infographic_model.dart';
@@ -172,24 +173,27 @@ class InfographicGallery extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: items.isEmpty
-          ? Center(
-              child: Text(
-                'No infographics available',
-                style: AppTheme.bodyFont(color: AppTheme.textSecondary),
+      body: ResponsiveBody(
+        maxWidth: ResponsiveBreakpoints.maxToolWidth,
+        child: items.isEmpty
+            ? Center(
+                child: Text(
+                  'No infographics available',
+                  style: AppTheme.bodyFont(color: AppTheme.textSecondary),
+                ),
+              )
+            : ListView.builder(
+                padding: const EdgeInsets.all(16),
+                itemCount: items.length,
+                itemBuilder: (context, index) {
+                  final item = items[index];
+                  return _InfographicCard(
+                    infographic: item,
+                    onTap: () => _onInfographicTap(context, item),
+                  );
+                },
               ),
-            )
-          : ListView.builder(
-              padding: const EdgeInsets.all(16),
-              itemCount: items.length,
-              itemBuilder: (context, index) {
-                final item = items[index];
-                return _InfographicCard(
-                  infographic: item,
-                  onTap: () => _onInfographicTap(context, item),
-                );
-              },
-            ),
+      ),
     );
   }
 }

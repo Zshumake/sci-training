@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 
 /// Interactive decision tree for neurogenic bladder management.
 ///
@@ -261,27 +262,30 @@ class _BladderManagementAlgorithmState
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.surfaceLight,
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          _buildBreadcrumb(),
-          const SizedBox(height: 12),
-          _buildNodeCard(_currentNode),
-          if (_currentNode.medications != null &&
-              _currentNode.medications!.isNotEmpty) ...[
+      body: ResponsiveBody(
+        maxWidth: ResponsiveBreakpoints.maxToolWidth,
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            _buildBreadcrumb(),
             const SizedBox(height: 12),
-            _buildMedicationPanel(_currentNode.medications!),
+            _buildNodeCard(_currentNode),
+            if (_currentNode.medications != null &&
+                _currentNode.medications!.isNotEmpty) ...[
+              const SizedBox(height: 12),
+              _buildMedicationPanel(_currentNode.medications!),
+            ],
+            if (_currentNode.safetyWarning != null) ...[
+              const SizedBox(height: 12),
+              _buildSafetyWarning(_currentNode.safetyWarning!),
+            ],
+            if (_showSummary) ...[
+              const SizedBox(height: 16),
+              _buildPathSummary(),
+            ],
+            const SizedBox(height: 32),
           ],
-          if (_currentNode.safetyWarning != null) ...[
-            const SizedBox(height: 12),
-            _buildSafetyWarning(_currentNode.safetyWarning!),
-          ],
-          if (_showSummary) ...[
-            const SizedBox(height: 16),
-            _buildPathSummary(),
-          ],
-          const SizedBox(height: 32),
-        ],
+        ),
       ),
     );
   }

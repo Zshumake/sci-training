@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 import '../../../data/models/anatomy_3d_model.dart';
 
 /// Displays a Sketchfab 3D model.
@@ -52,10 +53,12 @@ class SketchfabViewer extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // ── Title / attribution header ──
+      body: ResponsiveBody(
+        maxWidth: ResponsiveBreakpoints.maxToolWidth,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // ── Title / attribution header ──
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 8, 20, 0),
             child: Row(
@@ -192,7 +195,8 @@ class SketchfabViewer extends StatelessWidget {
               ],
             ),
           ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 
 /// Interactive bowel program builder.
 ///
@@ -246,28 +247,31 @@ class _BowelProgramAlgorithmState extends State<BowelProgramAlgorithm> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.surfaceLight,
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          if (_selectedType == null) ...[
-            _buildTypeSelector(),
-          ] else ...[
-            _buildHeader(),
-            const SizedBox(height: 12),
-            _buildTimeline(),
-            const SizedBox(height: 16),
-            _buildCurrentStepCard(),
-            const SizedBox(height: 12),
-            _buildStepNavigation(),
-            const SizedBox(height: 16),
-            _buildTroubleshootingSection(),
-            if (_troubleshootingBranch != null) ...[
+      body: ResponsiveBody(
+        maxWidth: ResponsiveBreakpoints.maxToolWidth,
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            if (_selectedType == null) ...[
+              _buildTypeSelector(),
+            ] else ...[
+              _buildHeader(),
               const SizedBox(height: 12),
-              _buildTroubleshootingDetail(_troubleshooting[_troubleshootingBranch!]!),
+              _buildTimeline(),
+              const SizedBox(height: 16),
+              _buildCurrentStepCard(),
+              const SizedBox(height: 12),
+              _buildStepNavigation(),
+              const SizedBox(height: 16),
+              _buildTroubleshootingSection(),
+              if (_troubleshootingBranch != null) ...[
+                const SizedBox(height: 12),
+                _buildTroubleshootingDetail(_troubleshooting[_troubleshootingBranch!]!),
+              ],
             ],
+            const SizedBox(height: 32),
           ],
-          const SizedBox(height: 32),
-        ],
+        ),
       ),
     );
   }

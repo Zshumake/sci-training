@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 import '../../../data/models/anatomy_layer_model.dart';
 
 /// Interactive anatomy layer viewer that lets users peel away
@@ -170,7 +171,9 @@ class _AnatomyLayerViewerState extends State<AnatomyLayerViewer>
         ],
       ),
       body: SafeArea(
-        child: Column(
+        child: ResponsiveBody(
+          maxWidth: ResponsiveBreakpoints.maxToolWidth,
+          child: Column(
           children: [
             // Main diagram area
             Expanded(
@@ -231,6 +234,7 @@ class _AnatomyLayerViewerState extends State<AnatomyLayerViewer>
               pearl: _activePearl,
             ),
           ],
+          ),
         ),
       ),
     );

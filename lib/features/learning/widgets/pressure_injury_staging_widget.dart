@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 
 // ---------------------------------------------------------------------------
 // Data models
@@ -424,10 +425,10 @@ class _PressureInjuryStagingWidgetState
           child: TabBarView(
             controller: _tabController,
             children: [
-              _buildStagingReference(),
-              _buildQuizTab(),
-              _buildBodyMapTab(),
-              _buildBradenTab(),
+              ResponsiveBody(maxWidth: ResponsiveBreakpoints.maxToolWidth, child: _buildStagingReference()),
+              ResponsiveBody(maxWidth: ResponsiveBreakpoints.maxToolWidth, child: _buildQuizTab()),
+              ResponsiveBody(maxWidth: ResponsiveBreakpoints.maxToolWidth, child: _buildBodyMapTab()),
+              ResponsiveBody(maxWidth: ResponsiveBreakpoints.maxToolWidth, child: _buildBradenTab()),
             ],
           ),
         ),

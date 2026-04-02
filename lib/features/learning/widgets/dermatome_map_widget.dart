@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 
 // ---------------------------------------------------------------------------
 // Mode enum
@@ -450,22 +451,25 @@ class _DermatomeMapWidgetState extends State<DermatomeMapWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // Header / quiz prompt
-        _buildHeader(),
-        const SizedBox(height: 8),
+    return ResponsiveBody(
+      maxWidth: ResponsiveBreakpoints.maxToolWidth,
+      child: Column(
+        children: [
+          // Header / quiz prompt
+          _buildHeader(),
+          const SizedBox(height: 8),
 
-        // Legend
-        _buildLegend(),
-        const SizedBox(height: 8),
+          // Legend
+          _buildLegend(),
+          const SizedBox(height: 8),
 
-        // Body map
-        Expanded(child: _buildBodyMap()),
+          // Body map
+          Expanded(child: _buildBodyMap()),
 
-        // Info card (study) or feedback card (quiz)
-        _buildInfoCard(),
-      ],
+          // Info card (study) or feedback card (quiz)
+          _buildInfoCard(),
+        ],
+      ),
     );
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 import '../../../core/isncsci/isncsci_algorithm.dart';
 import '../../../core/isncsci/isncsci_exam_model.dart';
 import '../../../core/isncsci/isncsci_result_model.dart';
@@ -36,7 +37,9 @@ class _ISNCSCIClassificationTrainerState
     return Scaffold(
       backgroundColor: AppTheme.surfaceLight,
       appBar: AppBar(title: const Text('Classification Trainer')),
-      body: ListView(
+      body: ResponsiveBody(
+        maxWidth: ResponsiveBreakpoints.maxToolWidth,
+        child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         children: [
           _buildIntroCard(),
@@ -50,6 +53,7 @@ class _ISNCSCIClassificationTrainerState
             const SizedBox(height: 16),
           ],
         ],
+      ),
       ),
     );
   }
@@ -349,17 +353,20 @@ class _CaseWalkthroughScreenState extends State<_CaseWalkthroughScreen> {
           onPressed: () => Navigator.pop(context, _currentStep == 6),
         ),
       ),
-      body: Column(
-        children: [
-          _buildStepIndicator(),
-          Expanded(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(16),
-              child: _buildStepContent(),
+      body: ResponsiveBody(
+        maxWidth: ResponsiveBreakpoints.maxToolWidth,
+        child: Column(
+          children: [
+            _buildStepIndicator(),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(16),
+                child: _buildStepContent(),
+              ),
             ),
-          ),
-          _buildBottomBar(),
-        ],
+            _buildBottomBar(),
+          ],
+        ),
       ),
     );
   }

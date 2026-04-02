@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 
 /// Interactive step-by-step AD emergency management simulator.
 ///
@@ -195,24 +196,27 @@ class _ADManagementFlowchartState extends State<ADManagementFlowchart>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.surfaceLight,
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          _buildScenarioCard(),
-          const SizedBox(height: 16),
-          _buildBPMonitor(),
-          const SizedBox(height: 16),
-          _buildStepList(),
-          if (_showDrugPanel) ...[
+      body: ResponsiveBody(
+        maxWidth: ResponsiveBreakpoints.maxToolWidth,
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            _buildScenarioCard(),
             const SizedBox(height: 16),
-            _buildDrugDosingPanel(),
-          ],
-          if (_currentStep >= _steps.length - 1) ...[
+            _buildBPMonitor(),
             const SizedBox(height: 16),
-            _buildCompletionCard(),
+            _buildStepList(),
+            if (_showDrugPanel) ...[
+              const SizedBox(height: 16),
+              _buildDrugDosingPanel(),
+            ],
+            if (_currentStep >= _steps.length - 1) ...[
+              const SizedBox(height: 16),
+              _buildCompletionCard(),
+            ],
+            const SizedBox(height: 32),
           ],
-          const SizedBox(height: 32),
-        ],
+        ),
       ),
     );
   }

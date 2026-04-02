@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 import '../../../core/isncsci/isncsci_algorithm.dart';
 import '../../../core/isncsci/isncsci_exam_model.dart';
 import '../../../core/isncsci/isncsci_result_model.dart';
@@ -343,12 +344,14 @@ class _ISNCSCIWorksheetState extends State<ISNCSCIWorksheet> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.surfaceLight,
-      body: Column(
-        children: [
-          // Main scrollable content
-          Expanded(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      body: ResponsiveBody(
+        maxWidth: ResponsiveBreakpoints.maxToolWidth,
+        child: Column(
+          children: [
+            // Main scrollable content
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -368,6 +371,7 @@ class _ISNCSCIWorksheetState extends State<ISNCSCIWorksheet> {
             ),
           ),
         ],
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/models/topic_content_model.dart';
 import '../../core/theme/app_theme.dart';
+import '../../core/widgets/responsive_layout.dart';
 import 'widgets/isncsci_scoring_tool.dart';
 import 'widgets/dermatome_map_widget.dart';
 import 'widgets/ais_practice_widget.dart';
@@ -36,12 +37,19 @@ class TopicContentView extends StatelessWidget {
           Expanded(
             child: TabBarView(
               children: topicData.tabs.map((tab) {
-                return ListView.builder(
-                  padding: const EdgeInsets.all(16),
-                  itemCount: tab.blocks.length,
-                  itemBuilder: (context, index) {
-                    return _buildBlock(tab.blocks[index], context);
-                  },
+                return Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      maxWidth: ResponsiveBreakpoints.maxContentWidth,
+                    ),
+                    child: ListView.builder(
+                      padding: const EdgeInsets.all(16),
+                      itemCount: tab.blocks.length,
+                      itemBuilder: (context, index) {
+                        return _buildBlock(tab.blocks[index], context);
+                      },
+                    ),
+                  ),
                 );
               }).toList(),
             ),

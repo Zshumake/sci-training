@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 
 // ---------------------------------------------------------------------------
 // Data models
@@ -305,7 +306,9 @@ class _FunctionalOutcomesWidgetState extends State<FunctionalOutcomesWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return ResponsiveBody(
+      maxWidth: ResponsiveBreakpoints.maxToolWidth,
+      child: SingleChildScrollView(
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -362,6 +365,7 @@ class _FunctionalOutcomesWidgetState extends State<FunctionalOutcomesWidget> {
           else
             _buildOutcomeCard(_outcomes[_selectedIndex], AppTheme.accentTeal),
         ],
+      ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import '../../../core/widgets/responsive_layout.dart';
 
 
 // ---------------------------------------------------------------------------
@@ -560,32 +561,35 @@ class _AISPracticeWidgetState extends State<AISPracticeWidget> {
         ],
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            _buildProgressBar(currentCase),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    _buildCaseCard(currentCase),
-                    const SizedBox(height: 16),
-                    _buildExamFindings(currentCase),
-                    const SizedBox(height: 20),
-                    _buildGradeButtons(currentCase),
-                    if (_answered) ...[
+        child: ResponsiveBody(
+          maxWidth: ResponsiveBreakpoints.maxToolWidth,
+          child: Column(
+            children: [
+              _buildProgressBar(currentCase),
+              Expanded(
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      _buildCaseCard(currentCase),
                       const SizedBox(height: 16),
-                      _buildFeedbackCard(currentCase, isCorrect),
-                      const SizedBox(height: 16),
-                      _buildNextButton(),
+                      _buildExamFindings(currentCase),
+                      const SizedBox(height: 20),
+                      _buildGradeButtons(currentCase),
+                      if (_answered) ...[
+                        const SizedBox(height: 16),
+                        _buildFeedbackCard(currentCase, isCorrect),
+                        const SizedBox(height: 16),
+                        _buildNextButton(),
+                      ],
+                      const SizedBox(height: 24),
                     ],
-                    const SizedBox(height: 24),
-                  ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

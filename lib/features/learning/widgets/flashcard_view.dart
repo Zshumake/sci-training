@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../data/models/flashcard_model.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 
 class FlashcardView extends StatefulWidget {
   final List<Flashcard> cards;
@@ -144,7 +145,8 @@ class _FlashcardViewState extends State<FlashcardView> {
           ),
         ],
       ),
-      body: Padding(
+      body: ResponsiveBody(
+        child: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
@@ -284,6 +286,7 @@ class _FlashcardViewState extends State<FlashcardView> {
               const SizedBox(height: 52),
           ],
         ),
+      ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 import '../../../core/isncsci/isncsci_algorithm.dart';
 import '../../../core/isncsci/isncsci_constants.dart' as constants;
 import '../../../core/isncsci/isncsci_exam_model.dart' as isncsci;
@@ -384,27 +385,30 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
           ),
         ],
       ),
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          _SensoryTab(
-            ltRight: _ltRight,
-            ltLeft: _ltLeft,
-            ppRight: _ppRight,
-            ppLeft: _ppLeft,
-            dap: _dap,
-            vac: _vac,
-            onDapChanged: (v) => setState(() => _dap = v),
-            onVacChanged: (v) => setState(() => _vac = v),
-            onScoreChanged: () => setState(() {}),
-          ),
-          _MotorTab(
-            motorRight: _motorRight,
-            motorLeft: _motorLeft,
-            onScoreChanged: () => setState(() {}),
-          ),
-          _ResultsTab(results: _computeResults()),
-        ],
+      body: ResponsiveBody(
+        maxWidth: ResponsiveBreakpoints.maxToolWidth,
+        child: TabBarView(
+          controller: _tabController,
+          children: [
+            _SensoryTab(
+              ltRight: _ltRight,
+              ltLeft: _ltLeft,
+              ppRight: _ppRight,
+              ppLeft: _ppLeft,
+              dap: _dap,
+              vac: _vac,
+              onDapChanged: (v) => setState(() => _dap = v),
+              onVacChanged: (v) => setState(() => _vac = v),
+              onScoreChanged: () => setState(() {}),
+            ),
+            _MotorTab(
+              motorRight: _motorRight,
+              motorLeft: _motorLeft,
+              onScoreChanged: () => setState(() {}),
+            ),
+            _ResultsTab(results: _computeResults()),
+          ],
+        ),
       ),
     );
   }

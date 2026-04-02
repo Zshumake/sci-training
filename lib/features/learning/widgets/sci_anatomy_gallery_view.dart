@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_theme.dart';
+import '../../../core/widgets/responsive_layout.dart';
 import '../../../data/anatomy/sci_anatomy_3d_models.dart';
 import '../../../data/anatomy/spinal_cord_layers.dart';
 import '../../../data/models/anatomy_3d_model.dart';
@@ -52,12 +53,15 @@ class SCIAnatomyGalleryView extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
-          children: [
-            _ModelsTab(moduleId: moduleId),
-            _DiagramsTab(moduleId: moduleId),
-            _LayersTab(moduleId: moduleId),
-          ],
+        body: ResponsiveBody(
+          maxWidth: ResponsiveBreakpoints.maxToolWidth,
+          child: TabBarView(
+            children: [
+              _ModelsTab(moduleId: moduleId),
+              _DiagramsTab(moduleId: moduleId),
+              _LayersTab(moduleId: moduleId),
+            ],
+          ),
         ),
       ),
     );
