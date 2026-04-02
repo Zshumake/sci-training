@@ -262,6 +262,12 @@ final TopicData sciFundamentalsContent = TopicData(
           isIntro: true,
         ),
         AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/dermatome_anterior.svg',
+          caption: 'Dermatome Map -- Anterior View (Haeggstroem, Public Domain)',
+          description: 'Color-coded dermatome body map showing cutaneous territories of each spinal nerve root on the anterior surface. Essential for localizing spinal cord injury levels during ISNCSCI examination.',
+          annotations: [],
+        ),
+        AnnotatedImageBlock(
           assetPath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
           caption: 'Vertebral Column — Anterior View',
           description: 'Tap the labeled points to review key anatomical regions of the vertebral column and their clinical significance in SCI.',

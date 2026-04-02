@@ -7,6 +7,7 @@ import '../../../core/isncsci/isncsci_exam_model.dart';
 import '../../../core/isncsci/isncsci_result_model.dart';
 import '../../../core/isncsci/isncsci_constants.dart';
 import '../../../data/isncsci_training_cases.dart';
+import 'dermatome_reference_panel.dart';
 
 // ============================================================================
 // Case Selection Screen
@@ -469,6 +470,8 @@ class _CaseWalkthroughScreenState extends State<_CaseWalkthroughScreen> {
             style: AppTheme.bodyFont(fontSize: 14, height: 1.6),
           ),
         ),
+        const SizedBox(height: 16),
+        const DermatomeReferencePanel(),
         const SizedBox(height: 16),
         _sectionHeader('Sensory Examination -- Light Touch'),
         _buildSensoryTable(

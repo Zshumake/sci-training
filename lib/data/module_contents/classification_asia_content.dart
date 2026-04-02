@@ -384,6 +384,18 @@ final TopicData classificationAsiaContent = TopicData(
       blocks: [
         CustomWidgetBlock(CustomWidgetType.dermatomalMap),
         AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/dermatome_anterior.svg',
+          caption: 'Dermatome Map -- Anterior View (Haeggstroem, Public Domain)',
+          description: 'Color-coded dermatome distribution on the anterior body surface. Pinch to zoom in the interactive viewer. Each color band represents the cutaneous territory of a single spinal nerve root.',
+          annotations: [],
+        ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/dermatome_posterior.svg',
+          caption: 'Dermatome Map -- Posterior View (Haeggstroem, Public Domain)',
+          description: 'Color-coded dermatome distribution on the posterior body surface. Useful for understanding sensory overlap and posterior column testing patterns.',
+          annotations: [],
+        ),
+        AnnotatedImageBlock(
           assetPath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
           caption: 'Key Sensory Points for ISNCSCI Examination',
           description: 'Tap each point to review the dermatome landmark tested during the ISNCSCI sensory exam. All 28 key sensory points must be tested bilaterally for light touch and pin prick.',

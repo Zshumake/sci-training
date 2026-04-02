@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../data/models/topic_content_model.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/widgets/responsive_layout.dart';
@@ -912,18 +913,24 @@ class TopicContentView extends StatelessWidget {
                   builder: (context, constraints) {
                     return Stack(
                       children: [
-                        Image.asset(
-                          block.assetPath,
-                          width: constraints.maxWidth,
-                          fit: BoxFit.contain,
-                          errorBuilder: (_, error, stack) => Container(
-                            height: 200,
-                            color: AppTheme.surfaceLight,
-                            child: Center(
-                              child: Text('Image not found', style: AppTheme.bodyFont(fontSize: 12, color: AppTheme.textSecondary)),
+                        block.assetPath.endsWith('.svg')
+                          ? SvgPicture.asset(
+                              block.assetPath,
+                              width: constraints.maxWidth,
+                              fit: BoxFit.contain,
+                            )
+                          : Image.asset(
+                              block.assetPath,
+                              width: constraints.maxWidth,
+                              fit: BoxFit.contain,
+                              errorBuilder: (_, error, stack) => Container(
+                                height: 200,
+                                color: AppTheme.surfaceLight,
+                                child: Center(
+                                  child: Text('Image not found', style: AppTheme.bodyFont(fontSize: 12, color: AppTheme.textSecondary)),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
                         ...block.annotations.map((a) {
                           return Positioned(
                             left: a.x * constraints.maxWidth - 10,

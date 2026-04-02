@@ -7,6 +7,7 @@ import '../../../core/isncsci/isncsci_exam_model.dart';
 import '../../../core/isncsci/isncsci_result_model.dart';
 import '../../../core/isncsci/isncsci_constants.dart';
 import '../../../data/isncsci_training_cases.dart';
+import 'dermatome_reference_panel.dart';
 
 // ============================================================================
 // Visual ISNCSCI Worksheet Widget
@@ -357,6 +358,8 @@ class _ISNCSCIWorksheetState extends State<ISNCSCIWorksheet> {
                 children: [
                   _buildHeader(),
                   if (_loadedCase != null) _buildCaseBanner(),
+                  const SizedBox(height: 8),
+                  const DermatomeReferencePanel(),
                   const SizedBox(height: 8),
                   _buildQuickActions(),
                   const SizedBox(height: 12),

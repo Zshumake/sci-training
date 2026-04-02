@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/responsive_layout.dart';
+import 'dermatome_reference_panel.dart';
 
 // ---------------------------------------------------------------------------
 // Mode enum
@@ -462,6 +463,10 @@ class _DermatomeMapWidgetState extends State<DermatomeMapWidget>
           // Legend
           _buildLegend(),
           const SizedBox(height: 8),
+
+          // Real SVG dermatome reference (collapsible)
+          if (widget.mode == DermatomeMapMode.study)
+            const DermatomeReferencePanel(showKeyTable: false),
 
           // Body map
           Expanded(child: _buildBodyMap()),

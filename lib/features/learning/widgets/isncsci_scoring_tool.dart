@@ -5,6 +5,7 @@ import '../../../core/widgets/responsive_layout.dart';
 import '../../../core/isncsci/isncsci_algorithm.dart';
 import '../../../core/isncsci/isncsci_constants.dart' as constants;
 import '../../../core/isncsci/isncsci_exam_model.dart' as isncsci;
+import 'dermatome_reference_panel.dart';
 
 /// Converts a canonical level name (e.g. 'S4_5') to display form ('S4-5').
 String _displayLevel(String level) => level.replaceAll('_', '-');
@@ -384,6 +385,13 @@ class _ISNCSCIScoringToolState extends State<ISNCSCIScoringTool>
             },
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.small(
+        onPressed: () => showDermatomeReferenceSheet(context),
+        backgroundColor: AppTheme.accentTeal,
+        tooltip: 'Dermatome Reference',
+        child: const Icon(Icons.accessibility_new_rounded,
+            color: Colors.white, size: 20),
       ),
       body: ResponsiveBody(
         maxWidth: ResponsiveBreakpoints.maxToolWidth,
