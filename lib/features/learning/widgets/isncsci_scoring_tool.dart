@@ -564,11 +564,16 @@ class _SensoryModality extends StatelessWidget {
                 rightScore: rightScores[level] ?? 0,
                 leftScore: leftScores[level] ?? 0,
                 onRightChanged: (v) {
-                  rightScores[level] = v;
+                  // Cascade: set this level and all caudal levels to the same score
+                  for (int i = index; i < constants.sensoryExamLevels.length; i++) {
+                    rightScores[constants.sensoryExamLevels[i]] = v;
+                  }
                   onScoreChanged();
                 },
                 onLeftChanged: (v) {
-                  leftScores[level] = v;
+                  for (int i = index; i < constants.sensoryExamLevels.length; i++) {
+                    leftScores[constants.sensoryExamLevels[i]] = v;
+                  }
                   onScoreChanged();
                 },
               );
@@ -737,11 +742,16 @@ class _MotorTab extends StatelessWidget {
                     rightScore: motorRight[level] ?? 0,
                     leftScore: motorLeft[level] ?? 0,
                     onRightChanged: (v) {
-                      motorRight[level] = v;
+                      // Cascade: set this level and all caudal motor levels to the same score
+                      for (int i = index; i < constants.motorLevels.length; i++) {
+                        motorRight[constants.motorLevels[i]] = v;
+                      }
                       onScoreChanged();
                     },
                     onLeftChanged: (v) {
-                      motorLeft[level] = v;
+                      for (int i = index; i < constants.motorLevels.length; i++) {
+                        motorLeft[constants.motorLevels[i]] = v;
+                      }
                       onScoreChanged();
                     },
                   ),

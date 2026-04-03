@@ -192,29 +192,39 @@ class _ISNCSCIWorksheetState extends State<ISNCSCIWorksheet> {
   void _cycleMotor(Map<String, String> map, String level) {
     final current = map[level]!;
     final idx = _motorCycleValues.indexOf(current);
-    map[level] = _motorCycleValues[(idx + 1) % _motorCycleValues.length];
+    final newValue = _motorCycleValues[(idx + 1) % _motorCycleValues.length];
+    // Cascade: set this level and all caudal motor levels to the same value
+    final levelIdx = motorLevels.indexOf(level);
+    for (int i = levelIdx; i < motorLevels.length; i++) {
+      map[motorLevels[i]] = newValue;
+    }
     _recalculate();
   }
 
   void _cycleSensory(Map<String, String> map, String level) {
     final current = map[level]!;
     final idx = _sensoryCycleValues.indexOf(current);
-    map[level] = _sensoryCycleValues[(idx + 1) % _sensoryCycleValues.length];
+    final newValue = _sensoryCycleValues[(idx + 1) % _sensoryCycleValues.length];
+    // Cascade: set this level and all caudal sensory levels to the same value
+    final levelIdx = sensoryExamLevels.indexOf(level);
+    for (int i = levelIdx; i < sensoryExamLevels.length; i++) {
+      map[sensoryExamLevels[i]] = newValue;
+    }
     _recalculate();
   }
 
   void _showMotorPopup(
       BuildContext context, Map<String, String> map, String level) {
-    _showValuePopup(context, map, level, _motorPopupValues);
+    _showValuePopup(context, map, level, _motorPopupValues, isMotor: true);
   }
 
   void _showSensoryPopup(
       BuildContext context, Map<String, String> map, String level) {
-    _showValuePopup(context, map, level, _sensoryPopupValues);
+    _showValuePopup(context, map, level, _sensoryPopupValues, isMotor: false);
   }
 
   void _showValuePopup(BuildContext context, Map<String, String> map,
-      String level, List<String> options) {
+      String level, List<String> options, {required bool isMotor}) {
     final current = map[level];
     showModalBottomSheet(
       context: context,
@@ -229,7 +239,7 @@ class _ISNCSCIWorksheetState extends State<ISNCSCIWorksheet> {
             Padding(
               padding: const EdgeInsets.all(12),
               child: Text(
-                'Set $level Score',
+                'Set $level and below',
                 style: AppTheme.displayFont(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
@@ -246,7 +256,12 @@ class _ISNCSCIWorksheetState extends State<ISNCSCIWorksheet> {
                   final selected = val == current;
                   return GestureDetector(
                     onTap: () {
-                      map[level] = val;
+                      // Cascade: set this level and all below
+                      final levels = isMotor ? motorLevels : sensoryExamLevels;
+                      final idx = levels.indexOf(level);
+                      for (int i = idx; i < levels.length; i++) {
+                        map[levels[i]] = val;
+                      }
                       _recalculate();
                       Navigator.pop(ctx);
                     },
