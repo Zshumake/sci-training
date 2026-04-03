@@ -13,6 +13,12 @@ final TopicData neurogenicBladderContent = TopicData(
           'A thorough understanding of bladder neuroanatomy is the foundation for classifying and managing neurogenic bladder dysfunction after SCI. Micturition involves coordinated activity between central pathways (cortical, pontine) and peripheral nerves (parasympathetic, sympathetic, somatic), mediated through specific receptor pharmacology.',
           isIntro: true,
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/bladder_cns_pathways.jpg',
+          caption: 'CNS Bladder Control Pathways (PeaceBoA, CC BY 4.0)',
+          description: 'Diagram of CNS pathways controlling bladder function, illustrating UMN vs LMN control and the pontine micturition center.',
+          annotations: [],
+        ),
         BulletCardBlock(
           title: 'Central Pathways',
           themeColor: const Color(0xFF6366F1),

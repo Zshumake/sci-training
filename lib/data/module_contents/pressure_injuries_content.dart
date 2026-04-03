@@ -28,6 +28,11 @@ final TopicData pressureInjuriesContent = TopicData(
           boardPearl: 'Staging landmarks: Stage 1 = intact skin, non-blanchable redness. Stage 2 = partial thickness (epidermis/dermis) — think "blister or shallow crater." Stage 3 = full thickness into fat — bone/tendon/muscle NOT visible. Stage 4 = full thickness WITH exposed bone/tendon/muscle. Unstageable = can\'t see the bottom (slough/eschar covers it). DTPI = deep purple/maroon under intact skin (damage is deep-to-superficial, originating at bone-muscle interface).',
         ),
         AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/wound_staging.jpg',
+          caption: 'Pressure Injury Stages 1-4 — Clinical Photos (CC BY-SA 3.0)',
+          annotations: [],
+        ),
+        AnnotatedImageBlock(
           assetPath: 'assets/infographics/anatomy/servier_skin_layers.png',
           caption: 'Skin Layers and Pressure Injury Depth',
           description:
@@ -149,6 +154,11 @@ final TopicData pressureInjuriesContent = TopicData(
         TextBlock(
           'SCI patients face lifelong elevated risk for pressure injuries due to the convergence of impaired sensation, immobility, moisture exposure, autonomic dysfunction, and nutritional challenges. Understanding risk factors, common locations by position, and risk assessment tools is essential for prevention and is heavily tested on board examinations.',
           isIntro: true,
+        ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/pressure_ulcer_points.svg',
+          caption: 'Pressure-Vulnerable Points by Position (CC BY-SA 3.0)',
+          annotations: [],
         ),
         BulletCardBlock(
           title: 'Intrinsic Risk Factors',

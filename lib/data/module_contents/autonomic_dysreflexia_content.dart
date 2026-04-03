@@ -28,6 +28,16 @@ final TopicData autonomicDysreflexiaContent = TopicData(
             'Risk increases with higher injury levels (cervical > upper thoracic)',
           ],
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/gray839_autonomic_ns.png',
+          caption: 'Autonomic Nervous System — Sympathetic (red) & Parasympathetic (blue) (Gray\'s Anatomy, Public Domain)',
+          annotations: [],
+        ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/openstax_sympathetic_ns.jpg',
+          caption: 'Sympathetic NS Connections (OpenStax, CC BY 3.0)',
+          annotations: [],
+        ),
         BulletCardBlock(
           title: 'Pathophysiological Mechanism — Step by Step',
           themeColor: const Color(0xFFDC2626),

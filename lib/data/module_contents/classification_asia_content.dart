@@ -541,6 +541,11 @@ final TopicData classificationAsiaContent = TopicData(
           'Board Pearl: Central Cord Mechanism',
           'In elderly patients with spondylosis, a simple fall with hyperextension can cause central cord syndrome WITHOUT fracture (SCIWORA). The ligamentum flavum buckles inward and can narrow the sagittal diameter by up to 50%. The typical presentation: elderly patient, falls, UE weakness > LE, hands worst. MRI may show cord signal change without fracture.',
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/brown_sequard_syndrome.svg',
+          caption: 'Brown-Séquard Syndrome — Hemisection (Polarlys, CC BY-SA 3.0)',
+          annotations: [],
+        ),
         ComparisonCardBlock(
           title: 'Brown-Séquard Syndrome',
           themeColor: const Color(0xFF7C3AED),

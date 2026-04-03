@@ -129,6 +129,11 @@ final TopicData cardiovascularContent = TopicData(
           'Deep vein thrombosis (DVT) and pulmonary embolism (PE) are among the most dangerous cardiovascular complications of acute SCI. PE is a leading cause of preventable death in acute SCI, making VTE prophylaxis one of the highest clinical priorities in the early management period.',
           isIntro: true,
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/dvt_clinical_photo.jpg',
+          caption: 'Deep Vein Thrombosis — Clinical Presentation (James Heilman MD, CC BY-SA 3.0)',
+          annotations: [],
+        ),
         BulletCardBlock(
           title: 'Virchow\'s Triad in SCI',
           themeColor: const Color(0xFFDC2626),

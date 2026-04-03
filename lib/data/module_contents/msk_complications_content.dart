@@ -13,6 +13,11 @@ final TopicData mskComplicationsContent = TopicData(
           'Heterotopic ossification is the formation of mature lamellar bone in soft tissues surrounding joints below the level of injury. It is one of the most commonly tested musculoskeletal complications in SCI. The incidence is 16-53% of all SCI patients, with clinically significant HO (causing functional limitation) in approximately 10-20%. Understanding the diagnostic workup, timing of labs and imaging, and indications for surgical resection is essential.',
           isIntro: true,
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/ho_elbow_xray.jpg',
+          caption: 'Heterotopic Ossification — Elbow X-ray with RT Field (CC BY-SA 3.0)',
+          annotations: [],
+        ),
         BulletCardBlock(
           title: 'Pathophysiology & Epidemiology',
           themeColor: const Color(0xFF3B82F6),

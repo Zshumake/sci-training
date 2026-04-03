@@ -280,6 +280,11 @@ final TopicData sciFundamentalsContent = TopicData(
             'Denticulate ligaments: 21 pairs of pia mater extensions anchoring cord laterally to dura',
           ],
         ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/gray111_vertebral_column.png',
+          caption: 'Vertebral Column — Color-Coded Regions (Gray\'s Anatomy, Public Domain)',
+          annotations: [],
+        ),
         HeaderBlock('Spinal Ligaments'),
         TableBlock(
           title: 'Major Spinal Ligaments',
@@ -368,6 +373,16 @@ final TopicData sciFundamentalsContent = TopicData(
         PearlBlock(
           'Board Pearl: Clarke\'s Nucleus',
           'Clarke\'s nucleus (Rexed lamina VII, C8-L2) receives proprioceptive afferents from the lower extremities and gives rise to the posterior spinocerebellar tract. Proprioceptive fibers from below L2 must first ascend in the fasciculus gracilis to reach Clarke\'s nucleus.',
+        ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/gray770_spinal_meninges.svg',
+          caption: 'Spinal Cord Meninges (Gray\'s Anatomy, Public Domain)',
+          annotations: [],
+        ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/spinal_cord_tracts.svg',
+          caption: 'Spinal Cord Cross-Section — Major Tracts (Polarlys/Häggström, CC BY-SA 3.0)',
+          annotations: [],
         ),
         HeaderBlock('Major Ascending Tracts (Sensory)'),
         TableBlock(
@@ -504,6 +519,12 @@ final TopicData sciFundamentalsContent = TopicData(
         PearlBlock(
           'Board Pearl: Artery of Adamkiewicz',
           'The artery of Adamkiewicz is the largest segmental artery and provides the major blood supply to the lower two-thirds of the spinal cord. It arises from the LEFT side in ~80% of cases, typically at T9-T12. Compromise during aortic aneurysm repair is a well-known cause of anterior cord syndrome and paraplegia. This is one of the highest-yield vascular anatomy questions on boards.',
+        ),
+        AnnotatedImageBlock(
+          assetPath: 'assets/infographics/anatomy/openstax_spinal_cord_cross_section.jpg',
+          caption: 'Spinal Cord Cross-Section — Histological View (OpenStax, CC BY 4.0)',
+          description: 'High-resolution histological cross-section showing gray and white matter regions, anterior and posterior spinal arteries, and their vascular territories.',
+          annotations: [],
         ),
         HeaderBlock('Vascular Territories'),
         ComparisonCardBlock(
