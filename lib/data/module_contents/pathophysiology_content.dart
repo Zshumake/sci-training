@@ -29,19 +29,6 @@ final TopicData pathophysiologyContent = TopicData(
             'Shear: rotational forces causing axonal injury and vascular disruption',
           ],
         ),
-        AnnotatedImageBlock(
-          assetPath: 'assets/infographics/anatomy/servier_brain_sagittal.png',
-          caption: 'Spinal Cord Cross-Section — Major Tracts',
-          description: 'The spinal cord is organized with white matter (tracts) surrounding a central butterfly-shaped gray matter core. Understanding tract locations is essential for predicting injury patterns.',
-          annotations: [
-            AnnotationPoint(x: 0.50, y: 0.30, label: 'Dorsal Columns (Posterior)', description: 'Fasciculus gracilis (medial, LE) and cuneatus (lateral, UE). Carry proprioception, vibration, discriminative touch. Preserved in anterior cord syndrome.', color: Color(0xFF3B82F6)),
-            AnnotationPoint(x: 0.25, y: 0.50, label: 'Lateral Corticospinal Tract', description: 'Voluntary motor. Somatotopic: cervical fibers medial, sacral lateral. Central cord syndrome preferentially damages cervical (UE) fibers.', color: Color(0xFFDC2626)),
-            AnnotationPoint(x: 0.30, y: 0.65, label: 'Lateral Spinothalamic Tract', description: 'Pain and temperature. Crosses within 1-2 segments at the anterior white commissure. Lost in anterior cord syndrome.', color: Color(0xFFEA580C)),
-            AnnotationPoint(x: 0.50, y: 0.70, label: 'Anterior Horn (Gray Matter)', description: 'Contains alpha and gamma motor neurons (LMN). More vulnerable than white matter due to higher metabolic demand. Central hemorrhagic necrosis begins here.', color: Color(0xFF7C3AED)),
-            AnnotationPoint(x: 0.50, y: 0.40, label: 'Dorsal Horn (Gray Matter)', description: 'Receives sensory afferent input. Substantia gelatinosa (Lamina II) modulates pain (gate control theory).', color: Color(0xFF059669)),
-            AnnotationPoint(x: 0.70, y: 0.55, label: 'IML Column (T1-L2)', description: 'Intermediolateral cell column contains sympathetic preganglionic neurons. Critical for understanding autonomic dysreflexia.', color: Color(0xFF0D9488)),
-          ],
-        ),
         HeaderBlock('Biomechanical Injury Patterns'),
         TableBlock(
           title: 'Mechanism → Fracture → SCI Syndrome',

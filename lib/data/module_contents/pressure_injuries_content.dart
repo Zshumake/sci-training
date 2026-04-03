@@ -200,62 +200,6 @@ final TopicData pressureInjuriesContent = TopicData(
             ['Any position', 'MEDICAL DEVICE-RELATED', 'Cervical collars, halo pins, O2 tubing (nose/ears), Foley catheter (urethral meatus/thigh), cast edges, splints'],
           ],
         ),
-        AnnotatedImageBlock(
-          assetPath: 'assets/infographics/anatomy/servier_adult_body_posterior.png',
-          caption: 'Common Pressure Injury Locations',
-          description:
-              'Pressure injuries develop over bony prominences where sustained pressure exceeds capillary closing pressure (~32 mmHg). Location depends on patient position: sitting, supine, or side-lying.',
-          annotations: [
-            AnnotationPoint(
-              x: 0.50,
-              y: 0.08,
-              label: 'Occiput',
-              description:
-                  'Risk in supine position — especially with cervical collar, halo vest, or rigid backboard. Common in acute cervical SCI.',
-              color: Color(0xFF7C3AED),
-            ),
-            AnnotationPoint(
-              x: 0.50,
-              y: 0.30,
-              label: 'Scapulae',
-              description:
-                  'Risk in supine position with poor padding. Less common overall but important in thin or malnourished patients.',
-              color: Color(0xFF6366F1),
-            ),
-            AnnotationPoint(
-              x: 0.50,
-              y: 0.45,
-              label: 'Sacrum / Coccyx',
-              description:
-                  '#1 location in supine/bed-bound patients. #1 in acute SCI. Head-of-bed elevation >30 degrees increases shear forces.',
-              color: Color(0xFFDC2626),
-            ),
-            AnnotationPoint(
-              x: 0.35,
-              y: 0.50,
-              label: 'Greater Trochanter',
-              description:
-                  '#1 location in side-lying position. Use 30-degree lateral tilt (NOT 90-degree side-lying) to redistribute pressure.',
-              color: Color(0xFFEA580C),
-            ),
-            AnnotationPoint(
-              x: 0.55,
-              y: 0.55,
-              label: 'Ischial Tuberosities',
-              description:
-                  '#1 location in SCI wheelchair users — the MOST TESTED PI fact on boards. Pressures of 100-300 mmHg during sitting.',
-              color: Color(0xFFDC2626),
-            ),
-            AnnotationPoint(
-              x: 0.45,
-              y: 0.90,
-              label: 'Heels',
-              description:
-                  '#2 supine location. ALWAYS float heels off bed surface with pillows or suspension device. Stable heel eschar should NOT be debrided.',
-              color: Color(0xFF3B82F6),
-            ),
-          ],
-        ),
         PearlBlock(
           'Board Pearl: Location by Position — The Big Three',
           'The three most commonly tested PI locations: (1) ISCHIAL TUBEROSITIES = #1 in wheelchair users with SCI (sitting). (2) SACRUM = #1 in supine/bed-bound patients. (3) GREATER TROCHANTER = #1 in side-lying position. For wheelchair users with SCI specifically, the ischial tuberosities are the most common location — this is the single most tested pressure injury fact on PM&R boards.',

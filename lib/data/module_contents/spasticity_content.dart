@@ -52,54 +52,6 @@ final TopicData spasticityContent = TopicData(
             'Muscle and soft tissue changes develop secondarily: fibrosis, contracture, loss of sarcomeres',
           ],
         ),
-        AnnotatedImageBlock(
-          assetPath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
-          caption: 'Common Spasticity Patterns in SCI',
-          description:
-              'Spasticity distribution varies by injury level and completeness. UMN injuries above the conus produce velocity-dependent hypertonia in the muscles below the lesion. The most clinically significant patterns involve hip adductors, knee extensors/flexors, and ankle plantarflexors.',
-          annotations: [
-            AnnotationPoint(
-              x: 0.50,
-              y: 0.22,
-              label: 'Elbow Flexors',
-              description:
-                  'Biceps/brachialis spasticity — common in cervical SCI. Produces flexion posture. Treated with botulinum toxin or phenol to musculocutaneous nerve.',
-              color: Color(0xFF3B82F6),
-            ),
-            AnnotationPoint(
-              x: 0.35,
-              y: 0.35,
-              label: 'Wrist/Finger Flexors',
-              description:
-                  'Wrist flexion and clenched fist — impairs hygiene, skin care. Note: in C6 tetraplegia, finger flexor tone may provide beneficial tenodesis grasp.',
-              color: Color(0xFF7C3AED),
-            ),
-            AnnotationPoint(
-              x: 0.45,
-              y: 0.52,
-              label: 'Hip Adductors',
-              description:
-                  'Adductor spasticity causes scissoring of legs — impairs catheterization, hygiene, positioning. Most common phenol target (obturator nerve block).',
-              color: Color(0xFFDC2626),
-            ),
-            AnnotationPoint(
-              x: 0.55,
-              y: 0.65,
-              label: 'Knee Extensors/Flexors',
-              description:
-                  'Quadriceps and hamstring spasticity — extensor tone may assist standing transfers (beneficial). Flexor spasms disrupt sitting and sleep.',
-              color: Color(0xFFEA580C),
-            ),
-            AnnotationPoint(
-              x: 0.45,
-              y: 0.85,
-              label: 'Ankle Plantarflexors',
-              description:
-                  'Gastrocnemius/soleus spasticity causes equinovarus foot posture — impairs footplate positioning, shoe wear, and ambulation potential.',
-              color: Color(0xFF059669),
-            ),
-          ],
-        ),
         ScaleBlock(
           scaleName: 'Modified Ashworth Scale (MAS)',
           description: 'The most commonly used clinical scale to grade spasticity. Measures resistance encountered during passive muscle stretch. The limb is moved through its full ROM at a moderate, consistent speed over approximately 1 second.',

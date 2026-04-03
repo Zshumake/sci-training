@@ -87,20 +87,6 @@ final TopicData autonomicDysreflexiaContent = TopicData(
           'AD Signs: Above vs Below the Lesion',
           '"Above = Red and Wet, Below = White and Dry." Above the lesion: parasympathetic compensation causes flushing, sweating, and vasodilation. Below the lesion: unopposed sympathetic activity causes pallor, piloerection, and vasoconstriction. The body is split into two opposing autonomic zones by the SCI level.',
         ),
-        AnnotatedImageBlock(
-          assetPath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
-          caption: 'Autonomic Dysreflexia — Trigger Zones & Signs',
-          description: 'AD is triggered by noxious stimuli below the level of injury. The body shows opposing autonomic responses above and below the lesion.',
-          annotations: [
-            AnnotationPoint(x: 0.50, y: 0.08, label: 'Pounding Headache', description: 'Most common symptom. Caused by severe hypertension. SBP may exceed 200-300 mmHg.', color: Color(0xFFDC2626)),
-            AnnotationPoint(x: 0.35, y: 0.12, label: 'Above Lesion: Flushing/Sweating', description: 'Parasympathetic compensation causes vasodilation, sweating, and flushing ABOVE the injury level. Nasal congestion also common.', color: Color(0xFFEA580C)),
-            AnnotationPoint(x: 0.50, y: 0.22, label: 'T6 Level (Critical Threshold)', description: 'AD occurs in injuries at T6 AND ABOVE. T6 controls splanchnic bed (~25% of cardiac output). More complete lesions = more severe AD.', color: Color(0xFF7C3AED)),
-            AnnotationPoint(x: 0.65, y: 0.30, label: 'Below Lesion: Pale/Cool/Dry', description: 'Unopposed sympathetic vasoconstriction below the lesion causes pallor, piloerection, and cool/dry skin.', color: Color(0xFF3B82F6)),
-            AnnotationPoint(x: 0.50, y: 0.38, label: '#1 Trigger: Bladder Distension', description: 'Bladder distension causes ~85% of AD episodes. ALWAYS check bladder FIRST. Catheterize or check Foley patency immediately.', color: Color(0xFFDC2626)),
-            AnnotationPoint(x: 0.50, y: 0.48, label: '#2 Trigger: Fecal Impaction', description: 'Second most common trigger. Apply lidocaine gel, wait 2 min, then perform gentle digital rectal exam.', color: Color(0xFFEA580C)),
-            AnnotationPoint(x: 0.35, y: 0.65, label: 'Skin Triggers', description: 'Pressure injuries, ingrown toenails, burns, tight clothing, leg bag straps. Inspect thoroughly if bladder/bowel ruled out.', color: Color(0xFF059669)),
-          ],
-        ),
         HeaderBlock('Silent AD & Heart Rate Variability'),
         BulletCardBlock(
           title: 'Silent Autonomic Dysreflexia',

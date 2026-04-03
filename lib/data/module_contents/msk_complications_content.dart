@@ -36,46 +36,6 @@ final TopicData mskComplicationsContent = TopicData(
             ['Elbow', 'Rare in SCI', 'More common in TBI and burns. Can severely limit self-feeding and grooming.'],
           ],
         ),
-        AnnotatedImageBlock(
-          assetPath: 'assets/infographics/anatomy/servier_adult_body_anterior.png',
-          caption: 'Common Sites of Heterotopic Ossification in SCI',
-          description:
-              'HO forms in periarticular soft tissues BELOW the level of neurological injury. The hip is by far the most commonly affected joint (70-80% of cases), followed by the knee. HO forms between muscle planes, not within the muscle itself.',
-          annotations: [
-            AnnotationPoint(
-              x: 0.50,
-              y: 0.48,
-              label: 'Hip (70-80%)',
-              description:
-                  'Most common HO site by far. Anterior/medial HO limits flexion — impairs sitting, transfers, and hygiene. Can progress to complete ankylosis.',
-              color: Color(0xFFDC2626),
-            ),
-            AnnotationPoint(
-              x: 0.55,
-              y: 0.62,
-              label: 'Knee (15-20%)',
-              description:
-                  'Second most common site. Limits flexion and extension — impairs wheelchair positioning and transfers.',
-              color: Color(0xFFEA580C),
-            ),
-            AnnotationPoint(
-              x: 0.35,
-              y: 0.22,
-              label: 'Shoulder (rare in SCI)',
-              description:
-                  'More common in TBI than SCI. When present, limits ROM for self-care and wheelchair propulsion.',
-              color: Color(0xFF3B82F6),
-            ),
-            AnnotationPoint(
-              x: 0.65,
-              y: 0.30,
-              label: 'Elbow (rare in SCI)',
-              description:
-                  'More common in TBI and burns. Can severely limit self-feeding and grooming if it occurs.',
-              color: Color(0xFF7C3AED),
-            ),
-          ],
-        ),
         BulletCardBlock(
           title: 'Risk Factors',
           themeColor: const Color(0xFF7C3AED),
