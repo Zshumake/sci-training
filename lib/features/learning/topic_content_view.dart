@@ -27,13 +27,20 @@ class TopicContentView extends StatelessWidget {
       length: topicData.tabs.length,
       child: Column(
         children: [
-          TabBar(
-            isScrollable: topicData.tabs.length > 3,
-            labelColor: AppTheme.primaryNavy,
-            unselectedLabelColor: AppTheme.textSecondary,
-            indicatorColor: AppTheme.accentTeal,
-            indicatorWeight: 3,
-            tabs: topicData.tabs.map((t) => Tab(text: t.title)).toList(),
+          Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                maxWidth: ResponsiveBreakpoints.maxContentWidth,
+              ),
+              child: TabBar(
+                isScrollable: topicData.tabs.length > 3,
+                labelColor: AppTheme.primaryNavy,
+                unselectedLabelColor: AppTheme.textSecondary,
+                indicatorColor: AppTheme.accentTeal,
+                indicatorWeight: 3,
+                tabs: topicData.tabs.map((t) => Tab(text: t.title)).toList(),
+              ),
+            ),
           ),
           Expanded(
             child: TabBarView(
@@ -82,7 +89,7 @@ class TopicContentView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 24, bottom: 4),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
             block.title,
@@ -171,6 +178,7 @@ class TopicContentView extends StatelessWidget {
   Widget _buildBulletCard(BulletCardBlock block) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
+      width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,
@@ -224,13 +232,14 @@ class TopicContentView extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
         border: Border.all(color: AppTheme.borderSubtle, width: 1),
       ),
       clipBehavior: Clip.antiAlias,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           if (block.title.isNotEmpty)
             Container(
@@ -252,10 +261,7 @@ class TopicContentView extends StatelessWidget {
                 ),
               ),
             ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: _buildTableContent(block.columns, block.rows, hasTitle: block.title.isNotEmpty),
-          ),
+          _buildTableContent(block.columns, block.rows, hasTitle: block.title.isNotEmpty),
         ],
       ),
     );
@@ -267,73 +273,71 @@ class TopicContentView extends StatelessWidget {
     List<List<String>> rows, {
     bool hasTitle = false,
   }) {
-    return IntrinsicWidth(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Column headers
-          Container(
-            color: AppTheme.surfaceMuted,
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            child: Row(
-              children: columns
-                  .map((col) => Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 16),
-                          child: Text(
-                            col.toUpperCase(),
-                            style: AppTheme.displayFont(
-                              fontSize: 11,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 0.5,
-                              color: AppTheme.textPrimary,
-                            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // Column headers
+        Container(
+          color: AppTheme.surfaceMuted,
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          child: Row(
+            children: columns
+                .map((col) => Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Text(
+                          col.toUpperCase(),
+                          style: AppTheme.displayFont(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 0.5,
+                            color: AppTheme.textPrimary,
                           ),
                         ),
-                      ))
-                  .toList(),
-            ),
+                      ),
+                    ))
+                .toList(),
           ),
-          Container(height: 1, color: AppTheme.inkLight),
-          // Data rows
-          ...rows.asMap().entries.map((entry) {
-            final rowIndex = entry.key;
-            final row = entry.value;
-            final isLast = rowIndex == rows.length - 1;
-            final bgColor = rowIndex.isEven
-                ? AppTheme.cardBackground
-                : AppTheme.surfaceLight;
+        ),
+        Container(height: 1, color: AppTheme.inkLight),
+        // Data rows
+        ...rows.asMap().entries.map((entry) {
+          final rowIndex = entry.key;
+          final row = entry.value;
+          final isLast = rowIndex == rows.length - 1;
+          final bgColor = rowIndex.isEven
+              ? AppTheme.cardBackground
+              : AppTheme.surfaceLight;
 
-            return Column(
-              children: [
-                Container(
-                  color: bgColor,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                  child: Row(
-                    children: row
-                        .map((cell) => Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.only(right: 16),
-                                child: Text(
-                                  cell,
-                                  style: AppTheme.bodyFont(
-                                    fontSize: 12,
-                                    height: 1.4,
-                                  ),
+          return Column(
+            children: [
+              Container(
+                color: bgColor,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                child: Row(
+                  children: row
+                      .map((cell) => Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 16),
+                              child: Text(
+                                cell,
+                                style: AppTheme.bodyFont(
+                                  fontSize: 12,
+                                  height: 1.4,
                                 ),
                               ),
-                            ))
-                        .toList(),
-                  ),
+                            ),
+                          ))
+                      .toList(),
                 ),
-                if (!isLast)
-                  Container(height: 1, color: AppTheme.inkLight),
-              ],
-            );
-          }),
-        ],
-      ),
+              ),
+              if (!isLast)
+                Container(height: 1, color: AppTheme.inkLight),
+            ],
+          );
+        }),
+      ],
     );
   }
 
@@ -387,6 +391,7 @@ class TopicContentView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: block.items.map((item) {
           return Padding(
             padding: const EdgeInsets.only(bottom: 8),
@@ -630,13 +635,14 @@ class TopicContentView extends StatelessWidget {
   Widget _buildScaleBlock(ScaleBlock block) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
         border: Border.all(color: AppTheme.borderSubtle, width: 1),
       ),
       clipBehavior: Clip.antiAlias,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Scale name header
           Container(
@@ -672,10 +678,7 @@ class TopicContentView extends StatelessWidget {
             ),
           ),
           // Table content
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: _buildTableContent(block.columns, block.rows),
-          ),
+          _buildTableContent(block.columns, block.rows),
           // Board pearl footer
           if (block.boardPearl != null)
             Container(
@@ -901,13 +904,14 @@ class TopicContentView extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
+      width: double.infinity,
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(6),
         border: Border.all(color: AppTheme.borderSubtle, width: 1),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Constrained image with rounded top corners
           ClipRRect(
@@ -992,13 +996,14 @@ class TopicContentView extends StatelessWidget {
   Widget _buildFlowchart(FlowchartBlock block) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
+      width: double.infinity,
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(6),
         border: Border.all(color: AppTheme.borderSubtle, width: 1),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
             width: double.infinity,
@@ -1071,7 +1076,7 @@ class TopicContentView extends StatelessWidget {
     }
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Container(
           width: double.infinity,
@@ -1096,12 +1101,12 @@ class TopicContentView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 20),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: children.map((edge) {
                 final childNode = nodeMap[edge.toId];
                 if (childNode == null) return const SizedBox.shrink();
                 return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 4),
@@ -1136,13 +1141,14 @@ class TopicContentView extends StatelessWidget {
   Widget _buildComparisonDiagram(ComparisonDiagramBlock block) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
+      width: double.infinity,
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(6),
         border: Border.all(color: AppTheme.borderSubtle, width: 1),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(14, 12, 14, 4),
@@ -1215,6 +1221,7 @@ class TopicContentView extends StatelessWidget {
   Widget _buildAnimatedWalkthrough(AnimatedWalkthroughBlock block) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
+      width: double.infinity,
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(6),
@@ -1285,7 +1292,7 @@ class _AnimatedWalkthroughWidgetState extends State<_AnimatedWalkthroughWidget> 
     final themeColor = widget.block.themeColor ?? AppTheme.accentTeal;
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         // Title bar
         Container(
@@ -1329,7 +1336,7 @@ class _AnimatedWalkthroughWidgetState extends State<_AnimatedWalkthroughWidget> 
         Padding(
           padding: const EdgeInsets.all(14),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               // Base image + overlays
               if (widget.block.baseImagePath != null)
