@@ -36,8 +36,17 @@ class TopicContentView extends StatelessWidget {
                 isScrollable: topicData.tabs.length > 3,
                 labelColor: AppTheme.primaryNavy,
                 unselectedLabelColor: AppTheme.textSecondary,
+                labelStyle: AppTheme.displayFont(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                ),
+                unselectedLabelStyle: AppTheme.displayFont(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
                 indicatorColor: AppTheme.accentTeal,
                 indicatorWeight: 3,
+                indicatorPadding: const EdgeInsets.symmetric(horizontal: 8),
                 tabs: topicData.tabs.map((t) => Tab(text: t.title)).toList(),
               ),
             ),
@@ -87,7 +96,7 @@ class TopicContentView extends StatelessWidget {
 
   Widget _buildHeader(HeaderBlock block) {
     return Padding(
-      padding: const EdgeInsets.only(top: 24, bottom: 4),
+      padding: const EdgeInsets.only(top: 28, bottom: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -133,12 +142,13 @@ class TopicContentView extends StatelessWidget {
 
   Widget _buildPearl(PearlBlock block) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
-      padding: const EdgeInsets.all(16),
-      decoration: const BoxDecoration(
-        color: AppTheme.cardBackground,
-        border: Border(
-          left: BorderSide(color: AppTheme.pearlBorder, width: 3),
+      margin: const EdgeInsets.symmetric(vertical: 14),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFFBEB),
+        borderRadius: BorderRadius.circular(6),
+        border: const Border(
+          left: BorderSide(color: Color(0xFFD97706), width: 4),
         ),
       ),
       child: Column(
@@ -147,15 +157,15 @@ class TopicContentView extends StatelessWidget {
           Row(
             children: [
               const Icon(Icons.lightbulb_rounded,
-                  color: AppTheme.pearlBorder, size: 18),
+                  color: Color(0xFFD97706), size: 22),
               const SizedBox(width: 8),
               Expanded(
                 child: Text(
                   block.title,
                   style: AppTheme.displayFont(
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: FontWeight.w700,
-                    color: const Color(0xFF8B6914),
+                    color: const Color(0xFF92400E),
                   ),
                 ),
               ),
@@ -166,6 +176,7 @@ class TopicContentView extends StatelessWidget {
             block.text,
             style: AppTheme.bodyFont(
               fontSize: 13,
+              fontWeight: FontWeight.w500,
               color: AppTheme.textPrimary,
               height: 1.5,
             ),
@@ -177,7 +188,7 @@ class TopicContentView extends StatelessWidget {
 
   Widget _buildBulletCard(BulletCardBlock block) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
+      margin: const EdgeInsets.symmetric(vertical: 14),
       width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -231,7 +242,7 @@ class TopicContentView extends StatelessWidget {
     final headerBg = block.headerColor ?? AppTheme.primaryNavy;
 
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
+      margin: const EdgeInsets.symmetric(vertical: 14),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
@@ -343,12 +354,13 @@ class TopicContentView extends StatelessWidget {
 
   Widget _buildMnemonic(MnemonicBlock block) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
+      margin: const EdgeInsets.symmetric(vertical: 14),
       padding: const EdgeInsets.all(16),
-      decoration: const BoxDecoration(
-        color: AppTheme.cardBackground,
-        border: Border(
-          left: BorderSide(color: AppTheme.mnemonicBorder, width: 3),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF5F3FF),
+        borderRadius: BorderRadius.circular(6),
+        border: const Border(
+          left: BorderSide(color: AppTheme.mnemonicBorder, width: 4),
         ),
       ),
       child: Column(
@@ -357,29 +369,30 @@ class TopicContentView extends StatelessWidget {
           Text(
             'MEMORY AID',
             style: AppTheme.displayFont(
-              fontSize: 10,
+              fontSize: 11,
               fontWeight: FontWeight.w700,
-              letterSpacing: 1.5,
+              letterSpacing: 2.5,
               color: AppTheme.mnemonicBorder,
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 10),
           Text(
             block.mnemonic,
             style: AppTheme.displayFont(
-              fontSize: 16,
+              fontSize: 17,
               fontWeight: FontWeight.w800,
               color: AppTheme.textPrimary,
+              letterSpacing: 0.3,
             ),
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height: 8),
           Text(
             block.explanation,
             style: AppTheme.bodyFont(
               fontSize: 13,
               fontStyle: FontStyle.italic,
               color: AppTheme.textSecondary,
-              height: 1.4,
+              height: 1.5,
             ),
           ),
         ],
@@ -389,7 +402,7 @@ class TopicContentView extends StatelessWidget {
 
   Widget _buildNumberedList(NumberedListBlock block) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: block.items.map((item) {
@@ -440,8 +453,16 @@ class TopicContentView extends StatelessWidget {
     final accentColor =
         block.isAvoid ? AppTheme.avoidBorder : AppTheme.accentTeal;
 
+    // Build the list of field pairs for alternating backgrounds
+    final fields = <MapEntry<String, String>>[
+      MapEntry('MECHANISM', block.mechanism),
+      MapEntry('INDICATION', block.indication),
+      if (block.dosing.isNotEmpty) MapEntry('DOSING', block.dosing),
+      if (block.sideEffects.isNotEmpty) MapEntry('SIDE EFFECTS', block.sideEffects),
+    ];
+
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6),
+      margin: const EdgeInsets.symmetric(vertical: 14),
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(6),
@@ -454,72 +475,91 @@ class TopicContentView extends StatelessWidget {
           // 3px left accent border
           Container(width: 3, color: accentColor),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(14),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Drug name
-                  Text(
-                    block.name,
-                    style: AppTheme.displayFont(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                      color: AppTheme.textPrimary,
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(14, 14, 14, 6),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Drug name — more visual weight
+                      Text(
+                        block.name,
+                        style: AppTheme.displayFont(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          color: AppTheme.textPrimary,
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      // Drug class chip
+                      Container(
+                        padding:
+                            const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          border:
+                              Border.all(color: AppTheme.borderSubtle, width: 1),
+                        ),
+                        child: Text(
+                          block.drugClass,
+                          style: AppTheme.displayFont(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w600,
+                            color: AppTheme.textSecondary,
+                            letterSpacing: 0.3,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 6),
-                  // Drug class chip
+                ),
+                const SizedBox(height: 4),
+                // Fields with alternating backgrounds
+                ...fields.asMap().entries.map((entry) {
+                  final isAlt = entry.key.isOdd;
+                  return Container(
+                    width: double.infinity,
+                    color: isAlt ? const Color(0xFFF9FAFB) : AppTheme.cardBackground,
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                    child: _buildMedField(entry.value.key, entry.value.value),
+                  );
+                }),
+                if (block.boardPearl.isNotEmpty) ...[
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      border:
-                          Border.all(color: AppTheme.borderSubtle, width: 1),
-                    ),
-                    child: Text(
-                      block.drugClass,
-                      style: AppTheme.displayFont(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                        color: AppTheme.textSecondary,
-                        letterSpacing: 0.3,
+                    width: double.infinity,
+                    margin: const EdgeInsets.only(top: 4),
+                    padding: const EdgeInsets.all(12),
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFFFFBEB),
+                      border: Border(
+                        left: BorderSide(color: Color(0xFFD97706), width: 3),
                       ),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Icon(Icons.lightbulb_rounded,
+                            color: Color(0xFFD97706), size: 16),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            'Board Pearl: ${block.boardPearl}',
+                            style: AppTheme.bodyFont(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              fontStyle: FontStyle.italic,
+                              color: const Color(0xFF92400E),
+                              height: 1.4,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  // Mechanism
-                  _buildMedField('MECHANISM', block.mechanism),
-                  const SizedBox(height: 6),
-                  // Indication
-                  _buildMedField('INDICATION', block.indication),
-                  if (block.dosing.isNotEmpty) ...[
-                    const SizedBox(height: 6),
-                    _buildMedField('DOSING', block.dosing),
-                  ],
-                  if (block.sideEffects.isNotEmpty) ...[
-                    const SizedBox(height: 6),
-                    _buildMedField('SIDE EFFECTS', block.sideEffects),
-                  ],
-                  if (block.boardPearl.isNotEmpty) ...[
-                    Container(
-                      margin: const EdgeInsets.only(top: 10, bottom: 6),
-                      height: 1,
-                      color: AppTheme.inkLight,
-                    ),
-                    Text(
-                      'Board Pearl: ${block.boardPearl}',
-                      style: AppTheme.bodyFont(
-                        fontSize: 12,
-                        fontStyle: FontStyle.italic,
-                        color: AppTheme.textSecondary,
-                        height: 1.4,
-                      ),
-                    ),
-                  ],
                 ],
-              ),
+              ],
             ),
           ),
         ],
@@ -554,7 +594,7 @@ class TopicContentView extends StatelessWidget {
 
   Widget _buildComparisonCard(ComparisonCardBlock block) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
+      margin: const EdgeInsets.symmetric(vertical: 14),
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(6),
@@ -634,7 +674,7 @@ class TopicContentView extends StatelessWidget {
 
   Widget _buildScaleBlock(ScaleBlock block) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
+      margin: const EdgeInsets.symmetric(vertical: 14),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
@@ -679,25 +719,36 @@ class TopicContentView extends StatelessWidget {
           ),
           // Table content
           _buildTableContent(block.columns, block.rows),
-          // Board pearl footer
+          // Board pearl footer — amber treatment
           if (block.boardPearl != null)
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(12),
               decoration: const BoxDecoration(
-                color: AppTheme.cardBackground,
+                color: Color(0xFFFFFBEB),
                 border: Border(
-                  left: BorderSide(color: AppTheme.pearlBorder, width: 3),
+                  left: BorderSide(color: Color(0xFFD97706), width: 4),
                 ),
               ),
-              child: Text(
-                'Board Pearl: ${block.boardPearl}',
-                style: AppTheme.bodyFont(
-                  fontSize: 12,
-                  fontStyle: FontStyle.italic,
-                  color: const Color(0xFF8B6914),
-                  height: 1.4,
-                ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Icon(Icons.lightbulb_rounded,
+                      color: Color(0xFFD97706), size: 16),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'Board Pearl: ${block.boardPearl}',
+                      style: AppTheme.bodyFont(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.italic,
+                        color: const Color(0xFF92400E),
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
         ],
@@ -837,14 +888,8 @@ class TopicContentView extends StatelessWidget {
         );
       },
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 10),
-        padding: const EdgeInsets.all(16),
+        margin: const EdgeInsets.symmetric(vertical: 14),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [color, color.withValues(alpha: 0.8)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
@@ -854,43 +899,68 @@ class TopicContentView extends StatelessWidget {
             ),
           ],
         ),
-        child: Row(
-          children: [
-            Container(
-              width: 52,
-              height: 52,
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: Icon(icon, color: Colors.white, size: 28),
-            ),
-            const SizedBox(width: 14),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Row(
+            children: [
+              // Thin accent-colored left border
+              Container(width: 3, color: color),
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        AppTheme.primaryNavy,
+                        Color.lerp(AppTheme.primaryNavy, color, 0.25)!,
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
                     ),
                   ),
-                  const SizedBox(height: 3),
-                  Text(
-                    subtitle,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.white.withValues(alpha: 0.85),
-                    ),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 52,
+                        height: 52,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Icon(icon, color: Colors.white, size: 28),
+                      ),
+                      const SizedBox(width: 14),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              title,
+                              style: AppTheme.displayFont(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(height: 3),
+                            Text(
+                              subtitle,
+                              style: AppTheme.bodyFont(
+                                fontSize: 12,
+                                color: Colors.white.withValues(alpha: 0.75),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Icon(Icons.chevron_right_rounded,
+                          color: Colors.white.withValues(alpha: 0.6), size: 28),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
-            Icon(Icons.arrow_forward_rounded, color: Colors.white.withValues(alpha: 0.7)),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -903,7 +973,7 @@ class TopicContentView extends StatelessWidget {
     const double maxImageHeight = 280;
 
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 14),
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,
@@ -995,7 +1065,7 @@ class TopicContentView extends StatelessWidget {
   // --- Flowchart Block ---
   Widget _buildFlowchart(FlowchartBlock block) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 14),
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,
@@ -1139,17 +1209,23 @@ class TopicContentView extends StatelessWidget {
 
   // --- Comparison Diagram Block ---
   Widget _buildComparisonDiagram(ComparisonDiagramBlock block) {
+    // Determine a theme color from the sides for the top border
+    final topBorderColor = block.left.themeColor;
+
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 14),
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(6),
         border: Border.all(color: AppTheme.borderSubtle, width: 1),
       ),
+      clipBehavior: Clip.antiAlias,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          // Thin colored top border
+          Container(height: 2, color: topBorderColor),
           Padding(
             padding: const EdgeInsets.fromLTRB(14, 12, 14, 4),
             child: Text(block.title, style: AppTheme.displayFont(fontSize: 14, fontWeight: FontWeight.w700)),
@@ -1164,11 +1240,11 @@ class TopicContentView extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(child: _buildComparisonColumn(block.left)),
+                Expanded(child: _buildComparisonColumn(block.left, tintBg: true)),
                 const SizedBox(width: 8),
                 Container(width: 1, color: AppTheme.borderSubtle),
                 const SizedBox(width: 8),
-                Expanded(child: _buildComparisonColumn(block.right)),
+                Expanded(child: _buildComparisonColumn(block.right, tintBg: true)),
               ],
             ),
           ),
@@ -1177,50 +1253,67 @@ class TopicContentView extends StatelessWidget {
     );
   }
 
-  Widget _buildComparisonColumn(ComparisonSide side) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if (side.imagePath != null)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: ClipRRect(
+  Widget _buildComparisonColumn(ComparisonSide side, {bool tintBg = false}) {
+    return Container(
+      decoration: tintBg
+          ? BoxDecoration(
+              color: side.themeColor.withValues(alpha: 0.04),
               borderRadius: BorderRadius.circular(4),
-              child: Image.asset(
-                side.imagePath!,
-                height: 100,
-                fit: BoxFit.contain,
-                errorBuilder: (_, error, stack) => const SizedBox.shrink(),
+            )
+          : null,
+      padding: tintBg ? const EdgeInsets.all(6) : EdgeInsets.zero,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (side.imagePath != null)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: Image.asset(
+                  side.imagePath!,
+                  height: 100,
+                  fit: BoxFit.contain,
+                  errorBuilder: (_, error, stack) => const SizedBox.shrink(),
+                ),
               ),
             ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+            decoration: BoxDecoration(
+              border: Border(left: BorderSide(color: side.themeColor, width: 3)),
+            ),
+            child: Text(side.title, style: AppTheme.displayFont(fontSize: 13, fontWeight: FontWeight.w700, color: side.themeColor)),
           ),
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-          decoration: BoxDecoration(
-            border: Border(left: BorderSide(color: side.themeColor, width: 3)),
-          ),
-          child: Text(side.title, style: AppTheme.displayFont(fontSize: 13, fontWeight: FontWeight.w700, color: side.themeColor)),
-        ),
-        const SizedBox(height: 6),
-        ...side.features.map((f) => Padding(
-          padding: const EdgeInsets.only(bottom: 4, left: 4),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('\u2022 ', style: TextStyle(color: side.themeColor, fontSize: 13)),
-              Expanded(child: Text(f, style: AppTheme.bodyFont(fontSize: 12, height: 1.4))),
-            ],
-          ),
-        )),
-      ],
+          const SizedBox(height: 6),
+          ...side.features.map((f) => Padding(
+            padding: const EdgeInsets.only(bottom: 4, left: 4),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 6,
+                  height: 6,
+                  margin: const EdgeInsets.only(top: 5, right: 6),
+                  decoration: BoxDecoration(
+                    color: side.themeColor,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                Expanded(child: Text(f, style: AppTheme.bodyFont(fontSize: 12, height: 1.4))),
+              ],
+            ),
+          )),
+        ],
+      ),
     );
   }
 
   // --- Animated Walkthrough Block ---
   Widget _buildAnimatedWalkthrough(AnimatedWalkthroughBlock block) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 14),
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppTheme.cardBackground,

@@ -40,12 +40,24 @@ class ContentCard extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-      child: Material(
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.04),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Material(
         color: AppTheme.cardBackground,
         borderRadius: BorderRadius.circular(6),
         child: InkWell(
           onTap: onTap,
           borderRadius: BorderRadius.circular(6),
+          hoverColor: _moduleColor.withValues(alpha: 0.04),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
@@ -53,7 +65,14 @@ class ContentCard extends StatelessWidget {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(6),
-              child: Row(
+              child: Column(
+                children: [
+                  // Thin top accent border
+                  Container(
+                    height: 1,
+                    color: _moduleColor,
+                  ),
+                  Row(
                 children: [
                   // Left color accent strip
                   Container(
@@ -61,16 +80,16 @@ class ContentCard extends StatelessWidget {
                     height: 100,
                     color: _moduleColor,
                   ),
-                  // Module number
+                  // Module number — slightly larger, full opacity
                   SizedBox(
                     width: 48,
                     child: Center(
                       child: Text(
                         numberLabel,
                         style: AppTheme.monoFont(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: _moduleColor.withValues(alpha: 0.6),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                          color: _moduleColor,
                         ),
                       ),
                     ),
@@ -150,8 +169,11 @@ class ContentCard extends StatelessWidget {
                   ),
                 ],
               ),
+                ],
+              ),
             ),
           ),
+        ),
         ),
       ),
     );

@@ -140,13 +140,13 @@ class AppTheme {
       ),
       tabBarTheme: TabBarThemeData(
         labelStyle: GoogleFonts.spaceGrotesk(
-          fontSize: 13,
-          fontWeight: FontWeight.w600,
+          fontSize: 14,
+          fontWeight: FontWeight.w700,
           letterSpacing: 0.3,
         ),
         unselectedLabelStyle: GoogleFonts.spaceGrotesk(
-          fontSize: 13,
-          fontWeight: FontWeight.w500,
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
           letterSpacing: 0.3,
         ),
         labelColor: primaryNavy,
