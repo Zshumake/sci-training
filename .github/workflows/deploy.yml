@@ -1,0 +1,82 @@
+name: Build and Deploy to shuhub.xyz
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+      - '.gitignore'
+      - 'reference-text/**'
+  workflow_dispatch:
+
+# Prevent concurrent deployments from clobbering each other
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Need full history so the commit-back step has something to push against
+          fetch-depth: 0
+          # Use a token that can push commits back
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Show Flutter version
+        run: flutter --version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run analyzer (non-blocking)
+        run: flutter analyze || true
+
+      - name: Run tests (non-blocking)
+        run: flutter test || true
+
+      - name: Build web with correct base href
+        run: flutter build web --release --base-href "/sci-training/"
+
+      - name: Sync build output to docs/
+        run: |
+          # Remove all old build artifacts from docs/ but preserve any non-build files
+          # (there shouldn't be any, but be defensive)
+          rm -rf docs/assets docs/canvaskit docs/icons
+          rm -f docs/flutter.js docs/flutter_bootstrap.js docs/flutter_service_worker.js
+          rm -f docs/favicon.png docs/index.html docs/main.dart.js docs/manifest.json docs/version.json
+
+          # Copy fresh build output
+          cp -r build/web/* docs/
+
+      - name: Commit and push docs/ updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Only commit if there are actual changes
+          if git diff --quiet docs/; then
+            echo "No changes to docs/ — skipping commit"
+            exit 0
+          fi
+
+          git add docs/
+          git commit -m "chore(docs): auto-rebuild web deployment for ${{ github.sha }}
+
+          Built from commit ${{ github.sha }}
+          Triggered by: ${{ github.event_name }}
+          [skip ci]"
+          git push
