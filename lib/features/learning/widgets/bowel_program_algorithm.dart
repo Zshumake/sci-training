@@ -189,6 +189,23 @@ class _BowelProgramAlgorithmState extends State<BowelProgramAlgorithm> {
         'Add mini-enema if suppository alone is insufficient',
       ],
     ),
+    'sma_syndrome': _TroubleshootInfo(
+      title: 'SMA Syndrome (Chronic Complication)',
+      causes: [
+        'Superior Mesenteric Artery (SMA) syndrome: aortomesenteric angle <25 degrees (normal 38-65 degrees), causing duodenal compression between the SMA and aorta',
+        'Rapid weight loss after SCI (loss of mesenteric fat pad)',
+        'Supine positioning for prolonged periods',
+        'Body cast or spinal orthosis compression',
+        'Post-prandial vomiting, bloating, early satiety, epigastric pain',
+      ],
+      solutions: [
+        'Diagnosis: upper GI series (classic duodenal cutoff), CT angiography (measures aortomesenteric angle)',
+        'Nutrition optimization: small frequent meals, high-calorie liquids, consider NJ tube feeds distal to obstruction',
+        'Positional therapy: left lateral decubitus or prone positioning after meals',
+        'Reverse the precipitant: weight gain, remove restrictive cast/orthosis',
+        'Surgery if refractory: duodenojejunostomy (definitive); gastrojejunostomy or Strong procedure as alternatives',
+      ],
+    ),
     'no_results': _TroubleshootInfo(
       title: 'No Results After Complete Program',
       causes: [
@@ -878,6 +895,12 @@ class _BowelProgramAlgorithmState extends State<BowelProgramAlgorithm> {
                     'no_results',
                     'No results after complete program',
                     Icons.block,
+                  ),
+                  const SizedBox(height: 6),
+                  _troubleshootOption(
+                    'sma_syndrome',
+                    'Post-prandial vomiting / bloating (SMA syndrome)',
+                    Icons.health_and_safety_outlined,
                   ),
                 ],
               ),

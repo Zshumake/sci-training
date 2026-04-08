@@ -544,6 +544,18 @@ class _FunctionalOutcomesWidgetState extends State<FunctionalOutcomesWidget> {
           // Normal baseline
           _buildEnergyBar('Normal', 1.0, maxCost, AppTheme.successGreen, false),
           const SizedBox(height: 4),
+          // Citation
+          Padding(
+            padding: const EdgeInsets.only(bottom: 6),
+            child: Text(
+              'Source: Waters et al. — Energy cost of ambulation in SCI',
+              style: AppTheme.bodyFont(
+                fontSize: 10,
+                fontStyle: FontStyle.italic,
+                color: AppTheme.textSecondary,
+              ),
+            ),
+          ),
           // All ambulatory levels
           ...ambulationLevels.map((o) {
             final isCurrentSelection = o.level == selected.level;

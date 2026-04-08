@@ -36,7 +36,7 @@ final TopicData sciFundamentalsContent = TopicData(
           points: [
             'Male-to-female ratio: approximately 4:1 (79% male since 2015)',
             'Average age at injury: 44 years (increased from 29 years in the 1970s)',
-            'Persons >60 years account for >11.5% of SCI cases',
+            'Persons ≥60 at injury account for ~18-21% of cases (up from 4.7% in the 1970s)',
             'Peak age group: 16-30 years (bimodal distribution with second peak >65)',
             'Increasing proportion of injuries in older adults due to falls',
             'Racial distribution: ~59.5% White, ~22.6% Black, ~13.5% Hispanic, ~2.6% Asian',
@@ -327,12 +327,14 @@ final TopicData sciFundamentalsContent = TopicData(
           themeColor: const Color(0xFFEA580C),
           backgroundColor: const Color(0xFFFFF7ED),
           points: [
-            'Cervical spine: cord segment is ~1 level below the vertebral body',
-            'Upper thoracic: cord segment is ~2 levels below',
-            'Lower thoracic (T10): cord segment is ~3 levels below',
-            'T12 vertebral body contains sacral cord segments',
-            'L1 vertebral body: conus medullaris (sacral segments)',
-            'Below L1-L2: only cauda equina (peripheral nerve roots, NOT spinal cord)',
+            'Lower cervical: cord segment is ~1 level ABOVE (rostral to) the same-numbered vertebral body',
+            'Upper thoracic (T1-T6): cord segment is ~2 levels ABOVE the vertebral body',
+            'Lower thoracic (T7-T9): cord segment is ~3 levels ABOVE the vertebral body',
+            'T10 vertebra contains L1-L2 cord segments',
+            'T11 vertebra contains L3-L4 cord segments',
+            'T12 vertebra contains L5 cord segments',
+            'L1 vertebra contains sacral cord segments (conus medullaris)',
+            'Below L1-L2 vertebra: only cauda equina (peripheral nerve roots, NOT spinal cord)',
           ],
         ),
         PearlBlock(
@@ -632,7 +634,7 @@ final TopicData sciFundamentalsContent = TopicData(
           ],
         ),
         BulletCardBlock(
-          title: 'Hangman Fracture (C2 Burst)',
+          title: 'Hangman Fracture (Bilateral C2 Pars Interarticularis)',
           themeColor: const Color(0xFFEA580C),
           backgroundColor: const Color(0xFFFFF7ED),
           points: [

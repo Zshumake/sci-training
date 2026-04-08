@@ -142,7 +142,7 @@ final TopicData rehabContinuumContent = TopicData(
             'Normal walking: baseline energy expenditure (1.0x)',
             'L3-L5 with AFOs: 1.5-2x normal energy cost — community ambulation feasible',
             'L1-L2 with KAFOs: 2-4x normal energy cost — household ambulation marginally feasible',
-            'T10-T12 with KAFOs: 4-8x normal energy cost — household ambulation with high effort',
+            'T10-L2 with KAFOs: 4-6x normal energy cost — household ambulation with high effort',
             'T6-T9 with KAFOs: 6-12x normal energy cost — exercise only, NOT functional ambulation',
             'High thoracic with HKAFOs: >10x normal energy cost — purely therapeutic standing',
             'Wheelchair propulsion: 10-30% above normal walking energy — far more efficient than KAFO ambulation',

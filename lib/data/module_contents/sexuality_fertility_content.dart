@@ -493,7 +493,7 @@ final TopicData sexualityFertilityContent = TopicData(
             '1. Reflexogenic erection = S2-S4 parasympathetic (pelvic nerve). Preserved in >90% of UMN.',
             '2. Psychogenic erection = T11-L2 sympathetic. NOT seen in complete UMN above T11.',
             '3. Ejaculation = primarily sympathetic (T11-L2, hypogastric nerve). Only 5-15% of complete UMN.',
-            '4. PVS is first-line sperm retrieval — works only in UMN (requires intact reflex arc). Better semen quality than EEJ.',
+            '4. PVS requires an intact ejaculatory reflex arc (T11-L2 sympathetic and S2-S4 somatic). This means injury must be at or ABOVE T10 with sacral segments intact. Works in UMN suprasacral injuries above T10. Does NOT work in LMN (sacral/cauda equina) injuries because the reflex arc is destroyed. EEJ is first-line when PVS fails OR when reflex arc is absent.',
             '5. EEJ is second-line — works in UMN AND LMN. Requires anesthesia in patients with sensation.',
             '6. Leukocytospermia (WBC >10^6/mL) is the single worst predictor of semen quality in SCI.',
             '7. Female fertility is PRESERVED. Amenorrhea is temporary (6-12 months).',
@@ -513,7 +513,7 @@ final TopicData sexualityFertilityContent = TopicData(
           points: [
             'TRAP: "Which erection type is preserved in complete UMN?" → Reflexogenic (NOT psychogenic)',
             'TRAP: "Can a C5 complete patient have psychogenic erection?" → NO (descending pathway interrupted)',
-            'TRAP: "First-line sperm retrieval in LMN?" → EEJ (NOT PVS — PVS requires intact UMN arc)',
+            'TRAP: "First-line sperm retrieval in LMN?" → EEJ (NOT PVS — PVS requires an intact ejaculatory reflex arc with T11-L2 sympathetic and S2-S4 somatic segments; LMN injuries destroy the arc)',
             'TRAP: "Patient on sildenafil develops AD — what NOT to give?" → Nitropaste/nitroglycerin',
             'TRAP: "Pregnant T4 SCI woman with episodic HTN during contractions" → AD (NOT preeclampsia)',
             'TRAP: "Best contraceptive for SCI woman?" → Progestogen-only methods (NOT combined OCP)',

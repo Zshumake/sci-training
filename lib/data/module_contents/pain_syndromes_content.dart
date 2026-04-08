@@ -41,7 +41,7 @@ final TopicData painSyndromesContent = TopicData(
           points: [
             'MUSCULOSKELETAL (nociceptive): Pain from bones, joints, muscles, ligaments, tendons above or at the level of injury with preserved innervation. Dull, aching quality. Worsened with movement.',
             'VISCERAL (nociceptive): Pain from internal organs. Dull, cramping, colicky, or pressure-like. Poorly localized. May be referred to distant sites.',
-            'AT-LEVEL NEUROPATHIC: Pain perceived within the dermatome of the neurological level of injury (NLI) and/or within 3 dermatomes below the NLI. May involve nerve root or spinal cord damage.',
+            'AT-LEVEL NEUROPATHIC: Pain perceived in a segmental pattern within the dermatome of the NLI and/or within 3 dermatomes above OR below the NLI (±3 dermatomes). May involve nerve root or spinal cord damage.',
             'BELOW-LEVEL NEUROPATHIC: Pain perceived more than 3 dermatomes below the NLI. Central neuropathic pain from spinal cord or brain damage. The hallmark pain of SCI.',
             'OTHER NEUROPATHIC: Neuropathic pain not related to the SCI lesion itself — e.g., carpal tunnel syndrome, peripheral neuropathy, CRPS.',
           ],
@@ -125,7 +125,7 @@ final TopicData painSyndromesContent = TopicData(
           themeColor: const Color(0xFFDC2626),
           backgroundColor: const Color(0xFFFEF2F2),
           icon: Icons.horizontal_rule,
-          description: 'Pain perceived within the dermatome of the NLI and/or within THREE dermatomes below the NLI. May involve peripheral (nerve root) and/or central (spinal cord) mechanisms.',
+          description: 'Pain perceived in a segmental pattern within the dermatome of the NLI and/or within 3 dermatomes above OR below the NLI (±3 dermatomes). May involve peripheral (nerve root) and/or central (spinal cord) mechanisms.',
           keyPoints: [
             'Location: segmental, band-like distribution at or just below the injury level',
             'May be unilateral or bilateral',
@@ -136,7 +136,7 @@ final TopicData painSyndromesContent = TopicData(
             'Potential structural causes: nerve root compression by disc/bone, syringomyelia expanding from the injury site, post-traumatic myelopathy, tethered cord',
             'More amenable to surgical treatment IF a structural cause is identified on MRI',
             'Onset: often develops within the first few months after injury',
-            'Affects approximately 40% of SCI patients',
+            'Affects approximately 20-25% of SCI patients (Siddall et al.)',
           ],
         ),
         ComparisonCardBlock(
@@ -155,7 +155,7 @@ final TopicData painSyndromesContent = TopicData(
             'Mechanisms: central sensitization, denervation supersensitivity, thalamic reorganization (maladaptive plasticity), loss of inhibitory interneurons, wind-up phenomenon',
             'Can develop MONTHS TO YEARS after injury (often delayed onset)',
             'More common in complete injuries (AIS A) and with confirmed spinothalamic tract damage',
-            'Affects 30-50% of all SCI patients; refractory to most treatments',
+            'Affects 40-50% of all SCI patients; refractory to most treatments',
             'Severe quality of life impact — many patients describe it as worse than the paralysis itself',
           ],
         ),
@@ -166,7 +166,7 @@ final TopicData painSyndromesContent = TopicData(
           left: ComparisonSide(
             title: 'At-Level Neuropathic Pain',
             features: [
-              'Within 3 dermatomes of NLI',
+              'Within ±3 dermatomes of NLI',
               'Segmental, band-like distribution',
               'May have radicular component',
               'Allodynia common in transitional zone',
@@ -403,7 +403,7 @@ final TopicData painSyndromesContent = TopicData(
           themeColor: const Color(0xFF3B82F6),
           backgroundColor: const Color(0xFFEFF6FF),
           points: [
-            'Affects 30-50% of all SCI patients; approximately 30% of these rate their pain as severe',
+            'Affects 40-50% of all SCI patients; approximately 30% of these rate their pain as severe',
             'Can develop at any time after injury — some patients develop central pain years later',
             'Typical onset: 1-6 months post-injury, but may be delayed by years',
             'Once established, central pain is usually chronic and persistent',

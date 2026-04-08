@@ -532,7 +532,7 @@ class ISNCSCITrainingCases {
           '< 3/5, so motor level is C5 since C5 is the most caudal key muscle >= 3 '
           'with the level above normal). NLI = C5 (most rostral of C6 sensory and '
           'C5 motor). VAC present so motor incomplete. Count muscles below NLI: '
-          '0 of 14 >= 3. AIS C.',
+          '0 of 18 >= 3 (NLI=C5, 9 myotomes below x 2 sides = 18). AIS C.',
     ),
 
     // Case 14: Asymmetric motor levels (AIS D)
@@ -564,12 +564,20 @@ class ISNCSCITrainingCases {
         deepAnalPressure: BinaryObservation.yes,
       ),
       teachingPoints:
-          'R sensory=L2, R motor=L2 (L3 is 4/5 but L2 is 5/5, so motor=L2). '
-          'L sensory=L4, L motor=L4 (L5 is 4/5, L4 is 5/5, so motor=L4). '
-          'NLI = L2 (most rostral). VAC present so motor incomplete. Count key '
-          'muscles below L2: R side L3=4, L4=3, L5=2, S1=1 (2 of 4 >= 3 = 50%); '
-          'L side L3=5, L4=5, L5=4, S1=3 (4 of 4 >= 3). Total 6 of 8 >= 3 = 75%. '
-          'AIS D (>= 50%).',
+          'Motor level rule: the MOST CAUDAL key muscle with grade >=3, provided '
+          'ALL key muscles ABOVE it are grade 5. (It is NOT "the lowest myotome '
+          'that is 5/5".) '
+          'R sensory=L2. R motor=L3 (L3=4 is >=3, and all key muscles above L3 '
+          'are grade 5 — L3 qualifies; L4=3 would qualify on its own grade but '
+          'L3 above it is 4 (not 5), so L4 does NOT qualify). '
+          'L sensory=L4. L motor=L5 (L5=4 is >=3, and all key muscles above L5 '
+          'are grade 5 — L5 qualifies; S1=3 would qualify on its own grade but '
+          'L5 above it is 4, so S1 does NOT qualify). '
+          'NLI = L2 (most rostral of R sensory L2, R motor L3, L sensory L4, '
+          'L motor L5). VAC present so motor incomplete. Count key muscles '
+          'below NLI (L2) with grade >=3: R side L3=4, L4=3, L5=2, S1=1 '
+          '(2 of 4 >=3); L side L3=5, L4=5, L5=4, S1=3 (4 of 4 >=3). '
+          'Total 6 of 8 >=3 = 75%. AIS D (>= 50%).',
     ),
 
     // Case 15: Asymmetric sensory with sacral sparing one side only
@@ -1027,11 +1035,19 @@ class ISNCSCITrainingCases {
       teachingPoints:
           'Central cord syndrome: upper extremity weakness > lower extremity '
           'weakness, with relatively preserved sensation. Classic in older adults '
-          'with cervical spondylosis. Sensory level = C4 (last fully normal). '
-          'Motor level = C4 (C5 = 3/5 but there is no key muscle above C5, and '
-          'sensory at C4 is normal, so motor follows sensory at C4). Sacral sparing '
-          'present. VAC present = motor incomplete. Count muscles below C4: many '
-          'LE muscles >= 3. Likely AIS D. Best prognosis of all SCI syndromes.',
+          'with cervical spondylosis. Sensory level = C4 bilaterally (last fully '
+          'normal LT AND PP). '
+          'Motor level = C5 bilaterally. Rule: the most caudal key muscle with '
+          'grade >=3 provided all key muscles above it are grade 5. C5=3 is >=3, '
+          'and there are no testable key muscles above C5, so C5 qualifies. '
+          'IMPORTANT: the "motor follows sensory" shortcut only applies to '
+          'non-myotome regions (C1-C4, T2-L1, S2-S5). C5 IS a key-muscle level, '
+          'so you test it directly — do NOT fall back to C4. '
+          'NLI = C4 (most rostral of C4 sensory and C5 motor — sensory C4 is '
+          'more rostral than motor C5, so NLI = C4). Sacral sparing present. '
+          'VAC present = motor incomplete. Count muscles below NLI C4: many '
+          'muscles are >=3 bilaterally, giving AIS D. Best prognosis of all SCI '
+          'syndromes.',
     ),
 
     // Case 27: Brown-Sequard Syndrome
@@ -1046,16 +1062,19 @@ class ISNCSCITrainingCases {
       difficulty: 'advanced',
       exam: Exam(
         right: ExamSide(
+          // IPSILATERAL to right hemisection: motor + LT impaired;
+          // PP (spinothalamic, crossed) is PRESERVED on the ipsilateral side.
           motor: _buildMotor(lastNormal: 'C6', overrides: {
             'C7': '1', 'C8': '0', 'T1': '0',
             'L2': '1', 'L3': '1', 'L4': '0', 'L5': '0', 'S1': '0',
           }),
-          lightTouch: _buildSensory(lastNormal: 'C6', impairedCount: 4, impairedValue: '1', belowValue: '1',
+          lightTouch: _buildSensory(lastNormal: 'C6', impairedCount: 22, impairedValue: '1',
             overrides: {'S4_5': '1'}),
-          pinPrick: _buildSensory(lastNormal: 'C6', impairedCount: 2, impairedValue: '1', belowValue: '1',
-            overrides: {'S4_5': '1'}),
+          pinPrick: Sensory.allSame('2'),
         ),
         left: ExamSide(
+          // CONTRALATERAL to right hemisection: PP impaired below lesion;
+          // motor and LT are preserved.
           motor: Motor.allSame('5'),
           lightTouch: Sensory.allSame('2'),
           pinPrick: _buildSensory(lastNormal: 'C6', impairedCount: 22, impairedValue: '1',
@@ -1065,12 +1084,20 @@ class ISNCSCITrainingCases {
         deepAnalPressure: BinaryObservation.yes,
       ),
       teachingPoints:
-          'Brown-Sequard (hemisection): ipsilateral motor and LT loss, '
-          'contralateral PP loss. R sensory = C6 (both LT and PP must be 2 -- PP '
-          'is actually impaired below C6 on the right too). L sensory level depends '
-          'on PP. L motor = intact (all 5/5). The dissociation between sides is '
-          'characteristic. Sacral sparing present, VAC present = motor incomplete. '
-          'Has the best recovery prognosis of incomplete injuries.',
+          'Brown-Sequard (pure right hemisection at C6): '
+          'IPSILATERAL (right) losses = motor (corticospinal, decussates at '
+          'medullary pyramids, already crossed by cord level) + light touch + '
+          'vibration/proprioception (dorsal columns, ascend uncrossed then '
+          'decussate at medulla). '
+          'CONTRALATERAL (left) loss = pain and temperature (spinothalamic '
+          'tract, decussates within 1-2 segments of entry via the anterior '
+          'white commissure, so the crossed fibers are lost on the opposite '
+          'side below the lesion). '
+          'In this dataset: R has motor loss + impaired LT below C6 but '
+          'PRESERVED PP (2); L has all motor 5/5 + preserved LT but impaired '
+          'PP below C6. Sacral sparing present, VAC present = motor incomplete. '
+          'Brown-Sequard has the best recovery prognosis of incomplete SCI '
+          'syndromes.',
     ),
 
     // Case 28: Anterior Cord Syndrome
@@ -1148,9 +1175,17 @@ class ISNCSCITrainingCases {
           'Cauda equina: LMN injury to nerve roots, typically asymmetric. No sacral '
           'sparing (S4-5 = 0, no DAP, no VAC) = AIS A despite the patchy pattern. '
           'Sensory level = L1 bilaterally (last level with 2/2 for both LT and PP). '
-          'Motor level = L1 (follows sensory). NLI = L1. ZPP varies by side due to '
-          'asymmetric pattern. Cauda equina is classified by ISNCSCI despite being '
-          'a PNS injury. Better recovery potential than cord injuries.',
+          'Motor level = L2 bilaterally. Rule: most caudal key muscle with grade '
+          '>=3 provided all key muscles above it are grade 5. R side L2=3 is >=3 '
+          'and all key muscles above L2 are grade 5 — L2 qualifies. L side L2=4 '
+          'is >=3 and all key muscles above L2 are grade 5 — L2 qualifies. Do NOT '
+          'apply the "motor follows sensory" shortcut here: L2 is a key-muscle '
+          'level (a myotome), so test it directly. '
+          'NLI = L1 because sensory L1 is more rostral than motor L2 (NLI is the '
+          'most rostral of the four levels: R sensory L1, R motor L2, L sensory '
+          'L1, L motor L2). ZPP varies by side due to asymmetric pattern. Cauda '
+          'equina is classified by ISNCSCI despite being a PNS injury. Better '
+          'recovery potential than cord injuries.',
     ),
 
     // Case 30: Conus Medullaris Syndrome

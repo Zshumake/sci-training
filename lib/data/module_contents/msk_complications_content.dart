@@ -152,7 +152,7 @@ final TopicData mskComplicationsContent = TopicData(
           indication: 'Treatment of active HO when NSAIDs are contraindicated or insufficient; prophylaxis in high-risk patients',
           dosing: '20 mg/kg/day PO for 2 weeks, then 10 mg/kg/day for 10 weeks (total 12-week course)',
           sideEffects: 'GI disturbance (nausea, diarrhea), osteomalacia with prolonged use (inhibits normal bone mineralization), increased fracture risk with extended use',
-          boardPearl: 'Etidronate prevents MINERALIZATION of new HO but does NOT remove existing mature bone. Must be started early while HO is still forming. Once HO is fully mature (normal ALP, cold bone scan), etidronate is ineffective and surgical resection is the only option. The high-dose, time-limited protocol (20→10 mg/kg) minimizes osteomalacia risk.',
+          boardPearl: 'Etidronate is no longer first-line; indomethacin (NSAID) is preferred for prophylaxis. Etidronate is largely historical. It prevents MINERALIZATION of new HO but does NOT remove existing mature bone. Must be started early while HO is still forming. Once HO is fully mature (normal ALP, cold bone scan), etidronate is ineffective and surgical resection is the only option. The high-dose, time-limited protocol (20→10 mg/kg) minimizes osteomalacia risk.',
         ),
         BulletCardBlock(
           title: 'Surgical Resection of HO',
@@ -180,7 +180,7 @@ final TopicData mskComplicationsContent = TopicData(
             WalkthroughStep(title: 'Inflammatory Trigger (Weeks 1-4)', description: 'Following SCI, local inflammation and microtrauma in periarticular tissues triggers pluripotent mesenchymal stem cells to differentiate along an osteogenic pathway instead of their normal lineage. Risk factors: complete injury (AIS A), spasticity, pressure injuries, DVT, UTI.'),
             WalkthroughStep(title: 'Early Cellular Phase', description: 'Alkaline phosphatase (ALP) rises — this is the EARLIEST laboratory marker, often elevated before clinical symptoms appear. The hip is affected in 70-80% of cases. Patients may notice warmth, swelling, erythema, and decreased ROM mimicking DVT or infection.'),
             WalkthroughStep(title: 'Cartilage Formation', description: 'Mesenchymal cells form cartilaginous tissue in the periarticular soft tissues. Triple-phase bone scan becomes positive (most sensitive EARLY diagnostic test — positive before plain radiographs). The process moves from peripheral maturation inward.'),
-            WalkthroughStep(title: 'Ossification', description: 'Cartilage undergoes endochondral ossification — the same process as normal bone formation. Plain radiographs become positive 2-6 weeks after clinical onset. CT scan defines the mature bone architecture for surgical planning.'),
+            WalkthroughStep(title: 'Ossification', description: 'Cartilage undergoes endochondral ossification — the same process as normal bone formation. Plain radiographs become positive 4-6 weeks after clinical onset. CT scan defines the mature bone architecture for surgical planning.'),
             WalkthroughStep(title: 'Maturation (6-18 months)', description: 'Bone matures peripherally to centrally. ALP normalizes. Triple-phase bone scan shows decreasing uptake. Surgical resection is delayed until maturity (12-18 months) — indicated when ALP is normal AND bone scan is "cold." Premature surgery risks recurrence. Prophylaxis: indomethacin 75 mg/day or etidronate, single-dose radiation.'),
           ],
         ),

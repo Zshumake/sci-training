@@ -370,6 +370,15 @@ final TopicData neurogenicBladderContent = TopicData(
           boardPearl: 'Oxybutynin is the most commonly tested anticholinergic for neurogenic bladder on boards. Extended-release and transdermal formulations have fewer side effects than immediate-release oral forms. The transdermal patch bypasses first-pass hepatic metabolism, producing less of the active metabolite (N-desethyl-oxybutynin) responsible for dry mouth.',
         ),
         MedicationCardBlock(
+          name: 'Tolterodine (Detrol)',
+          drugClass: 'Anticholinergic / Antimuscarinic (M3-selective)',
+          mechanism: 'M3 muscarinic antagonist with greater selectivity for the bladder over the salivary glands, reducing detrusor overactivity',
+          indication: 'Second-line anticholinergic for detrusor overactivity; useful when oxybutynin is not tolerated due to dry mouth or CNS side effects',
+          dosing: 'Tolterodine 2 mg PO BID (or 4 mg LA daily) — M3 muscarinic antagonist, second-line anticholinergic',
+          sideEffects: 'Dry mouth (less than oxybutynin), constipation, blurred vision, urinary retention; fewer CNS effects than oxybutynin because of reduced CNS penetration',
+          boardPearl: 'Tolterodine is a commonly used second-line antimuscarinic. Compared with immediate-release oxybutynin, it has less dry mouth and fewer CNS side effects, making it useful in elderly patients or those intolerant of oxybutynin.',
+        ),
+        MedicationCardBlock(
           name: 'Mirabegron (Myrbetriq)',
           drugClass: 'Beta-3 Adrenergic Agonist',
           mechanism: 'Activates beta-3 adrenergic receptors on the detrusor muscle, causing relaxation during filling phase and increasing bladder capacity',

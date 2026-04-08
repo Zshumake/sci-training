@@ -182,12 +182,12 @@ final TopicData classificationAsiaContent = TopicData(
             'Determined separately for RIGHT and LEFT sides',
             'For segments without key muscles (C1-C4, T2-L1, S2-S5): motor level = sensory level IF testable motor function above that level is also normal',
             'Example: C5 muscle is 2/5 with C4 sensory level → motor level is C4',
-            'Example: C5 muscle is 5/5, C6 is 4/5 → motor level is C5 (C6 is not ≥3/5 with level above 5/5... actually C6 IS ≥3/5 and C5 IS 5/5, so motor level would be C6)',
+            'Example: If C5 is 5/5 and C6 is 4/5, motor level is C6 (C6 is ≥3, C5 above is 5).',
           ],
         ),
         PearlBlock(
           'Board Pearl: Motor Level Rule',
-          'The motor level rule: the key muscle must be ≥3/5 AND the next rostral key muscle must be 5/5. If C5 is 4/5 and C6 is 3/5, the motor level is C4 (not C5, because C5 is not 5/5 — so C6 cannot meet the criterion). For non-key muscle levels (C1-C4, T2-L1, S2-S5), the motor level follows the sensory level if motor function above is normal.',
+          'The motor level rule: the key muscle must be ≥3/5 AND the next rostral key muscle must be 5/5. If C5 is 4/5 and C6 is 3/5, the motor level is **C5** (C5 is ≥3, and there is no key muscle to test above C5; the rule looks for the most caudal myotome ≥3 with all above grade 5). C6 cannot be the motor level because C5 above is only 4, not 5. For non-key muscle levels (C1-C4, T2-L1, S2-S5), the motor level follows the sensory level if motor function above is normal.',
         ),
         BulletCardBlock(
           title: 'Neurological Level of Injury (NLI)',
@@ -633,7 +633,7 @@ final TopicData classificationAsiaContent = TopicData(
           columns: ['Feature', 'Conus Medullaris', 'Cauda Equina'],
           headerColor: const Color(0xFF7C3AED),
           rows: [
-            ['Lesion type', 'UMN (spinal cord)', 'LMN (peripheral nerve roots)'],
+            ['Lesion type', 'MIXED UMN + LMN (sacral cord segments contain LMNs for bladder/bowel/sphincters)', 'LMN (peripheral nerve roots)'],
             ['Location', 'Cord terminus at L1-L2\nvertebral level', 'Nerve roots below L1-L2'],
             ['Onset', 'Sudden, bilateral,\nsymmetric', 'Gradual, often unilateral\nthen bilateral'],
             ['Pain', 'Less common', 'Severe radicular pain,\nasymmetric'],

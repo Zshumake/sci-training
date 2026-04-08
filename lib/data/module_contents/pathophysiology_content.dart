@@ -208,11 +208,10 @@ final TopicData pathophysiologyContent = TopicData(
           backgroundColor: const Color(0xFFFEF2F2),
           points: [
             'NASCIS I (1984): compared low-dose vs high-dose MPSS — no significant difference; NO placebo control',
-            'NASCIS II (1990): MPSS vs naloxone vs placebo — post-hoc analysis showed modest benefit if given within 8 hours',
-            'NASCIS II protocol: 30 mg/kg bolus + 5.4 mg/kg/hr × 23 hrs (if started within 3 hrs) or × 48 hrs (if started 3-8 hrs)',
-            'NASCIS III (1997): 24-hr vs 48-hr MPSS vs tirilazad — post-hoc subgroup analysis only',
+            'NASCIS II (1990): MPSS 30 mg/kg bolus + 5.4 mg/kg/hr × 23 hours, single duration',
+            'NASCIS III (1997): Compared 24-hour vs 48-hour MPSS infusion; 48-hour group benefited only if started 3-8 hours post-injury',
+            'Current AANS/CNS 2013 recommendation: MPSS NOT recommended for routine use',
             'If >8 hours since injury: do NOT administer (potential harm)',
-            'AANS/CNS 2013 guidelines: recommend AGAINST routine use',
             'Risks: wound infection, GI hemorrhage, sepsis, pneumonia, PE, hyperglycemia',
             'Modest benefit (~4 points on motor scale) of questionable functional significance',
           ],
@@ -237,7 +236,7 @@ final TopicData pathophysiologyContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: STASCIS Trial',
-          'The STASCIS trial showed early decompression (<24 hours) patients were 2.8x more likely to achieve ≥2 AIS grade improvement (19.8% vs 8.8% in late surgery). Current AANS/CNS 2024 guidelines recommend early surgical decompression within 24 hours for cervical SCI.',
+          'The STASCIS trial showed early decompression (<24 hours) patients were 2.8x more likely to achieve ≥2 AIS grade improvement (19.8% vs 8.8% in late surgery). Current AANS/CNS 2013 guidelines (and AO Spine 2017 guidelines for early decompression within 24 hours) recommend early surgical decompression within 24 hours for cervical SCI.',
         ),
         HeaderBlock('Succinylcholine Avoidance'),
         BulletCardBlock(

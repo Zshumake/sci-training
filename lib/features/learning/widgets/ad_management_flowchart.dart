@@ -66,7 +66,7 @@ class _ADManagementFlowchartState extends State<ADManagementFlowchart>
       instruction:
           'Obtain BP immediately and recheck every 2-5 minutes. SBP rise of 20-40 mmHg above baseline is significant in SCI (baseline often 90-110 mmHg).',
       lookFor:
-          'SBP >150 mmHg requires treatment. SBP >180 mmHg is a hypertensive emergency with risk of stroke, seizure, and death.',
+          'SBP elevation >=20-40 mmHg above patient\'s baseline (SCI baseline is often 90-110 mmHg) meets diagnostic criteria. SBP >180 mmHg is a hypertensive emergency with risk of stroke, seizure, and death.',
       rationale:
           'Objective BP measurement confirms the diagnosis of AD and guides the urgency of pharmacologic intervention.',
     ),
@@ -108,7 +108,7 @@ class _ADManagementFlowchartState extends State<ADManagementFlowchart>
       title: 'Pharmacologic Treatment',
       urgency: _Urgency.emergent,
       instruction:
-          'If BP remains elevated (SBP >150) after removing identifiable causes, initiate rapid-acting antihypertensive therapy while continuing to search for the trigger.',
+          'If BP remains elevated (SBP elevation >=20-40 mmHg above patient\'s baseline; SCI baseline is often 90-110 mmHg) after removing identifiable causes, initiate rapid-acting antihypertensive therapy while continuing to search for the trigger.',
       lookFor:
           'Response to medication within 5-10 minutes. Recheck BP every 2-5 minutes. Watch for rebound hypotension after stimulus removal.',
       rationale:
@@ -201,6 +201,8 @@ class _ADManagementFlowchartState extends State<ADManagementFlowchart>
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
+            _buildT6PearlCard(),
+            const SizedBox(height: 12),
             _buildScenarioCard(),
             const SizedBox(height: 16),
             _buildBPMonitor(),
@@ -217,6 +219,52 @@ class _ADManagementFlowchartState extends State<ADManagementFlowchart>
             const SizedBox(height: 32),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildT6PearlCard() {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: AppTheme.accentTeal.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(6),
+        border: const Border(
+          left: BorderSide(color: AppTheme.accentTeal, width: 3),
+        ),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(Icons.lightbulb_outline,
+              color: AppTheme.accentTeal, size: 18),
+          const SizedBox(width: 8),
+          Expanded(
+            child: RichText(
+              text: TextSpan(
+                style: AppTheme.bodyFont(
+                    fontSize: 12,
+                    color: AppTheme.textPrimary,
+                    height: 1.4),
+                children: [
+                  TextSpan(
+                    text: 'PEARL — T6 threshold rule: ',
+                    style: AppTheme.monoFont(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                      color: AppTheme.accentTeal,
+                      letterSpacing: 0.8,
+                    ),
+                  ),
+                  const TextSpan(
+                    text:
+                        'AD occurs in injuries at or ABOVE T6 (loss of supraspinal modulation of splanchnic sympathetic outflow). Rare with injuries below T8.',
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -310,9 +358,10 @@ class _ADManagementFlowchartState extends State<ADManagementFlowchart>
         if (bp >= 180) {
           bpColor = AppTheme.dangerRed;
           bpLabel = 'HYPERTENSIVE EMERGENCY';
-        } else if (bp >= 150) {
+        } else if (bp >= 140) {
+          // Baseline 100/65 → 140 is ≥40 mmHg above baseline → treat
           bpColor = AppTheme.warningAmber;
-          bpLabel = 'ELEVATED — TREAT';
+          bpLabel = 'ELEVATED (>=20-40 ABOVE BASELINE) — TREAT';
         } else if (bp >= 130) {
           bpColor = AppTheme.warningAmber;
           bpLabel = 'IMPROVING';

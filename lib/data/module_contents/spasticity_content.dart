@@ -441,7 +441,7 @@ final TopicData spasticityContent = TopicData(
             'Screening trial is MANDATORY before pump implantation:',
             '  - Intrathecal bolus injection via lumbar puncture: 50 mcg baclofen',
             '  - If no response: repeat trial with 75 mcg, then 100 mcg (on separate days)',
-            '  - Positive trial: ≥1 point improvement on Modified Ashworth Scale OR significant functional improvement within 4-8 hours of injection',
+            '  - Positive trial: ≥2-point reduction in MAS (or significant Spasm Frequency Score improvement) at 4-8 hours post-50 mcg bolus',
             '  - Trial assesses both efficacy AND whether the patient "prefers" their function with reduced spasticity',
             '  - Some patients lose beneficial spasticity (e.g., standing transfers) and may elect NOT to proceed',
           ],

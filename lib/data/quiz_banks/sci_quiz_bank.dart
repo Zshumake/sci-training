@@ -59,9 +59,9 @@ class SCIQuizBank {
         'C4',
         'L1',
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       explanation:
-          'C5 is the most common single neurological level of injury in traumatic SCI. Cervical injuries overall account for approximately 60% of all traumatic SCIs. The cervical spine is particularly vulnerable due to its mobility and the relatively small size of the spinal canal in relation to the spinal cord.',
+          'C4 is now the most common single neurological level of injury per NSCISC data (overtook C5 around 2015 due to aging population and increased fall etiology). C5 was historically most common.',
       moduleId: 'sci-fundamentals',
       difficulty: 'basic',
     ),
@@ -411,7 +411,7 @@ class SCIQuizBank {
       ],
       correctIndex: 1,
       explanation:
-          'Autonomic dysreflexia (AD) occurs in patients with SCI at or above T6. This is because the major splanchnic sympathetic outflow (T5-L2, with the greatest contribution from T6-T10) is below the level of injury and cannot be modulated by descending inhibitory pathways. Noxious stimuli below the level of injury trigger a massive sympathetic response causing vasoconstriction and hypertension. Above the level of injury, parasympathetic-mediated compensatory responses (via intact vagus nerve) cause bradycardia, flushing, and sweating.',
+          'Autonomic dysreflexia (AD) occurs in patients with SCI at or above T6. This is because the major splanchnic sympathetic outflow (T5-L2 with greatest contribution from T5-T9) is below the level of injury and cannot be modulated by descending inhibitory pathways. Noxious stimuli below the level of injury trigger a massive sympathetic response causing vasoconstriction and hypertension. Above the level of injury, parasympathetic-mediated compensatory responses (via intact vagus nerve) cause bradycardia, flushing, and sweating.',
       moduleId: 'autonomic-dysreflexia',
       difficulty: 'basic',
     ),
@@ -1752,16 +1752,16 @@ class SCIQuizBank {
     ),
     QuizQuestion(
       question:
-          'Which gastric motility medication should be used with caution in SCI patients with injuries at T6 and above because it can mask the symptoms of AD?',
+          'A T4 complete SCI patient with delayed gastric emptying is started on metoclopramide. What is the most important monitoring concern in SCI patients on this medication?',
       options: [
-        'Polyethylene glycol',
-        'Metoclopramide',
-        'Senna',
-        'Docusate',
+        'Risk of tardive dyskinesia with long-term use',
+        'May worsen orthostatic hypotension',
+        'May trigger autonomic dysreflexia through GI stimulation',
+        'Hyperkalemia risk',
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       explanation:
-          'Metoclopramide is a dopamine antagonist used to enhance gastric motility. It can also lower the blood pressure through its anti-dopaminergic effects, which may mask the hypertensive symptoms of autonomic dysreflexia in susceptible patients (T6 and above). Additionally, fecal impaction and bowel distension (the second most common AD trigger) may go unrecognized if GI symptoms are suppressed. Clinicians should be cautious with any medication that may mask or alter the presentation of AD in at-risk patients.',
+          'Metoclopramide carries a black-box warning for tardive dyskinesia with long-term use (>12 weeks). Use lowest effective dose for shortest duration. Other notable concerns: extrapyramidal symptoms, sedation, and rare neuroleptic malignant syndrome. It does not specifically interact with AD pathophysiology.',
       moduleId: 'neurogenic-bowel',
       difficulty: 'intermediate',
     ),
@@ -1944,16 +1944,16 @@ class SCIQuizBank {
     ),
     QuizQuestion(
       question:
-          'The mnemonic for remembering that poikilothermia (impaired temperature regulation) occurs with SCI at or above T8 is:',
+          'At or above which neurological level of injury does significant poikilothermia (impaired temperature regulation) typically occur?',
       options: [
-        '"T-EIGHT-ture" (temperature)',
-        '"T8 = thermostat off"',
-        '"Eight is great for heat"',
-        '"C3-4-5 keeps alive"',
+        'T6',
+        'T8',
+        'T10',
+        'L1',
       ],
       correctIndex: 0,
       explanation:
-          'The mnemonic "temp-EIGHT-ture" helps recall that injuries at or above T8 are associated with significant poikilothermia (inability to regulate body temperature). At this level and above, sufficient loss of sympathetic control over cutaneous blood flow, sweating, and shivering impairs the body\'s thermoregulatory responses below the injury level. Patients become susceptible to both hypothermia and hyperthermia based on environmental conditions. Higher injuries (cervical) produce more severe poikilothermia.',
+          'Poikilothermia (loss of thermoregulation) typically occurs with injuries at or above T6, where sympathetic outflow to skin/sweat glands is significantly disrupted. This matches the AD threshold (T6+). Patients become dependent on environmental temperature.',
       moduleId: 'cardiovascular',
       difficulty: 'intermediate',
     ),
@@ -2399,7 +2399,7 @@ class SCIQuizBank {
     ),
     QuizQuestion(
       question:
-          'A patient with T1 paraplegia should be expected to achieve independence in all of the following EXCEPT:',
+          'A patient with T1 tetraplegia (lower tetraplegia) should be expected to achieve independence in all of the following EXCEPT:',
       options: [
         'Manual wheelchair propulsion on all surfaces',
         'All transfers including floor-to-wheelchair',
@@ -2408,7 +2408,7 @@ class SCIQuizBank {
       ],
       correctIndex: 3,
       explanation:
-          'Patients with T1 complete paraplegia have full upper extremity function (including hand intrinsics) and can achieve independence in virtually all wheelchair-level activities: all ADLs, transfers (including floor-to-wheelchair), manual wheelchair propulsion on all surfaces, driving with hand controls, and independent bowel and bladder management. However, they cannot ambulate independently without assistive devices because all lower extremity motor function is absent. Ambulation would require bilateral KAFOs and crutches with extremely high energy cost, making it impractical for community mobility.',
+          'Per ASIA definition, any cervical involvement (including hand intrinsics affected by T1) is classified as tetraplegia (T1 = lower tetraplegia). These patients have full upper extremity function (including hand intrinsics) and can achieve independence in virtually all wheelchair-level activities: all ADLs, transfers (including floor-to-wheelchair), manual wheelchair propulsion on all surfaces, driving with hand controls, and independent bowel and bladder management. However, they cannot ambulate independently without assistive devices because all lower extremity motor function is absent. Ambulation would require bilateral KAFOs and crutches with extremely high energy cost, making it impractical for community mobility.',
       moduleId: 'rehab-continuum',
       difficulty: 'intermediate',
     ),

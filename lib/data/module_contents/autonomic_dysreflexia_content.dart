@@ -87,7 +87,7 @@ final TopicData autonomicDysreflexiaContent = TopicData(
             'Pale, cool, dry skin BELOW the injury level (sympathetic vasoconstriction)',
             'Nasal congestion (vasodilation of nasal mucosa)',
             'Blurred vision or visual changes',
-            'Bradycardia is the classic teaching, BUT tachycardia may present MORE FREQUENTLY (both can occur — per Cuccurullo, the heart rate response is variable)',
+            'Bradycardia is the CLASSIC and most commonly tested cardiac response (unopposed vagal baroreflex to elevated BP). Tachycardia may also occur, especially with high cervical injuries or partial autonomic disruption, but bradycardia is the textbook finding.',
             'Anxiety and sense of impending doom',
             'Cardiac arrhythmias may occur (see complications)',
             'Can be ASYMPTOMATIC ("silent AD") despite dangerously elevated BP — this is why regular BP monitoring is essential',
@@ -116,7 +116,7 @@ final TopicData autonomicDysreflexiaContent = TopicData(
           themeColor: const Color(0xFF6366F1),
           backgroundColor: const Color(0xFFEEF2FF),
           points: [
-            'Bradycardia is classically described, BUT tachycardia may occur MORE FREQUENTLY',
+            'Bradycardia is the CLASSIC and most commonly tested response (unopposed vagal baroreflex to elevated BP); tachycardia may also occur, especially with high cervical injuries',
             'Heart rate depends on balance between vagal response and direct sympathetic cardiac activation (T1-T4)',
             'In injuries above T4, both bradycardia and tachycardia can occur',
             'ECG changes during AD: ST segment changes, T wave inversions, QT prolongation',
@@ -147,14 +147,14 @@ final TopicData autonomicDysreflexiaContent = TopicData(
       blocks: [
         HeaderBlock('Common Triggers of Autonomic Dysreflexia'),
         TextBlock(
-          'Any noxious stimulus below the level of injury can trigger autonomic dysreflexia. The most common triggers involve the genitourinary system (approximately 85% of cases) and the gastrointestinal system. Rapid identification and removal of the trigger is the definitive treatment.',
+          'Any noxious stimulus below the level of injury can trigger autonomic dysreflexia. The most common triggers involve the genitourinary system (approximately 75-85% of cases) and the gastrointestinal system. Rapid identification and removal of the trigger is the definitive treatment.',
           isIntro: true,
         ),
         TableBlock(
           title: 'AD Triggers by System and Frequency',
           columns: ['Rank', 'System', 'Trigger', 'Notes'],
           rows: [
-            ['#1', 'Genitourinary (85%)', 'Bladder distension', 'Single most common trigger overall — always check FIRST'],
+            ['#1', 'Genitourinary (75-85%)', 'Bladder distension', 'Single most common trigger overall — always check FIRST'],
             ['#2', 'GI (bowel)', 'Fecal impaction / rectal distension', 'Second most common trigger — check SECOND'],
             ['#3', 'GU', 'UTI', 'Bladder wall irritation and inflammation'],
             ['#4', 'GU', 'Catheter blockage or kinking', 'Leads to bladder distension'],
@@ -178,7 +178,7 @@ final TopicData autonomicDysreflexiaContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: Trigger Identification Strategy',
-          'When managing AD, ALWAYS check the bladder FIRST (85% of cases). If a Foley is in place: check for kinks, blockage, and bag fullness. If on CIC: catheterize immediately. If bladder is ruled out, check the bowel SECOND (fecal impaction). Then systematically check skin, clothing, and other sources. In SCI patients presenting with acute hypertension and headache, AD should be the FIRST diagnosis considered — before essential hypertension or other hypertensive emergencies.',
+          'When managing AD, ALWAYS check the bladder FIRST (75-85% of cases). If a Foley is in place: check for kinks, blockage, and bag fullness. If on CIC: catheterize immediately. If bladder is ruled out, check the bowel SECOND (fecal impaction). Then systematically check skin, clothing, and other sources. In SCI patients presenting with acute hypertension and headache, AD should be the FIRST diagnosis considered — before essential hypertension or other hypertensive emergencies.',
         ),
         PearlBlock(
           'Board Pearl: AD as the Presenting Sign of Occult Pathology',
@@ -201,7 +201,7 @@ final TopicData autonomicDysreflexiaContent = TopicData(
             FlowchartNode(id: 'detect', text: 'AD Suspected\nSBP >20-40 mmHg\nabove baseline', type: FlowchartNodeType.start, color: Color(0xFFDC2626)),
             FlowchartNode(id: 'sit', text: 'SIT UP immediately\nLower legs off bed\nLoosen ALL clothing', type: FlowchartNodeType.action, color: Color(0xFFEA580C)),
             FlowchartNode(id: 'bp', text: 'Monitor BP\nevery 2-5 minutes', type: FlowchartNodeType.action, color: Color(0xFF3B82F6)),
-            FlowchartNode(id: 'bladder', text: 'Check BLADDER first\n(85% of cases)\nCatheterize or check Foley', type: FlowchartNodeType.action, color: Color(0xFFDC2626)),
+            FlowchartNode(id: 'bladder', text: 'Check BLADDER first\n(75-85% of cases)\nCatheterize or check Foley', type: FlowchartNodeType.action, color: Color(0xFFDC2626)),
             FlowchartNode(id: 'resolved1', text: 'BP normalizing?', type: FlowchartNodeType.decision, color: Color(0xFF7C3AED)),
             FlowchartNode(id: 'bowel', text: 'Check BOWEL\nLidocaine gel → wait 2 min\n→ gentle DRE\nRemove impaction', type: FlowchartNodeType.action, color: Color(0xFFEA580C)),
             FlowchartNode(id: 'resolved2', text: 'BP normalizing?', type: FlowchartNodeType.decision, color: Color(0xFF7C3AED)),
@@ -240,7 +240,7 @@ final TopicData autonomicDysreflexiaContent = TopicData(
           points: [
             'Nitropaste (2% nitroglycerin ointment): FIRST-LINE — apply 1/2 to 2 inches to the chest or forehead ABOVE the level of injury',
             'Onset: 3-5 minutes; duration: can be wiped off immediately if BP drops too far (key safety advantage)',
-            'CONTRAINDICATED with concurrent PDE5 inhibitor use (sildenafil, tadalafil) — combination causes life-threatening hypotension',
+            'CONTRAINDICATED with concurrent PDE5 inhibitor use (sildenafil, tadalafil) — combination causes life-threatening hypotension. Avoid nitrates within 24 hours of sildenafil/vardenafil and within 48 hours of tadalafil.',
             'Remove nitropaste once the triggering stimulus has been corrected and BP is normalizing',
             'Nifedipine (Procardia) immediate-release 10 mg: chew and SWALLOW (do NOT use sublingual — risk of precipitous uncontrolled drop)',
             'Clonidine 0.1-0.2 mg PO (some sources cite 0.3-0.4 mg): central alpha-2 agonist, reduces sympathetic outflow',
