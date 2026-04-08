@@ -56,22 +56,22 @@ class _BowelProgramAlgorithmState extends State<BowelProgramAlgorithm> {
     _BowelStep(
       title: 'Suppository Insertion',
       instruction:
-          'Insert a rectal suppository against the rectal wall (NOT into stool). Choice: bisacodyl (stimulant) or polyethylene glycol (PEG)-based. Wait 15-20 minutes for effect.',
+          'Insert a 10 mg bisacodyl suppository against the rectal wall (NOT into stool). Two formulations: HVO-based (Magic Bullet) or PEG-based (Dulcolax). Wait 15-20 minutes for effect.',
       pearl:
-          'Bisacodyl (Dulcolax): chemical stimulant — irritates rectal mucosa to trigger reflex peristalsis. Onset 15-30 min. PEG-based (Magic Bullet): faster onset (10-15 min), less mucosal irritation, CO2-releasing. Hydrogenated vegetable oil base absorbs faster than polyethylene glycol base.',
+          'BOTH suppositories contain 10 mg bisacodyl — the difference is the BASE. Magic Bullet uses hydrogenated vegetable oil (HVO) base, which melts at body temperature faster than PEG → faster onset (10-15 min) and less mucosal irritation. Dulcolax uses polyethylene glycol (PEG) base → slower onset (15-30 min). NOTE: Oral PEG (MiraLAX) is a completely different medication class — an osmotic laxative.',
       icon: Icons.medication,
       timelineLabel: 'Suppository',
       timelineMinutes: '30-35 min',
       choices: [
         _StepChoice(
-          label: 'Bisacodyl (Dulcolax)',
+          label: 'Magic Bullet (HVO base)',
           detail:
-              '10 mg rectal suppository. Chemical stimulant. Onset 15-30 min. Place against rectal wall. May cause cramping in incomplete injuries.',
+              '10 mg bisacodyl in hydrogenated vegetable oil base. Onset 10-15 min (faster — HVO melts at body temp). Less mucosal irritation. Preferred by many centres.',
         ),
         _StepChoice(
-          label: 'PEG-based (Magic Bullet)',
+          label: 'Dulcolax (PEG base)',
           detail:
-              'CO2-releasing suppository. Onset 10-15 min. Less mucosal irritation. Hydrogenated vegetable oil base for faster absorption. Preferred by many centres.',
+              '10 mg bisacodyl in polyethylene glycol base. Onset 15-30 min (slower). Chemical stimulant. Place against rectal wall. May cause cramping in incomplete injuries.',
         ),
       ],
     ),
@@ -132,7 +132,7 @@ class _BowelProgramAlgorithmState extends State<BowelProgramAlgorithm> {
     _BowelStep(
       title: 'Stool Softeners & Oral Agents',
       instruction:
-          'Docusate sodium (Colace) 100-200 mg BID for stool softening. Senna 1-2 tabs at bedtime for mild stimulation. Polyethylene glycol (MiraLAX) 17g daily for osmotic effect. Titrate to achieve formed but soft stool.',
+          'Docusate sodium (Colace) 100-200 mg BID for stool softening. Senna 1-2 tabs at bedtime (moderate-strength stimulant laxative). Polyethylene glycol (MiraLAX) 17g daily for osmotic effect. Titrate to achieve formed but soft stool.',
       pearl:
           'Oral agents are adjuncts, not replacements for manual evacuation in LMN bowel. Schedule oral laxatives so their effect coincides with planned evacuation time (senna takes 6-12 hours; take at bedtime for morning program).',
       icon: Icons.medication_liquid,
@@ -181,7 +181,7 @@ class _BowelProgramAlgorithmState extends State<BowelProgramAlgorithm> {
       ],
       solutions: [
         'Increase fibre to 20-30g/day and fluids to 2-3 L/day',
-        'Switch suppository type (try PEG-based for faster onset)',
+        'Switch suppository type (try HVO-based Magic Bullet for faster onset than PEG-based Dulcolax)',
         'Review medications — taper opioids if possible',
         'Schedule consistently 20-30 min after meal',
         'Use commode with upright positioning',

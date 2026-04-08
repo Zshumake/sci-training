@@ -802,7 +802,7 @@ final TopicData sciFundamentalsContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: TM and MS Risk',
-          'Patients with incomplete transverse myelitis lesions (<2 spinal segments on MRI) are at HIGHER risk for conversion to MS. Those with complete TM lesions (extending over >3 segments) are LESS likely to convert to MS. CSF oligoclonal bands and abnormal visual evoked potentials increase MS risk.',
+          'PARTIAL TM (asymmetric, limited cord cross-section involvement) carries HIGHER risk of conversion to MS. LONGITUDINALLY EXTENSIVE TM (>3 vertebral segments, LETM) suggests NMOSD/AQP4-IgG rather than MS. CSF oligoclonal bands and abnormal visual evoked potentials increase MS risk.',
         ),
         HeaderBlock('Neuromyelitis Optica (NMO / Devic Disease)'),
         BulletCardBlock(

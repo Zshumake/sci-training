@@ -374,7 +374,7 @@ class _KeySensoryPointsTable extends StatelessWidget {
   const _KeySensoryPointsTable();
 
   static const _keySensoryPoints = <(String, String)>[
-    ('C2', 'Occipital protuberance'),
+    ('C2', 'At least 1 cm lateral to occipital protuberance (ISNCSCI 2019)'),
     ('C3', 'Supraclavicular fossa'),
     ('C4', 'Top of AC joint'),
     ('C5', 'Lateral antecubital fossa'),

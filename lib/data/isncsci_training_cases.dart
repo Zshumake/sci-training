@@ -655,7 +655,7 @@ class ISNCSCITrainingCases {
           'A 35-year-old sustains a C6 SCI. Sensory normal through C6 bilaterally '
           'with S4-5 sensation preserved. No VAC. Motor normal through C6, with '
           'weak C7 (2/5) and C8 (1/5) bilaterally -- motor function is present '
-          'but only 2 levels below the motor level, not more than 3.',
+          'but only 1-2 levels below the motor level, not more than 3.',
       difficulty: 'intermediate',
       exam: Exam(
         right: ExamSide(
@@ -725,8 +725,8 @@ class ISNCSCITrainingCases {
           'No VAC, but sacral sparing present (S4-5 LT, DAP) = incomplete. To be '
           'motor incomplete without VAC, motor function must exist MORE THAN 3 '
           'levels below the motor level on EITHER side. Left motor level is C5. '
-          'Left L2 has motor function, which is more than 3 key muscle levels below '
-          'C5 (counting C6, C7, C8, T1, then L2). This makes it motor incomplete '
+          'Left L2 has motor function, which is many neurological segments below '
+          'C5 (well beyond the 3-segment threshold). This makes it motor incomplete '
           '= AIS C (< 50% of key muscles below NLI >= 3).',
     ),
 
@@ -1046,8 +1046,10 @@ class ISNCSCITrainingCases {
           'NLI = C4 (most rostral of C4 sensory and C5 motor — sensory C4 is '
           'more rostral than motor C5, so NLI = C4). Sacral sparing present. '
           'VAC present = motor incomplete. Count muscles below NLI C4: many '
-          'muscles are >=3 bilaterally, giving AIS D. Best prognosis of all SCI '
-          'syndromes.',
+          'muscles are >=3 bilaterally, giving AIS D. Generally favorable '
+          'prognosis with lower extremity recovery typically exceeding upper '
+          'extremity (especially hand) recovery — though Brown-Sequard has the '
+          'best overall functional recovery of all incomplete SCI syndromes.',
     ),
 
     // Case 27: Brown-Sequard Syndrome

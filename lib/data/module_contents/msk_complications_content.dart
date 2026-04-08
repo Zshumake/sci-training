@@ -412,7 +412,7 @@ final TopicData mskComplicationsContent = TopicData(
       blocks: [
         HeaderBlock('Carpal Tunnel Syndrome & Upper Extremity Overuse'),
         TextBlock(
-          'Carpal tunnel syndrome (CTS) and other upper extremity overuse injuries are endemic in the manual wheelchair user population. The prevalence of CTS (40-66%) far exceeds the general population (~5%). These conditions threaten the independence of SCI patients by compromising the very extremities they depend on for all mobility and self-care.',
+          'Carpal tunnel syndrome (CTS) and other upper extremity overuse injuries are endemic in the manual wheelchair user population. The prevalence of CTS (approximately 50-73%, with some studies reporting up to 90%) far exceeds the general population (~5%). These conditions threaten the independence of SCI patients by compromising the very extremities they depend on for all mobility and self-care.',
           isIntro: true,
         ),
         BulletCardBlock(
@@ -420,7 +420,7 @@ final TopicData mskComplicationsContent = TopicData(
           themeColor: const Color(0xFF7C3AED),
           backgroundColor: const Color(0xFFF5F3FF),
           points: [
-            'Prevalence: 40-66% of manual wheelchair users (vs ~5% general population)',
+            'Prevalence: approximately 50-73% of manual wheelchair users, with some studies reporting up to 90% (vs ~5% general population)',
             'Median nerve compression at the carpal tunnel (between transverse carpal ligament and carpal bones)',
             'Mechanism: repetitive weight bearing through the wrist during transfers and wheelchair propulsion',
             'Repetitive wrist extension and ulnar deviation during push rim contact',
@@ -471,7 +471,7 @@ final TopicData mskComplicationsContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: CTS in Wheelchair Users',
-          'CTS prevalence in manual wheelchair users (40-66%) is 10x the general population. The key board concept: CTS in a wheelchair user threatens the patient\'s independence because the hands are essential for ALL mobility and self-care. Prevention through proper wheelchair fitting, ergonomic propulsion, and padded gloves is paramount. Surgical release requires careful planning — the patient needs an alternative mobility plan during recovery. NEVER perform bilateral carpal tunnel release simultaneously in a wheelchair-dependent patient.',
+          'CTS prevalence in manual wheelchair users (approximately 50-73%, up to 90%) is an order of magnitude higher than the general population. The key board concept: CTS in a wheelchair user threatens the patient\'s independence because the hands are essential for ALL mobility and self-care. Prevention through proper wheelchair fitting, ergonomic propulsion, and padded gloves is paramount. Surgical release requires careful planning — the patient needs an alternative mobility plan during recovery. NEVER perform bilateral carpal tunnel release simultaneously in a wheelchair-dependent patient.',
         ),
       ],
     ),
@@ -511,7 +511,7 @@ final TopicData mskComplicationsContent = TopicData(
             '5. Fractures: present with swelling/warmth (NO PAIN) — mimics DVT. Treat conservatively with padded splints (NO circumferential casts).',
             '6. Shoulder pain: most common MSK complaint (30-70%). Rotator cuff impingement is the leading cause.',
             '7. Wheelchair fit is the most important shoulder preservation intervention: proper axle position, seat height, lightweight frame.',
-            '8. CTS: 40-66% prevalence in manual WC users. NEVER do bilateral release simultaneously.',
+            '8. CTS: ~50-73% prevalence (up to 90%) in manual WC users. NEVER do bilateral release simultaneously.',
             '9. HO vs DVT: periarticular swelling + decreased ROM → HO. Diffuse limb swelling + preserved ROM → DVT.',
             '10. Forced ROM/aggressive stretching can WORSEN HO — use gentle ROM only.',
           ],

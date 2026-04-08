@@ -141,6 +141,20 @@ const List<_PIStage> _stages = [
     ],
     color: Color(0xFF4F46E5),
   ),
+  _PIStage(
+    name: 'MMPI',
+    shortName: 'MMPI',
+    description:
+        'Mucosal Membrane Pressure Injury — a SEPARATE NPIAP category that CANNOT be staged with the skin staging system.',
+    keyFeatures: [
+      'Located on mucous membranes (nasal, oral, urethral, etc.)',
+      'Almost always caused by medical devices (NG tubes, catheters, ETT)',
+      'CANNOT be assigned Stage 1-4 or Unstageable',
+      'Mucosal anatomy lacks the skin layers required for NPIAP staging',
+      'Document as "Mucosal Membrane Pressure Injury" — do NOT stage',
+    ],
+    color: Color(0xFFEC4899),
+  ),
 ];
 
 const List<_BodyLocation> _bodyLocations = [
@@ -268,9 +282,9 @@ const List<_StagingScenario> _scenarios = [
     id: 10,
     description:
         'A patient with an NG tube develops a localized area of tissue damage on the nasal mucosa where the tube makes contact. The area shows erosion and erythema.',
-    correctStage: 'U',
+    correctStage: 'MMPI',
     explanation:
-        'Mucosal membrane pressure injuries (from medical devices contacting mucosa) CANNOT be staged using the NPIAP system. The staging system was developed for skin, not mucous membranes. Document as "mucosal membrane pressure injury."',
+        'This is a Mucosal Membrane Pressure Injury (MMPI) — a SEPARATE NPIAP category that CANNOT be staged with the skin staging system (Stages 1-4 or Unstageable). Mucosal anatomy lacks the skin layers required for NPIAP staging. Document simply as "mucosal membrane pressure injury" — do NOT assign a numerical stage.',
   ),
 ];
 

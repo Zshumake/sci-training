@@ -170,7 +170,7 @@ class SCIQuizBank {
       ],
       correctIndex: 1,
       explanation:
-          'S1 is tested at the lateral heel (lateral calcaneus). Key lower extremity sensory points: L1=inguinal region (halfway between ASIS and symphysis), L2=anterior mid-thigh, L3=medial femoral condyle (medial knee), L4=medial malleolus, L5=dorsum of foot at third MTP joint, S1=lateral heel, S2=popliteal fossa, S3=ischial tuberosity, S4-S5=perianal area.',
+          'S1 is tested at the lateral heel (lateral calcaneus). Key lower extremity sensory points: L1=upper anterior thigh (midpoint between T12 inguinal ligament point and L2 mid-thigh point — NOT on the abdomen), L2=anterior mid-thigh, L3=medial femoral condyle (medial knee), L4=medial malleolus, L5=dorsum of foot at third MTP joint, S1=lateral heel, S2=popliteal fossa midline, S3=ischial tuberosity, S4-S5=perianal area.',
       moduleId: 'classification-asia',
       difficulty: 'intermediate',
     ),
@@ -933,16 +933,16 @@ class SCIQuizBank {
     // =====================================================================
     QuizQuestion(
       question:
-          'Zone of partial preservation (ZPP) is defined only in which ASIA Impairment Scale grade?',
+          'Per the ISNCSCI 2019 revision, sensory Zone of Partial Preservation (ZPP) applies to which injuries?',
       options: [
-        'ASIA B',
-        'ASIA C',
-        'ASIA D',
-        'ASIA A',
+        'AIS A only',
+        'AIS A and AIS B',
+        'AIS A, B, and C',
+        'Any complete or incomplete SCI',
       ],
-      correctIndex: 3,
+      correctIndex: 0,
       explanation:
-          'The zone of partial preservation (ZPP) is defined ONLY in ASIA A (complete) injuries. It refers to the dermatomes and myotomes caudal to the neurological level of injury that remain partially innervated. In incomplete injuries (ASIA B, C, D), the concept of ZPP does not apply because by definition, function is preserved in the sacral segments. The ZPP is documented as the most caudal segment with some sensory or motor function on each side.',
+          'Per ISNCSCI 2019 (8th edition), sensory ZPP still applies ONLY to AIS A (complete) injuries — it refers to the dermatomes caudal to the NLI that retain partial sensation. HOWEVER, the 2019 revision EXPANDED motor ZPP: motor ZPP can now be reported in AIS B injuries (sensory incomplete with VAC absent and no motor function below NLI). This means ZPP documentation differs by modality: sensory ZPP = AIS A only; motor ZPP = AIS A or AIS B (when no motor below NLI). The ZPP is documented as the most caudal segment with some function on each side.',
       moduleId: 'classification-asia',
       difficulty: 'board',
     ),
@@ -1389,7 +1389,7 @@ class SCIQuizBank {
       ],
       correctIndex: 2,
       explanation:
-          'The L4 key sensory point is the medial malleolus. Critical dermatome landmarks for the ISNCSCI: C5=lateral antecubital fossa, C6=thumb, C7=middle finger, C8=little finger, T1=medial elbow, T4=nipple line, T10=umbilicus, L1=inguinal region, L2=anterior mid-thigh, L3=medial femoral condyle, L4=medial malleolus, L5=dorsum of foot at third MTP, S1=lateral heel, S2=popliteal fossa, S3=ischial tuberosity, S4-S5=perianal area.',
+          'The L4 key sensory point is the medial malleolus. Critical dermatome landmarks for the ISNCSCI: C5=lateral antecubital fossa, C6=thumb, C7=middle finger, C8=little finger, T1=medial elbow, T4=nipple line, T10=umbilicus, L1=upper anterior thigh (midpoint between T12 and L2 points), L2=anterior mid-thigh, L3=medial femoral condyle, L4=medial malleolus, L5=dorsum of foot at third MTP, S1=lateral heel, S2=popliteal fossa midline, S3=ischial tuberosity, S4-S5=perianal area.',
       moduleId: 'classification-asia',
       difficulty: 'basic',
     ),
@@ -1519,16 +1519,16 @@ class SCIQuizBank {
     ),
     QuizQuestion(
       question:
-          'The SOMI (sternal-occipital-mandibular immobilizer) orthosis provides approximately 93% restriction of cervical flexion but only what percentage of extension restriction?',
+          'Per Johnson et al. biomechanical data, the SOMI (sternal-occipital-mandibular immobilizer) orthosis restricts cervical flexion by approximately what percentage?',
       options: [
-        '93%',
+        '96%',
         '72%',
         '42%',
         '15%',
       ],
-      correctIndex: 2,
+      correctIndex: 1,
       explanation:
-          'The SOMI brace provides excellent restriction of cervical flexion (approximately 93%) but poor restriction of extension (approximately 42%). This is because its design relies on sternal, mandibular, and occipital contact points that primarily resist forward motion. For injuries requiring extension restriction, a cervicothoracic orthosis (CTO) such as a Minerva brace, Yale brace, or a halo vest is more appropriate. The halo vest remains the most rigid cervical orthosis, restricting approximately 96% of flexion-extension.',
+          'Per the classic Johnson et al. biomechanical study, the SOMI brace restricts cervical flexion by approximately 72% and extension by only ~34%. SOMI is designed to resist flexion well but poorly controls extension. For injuries requiring extension restriction, a cervicothoracic orthosis (CTO) such as a Minerva brace, Yale brace, or halo vest is more appropriate. The halo vest remains the most rigid cervical orthosis, restricting approximately 96% of flexion-extension.',
       moduleId: 'pathophysiology',
       difficulty: 'board',
     ),

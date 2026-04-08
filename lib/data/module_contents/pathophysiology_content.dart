@@ -290,7 +290,7 @@ final TopicData pathophysiologyContent = TopicData(
         ),
         HeaderBlock('Phases of Spinal Shock (Ditunno Model)'),
         NumberedListBlock([
-          MapEntry('Phase 1', '0-24 hours: AREFLEXIA — Complete loss of all reflexes below injury level. All motor function absent (flaccid). This is the classic "spinal shock" period.'),
+          MapEntry('Phase 1', '0-24 hours: areflexia/hyporeflexia EXCEPT the delayed plantar response, which is the earliest reflex to return (often within hours). All motor function absent (flaccid). This is the classic "spinal shock" period.'),
           MapEntry('Phase 2', '1-3 days: INITIAL REFLEX RETURN — Denervation supersensitivity develops. Cutaneous reflexes return first: (1) Delayed plantar response (first to return), (2) Bulbocavernosus reflex (BCR), (3) Cremasteric reflex, (4) Anal wink.'),
           MapEntry('Phase 3', '1-4 weeks: EARLY HYPERREFLEXIA — Deep tendon reflexes return. Muscle stretch reflexes become active. Detrusor hyperreflexia may begin. Babinski sign may appear.'),
           MapEntry('Phase 4', '1-12 months: SPASTICITY — Muscle stretch reflexes become hyperactive. Full UMN pattern established: hyperreflexia, clonus, Babinski sign, spasticity. Flexor then extensor spasms develop.'),

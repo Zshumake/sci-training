@@ -42,7 +42,7 @@ final TopicData classificationAsiaContent = TopicData(
           MapEntry('5', 'NLI: The SINGLE most caudal level where BOTH sensory AND motor function are normal on BOTH sides. This is the most ROSTRAL of the four levels (R sensory, L sensory, R motor, L motor).'),
           MapEntry('6', 'COMPLETENESS: Determine if complete (no sacral sparing) or incomplete (sacral sparing present).'),
           MapEntry('7', 'AIS GRADE: Assign AIS grade A-E based on completeness and motor function below NLI.'),
-          MapEntry('8', 'ZPP: Zone of Partial Preservation — only used in AIS A injuries. Most caudal segment with some preserved function.'),
+          MapEntry('8', 'ZPP: Zone of Partial Preservation — documented when sacral function is absent (no S4-5 sensation, no DAP, no VAC). Per ISNCSCI 2019, sensory ZPP applies to AIS A; motor ZPP can be reported in AIS B when no motor function exists below NLI.'),
         ]),
         HeaderBlock('1. Sensory Examination'),
         BulletCardBlock(
@@ -337,11 +337,11 @@ final TopicData classificationAsiaContent = TopicData(
           themeColor: const Color(0xFFEA580C),
           backgroundColor: const Color(0xFFFFF7ED),
           points: [
-            'ONLY used in AIS A (complete) injuries',
+            'Documented when sacral function is absent (no S4-5 sensation, no DAP, no VAC)',
+            'Per ISNCSCI 2019: sensory ZPP applies to AIS A; motor ZPP can be reported in AIS B when no motor function exists below NLI',
             'Defined as the most caudal dermatome and myotome with some preserved function',
             'Reported separately for: sensory-right, sensory-left, motor-right, motor-left',
             'Has prognostic significance — larger ZPP may indicate greater recovery potential',
-            'NOT applicable in incomplete injuries (AIS B-D)',
             'If no ZPP exists (no function below NLI), record the NLI as the ZPP',
           ],
         ),
@@ -746,7 +746,7 @@ final TopicData classificationAsiaContent = TopicData(
         ),
         PearlBlock(
           'Board Pearl: 2019 ISNCSCI Update',
-          'The 2019 revision (8th edition) expanded the ZPP definition so motor ZPP can be documented in incomplete injuries when VAC is absent (though sensory ZPP still applies only to AIS A). It also added guidance for classifying injuries complicated by non-SCI conditions (peripheral neuropathy, TBI, amputations).',
+          'The 2019 revision (8th edition) expanded ZPP: sensory ZPP still requires AIS A, but motor ZPP may be reported in AIS B injuries (sensory incomplete, VAC absent, no motor function below NLI). It also added guidance for classifying injuries complicated by non-SCI conditions (peripheral neuropathy, TBI, amputations).',
         ),
       ],
     ),

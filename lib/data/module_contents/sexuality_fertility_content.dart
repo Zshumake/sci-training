@@ -371,7 +371,7 @@ final TopicData sexualityFertilityContent = TopicData(
           backgroundColor: const Color(0xFFECFDF5),
           points: [
             'SCI does NOT affect female fertility long-term — ovulation, conception, and pregnancy are possible',
-            'Amenorrhea occurs in 50-85% of women acutely (more common with cervical/high thoracic injuries)',
+            'Amenorrhea occurs in approximately 50-60% of women acutely (transient, with menses returning within 4-6 months on average); more common with cervical/high thoracic injuries',
             'Mechanism: hypothalamic suppression from physiological stress, weight loss, medications',
             'Menses return within 6-12 months in 50-90% of women',
             'Once menstruation resumes, fertility is equivalent to age-matched able-bodied women',
