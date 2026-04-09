@@ -401,37 +401,93 @@ class TopicContentView extends StatelessWidget {
   }
 
   Widget _buildNumberedList(NumberedListBlock block) {
+    // Detect short numeric keys (like "1", "2", "3") vs long text keys
+    // (like "Step 1: Assessment" or "Phase 1") and render them differently.
+    bool isShortNumeric(String key) {
+      final trimmed = key.trim();
+      return trimmed.length <= 3 && RegExp(r'^[0-9]+\.?$').hasMatch(trimmed);
+    }
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: block.items.map((item) {
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 26,
-                  height: 26,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: AppTheme.borderSubtle, width: 1),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    item.key,
-                    style: AppTheme.monoFont(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: AppTheme.accentTeal,
+          final shortKey = isShortNumeric(item.key);
+
+          if (shortKey) {
+            // Compact numbered badge for "1", "2", "3", etc.
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 26,
+                    height: 26,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppTheme.borderSubtle, width: 1),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      item.key,
+                      style: AppTheme.monoFont(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: AppTheme.accentTeal,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 3),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 3),
+                      child: Text(
+                        item.value,
+                        style: AppTheme.bodyFont(
+                          fontSize: 13,
+                          height: 1.5,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }
+
+          // Stacked card layout for longer text keys like "Step 1: Assessment"
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppTheme.cardBackground,
+                borderRadius: BorderRadius.circular(6),
+                border: Border.all(color: AppTheme.borderSubtle, width: 1),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        left: BorderSide(color: AppTheme.accentTeal, width: 3),
+                        bottom: BorderSide(color: AppTheme.borderSubtle, width: 1),
+                      ),
+                    ),
+                    padding: const EdgeInsets.fromLTRB(12, 10, 12, 8),
+                    child: Text(
+                      item.key,
+                      style: AppTheme.displayFont(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w700,
+                        color: AppTheme.primaryNavy,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 10, 12, 12),
                     child: Text(
                       item.value,
                       style: AppTheme.bodyFont(
@@ -440,8 +496,8 @@ class TopicContentView extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         }).toList(),
